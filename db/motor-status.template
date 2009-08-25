@@ -1,0 +1,115 @@
+record(calc, "$(MOT):_CALC_STATUS") {
+  field(DESC, "$(DESC)")
+  field(CALC, "D<<3|G<<2|L<<1|H")
+  field(INPD, "$(MOT).DMOV CPP MS")
+  field(INPG, "$(MOT).MOVN CPP MS")
+  field(INPH, "$(MOT).HLS CPP MS")
+  field(INPL, "$(MOT).LLS CPP MS")
+}
+
+record(mbbi, "$(MOT):STATUS") {
+  field(DESC, "$(DESC)")
+  field(INP, "$(MOT):_CALC_STATUS.VAL CPP MS")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(NIVL, "9")
+  field(TEVL, "10")
+  field(ELVL, "11")
+  field(TVVL, "12")
+  field(TTVL, "13")
+  field(FTVL, "14")
+  field(FFVL, "15")
+  field(ZRST, "STOPPED-")
+  field(ONST, "HIGH LIM-")
+  field(TWST, "LOW LIM-")
+  field(THST, "INVALID")
+  field(FRST, "MOVING")
+  field(FVST, "INVALID")
+  field(SXST, "INVALID")
+  field(SVST, "INVALID")
+  field(EIST, "STOPPED")
+  field(NIST, "HIGH LIM")
+  field(TEST, "LOW LIM")
+  field(ELST, "INVALID")
+  field(TVST, "INVALID")
+  field(TTST, "INVALID")
+  field(FTST, "INVALID")
+  field(FFST, "INVALID")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "MAJOR")
+  field(TWSV, "MAJOR")
+  field(THSV, "INVALID")
+  field(FRSV, "MINOR")
+  field(FVSV, "INVALID")
+  field(SXSV, "INVALID")
+  field(SVSV, "INVALID")
+  field(EISV, "NO_ALARM")
+  field(NISV, "MAJOR")
+  field(TESV, "MAJOR")
+  field(ELSV, "INVALID")
+  field(TVSV, "INVALID")
+  field(TTSV, "INVALID")
+  field(FTSV, "INVALID")
+  field(FFSV, "INVALID")
+}
+
+record(stringout, "$(MOT):FW_MEANS") {
+   field(DESC, "Forward(+) motion means.")
+   field(VAL, "$(FW_MEANS)")
+}
+
+record(stringout, "$(MOT):REV_MEANS") {
+   field(DESC, "Reverse(-) motion means.")
+   field(VAL, "$(REV_MEANS)")
+}
+
+record(bo, "$(MOT):SET_ZERO") {
+   field(DESC, "Write 1 to set position.")
+   field(FLNK, "$(MOT):SET_ZERO_1")
+}
+
+record(fanout, "$(MOT):SET_ZERO_1") {
+   field(LNK1, "$(MOT):SET_ZERO_2")
+   field(LNK2, "$(MOT):SET_ZERO_3")
+}
+
+record(longout, "$(MOT):SET_ZERO_2") {
+   field(OUT,  "$(MOT).SSET")
+   field(VAL, "1")
+   field(FLNK, "$(MOT)")
+}
+
+record(fanout, "$(MOT):SET_ZERO_3") {
+   field(LNK1, "$(MOT):SET_ZERO_4")
+   field(LNK2, "$(MOT):SET_ZERO_4A")
+}
+
+record(longout, "$(MOT):SET_ZERO_4") {
+   field(OUT, "$(MOT).RVAL")
+   field(VAL, "0")
+   field(FLNK, "$(MOT)")
+}
+
+record(fanout, "$(MOT):SET_ZERO_4A") {
+   field(LNK1, "$(MOT):SET_ZERO_4B")
+   field(LNK2, "$(MOT):SET_ZERO_5")
+}
+
+record(longout, "$(MOT):SET_ZERO_4B") {
+   field(OUT,  "$(MOT).OFF")
+   field(VAL, "0")
+   field(FLNK, "$(MOT)")
+}
+
+record(longout, "$(MOT):SET_ZERO_5") {
+   field(OUT, "$(MOT).SUSE")
+   field(VAL, "1")
+   field(FLNK, "$(MOT)")
+}
