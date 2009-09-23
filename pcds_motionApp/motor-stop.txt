@@ -1,0 +1,68 @@
+Ideas for handling motor-stop scenarios.
+
+This occurs when the position or rotation sensors on a table are
+enabled and one of the sensors trips.  A proximity sensor trips when a
+table translates (x, y, or z) too far in relation to the other
+table(s) connected to it.  A rotation sensor fails when a table
+rotates beyond its threshold or the difference in rotations between
+any two tables exceeds its threshold.
+
+Theoretically, the stand motors on all three tables should be held
+motionless.  Then the user would determine which sensor was hit.
+After this, the user would manually disable the tripped sensor.  Then
+they would move the table in the opposite motion to untrip the sensor.
+
+Let's just look at situation of how to actually stop all of the
+motors.
+
+The SPMG field looks reasonable.
+
+So, the STOP_CALC calc goes high - the motors should be stopped.  We
+don't want to let the user change SPMG until they've turned off the
+offending sensor.  So, somehow the system should detect that the
+user's changed SPMG and force it back to STOP.
+
+How about a state machine that is triggered on STOP_CALC going high?
+When that occurs, it triggers the other tables' state machines
+(somehow).  It then forces its stand motors to STOP.  It monitors the
+value of SPMG - if the value changes, then it forces SPMG back to
+STOP.
+
+When STOP_CALC goes back to 0 (user has disabled a sensor), the SM
+should notify the other tables.  It should then put all of its stand
+motors back to their previous values of SPMG, allowing them to move.
+
+The user should back off the failing position
+
+----------------------------------------------------------------------
+
+Limit switch stuff.
+
+Use an sCalc record to hold the names of the motor records we're
+monitoring.  User would fill in a template.  Give up to 6 motors whose
+limits we monitor.
+
+How about two CALCs - one for high limit switch and one for low limit
+switch.  If you make the input links CPP, then the CALCs will process
+when they change.  Let's try it.
+
+OK, this is done.  There are two CALC records that hold the limit
+switch status:
+
+SPS:LIMITS_HIGH
+SPS:LIMITS_LOW
+
+----------------------------------------------------------------------
+
+Our state machine needs to determine what motors it should control.
+That's fairly easy:
+
+1.  Check the inputs of SPS:LIMITS_HIGH.
+
+2.  Strip off everything after the period.
+
+We have our motor name.  So, it would make sense to use an array for
+the monitors?  We would have to build the monitor array dynamically.
+
+We need to notify other tables, but we won't do that yet.
+

@@ -2,78 +2,155 @@
 #! DBDSTART
 #! DBDEND
 
+# Macros: EXP          = experiment name
+#         TABLE        = this table's name
+#         OTHER1_TABLE = other table whose inclinometer we monitor
+#         OTHER2_TABLE = other table we monitor
 
 record(calc, $(EXP):$(TABLE):SPS:MUX1) {
-  field(CALC, "!(A&&B&&C&&D&&E&&F&&G&&H&&I&&J&&K&&L)")
-  field(SCAN, ".1 second")
-  field(INPA, "$(EXP):$(TABLE):SPS:01")
-  field(INPB, "$(EXP):$(TABLE):SPS:02")
-  field(INPC, "$(EXP):$(TABLE):SPS:03")
-  field(INPD, "$(EXP):$(TABLE):SPS:04")
-  field(INPE, "$(EXP):$(TABLE):SPS:05")
-  field(INPF, "$(EXP):$(TABLE):SPS:06")
-  field(INPG, "$(EXP):$(TABLE):SPS:07")
-  field(INPH, "$(EXP):$(TABLE):SPS:08")
-  field(INPI, "$(EXP):$(TABLE):SPS:09")
-  field(INPJ, "$(EXP):$(TABLE):SPS:10")
-  field(INPK, "$(EXP):$(TABLE):SPS:11")
-  field(INPL, "$(EXP):$(TABLE):SPS:12")
-  field(FLNK, "$(EXP):$(TABLE):SPS:HIT")
+   field(DESC, "Determine if any sensors hit")
+   field(CALC, "!(A&&B&&C&&D&&E&&F&&G&&H&&I&&J&&K&&L)")
+   field(SCAN, ".1 second")
+   field(INPA, "$(EXP):$(TABLE):SPS:01")
+   field(INPB, "$(EXP):$(TABLE):SPS:02")
+   field(INPC, "$(EXP):$(TABLE):SPS:03")
+   field(INPD, "$(EXP):$(TABLE):SPS:04")
+   field(INPE, "$(EXP):$(TABLE):SPS:05")
+   field(INPF, "$(EXP):$(TABLE):SPS:06")
+   field(INPG, "$(EXP):$(TABLE):SPS:07")
+   field(INPH, "$(EXP):$(TABLE):SPS:08")
+   field(INPI, "$(EXP):$(TABLE):SPS:09")
+   field(INPJ, "$(EXP):$(TABLE):SPS:10")
+   field(INPK, "$(EXP):$(TABLE):SPS:11")
+   field(INPL, "$(EXP):$(TABLE):SPS:12")
+   field(FLNK, "$(EXP):$(TABLE):SPS:HIT")
 }
 
 record(bi, $(EXP):$(TABLE):SPS:HIT) {
-  field(INP, "$(EXP):$(TABLE):SPS:MUX1")
-  field(ZNAM, "Not Hit")
-  field(ONAM, "Hit")
-  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(DESC, "Has a sensor been hit")
+   field(INP, "$(EXP):$(TABLE):SPS:MUX1")
+   field(ZNAM, "Not Hit")
+   field(ONAM, "Hit")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
 record(bi, $(EXP):$(TABLE):SPS:ENABLE) {
-  field(ONAM, "Yes")
-  field(ZNAM, "No")
-  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(DESC, "Sensor hit will stop table")
+   field(ONAM, "Yes")
+   field(ZNAM, "No")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
 record(bi, $(EXP):$(TABLE):STI:ENABLE) {
+   field(DESC, "Inclinometer will stop table")
    field(ONAM, "Yes")
    field(ZNAM, "No")
-  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+}
+
+record(bi, $(EXP):$(TABLE):SPS:LIMITS:ENABLE) {
+   field(DESC, "Limit switch will stop table")
+   field(ONAM, "Yes")
+   field(ZNAM, "No")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+}
+
+record(calc, $(EXP):$(TABLE):SPS:LOCAL_STOP_CALC) {
+   field(DESC, "Calc if local safety tripped")
+   field(CALC, "(A&&B)||(C&&D)||(E&&F)")
+   field(INPA, "$(EXP):$(TABLE):SPS:ENABLE")
+   field(INPB, "$(EXP):$(TABLE):SPS:HIT")
+   field(INPC, "$(EXP):$(TABLE):STI:ENABLE")
+   field(INPD, "$(EXP):$(TABLE):STI:ROT_EXCEEDED")
+   field(INPE, "$(EXP):$(TABLE):SPS:LIMITS:ENABLE")
+   field(INPF, "$(EXP):$(TABLE):SPS:LIMITS_HIT")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
+}
+
+record(bi, $(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP) {
+   field(DESC, "Local safety tripped")
+   field(INP, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+   field(ONAM, "Yes")
+   field(ZNAM, "No")
+   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+}
+
+record(bi, $(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE) {
+   field(DESC, "Should other table stop us?")
+   field(ONAM, "Yes")
+   field(ZNAM, "No")
+   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+}
+
+record(calc, $(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC) {
+   field(DESC, "Are other tables stopped?")
+   field(INPA, "$(EXP):$(OTHER1_TABLE):SPS:STOP_MOTORS CPP")
+   field(INPB, "$(EXP):$(OTHER2_TABLE):SPS:STOP_MOTORS CPP")
+   field(CALC, "A||B")
+   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
+}
+
+record(bi, $(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED) {
+   field(DESC, "Set when remote table stops.")
+   field(INP, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC")
+   field(ONAM, "Stopped")
+   field(ZNAM, "Not Stopped")
+   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+}
+
+record(calc, $(EXP):$(TABLE):SPS:REMOTE_STOP_CALC) {
+   field(DESC, "Calc if other table stops us")
+   field(CALC, "A&&B")
+   field(INPA, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
+   field(INPB, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
+   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
+}
+
+record(bi, $(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP) {
+   field(DESC, "Other table will stop us")
+   field(INP, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+   field(ONAM, "Yes")
+   field(ZNAM, "No")
+   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
 }
 
 record(calc, $(EXP):$(TABLE):SPS:STOP_CALC) {
-  field(CALC, "(A&&B)||(C&&(D||E||F||G))")
-  field(INPA, "$(EXP):$(TABLE):SPS:ENABLE")
-  field(INPB, "$(EXP):$(TABLE):SPS:HIT")
-  field(INPC, "$(EXP):$(TABLE):STI:ENABLE")
-  field(INPD, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
-  field(INPE, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
-  field(INPF, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
-  field(INPG, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
-  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_MOTORS")
+   field(DESC, "Calc if table should stop")
+   field(INPA, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
+   field(INPB, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
+   field(CALC, "A||B")
+   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_MOTORS")
 }
 
 record(bi, $(EXP):$(TABLE):SPS:STOP_MOTORS) {
-  field(INP, "$(EXP):$(TABLE):SPS:STOP_CALC")
-  field(ONAM, "Motors stopped")
-  field(ZNAM, "Motors free")
+   field(DESC, "Table stopped by a safety")
+   field(INP,  "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(ONAM, "Yes")
+   field(ZNAM, "No")
+   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
 }
 
+# Convert X and Y measurements from the clinometer into local
+# pitch/roll orientation.
+
 record(ai, $(EXP):$(TABLE):STI:ROLL) {
-   field(SCAN, ".1 second")
+   field(DESC, "Rotation (LH) about Z axis")
    field(EGU,  "Deg")
    field(PREC, "3")
-   field(INP, "$(EXP):$(TABLE):CLIN:$(ROLL)")
+   field(INP,  "$(EXP):$(TABLE):CLIN:$(ROLL) CPP")
 }
 
 record(ai, $(EXP):$(TABLE):STI:PITCH) {
-   field(SCAN, ".1 second")
+   field(DESC, "Rotation (LH) about X axis")
    field(EGU,  "Deg")
    field(PREC, "3")
-   field(INP, "$(EXP):$(TABLE):CLIN:$(PITCH)")
+   field(INP, "$(EXP):$(TABLE):CLIN:$(PITCH) CPP")
 }
 
+#
 # Protection against excess differential (DIFF) rotation
 # (mutiple tables).
+#
 
 record(ai, $(EXP):$(TABLE):STI:DIFF_ROLL_THRESH) {
    field(EGU,  "Deg")
@@ -90,7 +167,7 @@ record(ai, $(EXP):$(TABLE):STI:DIFF_PITCH_THRESH) {
 record(calc, $(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC) {
    field(CALC, "ABS(A-B)")
    field(INPA, "$(EXP):$(TABLE):STI:ROLL")
-   field(INPB, "$(EXP):$(OTHER):STI:ROLL")
+   field(INPB, "$(EXP):$(OTHER1_TABLE):STI:ROLL")
    field(SCAN, ".1 second")
    field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
 }
@@ -98,7 +175,7 @@ record(calc, $(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC) {
 record(calc, $(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC) {
    field(CALC, "ABS(A-B)")
    field(INPA, "$(EXP):$(TABLE):STI:PITCH")
-   field(INPB, "$(EXP):$(OTHER):STI:PITCH")
+   field(INPB, "$(EXP):$(OTHER1_TABLE):STI:PITCH")
    field(SCAN, ".1 second")
    field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
 }
@@ -135,17 +212,33 @@ record(bi, $(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED) {
    field(INP,  "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
    field(ONAM, "Exceeded")
    field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
 }
 
 record(bi, $(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED) {
    field(INP,  "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
    field(ONAM, "Exceeded")
    field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
 }
 
+record(calc, $(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC) {
+   field(INPA, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
+   field(INPB, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
+   field(CALC, "A||B")
+   field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
+}
+
+record(bi, $(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED) {
+   field(INP, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+   field(ONAM, "Exceeded")
+   field(ZNAM, "Not exceeded")
+   field(FLNK, "$(EXP):$(TABLE):STI:ROT_CALC")
+}
+
+#
 # Protect against excessive rotation (single table).
+#
 
 record(ai, $(EXP):$(TABLE):STI:ROLL_THRESH) {
    field(EGU,  "Deg")
@@ -160,17 +253,15 @@ record(ai, $(EXP):$(TABLE):STI:PITCH_THRESH) {
 }
 
 record(calc, $(EXP):$(TABLE):STI:ROLL_THRESH_CALC) {
-   field(SCAN, ".1 second")
    field(CALC, "(A<=(0-B))||(A>=B)")
-   field(INPA, "$(EXP):$(TABLE):STI:ROLL")
+   field(INPA, "$(EXP):$(TABLE):STI:ROLL CPP")
    field(INPB, "$(EXP):$(TABLE):STI:ROLL_THRESH")
    field(FLNK, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
 }
 
 record(calc, $(EXP):$(TABLE):STI:PITCH_THRESH_CALC) {
-   field(SCAN, ".1 second")
    field(CALC, "(A<=(0-B))||(A>=B)")
-   field(INPA, "$(EXP):$(TABLE):STI:PITCH")
+   field(INPA, "$(EXP):$(TABLE):STI:PITCH CPP")
    field(INPB, "$(EXP):$(TABLE):STI:PITCH_THRESH")
    field(FLNK, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
 }
@@ -179,14 +270,46 @@ record(bi, $(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED) {
    field(INP,  "$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
    field(ONAM, "Exceeded")
    field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
 }
 
 record(bi, $(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED) {
    field(INP,  "$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
    field(ONAM, "Exceeded")
    field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+   field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+}
+
+record(calc, $(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC) {
+   field(INPA, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
+   field(INPB, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
+   field(CALC, "A||B")
+   field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
+}
+
+record(bi, $(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED) {
+   field(INP, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+   field(ONAM, "Exceeded")
+   field(ZNAM, "Not exceeded")
+   field(FLNK, "$(EXP):$(TABLE):STI:ROT_CALC")
+}
+
+#
+#
+#
+
+record(calc, $(EXP):$(TABLE):STI:ROT_CALC) {
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
+   field(INPB, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
+   field(FLNK, "$(EXP):$(TABLE):STI:ROT_EXCEEDED")
+}
+
+record(bi, $(EXP):$(TABLE):STI:ROT_EXCEEDED) {
+   field(INP, "$(EXP):$(TABLE):STI:ROT_CALC")
+   field(ONAM, "Exceeded")
+   field(ZNAM, "Not exceeded")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
 #! Further lines contain data used by VisualDCT
@@ -211,12 +334,12 @@ record(bi, $(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED) {
 #! Link("$(EXP):$(TABLE):SPS:HIT.INP","$(EXP):$(TABLE):SPS:MUX1.VAL")
 #! Record($(EXP):$(TABLE):SPS:ENABLE,500,23,0,0,"$(EXP):$(TABLE):SPS:ENABLE")
 #! Field("$(EXP):$(TABLE):SPS:ENABLE.VAL",16777215,0,"$(EXP):$(TABLE):SPS:ENABLE.VAL")
-#! Record($(EXP):$(TABLE):SPS:STOP_CALC,740,22,0,0,"$(EXP):$(TABLE):SPS:STOP_CALC")
-#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.INPA",16777215,0,"$(EXP):$(TABLE):SPS:STOP_CALC.INPA")
-#! Link("$(EXP):$(TABLE):SPS:STOP_CALC.INPA","$(EXP):$(TABLE):SPS:ENABLE.VAL")
-#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.INPB",16777215,0,"$(EXP):$(TABLE):SPS:STOP_CALC.INPB")
-#! Link("$(EXP):$(TABLE):SPS:STOP_CALC.INPB","$(EXP):$(TABLE):SPS:HIT.VAL")
-#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:STOP_CALC.VAL")
+#! Record($(EXP):$(TABLE):SPS:LOCAL_STOP_CALC,740,22,0,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPA",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPA")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPA","$(EXP):$(TABLE):SPS:ENABLE.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPB",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPB")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPB","$(EXP):$(TABLE):SPS:HIT.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.VAL")
 #! Record($(EXP):$(TABLE):SPS:STOP_MOTORS,980,10,0,0,"$(EXP):$(TABLE):SPS:STOP_MOTORS")
 #! Field("$(EXP):$(TABLE):SPS:STOP_MOTORS.INP",16777215,0,"$(EXP):$(TABLE):SPS:STOP_MOTORS.INP")
 #! Link("$(EXP):$(TABLE):SPS:STOP_MOTORS.INP","$(EXP):$(TABLE)

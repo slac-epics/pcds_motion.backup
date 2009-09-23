@@ -13,6 +13,7 @@ include $(TOP)/configure/CONFIG
 DB += clinometer.template
 DB += table-protection.template
 DB += motor-status.template
+DB += motor-limit-aggregator.template
 DB += basic_motor_jt.template
 
 #----------------------------------------------------

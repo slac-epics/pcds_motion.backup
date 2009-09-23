@@ -1,0 +1,184 @@
+# Process if a motor hits a limit.
+
+record(calc, $(EXP):$(TABLE):SPS:LIMITS_LOW) {
+   field(DESC, "Detect low limit hit.")
+   field(CALC, "A||B||C||D||E||F")
+   field(INPA, "$(EXP):$(TABLE):MMS:$(M1).LLS CPP")
+   field(INPB, "$(EXP):$(TABLE):MMS:$(M2).LLS CPP")
+   field(INPC, "$(EXP):$(TABLE):MMS:$(M3).LLS CPP")
+   field(INPD, "$(EXP):$(TABLE):MMS:$(M4).LLS CPP")
+   field(INPE, "$(EXP):$(TABLE):MMS:$(M5).LLS CPP")
+   field(INPF, "$(EXP):$(TABLE):MMS:$(M6).LLS CPP")
+   field(FLNK, "$(EXP):$(TABLE):SPS:CALC_ALL_LIMITS")
+}
+
+record(calc, $(EXP):$(TABLE):SPS:LIMITS_HIGH) {
+   field(DESC, "Detect high limit hit.")
+   field(CALC, "A||B||C||D||E||F")
+   field(INPA, "$(EXP):$(TABLE):MMS:$(M1).HLS CPP")
+   field(INPB, "$(EXP):$(TABLE):MMS:$(M2).HLS CPP")
+   field(INPC, "$(EXP):$(TABLE):MMS:$(M3).HLS CPP")
+   field(INPD, "$(EXP):$(TABLE):MMS:$(M4).HLS CPP")
+   field(INPE, "$(EXP):$(TABLE):MMS:$(M5).HLS CPP")
+   field(INPF, "$(EXP):$(TABLE):MMS:$(M6).HLS CPP")
+   field(FLNK, "$(EXP):$(TABLE):SPS:CALC_ALL_LIMITS")
+}
+
+record(fanout, $(EXP):$(TABLE):SPS:CALC_ALL_LIMITS) {
+   field(LNK1, "$(EXP):$(TABLE):MMS:$(M1):CALC_LIMIT_HIT")
+   field(LNK1, "$(EXP):$(TABLE):SPS:LIMITS_HIT_CALC")
+}
+
+#
+# Determine if an individual motor it at a limit.
+#
+
+record(calc, $(EXP):$(TABLE):MMS:$(M1):CALC_LIMIT_HIT) {
+   field(DESC, "Detect MMS:$(M1) at limit")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW.A")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH.A")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M1):LIMIT_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):MMS:$(M1):LIMIT_HIT) {
+   field(DESC, "Set if motor is at a limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):MMS:$(M1):CALC_LIMIT_HIT")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M2):CALC_LIMIT_HIT")
+}
+
+record(calc, $(EXP):$(TABLE):MMS:$(M2):CALC_LIMIT_HIT) {
+   field(DESC, "Detect MMS:$(M2) at limit")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW.B")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH.B")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M2):LIMIT_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):MMS:$(M2):LIMIT_HIT) {
+   field(DESC, "Set if motor is at a limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):MMS:$(M2):CALC_LIMIT_HIT")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M3):CALC_LIMIT_HIT")
+}
+
+record(calc, $(EXP):$(TABLE):MMS:$(M3):CALC_LIMIT_HIT) {
+   field(DESC, "Detect MMS:$(M3) at limit")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW.C")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH.C")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M3):LIMIT_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):MMS:$(M3):LIMIT_HIT) {
+   field(DESC, "Set if motor is at a limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):MMS:$(M3):CALC_LIMIT_HIT")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M4):CALC_LIMIT_HIT")
+}
+
+record(calc, $(EXP):$(TABLE):MMS:$(M4):CALC_LIMIT_HIT) {
+   field(DESC, "Detect MMS:$(M4) at limit")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW.D")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH.D")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M4):LIMIT_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):MMS:$(M4):LIMIT_HIT) {
+   field(DESC, "Set if motor is at a limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):MMS:$(M4):CALC_LIMIT_HIT")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M5):CALC_LIMIT_HIT")
+}
+
+record(calc, $(EXP):$(TABLE):MMS:$(M5):CALC_LIMIT_HIT) {
+   field(DESC, "Detect MMS:$(M5) at limit")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW.E")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH.E")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M5):LIMIT_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):MMS:$(M5):LIMIT_HIT) {
+   field(DESC, "Set if motor is at a limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):MMS:$(M5):CALC_LIMIT_HIT")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M6):CALC_LIMIT_HIT")
+}
+
+record(calc, $(EXP):$(TABLE):MMS:$(M6):CALC_LIMIT_HIT) {
+   field(DESC, "Detect MMS:$(M6) at limit")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW.F")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH.F")
+   field(FLNK, "$(EXP):$(TABLE):MMS:$(M6):LIMIT_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):MMS:$(M6):LIMIT_HIT) {
+   field(DESC, "Set if motor is at a limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):MMS:$(M6):CALC_LIMIT_HIT")
+}
+
+#
+# Determine if any limit has been hit.
+#
+
+record(calc, $(EXP):$(TABLE):SPS:LIMITS_HIT_CALC) {
+   field(DESC, "Detect any limit hit.")
+   field(CALC, "A||B")
+   field(INPA, "$(EXP):$(TABLE):SPS:LIMITS_LOW")
+   field(INPB, "$(EXP):$(TABLE):SPS:LIMITS_HIGH")
+   field(FLNK, "$(EXP):$(TABLE):SPS:LIMITS_HIT")
+}
+
+record(bi, $(EXP):$(TABLE):SPS:LIMITS_HIT) {
+   field(DESC, "Set if any motor is at limit")
+   field(ZNAM, "Not at limit")
+   field(ONAM, "At limit")
+   field(INP,  "$(EXP):$(TABLE):SPS:LIMITS_HIT_CALC")
+}
+
+#
+# Give a name to each of the motors so we can refer to specific
+# limits.
+#
+
+record(stringin, $(EXP):$(TABLE):SPS:LIMITS:M1_NAME) {
+   field(DESC, "$(EXP):$(TABLE):MMS:$(M1)")
+   field(VAL, "$(EXP):$(TABLE):MMS:$(M1)")
+}
+
+record(stringin, $(EXP):$(TABLE):SPS:LIMITS:M2_NAME) {
+   field(DESC, "$(EXP):$(TABLE):MMS:$(M2)")
+   field(VAL, "$(EXP):$(TABLE):MMS:$(M2)")
+}
+
+record(stringin, $(EXP):$(TABLE):SPS:LIMITS:M3_NAME) {
+   field(DESC, "$(EXP):$(TABLE):MMS:$(M3)")
+   field(VAL, "$(EXP):$(TABLE):MMS:$(M3)")
+}
+
+record(stringin, $(EXP):$(TABLE):SPS:LIMITS:M4_NAME) {
+   field(DESC, "$(EXP):$(TABLE):MMS:$(M4)")
+   field(VAL, "$(EXP):$(TABLE):MMS:$(M4)")
+}
+
+record(stringin, $(EXP):$(TABLE):SPS:LIMITS:M5_NAME) {
+   field(DESC, "$(EXP):$(TABLE):MMS:$(M5)")
+   field(VAL, "$(EXP):$(TABLE):MMS:$(M5)")
+}
+
+record(stringin, $(EXP):$(TABLE):SPS:LIMITS:M6_NAME) {
+   field(DESC, "$(EXP):$(TABLE):MMS:$(M6)")
+   field(VAL, "$(EXP):$(TABLE):MMS:$(M6)")
+}
+

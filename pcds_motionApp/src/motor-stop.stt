@@ -1,0 +1,100 @@
+program motor_stop
+
+%{
+#include <string.h>
+#include <stdio.h>
+}%
+
+int     stop_motors;
+assign  stop_motors  to "AMO:DIA:SPS:STOP_MOTORS";
+monitor stop_motors;
+
+int     spmg[6];
+assign  spmg to { "", "", "", "", "", "" };
+monitor spmg;
+char    spmg_name[80];
+
+int     orig_spmg[6];
+
+string  motor_name[6];
+assign  motor_name[0] to "AMO:DIA:SPS:LIMITS:M1_NAME";
+assign  motor_name[1] to "AMO:DIA:SPS:LIMITS:M2_NAME";
+assign  motor_name[2] to "AMO:DIA:SPS:LIMITS:M3_NAME";
+assign  motor_name[3] to "AMO:DIA:SPS:LIMITS:M5_NAME";
+assign  motor_name[4] to "AMO:DIA:SPS:LIMITS:M5_NAME";
+assign  motor_name[5] to "AMO:DIA:SPS:LIMITS:M6_NAME";
+
+/* Local variables aren't allowed - all must be declared here. */
+int i;
+int ret;
+
+ss motor_stop {
+   state startup {
+      entry {
+         printf( "motor_stop: startup\n" );
+	 printf( "assign: %ld, connect: %ld\n", pvAssignCount(),
+					        pvConnectCount() );
+         ret = pvGet( stop_motors, SYNC );
+	 printf( "pvGet(stop_motors) = %d.\n", ret );
+	 printf( "stop_motors = '%d'.\n", stop_motors );
+
+         for( i = 0; i < 6; ++i ) {
+            ret = pvGet( motor_name[i], SYNC );
+	    printf( "pvGet() = %d.\n", ret );
+	    printf( "M%d is '%s'.\n", i+1, motor_name[i] );
+	    strcpy( spmg_name, motor_name[i] );
+	    strcat( spmg_name, ".SPMG" );
+	    printf( "Assigning spmg[%d] to '%s'", i, spmg_name );
+	    pvAssign( spmg[i], spmg_name );
+         } 
+      }
+      when( pvConnectCount() == pvAssignCount() ) {}
+         state not_stopped
+   }
+
+   state not_stopped {
+      when( stop_motors == 1 ) {
+         printf( "Remember old SPMG and stop...\n" );
+         for( i = 0; i < 6; ++i ) {
+	    pvGet( spmg[i], SYNC );
+	    orig_spmg[i] = spmg[i];
+	    spmg[i] = 0;
+            pvPut( spmg[i], SYNC );
+	 }
+      } state stopped
+   }
+
+   state stopped {
+      when( spmg[0] != 0 ) {
+         spmg[0] = 0;
+         pvPut( spmg[0], SYNC );
+      }  state stopped
+      when( spmg[1] != 0 ) {
+         spmg[1] = 0;
+         pvPut( spmg[1], SYNC );
+      } state stopped
+      when( spmg[2] != 0 ) {
+         spmg[2] = 0;
+         pvPut( spmg[2], SYNC );
+      } state stopped
+      when( spmg[3] != 0 ) {
+         spmg[3] = 0;
+         pvPut( spmg[3], SYNC );
+      } state stopped
+      when( spmg[4] != 0 ) {
+         spmg[4] = 0;
+         pvPut( spmg[4], SYNC );
+      } state stopped
+      when( spmg[5] != 0 ) {
+         spmg[5] = 0;
+         pvPut( spmg[5], SYNC );
+      } state stopped
+      when( stop_motors == 0 ) {
+         for( i = 0; i < 6; ++i ) {
+	    spmg[i] = orig_spmg[i];
+            pvPut( spmg[i], SYNC );
+	 }
+      } state not_stopped
+   }         
+}
+
