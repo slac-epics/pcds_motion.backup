@@ -6,7 +6,7 @@ program motor_stop
 }%
 
 int     stop_motors;
-assign  stop_motors  to "AMO:DIA:SPS:STOP_MOTORS";
+assign  stop_motors  to "AMO:{TABLE}:SPS:STOP_MOTORS";
 monitor stop_motors;
 
 int     spmg[6];
@@ -17,12 +17,12 @@ char    spmg_name[80];
 int     orig_spmg[6];
 
 string  motor_name[6];
-assign  motor_name[0] to "AMO:DIA:SPS:LIMITS:M1_NAME";
-assign  motor_name[1] to "AMO:DIA:SPS:LIMITS:M2_NAME";
-assign  motor_name[2] to "AMO:DIA:SPS:LIMITS:M3_NAME";
-assign  motor_name[3] to "AMO:DIA:SPS:LIMITS:M5_NAME";
-assign  motor_name[4] to "AMO:DIA:SPS:LIMITS:M5_NAME";
-assign  motor_name[5] to "AMO:DIA:SPS:LIMITS:M6_NAME";
+assign  motor_name[0] to "AMO:{TABLE}:SPS:LIMITS:M1_NAME";
+assign  motor_name[1] to "AMO:{TABLE}:SPS:LIMITS:M2_NAME";
+assign  motor_name[2] to "AMO:{TABLE}:SPS:LIMITS:M3_NAME";
+assign  motor_name[3] to "AMO:{TABLE}:SPS:LIMITS:M4_NAME";
+assign  motor_name[4] to "AMO:{TABLE}:SPS:LIMITS:M5_NAME";
+assign  motor_name[5] to "AMO:{TABLE}:SPS:LIMITS:M6_NAME";
 
 /* Local variables aren't allowed - all must be declared here. */
 int i;

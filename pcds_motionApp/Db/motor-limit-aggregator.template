@@ -26,7 +26,7 @@ record(calc, $(EXP):$(TABLE):SPS:LIMITS_HIGH) {
 
 record(fanout, $(EXP):$(TABLE):SPS:CALC_ALL_LIMITS) {
    field(LNK1, "$(EXP):$(TABLE):MMS:$(M1):CALC_LIMIT_HIT")
-   field(LNK1, "$(EXP):$(TABLE):SPS:LIMITS_HIT_CALC")
+   field(LNK2, "$(EXP):$(TABLE):SPS:LIMITS_HIT_CALC")
 }
 
 #

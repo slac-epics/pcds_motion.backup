@@ -130,6 +130,35 @@ record(bi, $(EXP):$(TABLE):SPS:STOP_MOTORS) {
    field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
 }
 
+# This handles the situation where the tables lock up - they are all
+# stopped because they're all stopped - no local fault at all!
+
+record(calc, $(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC) {
+   field(DESC, "Calc if any table has fault")
+   field(INPA, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP CPP")
+   field(INPB, "$(EXP):$(OTHER1_TABLE):SPS:LOCAL_SHOULD_STOP CPP")
+   field(INPC, "$(EXP):$(OTHER2_TABLE):SPS:LOCAL_SHOULD_STOP CPP")
+   field(INPD, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
+   field(CALC, "D?A+B+C+1:0")
+   field(FLNK, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT")
+}
+
+record(fanout, $(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT) {
+   field(DESC, "Unlock motors if no locals")
+   field(LNK1, "$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES")
+   field(SELM, "Specified")
+   field(SELL, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC")
+}
+
+record(seq, $(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES) {
+   field(DESC, "Unlock mutually-stopped tbls")
+   field(DO1,  "0")
+   field(LNK1, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE CA")
+   field(DO2,  "1")
+   field(DLY2, "0.5")
+   field(LNK2, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE CA")
+}
+
 # Convert X and Y measurements from the clinometer into local
 # pitch/roll orientation.
 
