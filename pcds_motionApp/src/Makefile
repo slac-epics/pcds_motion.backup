@@ -8,7 +8,7 @@ include $(TOP)/configure/CONFIG
 #=============================
 # build an ioc application
 
-LIBRARY_IOC_RTEMS = pcds_motion
+LIBRARY_IOC = pcds_motion
 
 DBD += pcds_motion.dbd
 #include definitions for any other support applications needed
