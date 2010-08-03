@@ -16,6 +16,7 @@ DB += motor-status.template
 DB += motor-limit-aggregator.template
 DB += basic_motor_jt.template
 DB += pcds_motor.template
+DB += mcode.template
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
