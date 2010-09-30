@@ -2,314 +2,10 @@
 #! DBDSTART
 #! DBDEND
 
-
-record(stringin, "$(cont):VR") {
-  field(DESC, "Version")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_VR M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SAVE") {
-  field(DESC, "Save to NVM")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SAVE M$(M) $(addr)")
-  field(SCAN, "Passive")
-}
-
-record(stringin, "$(cont):S1") {
-  field(DESC, "Setup I/O 1")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_S1 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_S1") {
-  field(DESC, "Set S1")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_S1 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):S1")
-}
-
-record(stringin, "$(cont):S2") {
-  field(DESC, "Setup I/O 2")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_S2 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_S2") {
-  field(DESC, "Set S2")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_S2 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):S2")
-}
-
-record(stringin, "$(cont):S3") {
-  field(DESC, "Setup I/O 3")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_S3 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_S3") {
-  field(DESC, "Set S3")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_S3 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):S3")
-}
-
-record(stringin, "$(cont):S4") {
-  field(DESC, "Setup I/O 4")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_S4 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_S4") {
-  field(DESC, "Set S4")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_S4 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):S4")
-}
-
-record(stringin, "$(cont):ST") {
-  field(DESC, "Stall Flag")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_ST M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):SF") {
-  field(DESC, "Stall Factor")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_SF M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_SF") {
-  field(DESC, "Set Stall Factor")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_SF M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):SF")
-}
-
-record(stringin, "$(cont):MV") {
-  field(DESC, "Moving")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_MV M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):P") {
-  field(DESC, "Position")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_P M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_P") {
-  field(DESC, "Set Position")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_P M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):P")
-}
-
-record(stringin, "$(cont):PN") {
-  field(DESC, "Part Number")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_PN M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):PY") {
-  field(DESC, "Party Mode")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_PY M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_PY") {
-  field(DESC, "Set PY")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_PY M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):PY")
-}
-
-record(stringin, "$(cont):I1") {
-  field(DESC, "Read Input 1, Pos LS")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_I1 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):I2") {
-  field(DESC, "Read Input 2, Neg LS")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_I2 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):I3") {
-  field(DESC, "Read Input 3, Home")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_I3 M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):EE") {
-  field(DESC, "Encoder Enabled")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_EE M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_EE") {
-  field(DESC, "Set EE")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_EE M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):EE")
-}
-
-record(stringin, "$(cont):EM") {
-  field(DESC, "Echo Mode")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_EM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_EM") {
-  field(DESC, "Set EM")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_EM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):EM")
-}
-
-record(stringin, "$(cont):SM") {
-  field(DESC, "Stall Mode")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_SM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_SM") {
-  field(DESC, "Set Stall Mode")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_SM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):SM")
-}
-
-record(stringout, "$(cont):ZERO_POS") {
-  field(DESC, "Set Zero Position")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto ZERO_POS M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):P")
-}
-
-record(stringin, "$(cont):BD") {
-  field(DESC, "Baud Rate")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_BD M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_BD") {
-  field(DESC, "Set Baud Rate")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_BD M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):BD")
-}
-
-record(stringin, "$(cont):MT") {
-  field(DESC, "Motor Settling Time")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_MT M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_MT") {
-  field(DESC, "Set MT")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_MT M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):MT")
-}
-
-record(stringin, "$(cont):SN") {
-  field(DESC, "Serial Number")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_SN M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringin, "$(cont):EL") {
-  field(DESC, "Encoder Lines")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_EL M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_EL") {
-  field(DESC, "Set Encoder Lines")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_EL M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):EL")
-}
-
-record(stringin, "$(cont):MS") {
-  field(DESC, "Microsteps")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_MS M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_MS") {
-  field(DESC, "Set Microsteps")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_MS M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):MS")
-}
-
 record(stringin, "$(cont):A") {
   field(DESC, "Acceleration")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_A M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_A M$(M) $(addr)")
   field(SCAN, "Passive")
   field(PINI, "YES")
 }
@@ -317,159 +13,55 @@ record(stringin, "$(cont):A") {
 record(stringout, "$(cont):SET_A") {
   field(DESC, "Set A")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_A M$(M) $(addr)")
+  field(OUT, "@mcode.proto SET_A M$(M) $(addr)")
   field(SCAN, "Passive")
   field(FLNK, "$(cont):A")
 }
 
-record(stringin, "$(cont):D") {
-  field(DESC, "Deceleration")
+record(stringin, "$(cont):BD") {
+  field(DESC, "Baud Rate")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_D M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_BD M$(M) $(addr)")
   field(SCAN, "Passive")
   field(PINI, "YES")
 }
 
-record(stringout, "$(cont):SET_D") {
-  field(DESC, "Set D")
+record(stringout, "$(cont):SET_BD") {
+  field(DESC, "Set Baud Rate")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_D M$(M) $(addr)")
+  field(OUT, "@mcode.proto SET_BD M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(FLNK, "$(cont):D")
+  field(FLNK, "$(cont):BD")
 }
 
-record(stringin, "$(cont):DN") {
-  field(DESC, "Device Name")
+record(stringin, "$(cont):BP") {
+  field(DESC, "Break Point")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_DN M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_BP M$(M) $(addr)")
   field(SCAN, "Passive")
   field(PINI, "YES")
 }
 
-record(stringout, "$(cont):SET_DN") {
-  field(DESC, "Set Dev Name")
+record(stringout, "$(cont):SET_BP") {
+  field(DESC, "Set Break Point")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_DN M$(M) $(addr)")
+  field(OUT, "@mcode.proto SET_BP M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(FLNK, "$(cont):DN")
+  field(FLNK, "$(cont):BP")
 }
 
-record(stringin, "$(cont):DB") {
-  field(DESC, "Dead Band")
+record(stringin, "$(cont):BY") {
+  field(DESC, "Program Executing")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_DB M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_BY M$(M) $(addr)")
   field(SCAN, "Passive")
   field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_DB") {
-  field(DESC, "Set Deadband")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_DB M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):DB")
-}
-
-record(stringin, "$(cont):VI") {
-  field(DESC, "Initial Velocity")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_VI M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_VI") {
-  field(DESC, "Set VI")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_VI M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):VI")
-}
-
-record(stringin, "$(cont):VM") {
-  field(DESC, "Max Velocity")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_VM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_VM") {
-  field(DESC, "Set VM")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_VM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):VM")
-}
-
-record(stringin, "$(cont):LM") {
-  field(DESC, "Limit Mode")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_LM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_LM") {
-  field(DESC, "Set LM")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_LM M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):LM")
-}
-
-record(stringin, "$(cont):ER") {
-  field(DESC, "Error Code")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_ER M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):CLEAR_ER") {
-  field(DESC, "Clear Error Code")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto CLEAR_ER M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):ER")
-}
-
-record(stringin, "$(cont):HC") {
-  field(DESC, "Holding Current")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_HC M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_HC") {
-  field(DESC, "Set HC")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_HC M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):HC")
-}
-
-record(stringin, "$(cont):RC") {
-  field(DESC, "Run Current")
-  field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_RC M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(PINI, "YES")
-}
-
-record(stringout, "$(cont):SET_RC") {
-  field(DESC, "Set RC")
-  field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_RC M$(M) $(addr)")
-  field(SCAN, "Passive")
-  field(FLNK, "$(cont):RC")
 }
 
 record(stringin, "$(cont):C1") {
   field(DESC, "Counter 1 Register")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_C1 M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_C1 M$(M) $(addr)")
   field(SCAN, "Passive")
   field(PINI, "YES")
 }
@@ -477,7 +69,7 @@ record(stringin, "$(cont):C1") {
 record(stringout, "$(cont):SET_C1") {
   field(DESC, "Set C1")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_C1 M$(M) $(addr)")
+  field(OUT, "@mcode.proto SET_C1 M$(M) $(addr)")
   field(SCAN, "Passive")
   field(FLNK, "$(cont):C1")
 }
@@ -485,7 +77,7 @@ record(stringout, "$(cont):SET_C1") {
 record(stringin, "$(cont):C2") {
   field(DESC, "Counter 2 Register")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_C2 M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_C2 M$(M) $(addr)")
   field(SCAN, "Passive")
   field(PINI, "YES")
 }
@@ -493,64 +85,1317 @@ record(stringin, "$(cont):C2") {
 record(stringout, "$(cont):SET_C2") {
   field(DESC, "Set C2")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto SET_C2 M$(M) $(addr)")
+  field(OUT, "@mcode.proto SET_C2 M$(M) $(addr)")
   field(SCAN, "Passive")
   field(FLNK, "$(cont):C2")
+}
+
+record(stringin, "$(cont):CE") {
+  field(DESC, "Software Reset Enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_CE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_CE") {
+  field(DESC, "Set CE")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_CE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):CE")
+}
+
+record(stringin, "$(cont):CK") {
+  field(DESC, "Checksum enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_CK M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_CK") {
+  field(DESC, "Set Checksum enable")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_CK M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):CK")
+}
+
+record(stringin, "$(cont):CM") {
+  field(DESC, "Clock mode enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_CM M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_CM") {
+  field(DESC, "Set Clock mode enable")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_CM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):CM")
+}
+
+record(stringin, "$(cont):CR") {
+  field(DESC, "Clock ratio")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_CR M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_CR") {
+  field(DESC, "Set Clock ratio")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_CR M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):CR")
+}
+
+record(stringin, "$(cont):CW") {
+  field(DESC, "Clock width")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_CW M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_CW") {
+  field(DESC, "Set Clock width")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_CW M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):CW")
+}
+
+record(stringin, "$(cont):D1") {
+  field(DESC, "Input switch debounce, I1")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D1") {
+  field(DESC, "Set D1")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D1")
+}
+
+record(stringin, "$(cont):D2") {
+  field(DESC, "Input switch debounce, I2")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D2") {
+  field(DESC, "Set D2")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D2")
+}
+
+record(stringin, "$(cont):D3") {
+  field(DESC, "Input switch debounce, I3")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D3") {
+  field(DESC, "Set D3")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D3")
+}
+
+record(stringin, "$(cont):D4") {
+  field(DESC, "Input switch debounce, I4")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D4") {
+  field(DESC, "Set D4")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D4")
+}
+
+
+record(stringin, "$(cont):D5") {
+  field(DESC, "Input switch debounce, I5")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D5 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D5") {
+  field(DESC, "Set D5")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D5 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D5")
+}
+
+record(stringin, "$(cont):D9") {
+  field(DESC, "Input switch debounce, I9")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D9 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D9") {
+  field(DESC, "Set D9")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D9 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D9")
+}
+
+record(stringin, "$(cont):D10") {
+  field(DESC, "Input switch debounce, I10")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D10 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D10") {
+  field(DESC, "Set D10")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D10 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D10")
+}
+
+record(stringin, "$(cont):D11") {
+  field(DESC, "Input switch debounce, I11")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D11 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D11") {
+  field(DESC, "Set D11")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D11 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D11")
+}
+
+record(stringin, "$(cont):D12") {
+  field(DESC, "Input switch debounce, I12")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D12 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D12") {
+  field(DESC, "Set D12")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D12 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D12")
+}
+
+record(stringin, "$(cont):D") {
+  field(DESC, "Deceleration")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_D M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_D") {
+  field(DESC, "Set D")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_D M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):D")
+}
+
+record(stringin, "$(cont):DB") {
+  field(DESC, "Dead Band")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_DB M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_DB") {
+  field(DESC, "Set Deadband")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_DB M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):DB")
+}
+
+record(stringin, "$(cont):DE") {
+  field(DESC, "Drive enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_DE M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_DE") {
+  field(DESC, "Set DE")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_DE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):DE")
+}
+
+record(stringin, "$(cont):DG") {
+  field(DESC, "Disable global response")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_DG M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_DG") {
+  field(DESC, "Set Deadband")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_DG M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):DG")
+}
+
+record(stringin, "$(cont):DN") {
+  field(DESC, "Device Name")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_DN M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_DN") {
+  field(DESC, "Set Dev Name")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_DN M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):DN")
+}
+
+record(stringin, "$(cont):EE") {
+  field(DESC, "Encoder Enabled")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_EE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_EE") {
+  field(DESC, "Set EE")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_EE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):EE")
+}
+
+record(stringin, "$(cont):EF") {
+  field(DESC, "Error flag")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_EF M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):EL") {
+  field(DESC, "Encoder Lines")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_EL M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_EL") {
+  field(DESC, "Set Encoder Lines")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_EL M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):EL")
+}
+
+record(stringin, "$(cont):EM") {
+  field(DESC, "Echo Mode")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_EM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_EM") {
+  field(DESC, "Set EM")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_EM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):EM")
+}
+
+record(stringin, "$(cont):ER") {
+  field(DESC, "Error Code")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_ER M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):CLEAR_ER") {
+  field(DESC, "Clear Error Code")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto CLEAR_ER M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):ER")
+}
+
+record(stringin, "$(cont):ES") {
+  field(DESC, "Escape")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_ES M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_ES") {
+  field(DESC, "Set ES")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_ES M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):ES")
+}
+
+record(stringin, "$(cont):FC") {
+  field(DESC, "Filter capture")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_FC M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_FC") {
+  field(DESC, "Set FC")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_FC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):FC")
+}
+
+record(stringin, "$(cont):FM") {
+  field(DESC, "Filter motion")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_FM M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_FM") {
+  field(DESC, "Set FM")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_FM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):FM")
+}
+
+record(stringin, "$(cont):HC") {
+  field(DESC, "Holding Current")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_HC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_HC") {
+  field(DESC, "Set HC")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_HC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):HC")
+}
+
+record(stringin, "$(cont):HT") {
+  field(DESC, "Motor HC Time")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_HT M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_HT") {
+  field(DESC, "Set HC Time")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_HT M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):HT")
+}
+
+record(stringin, "$(cont):I1") {
+  field(DESC, "Read Input 1, Pos LS")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I2") {
+  field(DESC, "Read Input 2, Neg LS")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I3") {
+  field(DESC, "Read Input 3, Home")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I4") {
+  field(DESC, "Read Input 4")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I5") {
+  field(DESC, "Read Input 5")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I5 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I6") {
+  field(DESC, "Read encoder index mark")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I6 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I9") {
+  field(DESC, "Read Input 9")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I9 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I10") {
+  field(DESC, "Read Input 10")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I10 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I11") {
+  field(DESC, "Read Input 11")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I11 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):I12") {
+  field(DESC, "Read Input 12")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_I12 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):IF") {
+  field(DESC, "Input variable pending")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_IF M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringin, "$(cont):IH") {
+  field(DESC, "Read inputs 9-12 as group")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_IH M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):IL") {
+  field(DESC, "Read inputs 1-4 as group")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_IL M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):IN") {
+  field(DESC, "Read inputs 1-4,9-12 as group")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_IN M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):JE") {
+  field(DESC, "Jog enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_JE M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_JE") {
+  field(DESC, "Set JE")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_JE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):JE")
+}
+
+record(stringin, "$(cont):LK") {
+  field(DESC, "Lock user program")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_LK M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_LK") {
+  field(DESC, "Set LK")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_LK M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):LK")
+}
+
+record(stringin, "$(cont):LM") {
+  field(DESC, "Limit Mode")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_LM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_LM") {
+  field(DESC, "Set LM")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_LM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):LM")
+}
+
+record(stringin, "$(cont):MD") {
+  field(DESC, "Motion mode")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_MD M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):MP") {
+  field(DESC, "Moving to position")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_MP M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):MS") {
+  field(DESC, "Microsteps")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_MS M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_MS") {
+  field(DESC, "Set Microsteps")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_MS M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):MS")
+}
+
+record(stringin, "$(cont):MT") {
+  field(DESC, "Motor Settling Time")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_MT M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_MT") {
+  field(DESC, "Set MT")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_MT M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):MT")
+}
+
+record(stringin, "$(cont):MV") {
+  field(DESC, "Moving")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_MV M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):NE") {
+  field(DESC, "Numeric enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_NE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_NE") {
+  field(DESC, "Set NE")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_NE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):NE")
+}
+
+record(stringin, "$(cont):P") {
+  field(DESC, "Position")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_P M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_P") {
+  field(DESC, "Set Position")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_P M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):P")
+}
+
+record(stringin, "$(cont):PC") {
+  field(DESC, "Position capture at trip")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_PC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):PM") {
+  field(DESC, "Position Maintenance")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_PM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_PM") {
+  field(DESC, "Set Position Maintenance")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_PM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):PM")
+}
+
+record(stringin, "$(cont):PY") {
+  field(DESC, "Party Mode")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_PY M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_PY") {
+  field(DESC, "Set PY")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_PY M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):PY")
+}
+
+record(stringin, "$(cont):PN") {
+  field(DESC, "Part Number")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_PN M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):QD") {
+  field(DESC, "Queued")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_QD M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_QD") {
+  field(DESC, "Set QD")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_QD M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):QD")
+}
+
+record(stringin, "$(cont):R1") {
+  field(DESC, "User register 1")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_R1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_R1") {
+  field(DESC, "Set R1")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_R1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):R1")
+}
+
+record(stringin, "$(cont):R2") {
+  field(DESC, "User register 2")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_R2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_R2") {
+  field(DESC, "Set R2")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_R2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):R2")
+}
+
+record(stringin, "$(cont):R3") {
+  field(DESC, "User register 3")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_R3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_R3") {
+  field(DESC, "Set R3")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_R3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):R3")
+}
+
+record(stringin, "$(cont):R4") {
+  field(DESC, "User register 4")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_R4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_R4") {
+  field(DESC, "Set R4")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_R4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):R4")
+}
+
+record(stringin, "$(cont):RC") {
+  field(DESC, "Run Current")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_RC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_RC") {
+  field(DESC, "Set RC")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_RC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):RC")
+}
+
+record(stringout, "$(cont):SAVE") {
+  field(DESC, "Save to NVM")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SAVE M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringin, "$(cont):S1") {
+  field(DESC, "Setup I/O 1")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S1") {
+  field(DESC, "Set S1")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S1")
+}
+
+record(stringin, "$(cont):S2") {
+  field(DESC, "Setup I/O 2")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S2") {
+  field(DESC, "Set S2")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S2 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S2")
+}
+
+record(stringin, "$(cont):S3") {
+  field(DESC, "Setup I/O 3")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S3") {
+  field(DESC, "Set S3")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S3 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S3")
+}
+
+record(stringin, "$(cont):S4") {
+  field(DESC, "Setup I/O 4")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S4") {
+  field(DESC, "Set S4")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S4 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S4")
+}
+
+record(stringin, "$(cont):S5") {
+  field(DESC, "Setup I/O 5")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S5 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S5") {
+  field(DESC, "Set S5")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S5 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S5")
+}
+
+record(stringin, "$(cont):S7") {
+  field(DESC, "Setup I/O 7")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S7 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S7") {
+  field(DESC, "Set S7")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S7 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S7")
+}
+
+record(stringin, "$(cont):S8") {
+  field(DESC, "Setup I/O 8")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S8 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S8") {
+  field(DESC, "Set S8")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S8 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S8")
+}
+
+record(stringin, "$(cont):S9") {
+  field(DESC, "Setup I/O 9")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S9 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S9") {
+  field(DESC, "Set S9")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S9 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S9")
+}
+
+record(stringin, "$(cont):S10") {
+  field(DESC, "Setup I/O 10")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S10 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S10") {
+  field(DESC, "Set S10")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S10 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S10")
+}
+
+record(stringin, "$(cont):S11") {
+  field(DESC, "Setup I/O 11")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S11 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S11") {
+  field(DESC, "Set S11")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S11 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S11")
+}
+
+record(stringin, "$(cont):S12") {
+  field(DESC, "Setup I/O 12")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S12 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S12") {
+  field(DESC, "Set S12")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S12 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S12")
+}
+
+record(stringin, "$(cont):S13") {
+  field(DESC, "Setup I/O 13")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_S13 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_S13") {
+  field(DESC, "Set S13")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_S13 M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):S13")
+}
+
+record(stringin, "$(cont):SF") {
+  field(DESC, "Stall Factor")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_SF M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_SF") {
+  field(DESC, "Set Stall Factor")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_SF M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):SF")
+}
+
+record(stringin, "$(cont):SM") {
+  field(DESC, "Stall Mode")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_SM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_SM") {
+  field(DESC, "Set Stall Mode")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_SM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):SM")
+}
+
+record(stringin, "$(cont):SN") {
+  field(DESC, "Serial Number")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_SN M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):ST") {
+  field(DESC, "Stall Flag")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_ST M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):TC") {
+  field(DESC, "Trip capture")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_TC M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_TC") {
+  field(DESC, "Set TC")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_TC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):TC")
+}
+
+record(stringin, "$(cont):TE") {
+  field(DESC, "Trip enable")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_TE M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_TE") {
+  field(DESC, "Set TE")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_TE M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):TE")
+}
+
+record(stringin, "$(cont):TI") {
+  field(DESC, "Trip on input")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_TI M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_TI") {
+  field(DESC, "Set TI")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_TI M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):TI")
+}
+
+record(stringin, "$(cont):TP") {
+  field(DESC, "Trip on position")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_TP M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_TP") {
+  field(DESC, "Set TP")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_TP M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):TP")
+}
+
+record(stringin, "$(cont):TR") {
+  field(DESC, "Trip on relative position")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_TR M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_TR") {
+  field(DESC, "Set TR")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_TR M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):TR")
+}
+
+record(stringin, "$(cont):TT") {
+  field(DESC, "Trip on position")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_TT M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_TT") {
+  field(DESC, "Set TT")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_TT M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):TT")
+}
+
+record(stringin, "$(cont):V") {
+  field(DESC, "Read velocity")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_V M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(cont):VC") {
+  field(DESC, "Velocity changing")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_VC M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SET_VC") {
+  field(DESC, "Set VC")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_VC M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):VC")
+}
+
+record(stringin, "$(cont):VI") {
+  field(DESC, "Initial Velocity")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_VI M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_VI") {
+  field(DESC, "Set VI")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_VI M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):VI")
+}
+
+record(stringin, "$(cont):VM") {
+  field(DESC, "Max Velocity")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_VM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_VM") {
+  field(DESC, "Set VM")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_VM M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):VM")
+}
+
+record(stringin, "$(cont):VR") {
+  field(DESC, "Version")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_VR M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):IT") {
   field(DESC, "Internal Temp")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_IT M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_IT M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
 record(stringin, "$(cont):WT") {
   field(DESC, "Warning Temp")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_WT M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_WT M$(M) $(addr)")
   field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):ZERO_POS") {
+  field(DESC, "Set Zero Position")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto ZERO_POS M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):P")
 }
 
 record(stringin, "$(cont):CUSTOM") {
   field(DESC, "Custom Parameter")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_CUSTOM M$(M) $(addr)")
+  field(INP, "@mcode.proto GET_CUSTOM M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
 record(stringout, "$(cont):MR") {
   field(DESC, "Move Relative")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto MOV_MR M$(M) $(addr)")
+  field(OUT, "@mcode.proto MOV_MR M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
 record(stringout, "$(cont):MA") {
   field(DESC, "Move Absolute")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto MOV_MA M$(M) $(addr)")
+  field(OUT, "@mcode.proto MOV_MA M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
 record(stringout, "$(cont):HI") {
   field(DESC, "Move to Index mark")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto MOV_HI M$(M) $(addr)")
+  field(OUT, "@mcode.proto MOV_HI M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
 record(stringout, "$(cont):HM") {
   field(DESC, "Move to Home Mark")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto MOV_HM M$(M) $(addr)")
+  field(OUT, "@mcode.proto MOV_HM M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringout, "$(cont):SL") {
+  field(DESC, "Slew")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto MOV_SL M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
 record(stringout, "$(cont):STOP") {
   field(DESC, "Stop")
   field(DTYP, "stream")
-  field(OUT, "@streamDevice.proto STOP M$(M) $(addr)")
+  field(OUT, "@mcode.proto STOP M$(M) $(addr)")
   field(SCAN, "Passive")
 }
 
@@ -593,11 +1438,12 @@ record(fanout, "$(cont):UPDATE_ALL_3") {
   field(DESC, "Update all MCode parameters")
   field(LNK1, "$(cont):SF")
   field(LNK2, "$(cont):BD")
+  field(LNK2, "$(cont):ER")
   field(SCAN, "Passive")
 }
 
 record(fanout, "$(cont):UPDATE_STATUS") {
-  field(DESC, "Update all MCode parameters")
+  field(DESC, "Update Status")
   field(LNK1, "$(cont):MV")
   field(LNK2, "$(cont):P")
   field(LNK3, "$(cont):C1")
@@ -607,24 +1453,6 @@ record(fanout, "$(cont):UPDATE_STATUS") {
   field(SCAN, "Passive")
 }
 
-
-record(calc, "$(cont):CALC_SREV") {
-  field(CALC, "C=1?A*4:A*B")
-  field(INPA, "$(cont):EL")
-  field(INPB, "$(cont):MS")
-  field(INPC, "$(cont):EE")
-}
-
-record(calc, "$(cont):CALC_UREV") {
-  field(CALC, "A")
-  field(INPA, "1")
-}
-
-record(calc, "$(cont):CALC_MRES") {
-  field(CALC, "A/B")
-  field(INPA, "$(cont):CALC_UREV")
-  field(INPB, "$(cont):CALC_SREV")
-}
 
 #! Further lines contain data used by VisualDCT
 #! View(994,211,1.1)
