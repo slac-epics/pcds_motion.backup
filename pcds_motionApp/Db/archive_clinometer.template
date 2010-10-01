@@ -1,0 +1,13 @@
+# Archive these values
+# Macros:
+#	EXP	- Experiment: AMO, SXR, ...
+
+$(EXP):$(TABLE):CLIN:X			1
+$(EXP):$(TABLE):CLIN:Y			1
+$(EXP):$(TABLE):CLIN:TEMP		30
+$(EXP):$(TABLE):CLIN:SERL		1
+$(EXP):$(TABLE):CLIN:MODE		1	monitor
+$(EXP):$(TABLE):CLIN:X_PLUS		1	monitor
+$(EXP):$(TABLE):CLIN:X_MINUS	1	monitor
+$(EXP):$(TABLE):CLIN:Y_PLUS		1	monitor
+$(EXP):$(TABLE):CLIN:Y_MINUS	1	monitor

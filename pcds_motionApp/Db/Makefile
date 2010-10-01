@@ -10,17 +10,27 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-DB += clinometer.template
-DB += table-protection.template
-DB += motor-status.template
-DB += motor-limit-aggregator.template
 DB += basic_motor_jt.template
-DB += pcds_motor.template
+DB += clinometer.template
 DB += mcode.template
+DB += motor-limit-aggregator.template
+DB += motor-status.template
+DB += pcds_motor.template
+DB += table-protection.template
 
-#----------------------------------------------------
-# If <anyname>.db template is not named <anyname>*.template add
-# <anyname>_TEMPLATE = <templatename>
+#
+# Create and install archive templates and sample substitutions
+#
+ARCHIVE	+= archive_clinometer.template
+ARCHIVE	+= archive_motor.template
+
+#
+# Create and install archive templates and sample substitutions
+#
+REQ	+= autosave_clinometer.template
+REQ	+= autosave_motor_positions.template
+REQ	+= autosave_motor_settings.template
+
 
 include $(TOP)/configure/RULES
 #----------------------------------------

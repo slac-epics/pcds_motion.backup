@@ -1,0 +1,7 @@
+# Autosave position values for motor record 
+# TODO: Review this list
+
+$(MOTOR).DHLM
+$(MOTOR).DLLM
+$(MOTOR).S
+$(MOTOR).TWV

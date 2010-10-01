@@ -1,0 +1,11 @@
+# Archive files for motor record 
+# TODO: Review this list
+
+# Scan these at specified rate
+$(MOTOR).RVAL	1
+$(MOTOR).VAL	1
+
+# Monitor each change
+$(MOTOR):STATUS			1	Monitor
+$(MOTOR):SET_ZERO		1	Monitor
+$(MOTOR):LIMIT_HIT		1	Monitor

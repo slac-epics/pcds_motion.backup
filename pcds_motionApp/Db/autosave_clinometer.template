@@ -1,0 +1,12 @@
+# Autosave these values
+# Macros:
+#	EXP		- Experiment: AMO, SXR, ...
+#	TABLE	- HFP, KBO, ...
+
+#$(EXP):$(TABLE):CLIN:X
+#$(EXP):$(TABLE):CLIN:Y
+#$(EXP):$(TABLE):CLIN:SERL
+$(EXP):$(TABLE):CLIN:X_PLUS
+$(EXP):$(TABLE):CLIN:X_MINUS
+$(EXP):$(TABLE):CLIN:Y_PLUS
+$(EXP):$(TABLE):CLIN:Y_MINUS

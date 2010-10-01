@@ -9,11 +9,11 @@ include $(TOP)/configure/CONFIG
 # Specify what files should be copied and where.
 
 # What protocol files should be copied as part of the build.
-# COPY_FILES = example.proto
+COPY_FILES = mcode.proto
 
 # What subdirectory should hold the protcol files.  For this example,
 # $INSTALL_LOCATION/protocol will be created.
-# COPY_SUBDIR = protocol
+COPY_SUBDIR = protocol
 
 # Uncomment this if you only want to copy when *not* installing to
 # your development area.  Useful for iocBoot, where the source and

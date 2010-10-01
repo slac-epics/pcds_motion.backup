@@ -9,7 +9,7 @@ include $(TOP)/configure/CONFIG
 # You can override the default installation path.
 #INSTALL_LOCATION=
 
-#EDLS += example.edl
+EDLS += motor_mcode.edl
 
 # Install images to be used by EDM (Gif and Png are supported)
 # PNG is better and preferred.
