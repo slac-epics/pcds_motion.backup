@@ -1,0 +1,30 @@
+# Newall Absolute Linear Encoder
+# RS232 INTERFACE
+# Baud Rate = 115200
+# Data Bits = 8
+# Parity = NONE
+# Start Bits = 1
+# Stop Bits = 1
+# Address (ID) = 55 Hex
+# Minimum Delay Between Bytes = 1ms (use 20 ms)
+# Minimum Delay Between Requests = 25ms (use .2 seconds)
+
+## Request to Encoder
+## ID      Command                      Carriage Return
+## 1 byte  X Bytes depend on command    0D (hex)
+
+## Receive from Encoder
+## ID      Command                      Carriage Return
+## 1 byte  8 bytes                      1 byte
+
+InTerminator  =  ""; 
+OutTerminator =  ""; #CR;
+ReplyTimeout  =  250;
+ReadTimeout   =  50;
+WriteTimeout  =  100;
+ExtraInput    =  Ignore;
+MaxInput      =  10;
+
+
+# SCPI commands
+GET_ENCODER_POSITION { out "U"; wait 20; out "R"; wait 20; out "P"; wait 20; out "\r"; in "U%8u%<sum>";}

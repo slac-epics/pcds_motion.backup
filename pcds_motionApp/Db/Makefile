@@ -17,15 +17,17 @@ DB += motor-limit-aggregator.template
 DB += motor-status.template
 DB += pcds_motor.template
 DB += table-protection.template
+DB += newall-shg-a2.template
 
 #
 # Create and install archive templates and sample substitutions
 #
 ARCHIVE	+= archive_clinometer.template
 ARCHIVE	+= archive_motor.template
+ARCHIVE	+= archive_newall-shg-a2.template
 
 #
-# Create and install archive templates and sample substitutions
+# Create and install autosave templates and sample substitutions
 #
 REQ	+= autosave_clinometer.template
 REQ	+= autosave_motor_positions.template

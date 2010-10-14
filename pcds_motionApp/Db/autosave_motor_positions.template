@@ -2,3 +2,4 @@
 # TODO: Review this list
 
 $(MOTOR).DVAL
+$(MOTOR).OFF

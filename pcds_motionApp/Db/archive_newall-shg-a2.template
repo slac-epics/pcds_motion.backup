@@ -1,0 +1,5 @@
+# Archive these values
+# Macros:
+#	EXP	- Experiment: AMO, SXR, ...
+
+$(cont):POSITION
