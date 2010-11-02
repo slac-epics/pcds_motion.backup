@@ -6,7 +6,7 @@
 record(longin, "$(cont):POSITION") {
   field(DESC, "Newall SHG-A2 Linear Encoder")
   field(DTYP, "stream")
-  field(INP, "@streamDevice.proto GET_ENCODER_POSITION bus$(bus) $(addr)")
+  field(INP, "@newall-shg-a2.proto GET_ENCODER_POSITION bus$(bus) $(addr)")
   field(SCAN, "2 second")
 }
 
