@@ -4,20 +4,27 @@
 
 
 record(longin, "$(cont):POSITION") {
-  field(DESC, "Newall SHG-A2 Linear Encoder, position")
+  field(DESC, "Newall SHG-A2 Linear Encoder")
   field(DTYP, "stream")
   field(INP, "@streamDevice.proto GET_ENCODER_POSITION bus$(bus) $(addr)")
   field(SCAN, "2 second")
-  }
+}
 
 
+record(calc, "$(cont):CALC:mm") {
+  field(DESC, "Position in mm")
+  field(SCAN, "I/O Intr")
+  field(CALC, "A/B*C")
+  field(INPA, "$(cont):POSITION")
+  field(INPB, "2")
+  field(INPC, "1000")
+  field(EGU, "mm")
+}
 
 #! Further lines contain data used by VisualDCT
 #! View(0,0,1.1)
-#! Record("$(cont):IDENTITY",40,14,0,1,"$(cont):IDENTITY")
-#! Record("$(cont):SENSORTYPE",40,154,0,0,"$(cont):SENSORTYPE")
-#! Record("$(cont):SENSORMODEL",40,294,0,0,"$(cont):SENSORMODEL")
-#! Record("$(cont):SENSORSNUM",40,434,0,0,"$(cont):SENSORSNUM")
-#! Record("$(cont):SENSORRESP",40,574,0,0,"$(cont):SENSORRESP")
-#! Record("$(cont):SENSORTEMP",40,714,0,0,"$(cont):SENSORTEMP")
-#! Record("$(cont):SENSORDIA",40,854,0,0,"$(cont):SENSORDIA")
+#! Record("$(cont):POSITION",20,28,0,0,"$(cont):POSITION")
+#! Field("$(cont):POSITION.VAL",16777215,1,"$(cont):POSITION.VAL")
+#! Record("$(cont):CALC:mm",480,86,0,1,"$(cont):CALC:mm")
+#! Field("$(cont):CALC:mm.INPA",16777215,0,"$(cont):CALC:mm.INPA")
+#! Link("$(cont):CALC:mm.INPA","$(cont):POSITION.VAL")

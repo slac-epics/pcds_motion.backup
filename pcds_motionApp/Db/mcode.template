@@ -628,7 +628,7 @@ record(stringin, "$(cont):IF") {
 }
 
 record(stringin, "$(cont):IH") {
-  field(DESC, "Read inputs 9-12 as group")
+  field(DESC, "Read I9-12 as group")
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_IH M$(M) $(addr)")
   field(SCAN, "Passive")
@@ -636,7 +636,7 @@ record(stringin, "$(cont):IH") {
 }
 
 record(stringin, "$(cont):IL") {
-  field(DESC, "Read inputs 1-4 as group")
+  field(DESC, "Read I1-4 as group")
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_IL M$(M) $(addr)")
   field(SCAN, "Passive")
@@ -644,7 +644,7 @@ record(stringin, "$(cont):IL") {
 }
 
 record(stringin, "$(cont):IN") {
-  field(DESC, "Read inputs 1-4,9-12 as group")
+  field(DESC, "Read I1-4,9-12 as group")
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_IN M$(M) $(addr)")
   field(SCAN, "Passive")
