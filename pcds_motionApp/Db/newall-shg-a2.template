@@ -7,13 +7,13 @@ record(longin, "$(cont):POSITION") {
   field(DESC, "Newall SHG-A2 Linear Encoder")
   field(DTYP, "stream")
   field(INP, "@newall-shg-a2.proto GET_ENCODER_POSITION bus$(bus) $(addr)")
-  field(SCAN, "2 second")
+  field(SCAN, "1 second")
+  field(FLNK, "$(cont):CALC:mm")
 }
 
 
 record(calc, "$(cont):CALC:mm") {
   field(DESC, "Position in mm")
-  field(SCAN, "I/O Intr")
   field(CALC, "A/B*C")
   field(INPA, "$(cont):POSITION")
   field(INPB, "2")
