@@ -1,2 +1,55 @@
 #RULES.ioc
-include $(EPICS_BASE)/configure/RULES.ioc
+include $(CONFIG)/RULES_DIRS
+
+build: buildInstall
+install: buildInstall
+
+ifneq ($(findstring $(ARCH),$(BUILD_ARCHS)),)
+buildInstall: $(TARGETS)
+
+clean::
+	$(RM) cdCommands envPaths
+
+else 
+buildInstall:
+clean::
+endif
+
+envPaths cdCommands: $(wildcard $(TOP)/configure/RELEASE*) \
+	$(TOP)/configure/CONFIG $(INSTALL_BIN)
+	@$(RM) $@
+ifeq ($(IOCS_APPL_TOP),)
+	$(PERL) $(TOOLS)/convertRelease.pl -a $(ARCH) $@
+else
+	$(PERL) $(TOOLS)/convertRelease.pl -a $(ARCH) -t $(IOCS_APPL_TOP) $@
+endif
+
+realclean::
+	$(RM) cdCommands envPaths
+
+# Inflate the IOC archive file, if any
+$(INSTALL_ARCHIVE)/%.archive: %.substitutions
+	@echo "Inflating ioc archive file from $<"
+	@$(RM) $@
+	$(MSI) $(ARCHIVEFLAGS) -S$< > msi.tmp
+	$(MV) msi.tmp $@
+
+$(INSTALL_ARCHIVE)/%.archive: %.sub-arch
+	@echo "Inflating ioc archive file from $<"
+	@$(RM) $@
+	$(MSI) $(ARCHIVEFLAGS) -S$< > msi.tmp
+	$(MV) msi.tmp $@
+
+# Inflate the IOC autosave file, if any
+$(INSTALL_AUTOSAVE)/%.req: %.substitutions
+	@echo "Inflating ioc autosave file from $<"
+	@$(RM) $@
+	$(MSI) $(AUTOSAVEFLAGS) -S$< > msi.tmp
+	$(MV) msi.tmp $@
+
+$(INSTALL_AUTOSAVE)/%.req: %.sub-req
+	@echo "Inflating ioc autosave file from $<"
+	@$(RM) $@
+	$(MSI) $(AUTOSAVEFLAGS) -S$< > msi.tmp
+	$(MV) msi.tmp $@
+

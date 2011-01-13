@@ -1,0 +1,119 @@
+#
+# PCDS EPICS Template for motor interlocks
+#
+# To use, you can either use a substitutions file
+# to supply the needed macro definitions,
+# or just make a copy of this file and customize
+# it to fill in the macro names.
+# 
+# Required macro definitions:
+# IOC				# IOC name,	ex: CXI:IOC:DS1:STAND
+# ILK				# Interlock name,	ex: CXI:DIA:ILK:XRayFocus
+# NAME				# Display name for interlock, ex:  "SC1 GateValve"
+# MOTOR				# Motor name, ex:  "SXR:KB1:MMS:01"
+#
+# CalcFault PV field macros:
+# CALC_FAULT		# CALC: Calculation expression, ex: "A && !B"
+# CALC_FAULT_DESC	# DESC: 40 char string for U/I fault display, default ""
+# CALC_FAULT_OUT	# OUT:  Output link, default ""
+# CALC_FAULT_PINI	# PINI: Process at init, default "YES"
+# CALC_FAULT_SCAN	# SCAN: Process scan rate, default ".1 second"
+# A					# A:	Calculation Input
+# B					# B:	Calculation Input
+# C, D, E, ... 
+# L					# L:	Calculation Input
+#
+# Optional macros: 
+# FAULT_VAL_OK		# Value to use for OK status, default "0"
+# FAULT_VAL_ERR		# Value to use for ERROR status, default "1"
+# SIG_FAULT_FLNK	# FLNK field for SignalFault PV, default ""
+#
+# The FLNK and OUT macros can include directives such as PP, NPP, CA, CP, etc.
+# 
+# PV's Created by this template:
+#	\$(ILK):Override			# Interlock Enable/Disable: 0=Normal,1=OVERRIDE
+#	\$(ILK):DispName			# User friendly name for interlock (28 char max)
+#	\$(ILK):Error				# Error message (40 char max)
+#	\$(ILK):CalcFault			# Calc record that checks for fault condition
+#	\$(ILK):CalcSignal			# Calc record that signals fault conditions
+#	\$(ILK):SignalFault			# Transform record that disables/enables motor
+#
+
+record( bo, "$(ILK):Override" )
+{
+	field( DESC,	"Interlock Override" )
+	field( DOL,		"False" )
+	field( ZNAM,	"Normal" )
+	field( ONAM,	"OVERRIDE" )
+}
+
+record( stringin,	"$(ILK):DispName" )
+{
+	field( INP,		"$(NAME)" )
+}
+
+record( stringin,	"$(ILK):Error" )
+{
+	field( INP,		"$(ERR_MSG=ERROR: $(NAME) Interlock Activated!)" )
+}
+
+record( calcout, "$(ILK):CalcFault" )
+{
+	field( SCAN,	"$(CALC_FAULT_SCAN=.1 second)" )
+	field( DESC,	"$(CALC_FAULT_DESC=)" )
+	field( INPA,	"$(A=)" )
+	field( INPB,	"$(B=)" )
+	field( INPC,	"$(C=)" )
+	field( INPD,	"$(D=)" )
+	field( INPE,	"$(E=)" )
+	field( INPF,	"$(F=)" )
+	field( INPG,	"$(G=)" )
+	field( INPH,	"$(H=)" )
+	field( INPI,	"$(I=)" )
+	field( INPJ,	"$(J=)" )
+	field( INPK,	"$(K=)" )
+	field( INPL,	"$(L=)" )
+	field( CALC,	"$(CALC_FAULT=)" )
+	field( OUT,		"$(CALC_FAULT_OUT=)" )
+	field( FLNK,	"$(ILK):CalcSignal" )
+	field( PINI,	"$(CALC_FAULT_PINI=YES)" )
+}
+
+# The CalcSignal PV checks to see if
+# the interlock has been overridden before
+# signaling the fault.
+# The normal fault values for the motor
+# record are 0=Normal, 1=Disabled
+record( calcout, "$(ILK):CalcSignal" )
+{
+	field( INPA,	"$(FAULT_VAL_OK=0)" )
+	field( INPB,	"$(FAULT_VAL_ERR=1)" )
+	field( INPC,	"$(ILK):CalcFault NPP" )
+	field( INPD,	"$(ILK):Override" )
+	field( CALC,	"(C && !D) ? B : A" )
+	field( OUT,		"$(ILK):SignalFault.A PP MS" )
+}
+
+# The SignalFault PV disables or enables the
+# motor by a sequence of writes to the record
+# disable fields.
+# 	DISA:	0=Normal, 1=Disabled
+#	DISP:	0=Normal, 1=Disable CA putField's except to DISP
+# This works as follows.   To Disable:
+#	1.	Write 1 to DISA, disables motor
+#	2.	Write 1 to DISP, prevents changes to desired position
+#	3.	Write 1 to DISA, does nothing
+# To Enable:
+#	1.  Write 0 to DISA, does nothing if DISP is set
+#	2.	Write 0 to DISP, allows DISA to be changed
+#	3.	Write 0 to DISA, enables motor
+record( transform, "$(ILK):SignalFault" )
+{
+	field( DESC,	"Interlock fanout" )
+	field( CLCB,	"a" )
+	field( CLCC,	"a" )
+	field( OUTA,	"$(MOTOR).DISA NPP NMS" )
+	field( OUTB,	"$(MOTOR).DISP NPP NMS" )
+	field( OUTC,	"$(MOTOR).DISA NPP NMS" )
+	field( FLNK,	"$(SIG_FAULT_FLNK=)" )
+}

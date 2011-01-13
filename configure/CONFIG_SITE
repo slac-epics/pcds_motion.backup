@@ -26,3 +26,7 @@
 # define INSTALL_LOCATION here
 #INSTALL_LOCATION=<fullpathname>
 
+# Autosave and Restore install locations
+INSTALL_ARCHIVE	= $(TOP)/archive
+INSTALL_RESTORE	= $(TOP)/autosave
+

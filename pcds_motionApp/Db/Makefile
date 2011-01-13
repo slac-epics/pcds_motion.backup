@@ -15,7 +15,10 @@ DB += clinometer.template
 DB += mcode.template
 DB += motor-limit-aggregator.template
 DB += motor-status.template
+DB += motor-interlock.template
 DB += pcds_motor.template
+DB += sim-valve.template
+DB += sim-motor.template
 DB += table-protection.template
 DB += newall-shg-a2.template
 

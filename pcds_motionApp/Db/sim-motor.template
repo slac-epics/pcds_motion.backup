@@ -1,8 +1,8 @@
 grecord(motor,"$(P)$(M)")
 {
-	field(DESC,"$(DESC)")
+	field(DESC,"Sim $(DESC)")
 	field(DTYP,"$(DTYP)")
-	field(OUT, "#C$(C) S$(S) @")
+	field(OUT, "#C$(C) S$(S) @motorSim")
 	field(DIR, "$(DIR)")
 	field(SREV,"$(SREV)")
 	field(UREV,"$(UREV)")
