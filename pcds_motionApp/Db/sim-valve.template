@@ -4,52 +4,64 @@
 # This file provides dummy PV's that can be
 # controlled via the gui to simulate a valve
 #
+# PV's created by this template:
+#	$(VALVE):ENBL_SW	- bo control record, true when valve is enabled
+#	$(VALVE):OPN_DI		- bo status record, true when valve is open
+#	$(VALVE):CLS_DI		- bo status record, true when valve is closed
+#	$(VALVE):ILKALM		- bo status record, true when ?
+#	$(VALVE):OPN_SW		- bo control record, write 0 to close, 1 to open
+#
 
 record( bo, "$(VALVE):ENBL_SW" )
 {
 	field( DESC, "$(NAME) Enable" )
-	field( DOL,	"True" )
+	field( VAL,	"1" )
 	field( ZNAM, "Disabled" )
 	field( ONAM, "Enabled" )
+	field( PINI, "YES" )
 }
 
 record( bo, "$(VALVE):OPN_DI" )
 {
 	field( DESC, "$(NAME) Is Open" )
-	field( DOL,	"False" )
+	field( VAL,	"0" )
 	field( ZNAM, "Not Open" )
 	field( ONAM, "Open" )
+	field( PINI, "YES" )
 }
 
 record( bo, "$(VALVE):CLS_DI" )
 {
 	field( DESC, "$(NAME) Is Closed" )
-	field( DOL,	 "True" )
+	field( VAL,	 "1" )
 	field( ZNAM, "Not Closed" )
 	field( ONAM, "Closed" )
+	field( PINI, "YES" )
 }
 
 record( bo, "$(VALVE):ILKALM" )
 {
 	field( DESC, "$(NAME) Is Closed" )
-	field( DOL,	 "False" )
+	field( DOL,	 "0" )
 	field( ZNAM, "Low" )
 	field( ONAM, "High" )
+	field( PINI, "YES" )
 }
 
 record( bo, "$(VALVE):OPN_SW" )
 {
 	field( DESC, "$(NAME) Switch" )
-	field( DOL,	 "False" )
+	field( DOL,	 "0" )
 	field( ZNAM, "Close" )
 	field( ONAM, "Open" )
 	field( FLNK, "$(VALVE):SIM:Switch" )
+	field( PINI, "YES" )
 }
 
 record( calcout, "$(VALVE):SIM:Switch" )
 {
 	field( INPA, "$(VALVE):OPN_SW NPP" )
-	field( CALC, "A?0x04:0x40" )
+	field( CALC, "A?0x03:0x30" )
 	field( OUT,  "$(VALVE):SIM:Seq.SELN" )
 	field( FLNK, "$(VALVE):SIM:Seq" )
 }
@@ -58,27 +70,27 @@ record( calcout, "$(VALVE):SIM:Switch" )
 #
 # Valve sequence
 #
-#	Set SELN to 0x04 to execute steps 1-4
-#	Set SELN to 0x40 to execute steps 5-8
+#	Set SELN to 0x0F to execute steps 1-4
+#	Set SELN to 0xF0 to execute steps 5-8
 record( seq, "$(VALVE):SIM:Seq" )
 {
 	field( SELM,	"Mask"	)
-	field( SELN,	"0x04"	)
+	field( SELN,	"0x03"	)
 
 	field( DOL1,	"0"	)
-	field( LNK1,	"$(VALVE):CLS_DI" )
+	field( LNK1,	"$(VALVE):CLS_DI PP" )
 
 	field( DOL2,	"1"	)
-	field( LNK2,	"$(VALVE):OPN_DI" )
+	field( LNK2,	"$(VALVE):OPN_DI PP" )
 	field( DLY2,	"$(ACT_TIME=0.1)" )
 	# LNK3 unused
 	# LNK4 unused
 
 	field( DOL5,	"0"	)
-	field( LNK5,	"$(VALVE):OPN_DI" )
+	field( LNK5,	"$(VALVE):OPN_DI PP" )
 
 	field( DOL6,	"1"	)
-	field( LNK6,	"$(VALVE):CLS_DI" )
+	field( LNK6,	"$(VALVE):CLS_DI PP" )
 	field( DLY6,	"$(ACT_TIME=0.1)" )
 	# LNK7 unused
 	# LNK8 unused

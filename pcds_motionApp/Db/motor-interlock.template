@@ -37,24 +37,32 @@
 #	\$(ILK):CalcFault			# Calc record that checks for fault condition
 #	\$(ILK):CalcSignal			# Calc record that signals fault conditions
 #	\$(ILK):SignalFault			# Transform record that disables/enables motor
+#	\$(ILK):FaultDetected		# bo record, true when fault condition detected
+#	\$(ILK):MotorDisabled		# bo record, true when motor is disabled
 #
 
 record( bo, "$(ILK):Override" )
 {
 	field( DESC,	"Interlock Override" )
-	field( DOL,		"False" )
+	field( VAL,		"0" )
 	field( ZNAM,	"Normal" )
 	field( ONAM,	"OVERRIDE" )
+	field( FLNK,	"$(ILK):CalcFault" )
+	field( OSV,		"MINOR" )
 }
 
-record( stringin,	"$(ILK):DispName" )
+record( stringout,	"$(ILK):DispName" )
 {
-	field( INP,		"$(NAME)" )
+	field( DESC,	"Interlock Display Name" )
+	field( VAL,		"$(NAME)" )
+	field( PINI,	"YES" )
 }
 
-record( stringin,	"$(ILK):Error" )
+record( stringout,	"$(ILK):Error" )
 {
-	field( INP,		"$(ERR_MSG=ERROR: $(NAME) Interlock Activated!)" )
+	field( DESC,	"Interlock Error Message" )
+	field( VAL,		"$(ERR_MSG=$(NAME) Interlock Engaged!)" )
+	field( PINI,	"YES" )
 }
 
 record( calcout, "$(ILK):CalcFault" )
@@ -75,8 +83,21 @@ record( calcout, "$(ILK):CalcFault" )
 	field( INPL,	"$(L=)" )
 	field( CALC,	"$(CALC_FAULT=)" )
 	field( OUT,		"$(CALC_FAULT_OUT=)" )
-	field( FLNK,	"$(ILK):CalcSignal" )
+	field( FLNK,	"$(ILK):FaultDetected" )
 	field( PINI,	"$(CALC_FAULT_PINI=YES)" )
+	field( HIGH,	"1.0" )
+	field( HSV,		"MINOR" )
+}
+
+record( bo, "$(ILK):FaultDetected" )
+{
+	field( DESC,	"Interlock condition Detected" )
+	field( OMSL,	"closed_loop" )
+	field( DOL,		"$(ILK):CalcFault" )
+	field( ZNAM,	"Normal" )
+	field( ONAM,	"FAULT!" )
+	field( FLNK,	"$(ILK):CalcSignal" )
+	field( OSV,		"MINOR" )
 }
 
 # The CalcSignal PV checks to see if
@@ -92,6 +113,16 @@ record( calcout, "$(ILK):CalcSignal" )
 	field( INPD,	"$(ILK):Override" )
 	field( CALC,	"(C && !D) ? B : A" )
 	field( OUT,		"$(ILK):SignalFault.A PP MS" )
+	field( FLNK,	"$(ILK):MotorDisabled" )
+}
+
+record( bo, "$(ILK):MotorDisabled" )
+{
+	field( DESC,	"Motor Disabled" )
+	field( OMSL,	"closed_loop" )
+	field( DOL,		"$(MOTOR).DISA CPP" )
+	field( ZNAM,	"Normal" )
+	field( ONAM,	"Disabled" )
 }
 
 # The SignalFault PV disables or enables the

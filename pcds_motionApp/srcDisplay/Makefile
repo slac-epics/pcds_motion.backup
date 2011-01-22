@@ -5,11 +5,19 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
+#
+# PCDS Note:
+#
+# No need to "install" any screens via this makefile,
+# as we see them via soft links to
+#   $(EPICS_MODULES)/pcds_motion/$(PCDS_MOTION_MODULE_VERSION)/pcds_motionScreens
+#
+
 # EDM Screens to install
 # You can override the default installation path.
 #INSTALL_LOCATION=
 
-EDLS += motor_mcode.edl
+# EDLS += motor_mcode.edl
 
 # Install images to be used by EDM (Gif and Png are supported)
 # PNG is better and preferred.

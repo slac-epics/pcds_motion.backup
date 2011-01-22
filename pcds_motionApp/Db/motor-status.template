@@ -1,5 +1,4 @@
 record(calc, "$(MOT):_CALC_STATUS") {
-  field(DESC, "$(DESC)")
   field(CALC, "D<<3|G<<2|L<<1|H")
   field(INPD, "$(MOT).DMOV CPP MS")
   field(INPG, "$(MOT).MOVN CPP MS")
@@ -8,7 +7,6 @@ record(calc, "$(MOT):_CALC_STATUS") {
 }
 
 record(mbbi, "$(MOT):STATUS") {
-  field(DESC, "$(DESC)")
   field(INP, "$(MOT):_CALC_STATUS.VAL CPP MS")
   field(ZRVL, "0")
   field(ONVL, "1")
