@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 619
-y 553
-w 409
-h 327
+x 188
+y 32
+w 408
+h 328
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-18.0"
 btnFont "helvetica-medium-r-18.0"
@@ -89,78 +89,6 @@ nullColor index 18
 showUnits
 newPos
 objType "monitors"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 865
-y 191
-w 42
-h 24
-fgColor index 35
-onColor index 4
-offColor index 4
-topShadowColor index 1
-botShadowColor index 11
-controlPv "XRT:DIA:MMS:02.STOP"
-pressValue "1"
-onLabel "STOP"
-offLabel "STOP"
-3d
-useEnumNumeric
-font "helvetica-bold-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 863
-y 297
-w 42
-h 23
-fgColor index 35
-onColor index 4
-offColor index 4
-topShadowColor index 1
-botShadowColor index 11
-controlPv "XRT:DIA:MMS:04.STOP"
-pressValue "1"
-onLabel "STOP"
-offLabel "STOP"
-3d
-useEnumNumeric
-font "helvetica-bold-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 864
-y 405
-w 42
-h 23
-fgColor index 35
-onColor index 4
-offColor index 4
-topShadowColor index 1
-botShadowColor index 11
-controlPv "XRT:DIA:MMS:06.STOP"
-pressValue "1"
-onLabel "STOP"
-offLabel "STOP"
-3d
-useEnumNumeric
-font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Static Text)

@@ -61,7 +61,7 @@ record( stringout,	"$(ILK):DispName" )
 record( stringout,	"$(ILK):Error" )
 {
 	field( DESC,	"Interlock Error Message" )
-	field( VAL,		"$(ERR_MSG=$(NAME) Interlock Engaged!)" )
+	field( VAL,		"$(ERR_MSG=$(NAME) Engaged!)" )
 	field( PINI,	"YES" )
 }
 
