@@ -273,8 +273,8 @@ MOV_HM       { out "1HM %s";                        wait 25; }
 MOV_SL       { out "1SL %s";                        wait 25; }
 
 
-## To implement
 
-
-
-
+## Additional fields
+# Power up flag
+GET_PU       { out "1PR PU";        in "%s";        wait 25; }
+SET_PU       { out "1PU %s";                        wait 25; }

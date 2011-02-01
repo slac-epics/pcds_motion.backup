@@ -1399,6 +1399,22 @@ record(stringout, "$(cont):STOP") {
   field(SCAN, "Passive")
 }
 
+record(stringin, "$(cont):PU") {
+  field(DESC, "Power Up Flag")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_PU M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(cont):SET_PU") {
+  field(DESC, "Set PU")
+  field(DTYP, "stream")
+  field(OUT, "@mcode.proto SET_PU M$(M) $(addr)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(cont):PU")
+}
+
 record(fanout, "$(cont):UPDATE_ALL") {
   field(DESC, "Update all MCode parameters")
   field(LNK1, "$(cont):P")

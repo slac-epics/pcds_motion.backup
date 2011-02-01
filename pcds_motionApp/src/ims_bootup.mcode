@@ -1,0 +1,30 @@
+VA PU
+VA p1
+VA f1
+PG 1
+LB Su
+PU=1
+P=p1
+f1=0
+LB Pt
+CL zc, Mv=0
+CL fa, Mv=1
+H 100
+BR Pt
+LB fa
+CL fb, f1=0
+RT
+LB fb
+f1=1
+RT
+LB zc
+CL zd, f1=1
+RT
+LB zd
+p1=P
+f1=0
+RT
+E
+PG
+EX 1
+PU=0

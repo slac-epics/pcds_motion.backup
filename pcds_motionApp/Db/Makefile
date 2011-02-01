@@ -17,6 +17,7 @@ DB += motor-limit-aggregator.template
 DB += motor-status.template
 DB += motor-interlock.template
 DB += pcds_motor.template
+DB += pcds_motor_v2.template
 DB += sim-valve.template
 DB += sim-motor.template
 DB += table-protection.template
