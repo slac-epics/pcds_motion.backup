@@ -24,10 +24,11 @@ grecord(motor,"$(P)$(M)")
 	field(INIT,"")
 	field(TWV, "1")
 	field(IMS, "1")
-	field(MPGM,"/reg/neh/home/dhzhang/ims_mcode.txt")
+	field(MENV,"PCDS_MOTION")
+	field(MPGM,"/pcds_motionApp/src/ims_bootup.mcode")
 	field(SDLT,30)
 }
-record(bo,"$(P)$(M)_Update")
+record(bo,"$(P)$(M):Update")
 {
 	field(DESC,"Force $(DESC) to Update")
 	field(VAL,  1)
