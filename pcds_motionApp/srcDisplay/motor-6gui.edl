@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 67
-y 140
-w 1800
+x 1941
+y 127
+w 1860
 h 850
 font "helvetica-medium-r-10.0"
 ctlFont "helvetica-medium-r-10.0"
@@ -25,123 +25,6 @@ snapToGrid
 gridSize 8
 endScreenProperties
 
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 80
-y 72
-w 30
-h 25
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(M1):PU"
-pressValue "0"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 8
-y 56
-w 320
-h 224
-lineColor index 3
-fill
-fillColor index 3
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 8
-y 56
-w 320
-h 224
-lineColor index 14
-fillColor index 3
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 144
-y 256
-w 55
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(M1):S2"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 144
-y 232
-w 55
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(M1):S12"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 144
-y 208
-w 30
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(M1):SM"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -150,7 +33,7 @@ minor 1
 release 0
 x 0
 y 0
-w 1808
+w 1856
 h 32
 font "helvetica-bold-r-14.0"
 fgColor index 14
@@ -166,7 +49,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1728
+x 1760
 y 0
 w 48
 h 24
@@ -224,7 +107,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 48
 w 560
 h 235
@@ -238,7 +121,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 48
 w 560
 h 235
@@ -252,7 +135,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 48
 w 560
 h 235
@@ -266,7 +149,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 416
+x 432
 y 48
 w 112
 h 16
@@ -289,7 +172,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 688
+x 704
 y 56
 w 200
 h 16
@@ -307,7 +190,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 416
+x 432
 y 304
 w 112
 h 16
@@ -330,7 +213,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 304
 w 560
 h 235
@@ -344,7 +227,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 304
 w 560
 h 235
@@ -358,7 +241,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 304
 w 560
 h 235
@@ -372,7 +255,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 680
+x 696
 y 312
 w 208
 h 16
@@ -390,7 +273,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 560
 w 560
 h 235
@@ -404,7 +287,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 560
 w 560
 h 235
@@ -418,7 +301,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 336
+x 352
 y 560
 w 560
 h 235
@@ -432,7 +315,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 680
+x 696
 y 568
 w 216
 h 16
@@ -450,7 +333,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 48
 w 560
 h 235
@@ -464,7 +347,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 48
 w 560
 h 235
@@ -478,7 +361,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 48
 w 560
 h 235
@@ -492,7 +375,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1264
+x 1280
 y 56
 w 216
 h 16
@@ -510,7 +393,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 416
+x 432
 y 568
 w 112
 h 16
@@ -533,7 +416,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1000
+x 1016
 y 48
 w 112
 h 16
@@ -556,7 +439,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 304
 w 560
 h 235
@@ -570,7 +453,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 304
 w 560
 h 235
@@ -584,7 +467,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 304
 w 560
 h 235
@@ -598,7 +481,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1264
+x 1280
 y 312
 w 216
 h 16
@@ -616,7 +499,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1008
+x 1024
 y 304
 w 112
 h 16
@@ -639,7 +522,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 560
 w 560
 h 235
@@ -653,7 +536,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 560
 w 560
 h 235
@@ -667,7 +550,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 920
+x 936
 y 560
 w 560
 h 235
@@ -681,7 +564,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1272
+x 1288
 y 568
 w 208
 h 16
@@ -699,7 +582,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1000
+x 1016
 y 560
 w 112
 h 16
@@ -722,7 +605,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 344
+x 360
 y 72
 w 264
 h 192
@@ -737,7 +620,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 176
 w 16
 h 8
@@ -753,7 +636,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 176
 w 16
 h 8
@@ -769,7 +652,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 152
 w 16
 h 16
@@ -785,7 +668,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 152
 w 16
 h 16
@@ -801,7 +684,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 88
 w 56
 h 24
@@ -825,7 +708,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 408
+x 424
 y 88
 w 56
 h 24
@@ -849,7 +732,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 464
+x 480
 y 88
 w 56
 h 24
@@ -873,7 +756,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 624
+x 640
 y 72
 w 256
 h 192
@@ -888,7 +771,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 344
+x 360
 y 64
 w 48
 h 16
@@ -907,7 +790,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 120
 w 88
 h 24
@@ -926,7 +809,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 720
+x 736
 y 152
 w 72
 h 24
@@ -950,7 +833,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 152
 w 48
 h 24
@@ -970,7 +853,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 712
+x 728
 y 224
 w 64
 h 32
@@ -994,7 +877,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 624
+x 640
 y 64
 w 56
 h 16
@@ -1013,7 +896,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 120
 w 80
 h 24
@@ -1033,7 +916,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 712
+x 728
 y 120
 w 88
 h 24
@@ -1057,7 +940,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 656
+x 672
 y 88
 w 168
 h 24
@@ -1079,7 +962,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 152
 w 88
 h 24
@@ -1099,7 +982,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 152
 w 16
 h 16
@@ -1118,7 +1001,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 152
 w 16
 h 16
@@ -1137,7 +1020,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 488
+x 504
 y 152
 w 16
 h 16
@@ -1156,7 +1039,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 184
 w 80
 h 24
@@ -1175,7 +1058,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 712
+x 728
 y 184
 w 88
 h 24
@@ -1199,7 +1082,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 192
 w 88
 h 24
@@ -1218,7 +1101,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 456
+x 472
 y 192
 w 80
 h 24
@@ -1240,7 +1123,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 808
+x 824
 y 120
 w 16
 h 24
@@ -1263,7 +1146,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 536
+x 552
 y 176
 w 24
 h 16
@@ -1282,7 +1165,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 432
+x 448
 y 176
 w 24
 h 16
@@ -1302,7 +1185,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 808
+x 824
 y 184
 w 16
 h 32
@@ -1315,7 +1198,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 808
+x 824
 y 184
 w 16
 h 24
@@ -1338,7 +1221,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 808
+x 824
 y 192
 w 13
 h 24
@@ -1362,7 +1245,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 176
 w 16
 h 8
@@ -1382,7 +1265,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 176
 w 16
 h 8
@@ -1402,7 +1285,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 136
 w 24
 h 16
@@ -1427,7 +1310,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 112
 w 24
 h 16
@@ -1452,7 +1335,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 152
 w 24
 h 24
@@ -1475,7 +1358,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 200
 w 24
 h 16
@@ -1500,7 +1383,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 176
 w 24
 h 16
@@ -1525,7 +1408,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 704
+x 720
 y 72
 w 88
 h 16
@@ -1546,7 +1429,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 224
 w 88
 h 24
@@ -1565,7 +1448,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 456
+x 472
 y 224
 w 80
 h 24
@@ -1588,7 +1471,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 448
+x 464
 y 120
 w 96
 h 24
@@ -1611,7 +1494,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 536
+x 552
 y 88
 w 24
 h 24
@@ -1628,7 +1511,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 544
+x 560
 y 200
 w 64
 h 16
@@ -1651,7 +1534,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 408
+x 424
 y 152
 w 40
 h 16
@@ -1673,7 +1556,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 544
+x 560
 y 152
 w 40
 h 16
@@ -1694,7 +1577,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 472
+x 488
 y 264
 w 2
 h 0
@@ -1711,7 +1594,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 800
+x 816
 y 152
 w 40
 h 24
@@ -1724,7 +1607,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 800
+x 816
 y 152
 w 40
 h 24
@@ -1746,7 +1629,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 800
+x 816
 y 152
 w 40
 h 24
@@ -1772,7 +1655,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 680
+x 696
 y 152
 w 40
 h 24
@@ -1785,7 +1668,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 680
+x 696
 y 152
 w 40
 h 24
@@ -1807,7 +1690,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 680
+x 696
 y 152
 w 40
 h 24
@@ -1833,7 +1716,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 792
+x 808
 y 224
 w 80
 h 32
@@ -1859,7 +1742,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 552
+x 568
 y 112
 w 48
 h 32
@@ -1872,7 +1755,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 554
+x 570
 y 115
 w 45
 h 12
@@ -1897,7 +1780,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 552
+x 568
 y 131
 w 48
 h 12
@@ -1925,7 +1808,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 632
+x 648
 y 240
 w 48
 h 24
@@ -1951,7 +1834,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 344
+x 360
 y 328
 w 264
 h 192
@@ -1966,7 +1849,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 432
 w 16
 h 8
@@ -1982,7 +1865,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 432
 w 16
 h 8
@@ -1998,7 +1881,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 408
 w 16
 h 16
@@ -2014,7 +1897,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 408
 w 16
 h 16
@@ -2030,7 +1913,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 344
 w 56
 h 24
@@ -2054,7 +1937,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 408
+x 424
 y 344
 w 56
 h 24
@@ -2078,7 +1961,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 464
+x 480
 y 344
 w 56
 h 24
@@ -2102,7 +1985,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 624
+x 640
 y 328
 w 256
 h 192
@@ -2117,7 +2000,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 344
+x 360
 y 320
 w 48
 h 16
@@ -2136,7 +2019,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 376
 w 88
 h 24
@@ -2155,7 +2038,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 720
+x 736
 y 408
 w 72
 h 24
@@ -2179,7 +2062,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 408
 w 48
 h 24
@@ -2199,7 +2082,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 712
+x 728
 y 480
 w 64
 h 32
@@ -2223,7 +2106,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 624
+x 640
 y 320
 w 56
 h 16
@@ -2242,7 +2125,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 376
 w 80
 h 24
@@ -2262,7 +2145,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 712
+x 728
 y 376
 w 88
 h 24
@@ -2286,7 +2169,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 656
+x 672
 y 344
 w 168
 h 24
@@ -2308,7 +2191,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 408
 w 88
 h 24
@@ -2328,7 +2211,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 408
 w 16
 h 16
@@ -2347,7 +2230,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 408
 w 16
 h 16
@@ -2366,7 +2249,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 488
+x 504
 y 408
 w 16
 h 16
@@ -2385,7 +2268,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 440
 w 80
 h 24
@@ -2404,7 +2287,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 712
+x 728
 y 440
 w 88
 h 24
@@ -2428,7 +2311,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 448
 w 88
 h 24
@@ -2447,7 +2330,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 456
+x 472
 y 448
 w 80
 h 24
@@ -2469,7 +2352,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 808
+x 824
 y 376
 w 16
 h 24
@@ -2492,7 +2375,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 536
+x 552
 y 432
 w 24
 h 16
@@ -2511,7 +2394,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 432
+x 448
 y 432
 w 24
 h 16
@@ -2531,7 +2414,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 808
+x 824
 y 440
 w 16
 h 32
@@ -2544,7 +2427,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 808
+x 824
 y 440
 w 16
 h 24
@@ -2567,7 +2450,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 808
+x 824
 y 448
 w 13
 h 24
@@ -2591,7 +2474,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 432
 w 16
 h 8
@@ -2611,7 +2494,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 432
 w 16
 h 8
@@ -2631,7 +2514,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 392
 w 24
 h 16
@@ -2656,7 +2539,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 368
 w 24
 h 16
@@ -2681,7 +2564,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 408
 w 24
 h 24
@@ -2704,7 +2587,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 456
 w 24
 h 16
@@ -2729,7 +2612,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 432
 w 24
 h 16
@@ -2754,7 +2637,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 704
+x 720
 y 328
 w 88
 h 16
@@ -2775,7 +2658,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 480
 w 88
 h 24
@@ -2794,7 +2677,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 456
+x 472
 y 480
 w 80
 h 24
@@ -2817,7 +2700,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 448
+x 464
 y 376
 w 96
 h 24
@@ -2840,7 +2723,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 536
+x 552
 y 344
 w 24
 h 24
@@ -2857,7 +2740,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 544
+x 560
 y 456
 w 64
 h 16
@@ -2880,7 +2763,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 408
+x 424
 y 408
 w 40
 h 16
@@ -2902,7 +2785,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 544
+x 560
 y 408
 w 40
 h 16
@@ -2923,7 +2806,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 472
+x 488
 y 520
 w 2
 h 0
@@ -2940,7 +2823,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 800
+x 816
 y 408
 w 40
 h 24
@@ -2953,7 +2836,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 800
+x 816
 y 408
 w 40
 h 24
@@ -2975,7 +2858,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 800
+x 816
 y 408
 w 40
 h 24
@@ -3001,7 +2884,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 680
+x 696
 y 408
 w 40
 h 24
@@ -3014,7 +2897,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 680
+x 696
 y 408
 w 40
 h 24
@@ -3036,7 +2919,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 680
+x 696
 y 408
 w 40
 h 24
@@ -3062,7 +2945,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 792
+x 808
 y 480
 w 80
 h 32
@@ -3088,7 +2971,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 552
+x 568
 y 368
 w 48
 h 32
@@ -3101,7 +2984,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 554
+x 570
 y 371
 w 45
 h 12
@@ -3126,7 +3009,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 552
+x 568
 y 387
 w 48
 h 12
@@ -3154,7 +3037,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 632
+x 648
 y 496
 w 48
 h 24
@@ -3180,7 +3063,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 344
+x 360
 y 584
 w 264
 h 192
@@ -3195,7 +3078,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 688
 w 16
 h 8
@@ -3211,7 +3094,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 688
 w 16
 h 8
@@ -3227,7 +3110,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 664
 w 16
 h 16
@@ -3243,7 +3126,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 664
 w 16
 h 16
@@ -3259,7 +3142,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 600
 w 56
 h 24
@@ -3283,7 +3166,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 408
+x 424
 y 600
 w 56
 h 24
@@ -3307,7 +3190,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 464
+x 480
 y 600
 w 56
 h 24
@@ -3331,7 +3214,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 624
+x 640
 y 584
 w 256
 h 192
@@ -3346,7 +3229,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 344
+x 360
 y 576
 w 48
 h 16
@@ -3365,7 +3248,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 632
 w 88
 h 24
@@ -3384,7 +3267,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 720
+x 736
 y 664
 w 72
 h 24
@@ -3408,7 +3291,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 664
 w 48
 h 24
@@ -3428,7 +3311,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 712
+x 728
 y 736
 w 64
 h 32
@@ -3452,7 +3335,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 624
+x 640
 y 576
 w 56
 h 16
@@ -3471,7 +3354,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 632
 w 80
 h 24
@@ -3491,7 +3374,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 712
+x 728
 y 632
 w 88
 h 24
@@ -3515,7 +3398,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 656
+x 672
 y 600
 w 168
 h 24
@@ -3537,7 +3420,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 664
 w 88
 h 24
@@ -3557,7 +3440,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 664
 w 16
 h 16
@@ -3576,7 +3459,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 664
 w 16
 h 16
@@ -3595,7 +3478,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 488
+x 504
 y 664
 w 16
 h 16
@@ -3614,7 +3497,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 632
+x 648
 y 696
 w 80
 h 24
@@ -3633,7 +3516,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 712
+x 728
 y 696
 w 88
 h 24
@@ -3657,7 +3540,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 704
 w 88
 h 24
@@ -3676,7 +3559,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 456
+x 472
 y 704
 w 80
 h 24
@@ -3698,7 +3581,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 808
+x 824
 y 632
 w 16
 h 24
@@ -3721,7 +3604,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 536
+x 552
 y 688
 w 24
 h 16
@@ -3740,7 +3623,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 432
+x 448
 y 688
 w 24
 h 16
@@ -3760,7 +3643,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 808
+x 824
 y 696
 w 16
 h 32
@@ -3773,7 +3656,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 808
+x 824
 y 699
 w 16
 h 24
@@ -3796,7 +3679,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 808
+x 824
 y 707
 w 13
 h 24
@@ -3820,7 +3703,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 456
+x 472
 y 688
 w 16
 h 8
@@ -3840,7 +3723,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 536
 y 688
 w 16
 h 8
@@ -3860,7 +3743,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 648
 w 24
 h 16
@@ -3885,7 +3768,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 624
 w 24
 h 16
@@ -3910,7 +3793,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 664
 w 24
 h 24
@@ -3933,7 +3816,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 712
 w 24
 h 16
@@ -3958,7 +3841,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 848
+x 864
 y 688
 w 24
 h 16
@@ -3983,7 +3866,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 704
+x 720
 y 584
 w 88
 h 16
@@ -4004,7 +3887,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 352
+x 368
 y 736
 w 88
 h 24
@@ -4023,7 +3906,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 456
+x 472
 y 736
 w 80
 h 24
@@ -4046,7 +3929,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 448
+x 464
 y 632
 w 96
 h 24
@@ -4069,7 +3952,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 536
+x 552
 y 600
 w 24
 h 24
@@ -4086,7 +3969,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 544
+x 560
 y 712
 w 64
 h 16
@@ -4109,7 +3992,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 408
+x 424
 y 664
 w 40
 h 16
@@ -4131,7 +4014,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 544
+x 560
 y 664
 w 40
 h 16
@@ -4152,7 +4035,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 472
+x 488
 y 776
 w 2
 h 0
@@ -4169,7 +4052,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 800
+x 816
 y 664
 w 40
 h 24
@@ -4182,7 +4065,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 800
+x 816
 y 667
 w 40
 h 24
@@ -4204,7 +4087,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 800
+x 816
 y 667
 w 40
 h 24
@@ -4230,7 +4113,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 680
+x 696
 y 664
 w 40
 h 24
@@ -4243,7 +4126,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 680
+x 696
 y 667
 w 40
 h 24
@@ -4265,7 +4148,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 680
+x 696
 y 667
 w 40
 h 24
@@ -4291,7 +4174,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 792
+x 808
 y 736
 w 80
 h 32
@@ -4317,7 +4200,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 552
+x 568
 y 624
 w 48
 h 32
@@ -4330,7 +4213,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 554
+x 570
 y 630
 w 45
 h 12
@@ -4355,7 +4238,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 552
+x 568
 y 646
 w 48
 h 12
@@ -4383,7 +4266,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 632
+x 648
 y 752
 w 48
 h 24
@@ -4447,7 +4330,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 928
+x 944
 y 72
 w 264
 h 192
@@ -4462,7 +4345,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 176
 w 16
 h 8
@@ -4478,7 +4361,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 176
 w 16
 h 8
@@ -4494,7 +4377,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 152
 w 16
 h 16
@@ -4510,7 +4393,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 152
 w 16
 h 16
@@ -4526,7 +4409,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 88
 w 56
 h 24
@@ -4550,7 +4433,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 992
+x 1008
 y 88
 w 56
 h 24
@@ -4574,7 +4457,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1048
+x 1064
 y 88
 w 56
 h 24
@@ -4598,7 +4481,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1208
+x 1224
 y 72
 w 256
 h 192
@@ -4613,7 +4496,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 928
+x 944
 y 64
 w 48
 h 16
@@ -4632,7 +4515,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 120
 w 88
 h 24
@@ -4651,7 +4534,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1304
+x 1320
 y 152
 w 72
 h 24
@@ -4675,7 +4558,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 152
 w 48
 h 24
@@ -4695,7 +4578,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1296
+x 1312
 y 224
 w 64
 h 32
@@ -4719,7 +4602,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1208
+x 1224
 y 64
 w 56
 h 16
@@ -4738,7 +4621,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 120
 w 80
 h 24
@@ -4758,7 +4641,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1296
+x 1312
 y 120
 w 88
 h 24
@@ -4782,7 +4665,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1240
+x 1256
 y 88
 w 168
 h 24
@@ -4804,7 +4687,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 152
 w 88
 h 24
@@ -4824,7 +4707,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 152
 w 16
 h 16
@@ -4843,7 +4726,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 152
 w 16
 h 16
@@ -4862,7 +4745,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1072
+x 1088
 y 152
 w 16
 h 16
@@ -4881,7 +4764,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 184
 w 80
 h 24
@@ -4900,7 +4783,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1296
+x 1312
 y 184
 w 88
 h 24
@@ -4924,7 +4807,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 192
 w 88
 h 24
@@ -4943,7 +4826,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 1040
+x 1056
 y 192
 w 80
 h 24
@@ -4965,7 +4848,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1392
+x 1408
 y 120
 w 16
 h 24
@@ -4988,7 +4871,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1120
+x 1136
 y 176
 w 24
 h 16
@@ -5007,7 +4890,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1016
+x 1032
 y 176
 w 24
 h 16
@@ -5027,7 +4910,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1392
+x 1408
 y 184
 w 16
 h 32
@@ -5040,7 +4923,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1392
+x 1408
 y 184
 w 16
 h 24
@@ -5063,7 +4946,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1392
+x 1408
 y 192
 w 13
 h 24
@@ -5087,7 +4970,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 176
 w 16
 h 8
@@ -5107,7 +4990,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 176
 w 16
 h 8
@@ -5127,7 +5010,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 136
 w 24
 h 16
@@ -5152,7 +5035,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 112
 w 24
 h 16
@@ -5177,7 +5060,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 152
 w 24
 h 24
@@ -5200,7 +5083,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 200
 w 24
 h 16
@@ -5225,7 +5108,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 176
 w 24
 h 16
@@ -5250,7 +5133,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1288
+x 1304
 y 72
 w 88
 h 16
@@ -5271,7 +5154,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 224
 w 88
 h 24
@@ -5290,7 +5173,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1040
+x 1056
 y 224
 w 80
 h 24
@@ -5313,7 +5196,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1032
+x 1048
 y 120
 w 96
 h 24
@@ -5336,7 +5219,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1120
+x 1136
 y 88
 w 24
 h 24
@@ -5353,7 +5236,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1128
+x 1144
 y 200
 w 64
 h 16
@@ -5376,7 +5259,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 992
+x 1008
 y 152
 w 40
 h 16
@@ -5398,7 +5281,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1128
+x 1144
 y 152
 w 40
 h 16
@@ -5419,7 +5302,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1056
+x 1072
 y 264
 w 2
 h 0
@@ -5436,7 +5319,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1384
+x 1400
 y 152
 w 40
 h 24
@@ -5449,7 +5332,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1384
+x 1400
 y 152
 w 40
 h 24
@@ -5471,7 +5354,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1384
+x 1400
 y 152
 w 40
 h 24
@@ -5497,7 +5380,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1264
+x 1280
 y 152
 w 40
 h 24
@@ -5510,7 +5393,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1264
+x 1280
 y 152
 w 40
 h 24
@@ -5532,7 +5415,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1264
+x 1280
 y 152
 w 40
 h 24
@@ -5558,7 +5441,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1376
+x 1392
 y 224
 w 80
 h 32
@@ -5584,7 +5467,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1136
+x 1152
 y 112
 w 48
 h 32
@@ -5597,7 +5480,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1138
+x 1154
 y 115
 w 45
 h 12
@@ -5622,7 +5505,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1136
+x 1152
 y 131
 w 48
 h 12
@@ -5650,7 +5533,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1216
+x 1232
 y 240
 w 48
 h 24
@@ -5676,7 +5559,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 928
+x 944
 y 328
 w 264
 h 192
@@ -5691,7 +5574,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 432
 w 16
 h 8
@@ -5707,7 +5590,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 432
 w 16
 h 8
@@ -5723,7 +5606,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 408
 w 16
 h 16
@@ -5739,7 +5622,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 408
 w 16
 h 16
@@ -5755,7 +5638,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 344
 w 56
 h 24
@@ -5779,7 +5662,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 992
+x 1008
 y 344
 w 56
 h 24
@@ -5803,7 +5686,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1048
+x 1064
 y 344
 w 56
 h 24
@@ -5827,7 +5710,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1208
+x 1224
 y 328
 w 256
 h 192
@@ -5842,7 +5725,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 928
+x 944
 y 320
 w 48
 h 16
@@ -5861,7 +5744,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 376
 w 88
 h 24
@@ -5880,7 +5763,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1304
+x 1320
 y 408
 w 72
 h 24
@@ -5904,7 +5787,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 408
 w 48
 h 24
@@ -5924,7 +5807,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1296
+x 1312
 y 480
 w 64
 h 32
@@ -5948,7 +5831,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1208
+x 1224
 y 320
 w 56
 h 16
@@ -5967,7 +5850,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 376
 w 80
 h 24
@@ -5987,7 +5870,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1296
+x 1312
 y 376
 w 88
 h 24
@@ -6011,7 +5894,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1240
+x 1256
 y 344
 w 168
 h 24
@@ -6033,7 +5916,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 408
 w 88
 h 24
@@ -6053,7 +5936,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 408
 w 16
 h 16
@@ -6072,7 +5955,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 408
 w 16
 h 16
@@ -6091,7 +5974,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1072
+x 1088
 y 408
 w 16
 h 16
@@ -6110,7 +5993,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 440
 w 80
 h 24
@@ -6129,7 +6012,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1296
+x 1312
 y 440
 w 88
 h 24
@@ -6153,7 +6036,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 448
 w 88
 h 24
@@ -6172,7 +6055,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 1040
+x 1056
 y 448
 w 80
 h 24
@@ -6194,7 +6077,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1392
+x 1408
 y 376
 w 16
 h 24
@@ -6217,7 +6100,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1120
+x 1136
 y 432
 w 24
 h 16
@@ -6236,7 +6119,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1016
+x 1032
 y 432
 w 24
 h 16
@@ -6256,7 +6139,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1392
+x 1408
 y 440
 w 16
 h 32
@@ -6269,7 +6152,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1392
+x 1408
 y 440
 w 16
 h 24
@@ -6292,7 +6175,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1392
+x 1408
 y 448
 w 13
 h 24
@@ -6316,7 +6199,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 432
 w 16
 h 8
@@ -6336,7 +6219,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 432
 w 16
 h 8
@@ -6356,7 +6239,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 392
 w 24
 h 16
@@ -6381,7 +6264,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 368
 w 24
 h 16
@@ -6406,7 +6289,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 408
 w 24
 h 24
@@ -6429,7 +6312,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 456
 w 24
 h 16
@@ -6454,7 +6337,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 432
 w 24
 h 16
@@ -6479,7 +6362,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1288
+x 1304
 y 328
 w 88
 h 16
@@ -6500,7 +6383,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 480
 w 88
 h 24
@@ -6519,7 +6402,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1040
+x 1056
 y 480
 w 80
 h 24
@@ -6542,7 +6425,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1032
+x 1048
 y 376
 w 96
 h 24
@@ -6565,7 +6448,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1120
+x 1136
 y 344
 w 24
 h 24
@@ -6582,7 +6465,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1128
+x 1144
 y 456
 w 64
 h 16
@@ -6605,7 +6488,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 992
+x 1008
 y 408
 w 40
 h 16
@@ -6627,7 +6510,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1128
+x 1144
 y 408
 w 40
 h 16
@@ -6648,7 +6531,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1056
+x 1072
 y 520
 w 2
 h 0
@@ -6665,7 +6548,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1384
+x 1400
 y 408
 w 40
 h 24
@@ -6678,7 +6561,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1384
+x 1400
 y 408
 w 40
 h 24
@@ -6700,7 +6583,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1384
+x 1400
 y 408
 w 40
 h 24
@@ -6726,7 +6609,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1264
+x 1280
 y 408
 w 40
 h 24
@@ -6739,7 +6622,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1264
+x 1280
 y 408
 w 40
 h 24
@@ -6761,7 +6644,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1264
+x 1280
 y 408
 w 40
 h 24
@@ -6787,7 +6670,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1376
+x 1392
 y 480
 w 80
 h 32
@@ -6813,7 +6696,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1136
+x 1152
 y 368
 w 48
 h 32
@@ -6826,7 +6709,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1138
+x 1154
 y 371
 w 45
 h 12
@@ -6851,7 +6734,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1136
+x 1152
 y 387
 w 48
 h 12
@@ -6879,7 +6762,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1216
+x 1232
 y 496
 w 48
 h 24
@@ -6905,7 +6788,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 928
+x 944
 y 584
 w 264
 h 192
@@ -6920,7 +6803,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 688
 w 16
 h 8
@@ -6936,7 +6819,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 688
 w 16
 h 8
@@ -6952,7 +6835,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 664
 w 16
 h 16
@@ -6968,7 +6851,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 664
 w 16
 h 16
@@ -6984,7 +6867,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 600
 w 56
 h 24
@@ -7008,7 +6891,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 992
+x 1008
 y 600
 w 56
 h 24
@@ -7032,7 +6915,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1048
+x 1064
 y 600
 w 56
 h 24
@@ -7056,7 +6939,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1208
+x 1224
 y 584
 w 256
 h 192
@@ -7071,7 +6954,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 928
+x 944
 y 576
 w 48
 h 16
@@ -7090,7 +6973,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 632
 w 88
 h 24
@@ -7109,7 +6992,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1304
+x 1320
 y 664
 w 72
 h 24
@@ -7133,7 +7016,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 664
 w 48
 h 24
@@ -7153,7 +7036,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1296
+x 1312
 y 736
 w 64
 h 32
@@ -7177,7 +7060,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1208
+x 1224
 y 576
 w 56
 h 16
@@ -7196,7 +7079,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 632
 w 80
 h 24
@@ -7216,7 +7099,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1296
+x 1312
 y 632
 w 88
 h 24
@@ -7240,7 +7123,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1240
+x 1256
 y 600
 w 168
 h 24
@@ -7262,7 +7145,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 664
 w 88
 h 24
@@ -7282,7 +7165,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 664
 w 16
 h 16
@@ -7301,7 +7184,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 664
 w 16
 h 16
@@ -7320,7 +7203,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1072
+x 1088
 y 664
 w 16
 h 16
@@ -7339,7 +7222,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1216
+x 1232
 y 696
 w 80
 h 24
@@ -7358,7 +7241,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1296
+x 1312
 y 696
 w 88
 h 24
@@ -7382,7 +7265,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 704
 w 88
 h 24
@@ -7401,7 +7284,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 1040
+x 1056
 y 704
 w 80
 h 24
@@ -7423,7 +7306,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1392
+x 1408
 y 632
 w 16
 h 24
@@ -7446,7 +7329,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1120
+x 1136
 y 688
 w 24
 h 16
@@ -7465,7 +7348,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1016
+x 1032
 y 688
 w 24
 h 16
@@ -7485,7 +7368,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1392
+x 1408
 y 696
 w 16
 h 32
@@ -7498,7 +7381,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1392
+x 1408
 y 696
 w 16
 h 24
@@ -7521,7 +7404,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1392
+x 1408
 y 704
 w 13
 h 24
@@ -7545,7 +7428,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1040
+x 1056
 y 688
 w 16
 h 8
@@ -7565,7 +7448,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1104
+x 1120
 y 688
 w 16
 h 8
@@ -7585,7 +7468,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 648
 w 24
 h 16
@@ -7610,7 +7493,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 624
 w 24
 h 16
@@ -7635,7 +7518,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 664
 w 24
 h 24
@@ -7658,7 +7541,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 712
 w 24
 h 16
@@ -7683,7 +7566,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1432
+x 1448
 y 688
 w 24
 h 16
@@ -7708,7 +7591,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1288
+x 1304
 y 584
 w 88
 h 16
@@ -7729,7 +7612,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 936
+x 952
 y 736
 w 88
 h 24
@@ -7748,7 +7631,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1040
+x 1056
 y 736
 w 80
 h 24
@@ -7771,7 +7654,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1032
+x 1048
 y 632
 w 96
 h 24
@@ -7794,7 +7677,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1120
+x 1136
 y 600
 w 24
 h 24
@@ -7811,7 +7694,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1128
+x 1144
 y 712
 w 64
 h 16
@@ -7834,7 +7717,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 992
+x 1008
 y 664
 w 40
 h 16
@@ -7856,7 +7739,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1128
+x 1144
 y 664
 w 40
 h 16
@@ -7877,7 +7760,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1056
+x 1072
 y 776
 w 2
 h 0
@@ -7894,7 +7777,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1384
+x 1400
 y 664
 w 40
 h 24
@@ -7907,7 +7790,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1384
+x 1400
 y 664
 w 40
 h 24
@@ -7929,7 +7812,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1384
+x 1400
 y 664
 w 40
 h 24
@@ -7955,7 +7838,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1264
+x 1280
 y 664
 w 40
 h 24
@@ -7968,7 +7851,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1264
+x 1280
 y 664
 w 40
 h 24
@@ -7990,7 +7873,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1264
+x 1280
 y 664
 w 40
 h 24
@@ -8016,7 +7899,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1376
+x 1392
 y 736
 w 80
 h 32
@@ -8042,7 +7925,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1136
+x 1152
 y 624
 w 48
 h 32
@@ -8055,7 +7938,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1138
+x 1154
 y 627
 w 45
 h 12
@@ -8080,7 +7963,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1136
+x 1152
 y 643
 w 48
 h 12
@@ -8108,7 +7991,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1216
+x 1232
 y 752
 w 48
 h 24
@@ -8136,7 +8019,7 @@ minor 1
 release 0
 x 0
 y 824
-w 1792
+w 1856
 h 32
 font "helvetica-bold-r-14.0"
 fgColor index 14
@@ -8171,7 +8054,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 632
+x 648
 y 208
 w 48
 h 24
@@ -8197,7 +8080,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 632
+x 648
 y 464
 w 48
 h 24
@@ -8223,7 +8106,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 632
+x 648
 y 720
 w 48
 h 24
@@ -8249,7 +8132,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1216
+x 1232
 y 208
 w 48
 h 24
@@ -8275,7 +8158,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1216
+x 1232
 y 464
 w 48
 h 24
@@ -8301,7 +8184,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1216
+x 1232
 y 720
 w 48
 h 24
@@ -8321,21 +8204,138 @@ symbols {
 }
 endObjectProperties
 
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 88
+y 328
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):PU"
+pressValue "0"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 312
+w 320
+h 224
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 304
+w 336
+h 240
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 512
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):S2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 488
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):S1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 464
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):SM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
 # (Circle)
 object activeCircleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 112
-y 80
+x 120
+y 336
 w 10
 h 10
 lineColor index 35
 lineAlarm
 fill
 fillColor index 35
-visPv "$(M1):PU"
+visPv "$(M2):PU"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -8346,7 +8346,874 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 56
+x 64
+y 312
+w 75
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Power Up (PU)"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 392
+w 32
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):LM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 392
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Limit Mode (LM)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 392
+w 32
+h 16
+controlPv "$(M2):SET_LM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 440
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):HC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 416
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):RC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 240
+y 432
+w 88
+h 16
+controlPv "$(M2):CUSTOM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 240
+y 416
+w 88
+h 16
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Custom Command"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 248
+y 320
+w 80
+h 24
+controlPv "$(M2).MRES"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 200
+y 320
+w 40
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MRES"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 32
+y 336
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(M2):SET_PU"
+pressValue "0"
+onLabel "CLR"
+offLabel "CLR"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 392
+w 32
+h 24
+controlPv "$(M2):LM"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 360
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M2):EE"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 40
+y 360
+w 104
+h 24
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder Enabled (EE)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 232
+y 360
+w 38
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 34
+useDisplayBg
+visPv "$(M2):EE"
+visMin "1"
+visMax "2"
+value {
+  "YES"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 232
+y 360
+w 30
+h 21
+font "helvetica-bold-r-18.0"
+fgColor index 41
+bgColor index 34
+useDisplayBg
+visPv "$(M2):EE"
+visMin "0"
+visMax "1"
+value {
+  "NO"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 360
+w 35
+h 16
+controlPv "$(M2):SET_EE"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 360
+w 30
+h 25
+controlPv "$(M2):EE"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 464
+w 35
+h 16
+controlPv "$(M2):SET_SM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 464
+w 30
+h 20
+controlPv "$(M2):SM"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 464
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Stall Mode (SM)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 48
+y 416
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Run Current %: (RC)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 24
+y 440
+w 120
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Holding Current %: (HC)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 416
+w 35
+h 16
+controlPv "$(M2):SET_RC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 440
+w 35
+h 16
+controlPv "$(M2):SET_HC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 416
+w 30
+h 20
+controlPv "$(M2):RC"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 440
+w 30
+h 20
+controlPv "$(M2):HC"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 72
+y 512
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S2)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 512
+w 55
+h 20
+controlPv "$(M2):S2"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 216
+y 512
+w 65
+h 16
+controlPv "$(M2):SET_S2"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 216
+y 488
+w 65
+h 16
+controlPv "$(M2):SET_S1"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 488
+w 55
+h 20
+controlPv "$(M2):S1"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 72
+y 488
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 88
+y 328
+w 30
+h 25
+controlPv "$(M2):PU"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1584
+y 72
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):PU"
+pressValue "0"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1512
+y 56
+w 320
+h 224
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1504
+y 48
+w 336
+h 240
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 256
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):S2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 232
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):S1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 208
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):SM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1616
+y 80
+w 10
+h 10
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M4):PU"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
 y 56
 w 75
 h 20
@@ -8365,7 +9232,874 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 144
+x 1648
+y 136
+w 32
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):LM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 136
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Limit Mode (LM)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 136
+w 32
+h 16
+controlPv "$(M4):SET_LM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 184
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):HC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 160
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):RC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1736
+y 176
+w 88
+h 16
+controlPv "$(M4):CUSTOM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1736
+y 160
+w 88
+h 16
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Custom Command"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1744
+y 64
+w 80
+h 24
+controlPv "$(M4).MRES"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1696
+y 64
+w 40
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MRES"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1528
+y 80
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(M4):SET_PU"
+pressValue "0"
+onLabel "CLR"
+offLabel "CLR"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 136
+w 32
+h 24
+controlPv "$(M4):LM"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 104
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M4):EE"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1536
+y 104
+w 104
+h 24
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder Enabled (EE)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1728
+y 104
+w 38
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 34
+useDisplayBg
+visPv "$(M4):EE"
+visMin "1"
+visMax "2"
+value {
+  "YES"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1728
+y 104
+w 30
+h 21
+font "helvetica-bold-r-18.0"
+fgColor index 41
+bgColor index 34
+useDisplayBg
+visPv "$(M4):EE"
+visMin "0"
+visMax "1"
+value {
+  "NO"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 104
+w 35
+h 16
+controlPv "$(M4):SET_EE"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 104
+w 30
+h 25
+controlPv "$(M4):EE"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 208
+w 35
+h 16
+controlPv "$(M4):SET_SM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 208
+w 30
+h 20
+controlPv "$(M4):SM"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 208
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Stall Mode (SM)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1544
+y 160
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Run Current %: (RC)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1520
+y 184
+w 120
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Holding Current %: (HC)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 160
+w 35
+h 16
+controlPv "$(M4):SET_RC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 184
+w 35
+h 16
+controlPv "$(M4):SET_HC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 160
+w 30
+h 20
+controlPv "$(M4):RC"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 184
+w 30
+h 20
+controlPv "$(M4):HC"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1568
+y 256
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S2)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 256
+w 55
+h 20
+controlPv "$(M4):S2"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1712
+y 256
+w 65
+h 16
+controlPv "$(M4):SET_S2"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1712
+y 232
+w 65
+h 16
+controlPv "$(M4):SET_S1"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 232
+w 55
+h 20
+controlPv "$(M4):S1"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1568
+y 232
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1584
+y 72
+w 30
+h 25
+controlPv "$(M4):PU"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 88
+y 72
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M1):PU"
+pressValue "0"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 56
+w 320
+h 224
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 48
+w 336
+h 240
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 256
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M1):S2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 232
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M1):S1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 208
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M1):SM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 120
+y 80
+w 10
+h 10
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M1):PU"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 56
+w 75
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Power Up (PU)"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
 y 136
 w 32
 h 24
@@ -8387,7 +10121,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 56
+x 64
 y 136
 w 80
 h 20
@@ -8406,7 +10140,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 184
+x 192
 y 136
 w 32
 h 16
@@ -8432,7 +10166,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 144
+x 152
 y 184
 w 30
 h 20
@@ -8454,7 +10188,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 144
+x 152
 y 160
 w 30
 h 20
@@ -8476,7 +10210,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 232
+x 240
 y 176
 w 88
 h 16
@@ -8502,7 +10236,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 232
+x 240
 y 160
 w 88
 h 16
@@ -8521,7 +10255,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 240
+x 248
 y 64
 w 80
 h 24
@@ -8544,7 +10278,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 192
+x 200
 y 64
 w 40
 h 24
@@ -8563,7 +10297,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 24
+x 32
 y 80
 w 50
 h 15
@@ -8587,7 +10321,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 136
 w 32
 h 24
@@ -8606,7 +10340,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 144
+x 152
 y 104
 w 30
 h 25
@@ -8628,7 +10362,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 32
+x 40
 y 104
 w 104
 h 24
@@ -8647,7 +10381,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 224
+x 232
 y 104
 w 38
 h 21
@@ -8670,7 +10404,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 224
+x 232
 y 104
 w 30
 h 21
@@ -8693,7 +10427,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 184
+x 192
 y 104
 w 35
 h 16
@@ -8719,7 +10453,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 104
 w 30
 h 25
@@ -8738,7 +10472,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 184
+x 192
 y 208
 w 35
 h 16
@@ -8764,7 +10498,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 208
 w 30
 h 20
@@ -8783,7 +10517,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 56
+x 64
 y 208
 w 80
 h 20
@@ -8802,7 +10536,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 40
+x 48
 y 160
 w 100
 h 20
@@ -8821,7 +10555,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 16
+x 24
 y 184
 w 120
 h 20
@@ -8840,7 +10574,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 184
+x 192
 y 160
 w 35
 h 16
@@ -8866,7 +10600,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 184
+x 192
 y 184
 w 35
 h 16
@@ -8892,7 +10626,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 160
 w 30
 h 20
@@ -8911,7 +10645,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 184
 w 30
 h 20
@@ -8930,7 +10664,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 64
+x 72
 y 256
 w 80
 h 20
@@ -8949,7 +10683,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 256
 w 55
 h 20
@@ -8968,7 +10702,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 208
+x 216
 y 256
 w 65
 h 16
@@ -8994,7 +10728,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 208
+x 216
 y 232
 w 65
 h 16
@@ -9020,7 +10754,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 144
+x 152
 y 232
 w 55
 h 20
@@ -9039,7 +10773,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 64
+x 72
 y 232
 w 80
 h 20
@@ -9058,11 +10792,2612 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 80
+x 88
 y 72
 w 30
 h 25
 controlPv "$(M1):PU"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1584
+y 328
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):PU"
+pressValue "0"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1512
+y 312
+w 320
+h 224
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1504
+y 304
+w 336
+h 240
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 512
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):S2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 488
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):S1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 464
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):SM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1616
+y 336
+w 10
+h 10
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M5):PU"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 312
+w 75
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Power Up (PU)"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 392
+w 32
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):LM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 392
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Limit Mode (LM)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 392
+w 32
+h 16
+controlPv "$(M5):SET_LM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 440
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):HC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 416
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):RC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1736
+y 432
+w 88
+h 16
+controlPv "$(M5):CUSTOM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1736
+y 416
+w 88
+h 16
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Custom Command"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1744
+y 320
+w 80
+h 24
+controlPv "$(M5).MRES"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1696
+y 320
+w 40
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MRES"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1528
+y 336
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(M5):SET_PU"
+pressValue "0"
+onLabel "CLR"
+offLabel "CLR"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 392
+w 32
+h 24
+controlPv "$(M5):LM"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 360
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M5):EE"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1536
+y 360
+w 104
+h 24
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder Enabled (EE)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1728
+y 360
+w 38
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 34
+useDisplayBg
+visPv "$(M5):EE"
+visMin "1"
+visMax "2"
+value {
+  "YES"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1728
+y 360
+w 30
+h 21
+font "helvetica-bold-r-18.0"
+fgColor index 41
+bgColor index 34
+useDisplayBg
+visPv "$(M5):EE"
+visMin "0"
+visMax "1"
+value {
+  "NO"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 360
+w 35
+h 16
+controlPv "$(M5):SET_EE"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 360
+w 30
+h 25
+controlPv "$(M5):EE"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 464
+w 35
+h 16
+controlPv "$(M5):SET_SM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 464
+w 30
+h 20
+controlPv "$(M5):SM"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 464
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Stall Mode (SM)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1544
+y 416
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Run Current %: (RC)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1520
+y 440
+w 120
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Holding Current %: (HC)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 416
+w 35
+h 16
+controlPv "$(M5):SET_RC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 440
+w 35
+h 16
+controlPv "$(M5):SET_HC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 416
+w 30
+h 20
+controlPv "$(M5):RC"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 440
+w 30
+h 20
+controlPv "$(M5):HC"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1568
+y 512
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S2)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 512
+w 55
+h 20
+controlPv "$(M5):S2"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1712
+y 512
+w 65
+h 16
+controlPv "$(M5):SET_S2"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1712
+y 488
+w 65
+h 16
+controlPv "$(M5):SET_S1"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 488
+w 55
+h 20
+controlPv "$(M5):S1"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1568
+y 488
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1584
+y 328
+w 30
+h 25
+controlPv "$(M5):PU"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1584
+y 584
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):PU"
+pressValue "0"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1512
+y 568
+w 320
+h 224
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1504
+y 560
+w 336
+h 240
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 768
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):S2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 744
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):S1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 720
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):SM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1616
+y 592
+w 10
+h 10
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M6):PU"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 568
+w 75
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Power Up (PU)"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 648
+w 32
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):LM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 648
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Limit Mode (LM)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 648
+w 32
+h 16
+controlPv "$(M6):SET_LM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 696
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):HC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 672
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):RC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1736
+y 688
+w 88
+h 16
+controlPv "$(M6):CUSTOM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1736
+y 672
+w 88
+h 16
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Custom Command"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1744
+y 576
+w 80
+h 24
+controlPv "$(M6).MRES"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1696
+y 576
+w 40
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MRES"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1528
+y 592
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(M6):SET_PU"
+pressValue "0"
+onLabel "CLR"
+offLabel "CLR"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 648
+w 32
+h 24
+controlPv "$(M6):LM"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1648
+y 616
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M6):EE"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1536
+y 616
+w 104
+h 24
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder Enabled (EE)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1728
+y 616
+w 38
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 34
+useDisplayBg
+visPv "$(M6):EE"
+visMin "1"
+visMax "2"
+value {
+  "YES"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1728
+y 616
+w 30
+h 21
+font "helvetica-bold-r-18.0"
+fgColor index 41
+bgColor index 34
+useDisplayBg
+visPv "$(M5):EE"
+visMin "0"
+visMax "1"
+value {
+  "NO"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 616
+w 35
+h 16
+controlPv "$(M6):SET_EE"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 616
+w 30
+h 25
+controlPv "$(M6):EE"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 720
+w 35
+h 16
+controlPv "$(M6):SET_SM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 720
+w 30
+h 20
+controlPv "$(M6):SM"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1560
+y 720
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Stall Mode (SM)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1544
+y 672
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Run Current %: (RC)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1520
+y 696
+w 120
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Holding Current %: (HC)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 672
+w 35
+h 16
+controlPv "$(M6):SET_RC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1688
+y 696
+w 35
+h 16
+controlPv "$(M6):SET_HC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 672
+w 30
+h 20
+controlPv "$(M6):RC"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 696
+w 30
+h 20
+controlPv "$(M6):HC"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1568
+y 768
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S2)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 768
+w 55
+h 20
+controlPv "$(M6):S2"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1712
+y 768
+w 65
+h 16
+controlPv "$(M6):SET_S2"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1712
+y 744
+w 65
+h 16
+controlPv "$(M6):SET_S1"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1648
+y 744
+w 55
+h 20
+controlPv "$(M6):S1"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1568
+y 744
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1584
+y 584
+w 30
+h 25
+controlPv "$(M6):PU"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 88
+y 584
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):PU"
+pressValue "0"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 568
+w 320
+h 224
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 560
+w 336
+h 240
+lineColor index 14
+fillColor index 3
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 768
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):S2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 744
+w 55
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):S1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 720
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):SM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 120
+y 592
+w 10
+h 10
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M3):PU"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 568
+w 75
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Power Up (PU)"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 648
+w 32
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):LM"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 648
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Limit Mode (LM)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 648
+w 32
+h 16
+controlPv "$(M3):SET_LM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 696
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):HC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 672
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):RC"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 240
+y 688
+w 88
+h 16
+controlPv "$(M3):CUSTOM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 240
+y 672
+w 88
+h 16
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Custom Command"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 248
+y 576
+w 80
+h 24
+controlPv "$(M3).MRES"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 200
+y 576
+w 40
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MRES"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 32
+y 592
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(M3):SET_PU"
+pressValue "0"
+onLabel "CLR"
+offLabel "CLR"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 648
+w 32
+h 24
+controlPv "$(M3):LM"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 152
+y 616
+w 30
+h 25
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(M3):EE"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 40
+y 616
+w 104
+h 24
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder Enabled (EE)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 232
+y 616
+w 38
+h 21
+font "helvetica-medium-r-18.0"
+fgColor index 15
+bgColor index 34
+useDisplayBg
+visPv "$(M3):EE"
+visMin "1"
+visMax "2"
+value {
+  "YES"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 232
+y 616
+w 30
+h 21
+font "helvetica-bold-r-18.0"
+fgColor index 41
+bgColor index 34
+useDisplayBg
+visPv "$(M3):EE"
+visMin "0"
+visMax "1"
+value {
+  "NO"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 616
+w 35
+h 16
+controlPv "$(M3):SET_EE"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 616
+w 30
+h 25
+controlPv "$(M3):EE"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 720
+w 35
+h 16
+controlPv "$(M3):SET_SM"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 720
+w 30
+h 20
+controlPv "$(M3):SM"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 64
+y 720
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Stall Mode (SM)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 48
+y 672
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Run Current %: (RC)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 24
+y 696
+w 120
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Holding Current %: (HC)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 672
+w 35
+h 16
+controlPv "$(M3):SET_RC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 192
+y 696
+w 35
+h 16
+controlPv "$(M3):SET_HC"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 672
+w 30
+h 20
+controlPv "$(M3):RC"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 696
+w 30
+h 20
+controlPv "$(M3):HC"
+fgColor index 19
+fgAlarm
+bgColor index 5
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 72
+y 768
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S2)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 768
+w 55
+h 20
+controlPv "$(M3):S2"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 216
+y 768
+w 65
+h 16
+controlPv "$(M3):SET_S2"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 216
+y 744
+w 65
+h 16
+controlPv "$(M3):SET_S1"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 152
+y 744
+w 55
+h 20
+controlPv "$(M3):S1"
+fgColor index 16
+fgAlarm
+bgColor index 2
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 72
+y 744
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Setup I/O (S1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 88
+y 584
+w 30
+h 25
+controlPv "$(M3):PU"
 fgColor index 16
 fgAlarm
 bgColor index 2
