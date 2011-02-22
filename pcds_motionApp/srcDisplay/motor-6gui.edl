@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1941
-y 202
+x 1945
+y 220
 w 1860
 h 850
 font "helvetica-medium-r-10.0"
@@ -8504,9 +8504,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 248
+x 224
 y 320
-w 80
+w 104
 h 24
 controlPv "$(M2).MRES"
 font "courier-medium-r-12.0"
@@ -8514,7 +8514,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-limitsFromDb
+precision 8
 nullColor index 18
 showUnits
 newPos
@@ -8527,7 +8527,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 200
+x 184
 y 320
 w 40
 h 24
@@ -9371,9 +9371,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1744
+x 1720
 y 64
-w 80
+w 104
 h 24
 controlPv "$(M4).MRES"
 font "courier-medium-r-12.0"
@@ -9381,7 +9381,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-limitsFromDb
+precision 8
 nullColor index 18
 showUnits
 newPos
@@ -9394,7 +9394,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1696
+x 1680
 y 64
 w 40
 h 24
@@ -10238,9 +10238,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 248
+x 224
 y 64
-w 80
+w 104
 h 24
 controlPv "$(M1).MRES"
 font "courier-medium-r-12.0"
@@ -10248,7 +10248,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-limitsFromDb
+precision 8
 nullColor index 18
 showUnits
 newPos
@@ -10261,7 +10261,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 200
+x 184
 y 64
 w 40
 h 24
@@ -11105,9 +11105,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1744
+x 1720
 y 320
-w 80
+w 104
 h 24
 controlPv "$(M5).MRES"
 font "courier-medium-r-12.0"
@@ -11115,7 +11115,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-limitsFromDb
+precision 8
 nullColor index 18
 showUnits
 newPos
@@ -11128,7 +11128,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1696
+x 1680
 y 320
 w 40
 h 24
@@ -11972,9 +11972,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 1744
+x 1720
 y 576
-w 80
+w 104
 h 24
 controlPv "$(M6).MRES"
 font "courier-medium-r-12.0"
@@ -11982,7 +11982,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-limitsFromDb
+precision 8
 nullColor index 18
 showUnits
 newPos
@@ -11995,7 +11995,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1696
+x 1680
 y 576
 w 40
 h 24
@@ -12839,9 +12839,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 248
+x 224
 y 576
-w 80
+w 104
 h 24
 controlPv "$(M3).MRES"
 font "courier-medium-r-12.0"
@@ -12849,7 +12849,7 @@ fontAlign "center"
 fgColor index 15
 fgAlarm
 bgColor index 12
-limitsFromDb
+precision 8
 nullColor index 18
 showUnits
 newPos
@@ -12862,7 +12862,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 200
+x 184
 y 576
 w 40
 h 24
