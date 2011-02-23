@@ -26,12 +26,12 @@ grecord(motor,"$(P)$(M)")
 	field(IMS, "1")
 	field(MENV,"PCDS_MOTION")
 	field(MPGM,"/pcds_motionApp/src/ims_bootup.mcode")
-	field(SDLT,30)
+	field(SDLT,"30")
 }
 record(bo,"$(P)$(M):Update")
 {
 	field(DESC,"Force $(DESC) to Update")
-	field(VAL,  1)
-	field(OUT,  "$(P)$(M).PROC")
-	field(SCAN, "10 second")
+	field(VAL, "1")
+	field(OUT, "$(P)$(M).PROC")
+	field(SCAN,"10 second")
 }
