@@ -2,348 +2,343 @@
 #! DBDSTART
 #! DBDEND
 
+
 # Macros: EXP          = experiment name
 #         TABLE        = this table's name
 #         OTHER1_TABLE = other table whose inclinometer we monitor
 #         OTHER2_TABLE = other table we monitor
-
-record(calc, $(EXP):$(TABLE):SPS:MUX1) {
-   field(DESC, "Determine if any sensors hit")
-   field(CALC, "!(A&&B&&C&&D&&E&&F&&G&&H&&I&&J&&K&&L)")
-   field(SCAN, ".1 second")
-   field(INPA, "$(EXP):$(TABLE):SPS:01")
-   field(INPB, "$(EXP):$(TABLE):SPS:02")
-   field(INPC, "$(EXP):$(TABLE):SPS:03")
-   field(INPD, "$(EXP):$(TABLE):SPS:04")
-   field(INPE, "$(EXP):$(TABLE):SPS:05")
-   field(INPF, "$(EXP):$(TABLE):SPS:06")
-   field(INPG, "$(EXP):$(TABLE):SPS:07")
-   field(INPH, "$(EXP):$(TABLE):SPS:08")
-   field(INPI, "$(EXP):$(TABLE):SPS:09")
-   field(INPJ, "$(EXP):$(TABLE):SPS:10")
-   field(INPK, "$(EXP):$(TABLE):SPS:11")
-   field(INPL, "$(EXP):$(TABLE):SPS:12")
-   field(FLNK, "$(EXP):$(TABLE):SPS:HIT")
+record(calc, "$(EXP):$(TABLE):SPS:MUX1") {
+  field(DESC, "Determine if any sensors hit")
+  field(CALC, "!(A&&B&&C&&D&&E&&F&&G&&H&&I&&J&&K&&L)")
+  field(SCAN, ".1 second")
+  field(INPA, "$(EXP):$(TABLE):SPS:01")
+  field(INPB, "$(EXP):$(TABLE):SPS:02")
+  field(INPC, "$(EXP):$(TABLE):SPS:03")
+  field(INPD, "$(EXP):$(TABLE):SPS:04")
+  field(INPE, "$(EXP):$(TABLE):SPS:05")
+  field(INPF, "$(EXP):$(TABLE):SPS:06")
+  field(INPG, "$(EXP):$(TABLE):SPS:07")
+  field(INPH, "$(EXP):$(TABLE):SPS:08")
+  field(INPI, "$(EXP):$(TABLE):SPS:09")
+  field(INPJ, "$(EXP):$(TABLE):SPS:10")
+  field(INPK, "$(EXP):$(TABLE):SPS:11")
+  field(INPL, "$(EXP):$(TABLE):SPS:12")
+  field(FLNK, "$(EXP):$(TABLE):SPS:HIT")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:HIT) {
-   field(DESC, "Has a sensor been hit")
-   field(INP, "$(EXP):$(TABLE):SPS:MUX1")
-   field(ZNAM, "Not Hit")
-   field(ONAM, "Hit")
-   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:HIT") {
+  field(DESC, "Has a sensor been hit")
+  field(INP, "$(EXP):$(TABLE):SPS:MUX1")
+  field(ZNAM, "Not Hit")
+  field(ONAM, "Hit")
+  field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:ENABLE) {
-   field(DESC, "Sensor hit will stop table")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:ENABLE") {
+  field(DESC, "Sensor hit will stop table")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
-record(bi, $(EXP):$(TABLE):STI:ENABLE) {
-   field(DESC, "Inclinometer will stop table")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):STI:ENABLE") {
+  field(DESC, "Inclinometer will stop table")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:LIMITS:ENABLE) {
-   field(DESC, "Limit switch will stop table")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:LIMITS:ENABLE") {
+  field(DESC, "Limit switch will stop table")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):SPS:LOCAL_STOP_CALC) {
-   field(DESC, "Calc if local safety tripped")
-   field(CALC, "(A&&B)||(C&&D)||(E&&F)")
-   field(INPA, "$(EXP):$(TABLE):SPS:ENABLE")
-   field(INPB, "$(EXP):$(TABLE):SPS:HIT")
-   field(INPC, "$(EXP):$(TABLE):STI:ENABLE")
-   field(INPD, "$(EXP):$(TABLE):STI:ROT_EXCEEDED")
-   field(INPE, "$(EXP):$(TABLE):SPS:LIMITS:ENABLE")
-   field(INPF, "$(EXP):$(TABLE):SPS:LIMITS_HIT")
-   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
+record(calc, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC") {
+  field(DESC, "Calc if local safety tripped")
+  field(CALC, "(A&&B)||(C&&D)||(E&&F)")
+  field(INPA, "$(EXP):$(TABLE):SPS:ENABLE")
+  field(INPB, "$(EXP):$(TABLE):SPS:HIT")
+  field(INPC, "$(EXP):$(TABLE):STI:ENABLE")
+  field(INPD, "$(EXP):$(TABLE):STI:ROT_EXCEEDED")
+  field(INPE, "$(EXP):$(TABLE):SPS:LIMITS:ENABLE")
+  field(INPF, "$(EXP):$(TABLE):SPS:LIMITS_HIT")
+  field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP) {
-   field(DESC, "Local safety tripped")
-   field(INP, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP") {
+  field(DESC, "Local safety tripped")
+  field(INP, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE) {
-   field(DESC, "Should other table stop us?")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE") {
+  field(DESC, "Should other table stop us?")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC) {
-   field(DESC, "Are other tables stopped?")
-   field(INPA, "$(EXP):$(OTHER1_TABLE):SPS:STOP_MOTORS CPP")
-   field(INPB, "$(EXP):$(OTHER2_TABLE):SPS:STOP_MOTORS CPP")
-   field(CALC, "A||B")
-   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
+record(calc, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC") {
+  field(DESC, "Are other tables stopped?")
+  field(INPA, "$(EXP):$(OTHER1_TABLE):SPS:STOP_MOTORS CPP")
+  field(INPB, "$(EXP):$(OTHER2_TABLE):SPS:STOP_MOTORS CPP")
+  field(CALC, "A||B")
+  field(FLNK, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED) {
-   field(DESC, "Set when remote table stops.")
-   field(INP, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC")
-   field(ONAM, "Stopped")
-   field(ZNAM, "Not Stopped")
-   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED") {
+  field(DESC, "Set when remote table stops.")
+  field(INP, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC")
+  field(ONAM, "Stopped")
+  field(ZNAM, "Not Stopped")
+  field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):SPS:REMOTE_STOP_CALC) {
-   field(DESC, "Calc if other table stops us")
-   field(CALC, "A&&B")
-   field(INPA, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
-   field(INPB, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
-   field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
+record(calc, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC") {
+  field(DESC, "Calc if other table stops us")
+  field(CALC, "A&&B")
+  field(INPA, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
+  field(INPB, "$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
+  field(FLNK, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP) {
-   field(DESC, "Other table will stop us")
-   field(INP, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP") {
+  field(DESC, "Other table will stop us")
+  field(INP, "$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):SPS:STOP_CALC) {
-   field(DESC, "Calc if table should stop")
-   field(INPA, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
-   field(INPB, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
-   field(CALC, "A||B")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_MOTORS")
+record(calc, "$(EXP):$(TABLE):SPS:STOP_CALC") {
+  field(DESC, "Calc if table should stop")
+  field(INPA, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
+  field(INPB, "$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
+  field(CALC, "A||B")
+  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_MOTORS")
 }
 
-record(bi, $(EXP):$(TABLE):SPS:STOP_MOTORS) {
-   field(DESC, "Table stopped by a safety")
-   field(INP,  "$(EXP):$(TABLE):SPS:STOP_CALC")
-   field(ONAM, "Yes")
-   field(ZNAM, "No")
-   field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
+record(bi, "$(EXP):$(TABLE):SPS:STOP_MOTORS") {
+  field(DESC, "Table stopped by a safety")
+  field(INP, "$(EXP):$(TABLE):SPS:STOP_CALC")
+  field(ONAM, "Yes")
+  field(ZNAM, "No")
+  field(FLNK, "$(EXP):$(TABLE):SPS:STOP_CALC")
 }
 
 # This handles the situation where the tables lock up - they are all
 # stopped because they're all stopped - no local fault at all!
-
-record(calc, $(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC) {
-   field(DESC, "Calc if any table has fault")
-   field(INPA, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP CPP")
-   field(INPB, "$(EXP):$(OTHER1_TABLE):SPS:LOCAL_SHOULD_STOP CPP")
-   field(INPC, "$(EXP):$(OTHER2_TABLE):SPS:LOCAL_SHOULD_STOP CPP")
-   field(INPD, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
-   field(CALC, "D?A+B+C+1:0")
-   field(FLNK, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT")
+record(calc, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC") {
+  field(DESC, "Calc if any table has fault")
+  field(INPA, "$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP CPP")
+  field(INPB, "$(EXP):$(OTHER1_TABLE):SPS:LOCAL_SHOULD_STOP CPP")
+  field(INPC, "$(EXP):$(OTHER2_TABLE):SPS:LOCAL_SHOULD_STOP CPP")
+  field(INPD, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
+  field(CALC, "D?A+B+C+1:0")
+  field(FLNK, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT")
 }
 
-record(fanout, $(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT) {
-   field(DESC, "Unlock motors if no locals")
-   field(LNK1, "$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES")
-   field(SELM, "Specified")
-   field(SELL, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC")
+record(fanout, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT") {
+  field(DESC, "Unlock motors if no locals")
+  field(LNK1, "$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES")
+  field(SELM, "Specified")
+  field(SELL, "$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC")
 }
 
-record(seq, $(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES) {
-   field(DESC, "Unlock mutually-stopped tbls")
-   field(DO1,  "0")
-   field(LNK1, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE CA")
-   field(DO2,  "1")
-   field(DLY2, "0.5")
-   field(LNK2, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE CA")
+record(seq, "$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES") {
+  field(DESC, "Unlock mutually-stopped tbls")
+  field(DO1, "0")
+  field(LNK1, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE CA")
+  field(DO2, "1")
+  field(DLY2, "0.5")
+  field(LNK2, "$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE CA")
 }
 
 # Convert X and Y measurements from the clinometer into local
 # pitch/roll orientation.
-
-record(ai, $(EXP):$(TABLE):STI:ROLL) {
-   field(DESC, "Rotation (LH) about Z axis")
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(INP,  "$(EXP):$(TABLE):CLIN:$(ROLL) CPP")
+record(ai, "$(EXP):$(TABLE):STI:ROLL") {
+  field(DESC, "Rotation (LH) about Z axis")
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(INP, "$(EXP):$(TABLE):CLIN:$(ROLL) CPP")
 }
 
-record(ai, $(EXP):$(TABLE):STI:PITCH) {
-   field(DESC, "Rotation (LH) about X axis")
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(INP, "$(EXP):$(TABLE):CLIN:$(PITCH) CPP")
+record(ai, "$(EXP):$(TABLE):STI:PITCH") {
+  field(DESC, "Rotation (LH) about X axis")
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(INP, "$(EXP):$(TABLE):CLIN:$(PITCH) CPP")
 }
 
 #
 # Protection against excess differential (DIFF) rotation
 # (mutiple tables).
 #
-
-record(ai, $(EXP):$(TABLE):STI:DIFF_ROLL_THRESH) {
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC")
+record(ai, "$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH") {
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC")
 }
 
-record(ai, $(EXP):$(TABLE):STI:DIFF_PITCH_THRESH) {
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC")
+record(ai, "$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH") {
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC) {
-   field(CALC, "ABS(A-B)")
-   field(INPA, "$(EXP):$(TABLE):STI:ROLL")
-   field(INPB, "$(EXP):$(OTHER1_TABLE):STI:ROLL")
-   field(SCAN, ".1 second")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
+record(calc, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC") {
+  field(CALC, "ABS(A-B)")
+  field(INPA, "$(EXP):$(TABLE):STI:ROLL")
+  field(INPB, "$(EXP):$(OTHER1_TABLE):STI:ROLL")
+  field(SCAN, ".1 second")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
 }
 
-record(calc, $(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC) {
-   field(CALC, "ABS(A-B)")
-   field(INPA, "$(EXP):$(TABLE):STI:PITCH")
-   field(INPB, "$(EXP):$(OTHER1_TABLE):STI:PITCH")
-   field(SCAN, ".1 second")
-   field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
+record(calc, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC") {
+  field(CALC, "ABS(A-B)")
+  field(INPA, "$(EXP):$(TABLE):STI:PITCH")
+  field(INPB, "$(EXP):$(OTHER1_TABLE):STI:PITCH")
+  field(SCAN, ".1 second")
+  field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
 }
 
-record(ai, $(EXP):$(TABLE):STI:ROLL_DIFF_DIFF) {
-   field(INP, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC")
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
+record(ai, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF") {
+  field(INP, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC")
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
 }
 
-record(ai, $(EXP):$(TABLE):STI:PITCH_DIFF_DIFF) {
-   field(INP, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC")
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
+record(ai, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF") {
+  field(INP, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC")
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC) {
-   field(CALC, "A>=B")
-   field(INPA, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
-   field(INPB, "$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC") {
+  field(CALC, "A>=B")
+  field(INPA, "$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
+  field(INPB, "$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
 }
 
-record(calc, $(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC) {
-   field(CALC, "A>=B")
-   field(INPA, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
-   field(INPB, "$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH")
-   field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC") {
+  field(CALC, "A>=B")
+  field(INPA, "$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
+  field(INPB, "$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH")
+  field(FLNK, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
 }
 
-record(bi, $(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED) {
-   field(INP,  "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+record(bi, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
 }
 
-record(bi, $(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED) {
-   field(INP,  "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+record(bi, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC) {
-   field(INPA, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
-   field(INPB, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
-   field(CALC, "A||B")
-   field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC") {
+  field(INPA, "$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
+  field(INPB, "$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
+  field(CALC, "A||B")
+  field(FLNK, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
 }
 
-record(bi, $(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED) {
-   field(INP, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROT_CALC")
+record(bi, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROT_CALC")
 }
 
 #
 # Protect against excessive rotation (single table).
 #
-
-record(ai, $(EXP):$(TABLE):STI:ROLL_THRESH) {
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
+record(ai, "$(EXP):$(TABLE):STI:ROLL_THRESH") {
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
 }
 
-record(ai, $(EXP):$(TABLE):STI:PITCH_THRESH) {
-   field(EGU,  "Deg")
-   field(PREC, "3")
-   field(FLNK, "$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
+record(ai, "$(EXP):$(TABLE):STI:PITCH_THRESH") {
+  field(EGU, "Deg")
+  field(PREC, "3")
+  field(FLNK, "$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):STI:ROLL_THRESH_CALC) {
-   field(CALC, "(A<=(0-B))||(A>=B)")
-   field(INPA, "$(EXP):$(TABLE):STI:ROLL CPP")
-   field(INPB, "$(EXP):$(TABLE):STI:ROLL_THRESH")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:ROLL_THRESH_CALC") {
+  field(CALC, "(A<=(0-B))||(A>=B)")
+  field(INPA, "$(EXP):$(TABLE):STI:ROLL CPP")
+  field(INPB, "$(EXP):$(TABLE):STI:ROLL_THRESH")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
 }
 
-record(calc, $(EXP):$(TABLE):STI:PITCH_THRESH_CALC) {
-   field(CALC, "(A<=(0-B))||(A>=B)")
-   field(INPA, "$(EXP):$(TABLE):STI:PITCH CPP")
-   field(INPB, "$(EXP):$(TABLE):STI:PITCH_THRESH")
-   field(FLNK, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:PITCH_THRESH_CALC") {
+  field(CALC, "(A<=(0-B))||(A>=B)")
+  field(INPA, "$(EXP):$(TABLE):STI:PITCH CPP")
+  field(INPB, "$(EXP):$(TABLE):STI:PITCH_THRESH")
+  field(FLNK, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
 }
 
-record(bi, $(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED) {
-   field(INP,  "$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+record(bi, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
 }
 
-record(bi, $(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED) {
-   field(INP,  "$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+record(bi, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
 }
 
-record(calc, $(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC) {
-   field(INPA, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
-   field(INPB, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
-   field(CALC, "A||B")
-   field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC") {
+  field(INPA, "$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
+  field(INPB, "$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
+  field(CALC, "A||B")
+  field(FLNK, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
 }
 
-record(bi, $(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED) {
-   field(INP, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROT_CALC")
+record(bi, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROT_CALC")
 }
 
 #
 #
 #
-
-record(calc, $(EXP):$(TABLE):STI:ROT_CALC) {
-   field(CALC, "A||B")
-   field(INPA, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
-   field(INPB, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
-   field(FLNK, "$(EXP):$(TABLE):STI:ROT_EXCEEDED")
+record(calc, "$(EXP):$(TABLE):STI:ROT_CALC") {
+  field(CALC, "A||B")
+  field(INPA, "$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
+  field(INPB, "$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
+  field(FLNK, "$(EXP):$(TABLE):STI:ROT_EXCEEDED")
 }
 
-record(bi, $(EXP):$(TABLE):STI:ROT_EXCEEDED) {
-   field(INP, "$(EXP):$(TABLE):STI:ROT_CALC")
-   field(ONAM, "Exceeded")
-   field(ZNAM, "Not exceeded")
-   field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+record(bi, "$(EXP):$(TABLE):STI:ROT_EXCEEDED") {
+  field(INP, "$(EXP):$(TABLE):STI:ROT_CALC")
+  field(ONAM, "Exceeded")
+  field(ZNAM, "Not exceeded")
+  field(FLNK, "$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 }
 
 #! Further lines contain data used by VisualDCT
 #! View(0,0,1.0)
-#! Record($(EXP):$(TABLE):SPS:MUX1,20,23,0,0,"$(EXP):$(TABLE):SPS:MUX1")
+#! Record("$(EXP):$(TABLE):SPS:MUX1",20,21,0,0,"$(EXP):$(TABLE):SPS:MUX1")
 #! Field("$(EXP):$(TABLE):SPS:MUX1.INPA",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.INPA")
 #! Field("$(EXP):$(TABLE):SPS:MUX1.INPB",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.INPB")
 #! Field("$(EXP):$(TABLE):SPS:MUX1.INPC",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.INPC")
@@ -356,19 +351,254 @@ record(bi, $(EXP):$(TABLE):STI:ROT_EXCEEDED) {
 #! Field("$(EXP):$(TABLE):SPS:MUX1.INPJ",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.INPJ")
 #! Field("$(EXP):$(TABLE):SPS:MUX1.INPK",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.INPK")
 #! Field("$(EXP):$(TABLE):SPS:MUX1.INPL",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.INPL")
+#! Field("$(EXP):$(TABLE):SPS:MUX1.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:MUX1.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:MUX1.FLNK","$(EXP):$(TABLE):SPS:HIT")
 #! Field("$(EXP):$(TABLE):SPS:MUX1.VAL",16777215,0,"$(EXP):$(TABLE):SPS:MUX1.VAL")
-#! Record($(EXP):$(TABLE):SPS:HIT,260,10,0,0,"$(EXP):$(TABLE):SPS:HIT")
-#! Field("$(EXP):$(TABLE):SPS:HIT.VAL",16777215,1,"$(EXP):$(TABLE):SPS:HIT.VAL")
+#! Record("$(EXP):$(TABLE):SPS:HIT",260,14,0,1,"$(EXP):$(TABLE):SPS:HIT")
 #! Field("$(EXP):$(TABLE):SPS:HIT.INP",16777215,0,"$(EXP):$(TABLE):SPS:HIT.INP")
 #! Link("$(EXP):$(TABLE):SPS:HIT.INP","$(EXP):$(TABLE):SPS:MUX1.VAL")
-#! Record($(EXP):$(TABLE):SPS:ENABLE,500,23,0,0,"$(EXP):$(TABLE):SPS:ENABLE")
-#! Field("$(EXP):$(TABLE):SPS:ENABLE.VAL",16777215,0,"$(EXP):$(TABLE):SPS:ENABLE.VAL")
-#! Record($(EXP):$(TABLE):SPS:LOCAL_STOP_CALC,740,22,0,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:HIT.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:HIT.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:HIT.FLNK","$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:HIT.VAL",16777215,1,"$(EXP):$(TABLE):SPS:HIT.VAL")
+#! Record("$(EXP):$(TABLE):SPS:ENABLE",500,28,0,0,"$(EXP):$(TABLE):SPS:ENABLE")
+#! Field("$(EXP):$(TABLE):SPS:ENABLE.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:ENABLE.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:ENABLE.FLNK","$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:ENABLE.VAL",16777215,1,"$(EXP):$(TABLE):SPS:ENABLE.VAL")
+#! Record("$(EXP):$(TABLE):STI:ENABLE",740,28,0,0,"$(EXP):$(TABLE):STI:ENABLE")
+#! Field("$(EXP):$(TABLE):STI:ENABLE.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ENABLE.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ENABLE.FLNK","$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+#! Field("$(EXP):$(TABLE):STI:ENABLE.VAL",16777215,1,"$(EXP):$(TABLE):STI:ENABLE.VAL")
+#! Record("$(EXP):$(TABLE):SPS:LIMITS:ENABLE",980,28,0,0,"$(EXP):$(TABLE):SPS:LIMITS:ENABLE")
+#! Field("$(EXP):$(TABLE):SPS:LIMITS:ENABLE.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:LIMITS:ENABLE.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:LIMITS:ENABLE.FLNK","$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:LIMITS:ENABLE.VAL",16777215,0,"$(EXP):$(TABLE):SPS:LIMITS:ENABLE.VAL")
+#! Record("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC",1220,19,0,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
 #! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPA",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPA")
 #! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPA","$(EXP):$(TABLE):SPS:ENABLE.VAL")
 #! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPB",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPB")
 #! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPB","$(EXP):$(TABLE):SPS:HIT.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPC",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPC")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPC","$(EXP):$(TABLE):STI:ENABLE.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPD",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPD")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPD","$(EXP):$(TABLE):STI:ROT_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPE",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPE")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPE","$(EXP):$(TABLE):SPS:LIMITS:ENABLE.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPF",16777215,1,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.INPF")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.FLNK","$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
 #! Field("$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.VAL")
-#! Record($(EXP):$(TABLE):SPS:STOP_MOTORS,980,10,0,0,"$(EXP):$(TABLE):SPS:STOP_MOTORS")
+#! Record("$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP",1460,14,0,1,"$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.INP",16777215,0,"$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.INP")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.INP","$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC.VAL")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.FLNK","$(EXP):$(TABLE):SPS:STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.VAL",16777215,1,"$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.VAL")
+#! Record("$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE",1700,28,0,0,"$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.FLNK","$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.VAL",16777215,1,"$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.VAL")
+#! Record("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC",1940,14,0,0,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.INPA",16777215,1,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.INPA")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.INPB",16777215,1,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.INPB")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.FLNK","$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.VAL")
+#! Record("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED",2180,14,0,1,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.INP",16777215,0,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.INP")
+#! Link("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.INP","$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED_CALC.VAL")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.FLNK","$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.VAL",16777215,0,"$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.VAL")
+#! Record("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC",2420,14,0,0,"$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.INPA",16777215,0,"$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.INPA")
+#! Link("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.INPA","$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.VAL")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.INPB",16777215,0,"$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.INPB")
+#! Link("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.INPB","$(EXP):$(TABLE):SPS:REMOTES_ARE_STOPPED.VAL")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.FLNK","$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.VAL")
+#! Record("$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP",2660,14,0,1,"$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.INP",16777215,0,"$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.INP")
+#! Link("$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.INP","$(EXP):$(TABLE):SPS:REMOTE_STOP_CALC.VAL")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.FLNK","$(EXP):$(TABLE):SPS:STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.VAL",16777215,0,"$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.VAL")
+#! Record("$(EXP):$(TABLE):SPS:STOP_CALC",2900,14,0,0,"$(EXP):$(TABLE):SPS:STOP_CALC")
+#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.INPA",16777215,0,"$(EXP):$(TABLE):SPS:STOP_CALC.INPA")
+#! Link("$(EXP):$(TABLE):SPS:STOP_CALC.INPA","$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.VAL")
+#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.INPB",16777215,0,"$(EXP):$(TABLE):SPS:STOP_CALC.INPB")
+#! Link("$(EXP):$(TABLE):SPS:STOP_CALC.INPB","$(EXP):$(TABLE):SPS:REMOTE_SHOULD_STOP.VAL")
+#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:STOP_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:STOP_CALC.FLNK","$(EXP):$(TABLE):SPS:STOP_MOTORS")
+#! Field("$(EXP):$(TABLE):SPS:STOP_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:STOP_CALC.VAL")
+#! Record("$(EXP):$(TABLE):SPS:STOP_MOTORS",3140,14,0,1,"$(EXP):$(TABLE):SPS:STOP_MOTORS")
 #! Field("$(EXP):$(TABLE):SPS:STOP_MOTORS.INP",16777215,0,"$(EXP):$(TABLE):SPS:STOP_MOTORS.INP")
-#! Link("$(EXP):$(TABLE):SPS:STOP_MOTORS.INP","$(EXP):$(TABLE)
+#! Link("$(EXP):$(TABLE):SPS:STOP_MOTORS.INP","$(EXP):$(TABLE):SPS:STOP_CALC.VAL")
+#! Field("$(EXP):$(TABLE):SPS:STOP_MOTORS.FLNK",16777215,0,"$(EXP):$(TABLE):SPS:STOP_MOTORS.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:STOP_MOTORS.FLNK","$(EXP):$(TABLE):SPS:STOP_CALC")
+#! Record("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC",3380,26,0,0,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPA",16777215,0,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPA")
+#! Link("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPA","$(EXP):$(TABLE):SPS:LOCAL_SHOULD_STOP.VAL")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPB",16777215,1,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPB")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPC",16777215,1,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPC")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPD",16777215,0,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPD")
+#! Link("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.INPD","$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.VAL")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.FLNK","$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.VAL",16777215,0,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.VAL")
+#! Record("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT",3620,28,0,1,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT.LNK1",16777215,1,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT.LNK1")
+#! Link("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT.LNK1","$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES")
+#! Field("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT.SELL",16777215,0,"$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT.SELL")
+#! Link("$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_SELECT.SELL","$(EXP):$(TABLE):SPS:ANY_LOCAL_FAULTS_CALC.VAL")
+#! Record("$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES",3860,20,0,1,"$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES")
+#! Field("$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES.LNK1",16777215,0,"$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES.LNK1")
+#! Link("$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES.LNK1","$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.VAL")
+#! Field("$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES.LNK2",16777215,0,"$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES.LNK2")
+#! Link("$(EXP):$(TABLE):SPS:UNLOCK_STOPPED_TABLES.LNK2","$(EXP):$(TABLE):SPS:REMOTE_STOP_MOTORS_ENABLE.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL",4100,28,0,0,"$(EXP):$(TABLE):STI:ROLL")
+#! Field("$(EXP):$(TABLE):STI:ROLL.INP",16777215,1,"$(EXP):$(TABLE):STI:ROLL.INP")
+#! Field("$(EXP):$(TABLE):STI:ROLL.VAL",16777215,0,"$(EXP):$(TABLE):STI:ROLL.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH",4340,28,0,0,"$(EXP):$(TABLE):STI:PITCH")
+#! Field("$(EXP):$(TABLE):STI:PITCH.INP",16777215,1,"$(EXP):$(TABLE):STI:PITCH.INP")
+#! Field("$(EXP):$(TABLE):STI:PITCH.VAL",16777215,0,"$(EXP):$(TABLE):STI:PITCH.VAL")
+#! Record("$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH",4580,22,0,0,"$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH.FLNK",16777215,0,"$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH.FLNK")
+#! Link("$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH.FLNK","$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH.VAL",16777215,0,"$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH.VAL")
+#! Record("$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH",20,382,0,0,"$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH")
+#! Field("$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH.FLNK",16777215,1,"$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH.FLNK")
+#! Link("$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH.FLNK","$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC")
+#! Field("$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH.VAL",16777215,1,"$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC",260,374,0,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.INPA",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.INPA","$(EXP):$(TABLE):STI:ROLL.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.INPB",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.INPB")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.FLNK","$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC",500,374,0,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.INPA",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.INPA","$(EXP):$(TABLE):STI:PITCH.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.INPB",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.INPB")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.FLNK","$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.VAL",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF",740,388,0,0,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.INP",16777215,0,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.INP")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.INP","$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.FLNK","$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF",980,388,0,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.INP",16777215,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.INP")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.INP","$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.FLNK","$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.VAL",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC",1220,388,0,0,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.INPA",16777215,0,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.INPA","$(EXP):$(TABLE):STI:ROLL_DIFF_DIFF.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.INPB",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.INPB","$(EXP):$(TABLE):STI:DIFF_ROLL_THRESH.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.FLNK","$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC",1460,388,0,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.INPA",16777215,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.INPA","$(EXP):$(TABLE):STI:PITCH_DIFF_DIFF.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.INPB",16777215,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.INPB","$(EXP):$(TABLE):STI:DIFF_PITCH_THRESH.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.FLNK","$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.VAL",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED",1700,388,0,0,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.INP",16777215,0,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.INP","$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.FLNK","$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED",1940,388,0,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.INP",16777215,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.INP","$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.FLNK","$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.VAL",16777215,0,"$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.VAL")
+#! Record("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC",2180,388,0,0,"$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.INPA",16777215,0,"$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.INPA","$(EXP):$(TABLE):STI:ROLL_DIFF_THRESH_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.INPB",16777215,0,"$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.INPB","$(EXP):$(TABLE):STI:PITCH_DIFF_THRESH_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.FLNK","$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.VAL",16777215,0,"$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED",2420,388,0,1,"$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.INP",16777215,0,"$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.INP","$(EXP):$(TABLE):STI:DIFF_ROT_THRESH_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.FLNK","$(EXP):$(TABLE):STI:ROT_CALC")
+#! Field("$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.VAL",16777215,1,"$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_THRESH",2660,382,0,0,"$(EXP):$(TABLE):STI:ROLL_THRESH")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_THRESH.FLNK","$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_THRESH",2900,382,0,0,"$(EXP):$(TABLE):STI:PITCH_THRESH")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_THRESH.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_THRESH.FLNK","$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH.VAL",16777215,1,"$(EXP):$(TABLE):STI:PITCH_THRESH.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC",3140,388,0,0,"$(EXP):$(TABLE):STI:ROLL_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.INPA",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.INPA","$(EXP):$(TABLE):STI:ROLL.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.INPB",16777215,0,"$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.INPB","$(EXP):$(TABLE):STI:ROLL_THRESH.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.FLNK","$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC",3380,388,0,0,"$(EXP):$(TABLE):STI:PITCH_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.INPA",16777215,1,"$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.INPA","$(EXP):$(TABLE):STI:PITCH.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.INPB",16777215,0,"$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.INPB","$(EXP):$(TABLE):STI:PITCH_THRESH.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.FLNK","$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.VAL",16777215,1,"$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED",3620,388,0,0,"$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.INP",16777215,0,"$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.INP","$(EXP):$(TABLE):STI:ROLL_THRESH_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.FLNK","$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.VAL")
+#! Record("$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED",3860,388,0,0,"$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.INP",16777215,0,"$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.INP","$(EXP):$(TABLE):STI:PITCH_THRESH_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.FLNK","$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.VAL",16777215,0,"$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.VAL")
+#! Record("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC",4100,388,0,0,"$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.INPA",16777215,0,"$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.INPA","$(EXP):$(TABLE):STI:ROLL_THRESH_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.INPB",16777215,0,"$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.INPB","$(EXP):$(TABLE):STI:PITCH_THRESH_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.FLNK","$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.VAL",16777215,0,"$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED",4340,388,0,1,"$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.INP",16777215,0,"$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.INP","$(EXP):$(TABLE):STI:ABS_ROT_THRESH_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.FLNK","$(EXP):$(TABLE):STI:ROT_CALC")
+#! Field("$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.VAL",16777215,0,"$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROT_CALC",4580,388,0,0,"$(EXP):$(TABLE):STI:ROT_CALC")
+#! Field("$(EXP):$(TABLE):STI:ROT_CALC.INPA",16777215,0,"$(EXP):$(TABLE):STI:ROT_CALC.INPA")
+#! Link("$(EXP):$(TABLE):STI:ROT_CALC.INPA","$(EXP):$(TABLE):STI:ABS_ROT_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROT_CALC.INPB",16777215,0,"$(EXP):$(TABLE):STI:ROT_CALC.INPB")
+#! Link("$(EXP):$(TABLE):STI:ROT_CALC.INPB","$(EXP):$(TABLE):STI:DIFF_ROT_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROT_CALC.FLNK",16777215,0,"$(EXP):$(TABLE):STI:ROT_CALC.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROT_CALC.FLNK","$(EXP):$(TABLE):STI:ROT_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ROT_CALC.VAL",16777215,0,"$(EXP):$(TABLE):STI:ROT_CALC.VAL")
+#! Record("$(EXP):$(TABLE):STI:ROT_EXCEEDED",20,748,0,1,"$(EXP):$(TABLE):STI:ROT_EXCEEDED")
+#! Field("$(EXP):$(TABLE):STI:ROT_EXCEEDED.VAL",16777215,1,"$(EXP):$(TABLE):STI:ROT_EXCEEDED.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROT_EXCEEDED.INP",16777215,1,"$(EXP):$(TABLE):STI:ROT_EXCEEDED.INP")
+#! Link("$(EXP):$(TABLE):STI:ROT_EXCEEDED.INP","$(EXP):$(TABLE):STI:ROT_CALC.VAL")
+#! Field("$(EXP):$(TABLE):STI:ROT_EXCEEDED.FLNK",16777215,1,"$(EXP):$(TABLE):STI:ROT_EXCEEDED.FLNK")
+#! Link("$(EXP):$(TABLE):STI:ROT_EXCEEDED.FLNK","$(EXP):$(TABLE):SPS:LOCAL_STOP_CALC")
