@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1261
-y 326
+x 1265
+y 349
 w 430
 h 611
 font "helvetica-medium-r-18.0"
@@ -2066,7 +2066,7 @@ h 16
 font "helvetica-bold-r-12.0"
 fgColor index 35
 bgColor index 10
-visPv "$(M1).SET"
+visPv "$(MOTOR).SET"
 visMin "1"
 visMax "2"
 value {
@@ -2135,7 +2135,7 @@ endObjectProperties
 
 endGroup
 
-visPv "$(M1).SET"
+visPv "$(MOTOR).SET"
 visMin "1"
 visMax "2"
 endObjectProperties
