@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 188
-y 32
+x 443
+y 49
 w 952
 h 483
 font "helvetica-medium-r-12.0"
@@ -36,7 +36,7 @@ minor 1
 release 0
 x 328
 y 8
-w 197
+w 57
 h 21
 font "helvetica-medium-r-18.0"
 fontAlign "center"
@@ -293,7 +293,16 @@ topShadowColor index 1
 botShadowColor index 14
 displaySource "file"
 file "pcds_motionScreens/emb-motor-small-ilk.edl"
-numDsps 0
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-motor-small-ilk.edl"
+}
+menuLabel {
+  0 "0"
+}
+symbols {
+  0 "LLL=TST"
+}
 noScroll
 endObjectProperties
 
@@ -320,6 +329,9 @@ displayFileName {
 }
 setPosition {
   0 "parentWindow"
+}
+symbols {
+  0 "LLL=TST"
 }
 icon
 endObjectProperties
@@ -348,7 +360,7 @@ menuLabel {
   0 "GateValve1"
 }
 symbols {
-  0 "VALVE=$(V1)"
+  0 "VALVE=$(V1),LLL=TST"
 }
 noScroll
 endObjectProperties
@@ -378,7 +390,7 @@ setPosition {
   0 "parentWindow"
 }
 symbols {
-  0 "VALVE=$(V1)"
+  0 "VALVE=$(V1),LLL=TST"
 }
 icon
 endObjectProperties
@@ -408,7 +420,7 @@ menuLabel {
   0 "GateValve2"
 }
 symbols {
-  0 "VALVE=$(V2)"
+  0 "VALVE=$(V2),LLL=TST"
 }
 noScroll
 endObjectProperties

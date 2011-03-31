@@ -9,7 +9,9 @@ include $(TOP)/configure/CONFIG
 # Specify what files should be copied and where.
 
 # What protocol files should be copied as part of the build.
-COPY_FILES = mcode.proto newall-shg-a2.proto AGI_MD900_clinometer.proto
+COPY_FILES += mcode.proto
+COPY_FILES += newall-shg-a2.proto
+COPY_FILES += AGI_MD900_clinometer.proto
 
 # What subdirectory should hold the protcol files.  For this example,
 # $INSTALL_LOCATION/protocol will be created.
