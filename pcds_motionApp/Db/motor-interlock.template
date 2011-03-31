@@ -8,9 +8,9 @@
 # 
 # Required macro definitions:
 # IOC				# IOC name,	ex: CXI:IOC:DS1:STAND
-# ILK				# Interlock name,	ex: CXI:DIA:ILK:XRayFocus
-# NAME				# Display name for interlock, ex:  "SC1 GateValve"
+# NAME				# Display name for interlock, ex:  "SC1 GateValve v Detector"
 # MOTOR				# Motor name, ex:  "SXR:KB1:MMS:01"
+# ILK				# Interlock name,	ex: $(MOTOR):ILK
 #
 # CalcFault PV field macros:
 # CALC_FAULT		# CALC: Calculation expression, ex: "A && !B"
@@ -22,6 +22,13 @@
 # B					# B:	Calculation Input
 # C, D, E, ... 
 # L					# L:	Calculation Input
+#
+# Hint: To make your CalcFault monitor a PV and process whenever
+#	it changes, use CPP.
+# Example:
+#	A = "CXI:IOC:CTRL:Beam:Attenuated CPP"
+#	C = "CXI:IOC:CTRL:Configuration CPP"
+#	CALC_FAULT = "(C==2)&&!A"
 #
 # Optional macros: 
 # FAULT_VAL_OK		# Value to use for OK status, default "0"
