@@ -29,6 +29,7 @@ DB += newall-shg-a2.template
 #
 ARCHIVE	+= archive_clinometer.template
 ARCHIVE	+= archive_motor.template
+ARCHIVE	+= archive_motor-mc.template
 ARCHIVE	+= archive_newall-shg-a2.template
 
 #
