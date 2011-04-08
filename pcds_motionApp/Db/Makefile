@@ -38,6 +38,7 @@ ARCHIVE	+= archive_newall-shg-a2.template
 REQ	+= autosave_clinometer.template
 REQ	+= autosave_motor_positions.template
 REQ	+= autosave_motor_settings.template
+REQ	+= ims_motor_settings.template
 
 
 include $(TOP)/configure/RULES
