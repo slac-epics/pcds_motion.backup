@@ -1,0 +1,4 @@
+# Autosave values for motor interlocks
+
+$(MOTOR):ILK:DispName
+$(MOTOR):ILK:Error
