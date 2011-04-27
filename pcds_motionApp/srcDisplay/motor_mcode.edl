@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 888
-y 105
+x 2025
+y 100
 w 900
 h 1000
 font "helvetica-medium-r-18.0"
@@ -2926,16 +2926,16 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 40
+x 30
 y 80
-w 85
+w 95
 h 20
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Home Switch (I3)"
+  "Encoder Power (I3)"
 }
 endObjectProperties
 
