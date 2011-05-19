@@ -8,7 +8,6 @@ record(longin, "$(cont):POSITION") {
   field(DTYP, "stream")
   field(INP, "@newall-shg-a2.proto GET_ENCODER_POSITION bus$(bus) $(addr)")
   field(SCAN, "1 second")
-  field(FLNK, "$(cont):CALC:mm")
 }
 
 
