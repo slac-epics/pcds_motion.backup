@@ -1,5 +1,3 @@
-# Archive these values
-# Macros:
-#	EXP	- Experiment: AMO, SXR, ...
+# Archive Newall absolute encoder position
+$(cont):POSITION             1                monitor
 
-$(cont):POSITION
