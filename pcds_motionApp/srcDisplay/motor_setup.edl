@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1265
-y 349
+x 2702
+y 239
 w 430
 h 611
 font "helvetica-medium-r-18.0"
@@ -935,8 +935,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 241
-y 353
+x 240
+y 350
 w 50
 h 18
 font "helvetica-medium-r-10.0"
@@ -973,26 +973,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 240
-y 400
-w 50
-h 18
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "/Step"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 240
+x 285
 y 375
 w 50
 h 18
@@ -1011,7 +992,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 170
+x 215
 y 375
 w 70
 h 18
@@ -1055,31 +1036,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 170
-y 400
-w 70
-h 18
-controlPv "$(MOTOR).EGU"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fontAlign "right"
-fgColor index 44
-bgColor index 3
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -1087,7 +1043,7 @@ major 4
 minor 1
 release 0
 x 170
-y 350
+y 345
 w 70
 h 18
 font "helvetica-medium-r-10.0"
@@ -1106,10 +1062,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 90
+x 115
 y 370
-w 80
-h 25
+w 145
+h 16
 controlPv "$(MOTOR).UREV"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -1118,6 +1074,7 @@ bgColor index 51
 editable
 autoHeight
 motifWidget
+precision 20
 nullColor index 32
 smartRefresh
 fastUpdate
@@ -1132,7 +1089,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 90
+x 115
 y 345
 w 80
 h 25
@@ -1158,7 +1115,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 90
+x 115
 y 320
 w 80
 h 25
@@ -1184,27 +1141,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 296
-y 403
-w 30
-h 18
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Use:"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 296
-y 428
+x 300
+y 460
 w 30
 h 18
 font "helvetica-medium-r-10.0"
@@ -1242,15 +1180,15 @@ major 4
 minor 1
 release 0
 x 5
-y 325
-w 60
-h 18
+y 320
+w 85
+h 20
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Units:"
+  "Units:          EGU"
 }
 endObjectProperties
 
@@ -1260,8 +1198,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 216
-y 543
+x 215
+y 545
 w 95
 h 18
 font "helvetica-medium-r-10.0"
@@ -1269,7 +1207,7 @@ fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Precision"
+  "Display Precision"
 }
 endObjectProperties
 
@@ -1279,7 +1217,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 216
+x 215
 y 525
 w 95
 h 18
@@ -1360,7 +1298,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 316
+x 315
 y 525
 w 80
 h 18
@@ -1384,8 +1322,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 316
-y 540
+x 315
+y 545
 w 80
 h 25
 controlPv "$(MOTOR).PREC"
@@ -1410,9 +1348,9 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 120
+x 90
 y 525
-w 50
+w 80
 h 25
 controlPv "$(MOTOR).RTRY"
 format "decimal"
@@ -1565,8 +1503,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 320
-y 375
+x 340
+y 420
 w 80
 h 25
 controlPv "$(MOTOR).DLY"
@@ -1591,8 +1529,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 320
-y 345
+x 340
+y 390
 w 80
 h 14
 font "helvetica-medium-r-10.0"
@@ -1611,8 +1549,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 320
-y 360
+x 340
+y 405
 w 80
 h 14
 font "helvetica-medium-r-10.0"
@@ -1873,29 +1811,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 326
-y 403
-w 70
-h 20
-fgColor index 14
-bgColor index 51
-selectColor index 51
-inconsistentColor index 14
-topShadowColor index 0
-botShadowColor index 14
-controlPv "$(MOTOR).UEIP"
-font "helvetica-medium-r-10.0"
-orientation "horizontal"
-endObjectProperties
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 326
-y 428
+x 330
+y 460
 w 70
 h 20
 fgColor index 14
@@ -1916,7 +1833,7 @@ major 4
 minor 2
 release 0
 x 345
-y 570
+y 580
 w 40
 h 20
 fgColor index 0
@@ -2011,7 +1928,7 @@ major 4
 minor 2
 release 0
 x 290
-y 565
+y 575
 w 48
 h 24
 fgColor index 14
@@ -2034,7 +1951,7 @@ major 4
 minor 0
 release 0
 x 205
-y 560
+y 570
 w 80
 h 32
 fgColor index 14
@@ -2256,8 +2173,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 170
-y 420
+x 215
+y 405
 w 70
 h 18
 controlPv "$(MOTOR).EGU"
@@ -2282,15 +2199,15 @@ major 4
 minor 1
 release 0
 x 5
-y 420
-w 60
-h 18
+y 400
+w 95
+h 20
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Motor Res:"
+  "Motor Res: MRES"
 }
 endObjectProperties
 
@@ -2300,10 +2217,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 90
-y 415
-w 80
-h 16
+x 115
+y 400
+w 145
+h 15
 controlPv "$(MOTOR).MRES"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -2312,7 +2229,7 @@ bgColor index 51
 editable
 autoHeight
 motifWidget
-precision 8
+precision 20
 nullColor index 32
 smartRefresh
 fastUpdate
@@ -2327,54 +2244,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 5
-y 400
-w 65
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Encoder Res:"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 90
-y 395
-w 80
-h 25
-controlPv "$(MOTOR).ERES"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 51
-editable
-autoHeight
-motifWidget
-precision 8
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 240
-y 420
+x 285
+y 405
 w 50
 h 18
 font "helvetica-medium-r-10.0"
@@ -2437,10 +2308,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 120
+x 90
 y 555
-w 50
-h 16
+w 80
+h 15
 controlPv "$(MOTOR).SDLT"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -2483,8 +2354,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 230
-y 310
+x 265
+y 315
 w 70
 h 20
 font "helvetica-medium-r-10.0"
@@ -2502,8 +2373,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 305
-y 310
+x 340
+y 315
 w 80
 h 16
 controlPv "$(MOTOR):Update.SCAN"
@@ -2527,10 +2398,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 120
+x 90
 y 580
-w 50
-h 16
+w 80
+h 15
 controlPv "$(MOTOR).PDBD"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -2564,6 +2435,44 @@ useDisplayBg
 value {
   "Slip/Stall"
   "Deadband"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 30
+y 340
+w 70
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "          SREV  "
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 30
+y 370
+w 70
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "          UREV  "
 }
 endObjectProperties
 

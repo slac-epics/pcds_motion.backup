@@ -1,6 +1,7 @@
 VA PU
 VA p1
 VA f1
+NE=0
 p1=P
 PG 1
 LB Su
