@@ -7,7 +7,6 @@ record(stringin, "$(cont):A") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_A M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_A") {
@@ -23,7 +22,6 @@ record(stringin, "$(cont):BD") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_BD M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_BD") {
@@ -39,7 +37,6 @@ record(stringin, "$(cont):BP") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_BP M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_BP") {
@@ -55,7 +52,6 @@ record(stringin, "$(cont):BY") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_BY M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):C1") {
@@ -63,7 +59,6 @@ record(stringin, "$(cont):C1") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_C1 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_C1") {
@@ -79,7 +74,6 @@ record(stringin, "$(cont):C2") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_C2 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_C2") {
@@ -95,7 +89,6 @@ record(stringin, "$(cont):CE") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_CE M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_CE") {
@@ -111,7 +104,6 @@ record(stringin, "$(cont):CK") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_CK M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_CK") {
@@ -157,7 +149,6 @@ record(stringin, "$(cont):CW") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_CW M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_CW") {
@@ -173,7 +164,6 @@ record(stringin, "$(cont):D1") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D1 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D1") {
@@ -189,7 +179,6 @@ record(stringin, "$(cont):D2") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D2 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D2") {
@@ -205,7 +194,6 @@ record(stringin, "$(cont):D3") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D3 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D3") {
@@ -221,7 +209,6 @@ record(stringin, "$(cont):D4") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D4 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D4") {
@@ -238,7 +225,6 @@ record(stringin, "$(cont):D5") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D5 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D5") {
@@ -254,7 +240,6 @@ record(stringin, "$(cont):D9") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D9 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D9") {
@@ -270,7 +255,6 @@ record(stringin, "$(cont):D10") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D10 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D10") {
@@ -286,7 +270,6 @@ record(stringin, "$(cont):D11") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D11 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D11") {
@@ -302,7 +285,6 @@ record(stringin, "$(cont):D12") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D12 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D12") {
@@ -318,7 +300,6 @@ record(stringin, "$(cont):D") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_D M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_D") {
@@ -334,7 +315,6 @@ record(stringin, "$(cont):DB") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_DB M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_DB") {
@@ -380,7 +360,6 @@ record(stringin, "$(cont):DN") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_DN M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_DN") {
@@ -396,7 +375,6 @@ record(stringin, "$(cont):EE") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_EE M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_EE") {
@@ -412,7 +390,6 @@ record(stringin, "$(cont):EF") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_EF M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):EL") {
@@ -420,7 +397,6 @@ record(stringin, "$(cont):EL") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_EL M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_EL") {
@@ -436,7 +412,6 @@ record(stringin, "$(cont):EM") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_EM M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_EM") {
@@ -452,7 +427,6 @@ record(stringin, "$(cont):ER") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_ER M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):CLEAR_ER") {
@@ -513,7 +487,6 @@ record(stringin, "$(cont):HC") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_HC M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_HC") {
@@ -529,7 +502,6 @@ record(stringin, "$(cont):HT") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_HT M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_HT") {
@@ -545,7 +517,6 @@ record(stringin, "$(cont):I1") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I1 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I2") {
@@ -553,7 +524,6 @@ record(stringin, "$(cont):I2") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I2 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I3") {
@@ -561,7 +531,6 @@ record(stringin, "$(cont):I3") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I3 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I4") {
@@ -569,7 +538,6 @@ record(stringin, "$(cont):I4") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I4 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I5") {
@@ -577,7 +545,6 @@ record(stringin, "$(cont):I5") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I5 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I6") {
@@ -585,7 +552,6 @@ record(stringin, "$(cont):I6") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I6 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I9") {
@@ -593,7 +559,6 @@ record(stringin, "$(cont):I9") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I9 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I10") {
@@ -601,7 +566,6 @@ record(stringin, "$(cont):I10") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I10 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I11") {
@@ -609,7 +573,6 @@ record(stringin, "$(cont):I11") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I11 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):I12") {
@@ -617,7 +580,6 @@ record(stringin, "$(cont):I12") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_I12 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):IF") {
@@ -632,7 +594,6 @@ record(stringin, "$(cont):IH") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_IH M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):IL") {
@@ -640,7 +601,6 @@ record(stringin, "$(cont):IL") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_IL M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):IN") {
@@ -648,7 +608,6 @@ record(stringin, "$(cont):IN") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_IN M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):JE") {
@@ -686,7 +645,6 @@ record(stringin, "$(cont):LM") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_LM M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_LM") {
@@ -702,7 +660,6 @@ record(stringin, "$(cont):MD") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_MD M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):MP") {
@@ -710,7 +667,6 @@ record(stringin, "$(cont):MP") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_MP M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):MS") {
@@ -718,7 +674,6 @@ record(stringin, "$(cont):MS") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_MS M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_MS") {
@@ -734,7 +689,6 @@ record(stringin, "$(cont):MT") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_MT M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_MT") {
@@ -750,7 +704,6 @@ record(stringin, "$(cont):MV") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_MV M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):NE") {
@@ -758,7 +711,6 @@ record(stringin, "$(cont):NE") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_NE M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_NE") {
@@ -774,7 +726,6 @@ record(stringin, "$(cont):P") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_P M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_P") {
@@ -790,7 +741,6 @@ record(stringin, "$(cont):PC") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_PC M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):PM") {
@@ -798,7 +748,6 @@ record(stringin, "$(cont):PM") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_PM M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_PM") {
@@ -814,7 +763,6 @@ record(stringin, "$(cont):PY") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_PY M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_PY") {
@@ -830,7 +778,6 @@ record(stringin, "$(cont):PN") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_PN M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):QD") {
@@ -853,7 +800,6 @@ record(stringin, "$(cont):R1") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_R1 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_R1") {
@@ -869,7 +815,6 @@ record(stringin, "$(cont):R2") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_R2 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_R2") {
@@ -885,7 +830,6 @@ record(stringin, "$(cont):R3") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_R3 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_R3") {
@@ -901,7 +845,6 @@ record(stringin, "$(cont):R4") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_R4 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_R4") {
@@ -917,7 +860,6 @@ record(stringin, "$(cont):RC") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_RC M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_RC") {
@@ -940,7 +882,6 @@ record(stringin, "$(cont):S1") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S1 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S1") {
@@ -956,7 +897,6 @@ record(stringin, "$(cont):S2") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S2 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S2") {
@@ -972,7 +912,6 @@ record(stringin, "$(cont):S3") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S3 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S3") {
@@ -988,7 +927,6 @@ record(stringin, "$(cont):S4") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S4 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S4") {
@@ -1004,7 +942,6 @@ record(stringin, "$(cont):S5") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S5 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S5") {
@@ -1020,7 +957,6 @@ record(stringin, "$(cont):S7") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S7 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S7") {
@@ -1036,7 +972,6 @@ record(stringin, "$(cont):S8") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S8 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S8") {
@@ -1052,7 +987,6 @@ record(stringin, "$(cont):S9") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S9 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S9") {
@@ -1068,7 +1002,6 @@ record(stringin, "$(cont):S10") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S10 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S10") {
@@ -1084,7 +1017,6 @@ record(stringin, "$(cont):S11") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S11 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S11") {
@@ -1100,7 +1032,6 @@ record(stringin, "$(cont):S12") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S12 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S12") {
@@ -1116,7 +1047,6 @@ record(stringin, "$(cont):S13") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_S13 M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_S13") {
@@ -1132,7 +1062,6 @@ record(stringin, "$(cont):SF") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_SF M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_SF") {
@@ -1148,7 +1077,6 @@ record(stringin, "$(cont):SM") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_SM M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_SM") {
@@ -1164,7 +1092,6 @@ record(stringin, "$(cont):SN") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_SN M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):ST") {
@@ -1172,7 +1099,6 @@ record(stringin, "$(cont):ST") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_ST M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):TC") {
@@ -1270,7 +1196,6 @@ record(stringin, "$(cont):V") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_V M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):VC") {
@@ -1293,7 +1218,6 @@ record(stringin, "$(cont):VI") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_VI M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_VI") {
@@ -1309,7 +1233,6 @@ record(stringin, "$(cont):VM") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_VM M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_VM") {
@@ -1325,7 +1248,6 @@ record(stringin, "$(cont):VR") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_VR M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringin, "$(cont):IT") {
@@ -1404,7 +1326,6 @@ record(stringin, "$(cont):PU") {
   field(DTYP, "stream")
   field(INP, "@mcode.proto GET_PU M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(PINI, "YES")
 }
 
 record(stringout, "$(cont):SET_PU") {

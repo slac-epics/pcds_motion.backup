@@ -10,53 +10,53 @@ ExtraInput    =  Ignore;
 # MDrivePlus MCode commands (See MCode Manual for descriptions)
 
 ## Read Only
-GET_BY       { out "1PR BY";        in "%s";        wait 25; }
-GET_EF       { out "1PR EF";        in "%s";        wait 25; }
-GET_I1       { out "1PR I1";        in "%s";        wait 25; }
-GET_I2       { out "1PR I2";        in "%s";        wait 25; }
-GET_I3       { out "1PR I3";        in "%s";        wait 25; }
-GET_I4       { out "1PR I4";        in "%s";        wait 25; }
-GET_I5       { out "1PR I5";        in "%s";        wait 25; }
-GET_I6       { out "1PR I6";        in "%s";        wait 25; }
-GET_I9       { out "1PR I9";        in "%s";        wait 25; }
-GET_I10      { out "1PR I10";       in "%s";        wait 25; }
-GET_I11      { out "1PR I11";       in "%s";        wait 25; }
-GET_I12      { out "1PR I12";       in "%s";        wait 25; }
+GET_BY       { out "1PR BY";        in "%s";        wait 25;	@init { out "1PR BY"; 	in "%s"; } }
+GET_EF       { out "1PR EF";        in "%s";        wait 25;	@init { out "1PR EF"; 	in "%s"; } }
+GET_I1       { out "1PR I1";        in "%s";        wait 25;	@init { out "1PR I1"; 	in "%s"; } }
+GET_I2       { out "1PR I2";        in "%s";        wait 25;	@init { out "1PR I2"; 	in "%s"; } }
+GET_I3       { out "1PR I3";        in "%s";        wait 25;	@init { out "1PR I3"; 	in "%s"; } }
+GET_I4       { out "1PR I4";        in "%s";        wait 25;	@init { out "1PR I4"; 	in "%s"; } }
+GET_I5       { out "1PR I5";        in "%s";        wait 25;	@init { out "1PR I5"; 	in "%s"; } }
+GET_I6       { out "1PR I6";        in "%s";        wait 25;	@init { out "1PR I6"; 	in "%s"; } }
+GET_I9       { out "1PR I9";        in "%s";        wait 25;	@init { out "1PR I9"; 	in "%s"; } }
+GET_I10      { out "1PR I10";       in "%s";        wait 25;	@init { out "1PR I10"; 	in "%s"; } }
+GET_I11      { out "1PR I11";       in "%s";        wait 25;	@init { out "1PR I11"; 	in "%s"; } }
+GET_I12      { out "1PR I12";       in "%s";        wait 25;	@init { out "1PR I12"; 	in "%s"; } }
 GET_IF       { out "1PR IF";        in "%s";        wait 25; }
-GET_IH       { out "1PR IH";        in "%s";        wait 25; }
-GET_IL       { out "1PR IL";        in "%s";        wait 25; }
-GET_IN       { out "1PR IN";        in "%s";        wait 25; }
-GET_MD       { out "1PR MD";        in "%s";        wait 25; }
-GET_MP       { out "1PR MP";        in "%s";        wait 25; }
-GET_MV       { out "1PR MV";        in "%s";        wait 25; }
-GET_PC       { out "1PR PC";        in "%s";        wait 25; }
-GET_PN       { out "1PR PN";        in "%s";        wait 25; }
-GET_SN       { out "1PR SN";        in "%s";        wait 25; }
-GET_ST       { out "1PR ST";        in "%s";        wait 25; }
-GET_V        { out "1PR V";         in "%s";        wait 25; }
-GET_VR       { out "1PR VR";        in "%s";        wait 25; }
+GET_IH       { out "1PR IH";        in "%s";        wait 25;	@init { out "1PR IH"; 	in "%s"; } }
+GET_IL       { out "1PR IL";        in "%s";        wait 25;	@init { out "1PR IL"; 	in "%s"; } }
+GET_IN       { out "1PR IN";        in "%s";        wait 25;	@init { out "1PR IN"; 	in "%s"; } }
+GET_MD       { out "1PR MD";        in "%s";        wait 25;	@init { out "1PR MD"; 	in "%s"; } }
+GET_MP       { out "1PR MP";        in "%s";        wait 25;	@init { out "1PR MP"; 	in "%s"; } }
+GET_MV       { out "1PR MV";        in "%s";        wait 25;	@init { out "1PR MV"; 	in "%s"; } }
+GET_PC       { out "1PR PC";        in "%s";        wait 25;	@init { out "1PR PC"; 	in "%s"; } }
+GET_PN       { out "1PR PN";        in "%s";        wait 25;	@init { out "1PR PN"; 	in "%s"; } }
+GET_SN       { out "1PR SN";        in "%s";        wait 25;	@init { out "1PR SN"; 	in "%s"; } }
+GET_ST       { out "1PR ST";        in "%s";        wait 25;	@init { out "1PR ST"; 	in "%s"; } }
+GET_V        { out "1PR V";         in "%s";        wait 25;	@init { out "1PR V"; 	in "%s"; } }
+GET_VR       { out "1PR VR";        in "%s";        wait 25;	@init { out "1PR VR"; 	in "%s"; } }
 GET_IT       { out "1PR IT";        in "%s";        wait 25; }
 
 ## Read/Write
-GET_A        { out "1PR A";         in "%s";        wait 25; }
+GET_A        { out "1PR A";         in "%s";        wait 25;	@init { out "1PR A"; 	in "%s"; } }
 SET_A        { out "1A %s";                         wait 25; }
 
-GET_BD       { out "1PR BD";        in "%s";        wait 25; }
+GET_BD       { out "1PR BD";        in "%s";        wait 25;	@init { out "1PR BD"; 	in "%s"; } }
 SET_BD       { out "1BD %s";                        wait 25; }
 
-GET_BP       { out "1PR BP";        in "%[, 0-9]";  wait 25; }
+GET_BP       { out "1PR BP";        in "%[, 0-9]";  wait 25;	@init { out "1PR BP"; 	in "%[, 0-9]"; } } 
 SET_BP       { out "1BP %s";                        wait 25; }
 
-GET_C1       { out "1PR C1";        in "%s";        wait 25; }
+GET_C1       { out "1PR C1";        in "%s";        wait 25;	@init { out "1PR C1"; 	in "%s"; } }
 SET_C1       { out "1C1 %s";                        wait 25; }
 
-GET_C2       { out "1PR C2";        in "%s";        wait 25; }
+GET_C2       { out "1PR C2";        in "%s";        wait 25;	@init { out "1PR C2"; 	in "%s"; } }
 SET_C2       { out "1C2 %s";                        wait 25; }
 
-GET_CE       { out "1PR CE";        in "%s";        wait 25; }
+GET_CE       { out "1PR CE";        in "%s";        wait 25;	@init { out "1PR CE"; 	in "%s"; } }
 SET_CE       { out "1CE %s";                        wait 25; }
 
-GET_CK       { out "1PR CK";        in "%s";        wait 25; }
+GET_CK       { out "1PR CK";        in "%s";        wait 25;	@init { out "1PR CK"; 	in "%s"; } }
 SET_CK       { out "1CK %s";                        wait 25; }
 
 GET_CM       { out "1PR CM";        in "%s";        wait 25; }
@@ -65,40 +65,40 @@ SET_CM       { out "1CM %s";                        wait 25; }
 GET_CR       { out "1PR CR";        in "%s";        wait 25; }
 SET_CR       { out "1CR %s";                        wait 25; }
 
-GET_CW       { out "1PR CW";        in "%s";        wait 25; }
+GET_CW       { out "1PR CW";        in "%s";        wait 25;	@init { out "1PR CW"; 	in "%s"; } }
 SET_CW       { out "1CW %s";                        wait 25; }
 
-GET_D1       { out "1PR D1";        in "%s";        wait 25; }
+GET_D1       { out "1PR D1";        in "%s";        wait 25;	@init { out "1PR D1"; 	in "%s"; } }
 SET_D1       { out "1D1 %s";                        wait 25; }
 
-GET_D2       { out "1PR D2";        in "%s";        wait 25; }
+GET_D2       { out "1PR D2";        in "%s";        wait 25;	@init { out "1PR D2"; 	in "%s"; } }
 SET_D2       { out "1D2 %s";                        wait 25; }
 
-GET_D3       { out "1PR D3";        in "%s";        wait 25; }
+GET_D3       { out "1PR D3";        in "%s";        wait 25;	@init { out "1PR D3"; 	in "%s"; } }
 SET_D3       { out "1D3 %s";                        wait 25; }
 
-GET_D4       { out "1PR D4";        in "%s";        wait 25; }
+GET_D4       { out "1PR D4";        in "%s";        wait 25;	@init { out "1PR D4"; 	in "%s"; } }
 SET_D4       { out "1D4 %s";                        wait 25; }
 
-GET_D5       { out "1PR D5";        in "%s";        wait 25; }
+GET_D5       { out "1PR D5";        in "%s";        wait 25;	@init { out "1PR D5"; 	in "%s"; } }
 SET_D5       { out "1D5 %s";                        wait 25; }
 
-GET_D9       { out "1PR D9";        in "%s";        wait 25; }
+GET_D9       { out "1PR D9";        in "%s";        wait 25;	@init { out "1PR D9"; 	in "%s"; } }
 SET_D9       { out "1D9 %s";                        wait 25; }
 
-GET_D10      { out "1PR D10";        in "%s";        wait 25; }
+GET_D10      { out "1PR D10";        in "%s";        wait 25;	@init { out "1PR D10"; 	in "%s"; } }
 SET_D10      { out "1D10 %s";                        wait 25; }
 
-GET_D11      { out "1PR D11";        in "%s";        wait 25; }
+GET_D11      { out "1PR D11";        in "%s";        wait 25;	@init { out "1PR D11"; 	in "%s"; } }
 SET_D11      { out "1D11 %s";                        wait 25; }
 
-GET_D12      { out "1PR D12";        in "%s";        wait 25; }
+GET_D12      { out "1PR D12";        in "%s";        wait 25;	@init { out "1PR D12"; 	in "%s"; } }
 SET_D12      { out "1D12 %s";                        wait 25; }
 
-GET_D        { out "1PR D";         in "%s";        wait 25; }
+GET_D        { out "1PR D";         in "%s";        wait 25;	@init { out "1PR D"; 	in "%s"; } }
 SET_D        { out "1D %s";                         wait 25; }
 
-GET_DB       { out "1PR DB";        in "%s";        wait 25; }
+GET_DB       { out "1PR DB";        in "%s";        wait 25;	@init { out "1PR DB"; 	in "%s"; } }
 SET_DB       { out "1DB %s";                        wait 25; }
 
 GET_DE       { out "1PR DE";        in "%s";        wait 25; }
@@ -107,19 +107,19 @@ SET_DE       { out "1DE %s";                        wait 25; }
 GET_DG       { out "1PR DG";        in "%s";        wait 25; }
 SET_DG       { out "1DG %s";                        wait 25; }
 
-GET_DN       { out "1PR DN";        in "%s";        wait 25; }
+GET_DN       { out "1PR DN";        in "%s";        wait 25;	@init { out "1PR DN"; 	in "%s"; } }
 SET_DN       { out "1DN %s";                        wait 25; }
 
-GET_EE       { out "1PR EE";        in "%s";        wait 25; }
+GET_EE       { out "1PR EE";        in "%s";        wait 25;	@init { out "1PR EE"; 	in "%s"; } }
 SET_EE       { out "1EE %s";                        wait 25; }
 
-GET_EL       { out "1PR EL";        in "%s";        wait 25; }
+GET_EL       { out "1PR EL";        in "%s";        wait 25;	@init { out "1PR EL"; 	in "%s"; } }
 SET_EL       { out "1EL %s";                        wait 25; }
 
-GET_EM       { out "1PR EM";        in "%s";        wait 25; }
+GET_EM       { out "1PR EM";        in "%s";        wait 25;	@init { out "1PR EM"; 	in "%s"; } }
 SET_EM       { out "1EM %s";                        wait 25; }
 
-GET_ER       { out "1PR ER";        in "%s";        wait 25; }
+GET_ER       { out "1PR ER";        in "%s";        wait 25;	@init { out "1PR ER"; 	in "%s"; } }
 CLEAR_ER     { out "1ER=0";                         wait 25; }
 
 GET_ES       { out "1PR ES";        in "%s";        wait 25; }
@@ -131,10 +131,10 @@ SET_FC       { out "1FC %s";                        wait 25; }
 GET_FM       { out "1PR FM";        in "%s";        wait 25; }
 SET_FM       { out "1FM %s";                        wait 25; }
 
-GET_HC       { out "1PR HC";        in "%s";        wait 25; }
+GET_HC       { out "1PR HC";        in "%s";        wait 25;	@init { out "1PR HC"; 	in "%s"; } }
 SET_HC       { out "1HC %s";                        wait 25; }
 
-GET_HT       { out "1PR HT";        in "%s";        wait 25; }
+GET_HT       { out "1PR HT";        in "%s";        wait 25; 	@init { out "1PR HT"; 	in "%s"; } }
 SET_HT       { out "1HT %s";                        wait 25; }
 
 GET_JE       { out "1PR JE";        in "%s";        wait 25; }
@@ -143,87 +143,87 @@ SET_JE       { out "1JE %s";                        wait 25; }
 GET_LK       { out "1PR LK";        in "%s";        wait 25; }
 SET_LK       { out "1LK %s";                        wait 25; }
 
-GET_LM       { out "1PR LM";        in "%s";        wait 25; }
+GET_LM       { out "1PR LM";        in "%s";        wait 25; 	@init { out "1PR LM"; 	in "%s"; } }
 SET_LM       { out "1LM %s";                        wait 25; }
 
-GET_MS       { out "1PR MS";        in "%s";        wait 25; }
+GET_MS       { out "1PR MS";        in "%s";        wait 25; 	@init { out "1PR MS"; 	in "%s"; } }
 SET_MS       { out "1MS %s";                        wait 25; }
 
-GET_MT       { out "1PR MT";        in "%s";        wait 25; }
+GET_MT       { out "1PR MT";        in "%s";        wait 25; 	@init { out "1PR MT"; 	in "%s"; } }
 SET_MT       { out "1MT %s";                        wait 25; }
 
-GET_NE       { out "1PR NE";        in "%s";        wait 25; }
+GET_NE       { out "1PR NE";        in "%s";        wait 25; 	@init { out "1PR NE"; 	in "%s"; } }
 SET_NE       { out "1NE %s";                        wait 25; }
 
-GET_P        { out "1PR P";         in "%s";        wait 25; }
+GET_P        { out "1PR P";         in "%s";        wait 25; 	@init { out "1PR P"; 	in "%s"; } }
 SET_P        { out "1P %s";                         wait 25; }
 
-GET_PM       { out "1PR PM";        in "%s";        wait 25; }
+GET_PM       { out "1PR PM";        in "%s";        wait 25; 	@init { out "1PR PM"; 	in "%s"; } }
 SET_PM       { out "1PM %s";                        wait 25; }
 
-GET_PY       { out "1PR PY";        in "%s";        wait 25; }
+GET_PY       { out "1PR PY";        in "%s";        wait 25; 	@init { out "1PR PY"; 	in "%s"; } }
 SET_PY       { out "1PY %s";                        wait 25; }
 
 GET_QD       { out "1PR QD";        in "%s";        wait 25; }
 SET_QD       { out "1QD %s";                        wait 25; }
 
-GET_R1       { out "1PR R1";        in "%s";        wait 25; }
+GET_R1       { out "1PR R1";        in "%s";        wait 25; 	@init { out "1PR R1"; 	in "%s"; } }
 SET_R1       { out "1R1 %s";                        wait 25; }
 
-GET_R2       { out "1PR R2";        in "%s";        wait 25; }
+GET_R2       { out "1PR R2";        in "%s";        wait 25; 	@init { out "1PR R2"; 	in "%s"; } }
 SET_R2       { out "1R2 %s";                        wait 25; }
 
-GET_R3       { out "1PR R3";        in "%s";        wait 25; }
+GET_R3       { out "1PR R3";        in "%s";        wait 25; 	@init { out "1PR R3"; 	in "%s"; } }
 SET_R3       { out "1R3 %s";                        wait 25; }
 
-GET_R4       { out "1PR R4";        in "%s";        wait 25; }
+GET_R4       { out "1PR R4";        in "%s";        wait 25; 	@init { out "1PR R4"; 	in "%s"; } }
 SET_R4       { out "1R4 %s";                        wait 25; }
 
-GET_RC       { out "1PR RC";        in "%s";        wait 25; }
+GET_RC       { out "1PR RC";        in "%s";        wait 25; 	@init { out "1PR RC"; 	in "%s"; } }
 SET_RC       { out "1RC %s";                        wait 25; }
 
 SAVE         { out "1S";                            wait 25; }
 
-GET_S1       { out "1PR S1";        in "%[, 0-9]";  wait 25; }
+GET_S1       { out "1PR S1";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S1"; 	in "%[, 0-9]"; } }
 SET_S1       { out "1S1 %s";                        wait 25; }
 
-GET_S2       { out "1PR S2";        in "%[, 0-9]";  wait 25; }
+GET_S2       { out "1PR S2";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S2"; 	in "%[, 0-9]"; } }
 SET_S2       { out "1S2 %s";                        wait 25; }
 
-GET_S3       { out "1PR S3";        in "%[, 0-9]";  wait 25; }
+GET_S3       { out "1PR S3";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S3"; 	in "%[, 0-9]"; } }
 SET_S3       { out "1S3 %s";                        wait 25; }
 
-GET_S4       { out "1PR S4";        in "%[, 0-9]";  wait 25; }
+GET_S4       { out "1PR S4";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S4"; 	in "%[, 0-9]"; } }
 SET_S4       { out "1S4 %s";                        wait 25; }
 
-GET_S5       { out "1PR S5";        in "%[, 0-9]";  wait 25; }
+GET_S5       { out "1PR S5";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S5"; 	in "%[, 0-9]"; } }
 SET_S5       { out "1S5 %s";                        wait 25; }
 
-GET_S7       { out "1PR S7";        in "%[, 0-9]";  wait 25; }
+GET_S7       { out "1PR S7";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S7"; 	in "%[, 0-9]"; } }
 SET_S7       { out "1S7 %s";                        wait 25; }
 
-GET_S8       { out "1PR S8";        in "%[, 0-9]";  wait 25; }
+GET_S8       { out "1PR S8";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S8"; 	in "%[, 0-9]"; } }
 SET_S8       { out "1S8 %s";                        wait 25; }
 
-GET_S9       { out "1PR S9";        in "%[, 0-9]";  wait 25; }
+GET_S9       { out "1PR S9";        in "%[, 0-9]";  wait 25; 	@init { out "1PR S9"; 	in "%[, 0-9]"; } }
 SET_S9       { out "1S9 %s";                        wait 25; }
 
-GET_S10       { out "1PR S10";      in "%[, 0-9]";  wait 25; }
+GET_S10       { out "1PR S10";      in "%[, 0-9]";  wait 25; 	@init { out "1PR S10"; 	in "%[, 0-9]"; } }
 SET_S10       { out "1S10 %s";                      wait 25; }
 
-GET_S11       { out "1PR S11";      in "%[, 0-9]";  wait 25; }
+GET_S11       { out "1PR S11";      in "%[, 0-9]";  wait 25; 	@init { out "1PR S11"; 	in "%[, 0-9]"; } }
 SET_S11       { out "1S11 %s";                      wait 25; }
 
-GET_S12       { out "1PR S12";      in "%[, 0-9]";  wait 25; }
+GET_S12       { out "1PR S12";      in "%[, 0-9]";  wait 25; 	@init { out "1PR S12"; 	in "%[, 0-9]"; } }
 SET_S12       { out "1S12 %s";                      wait 25; }
 
-GET_S13       { out "1PR S13";      in "%[, 0-9]";  wait 25; }
+GET_S13       { out "1PR S13";      in "%[, 0-9]";  wait 25; 	@init { out "1PR S13"; 	in "%[, 0-9]"; } }
 SET_S13       { out "1S13 %s";                      wait 25; }
 
-GET_SF       { out "1PR SF";        in "%s";        wait 25; }
+GET_SF       { out "1PR SF";        in "%s";        wait 25; 	@init { out "1PR SF"; 	in "%s"; } }
 SET_SF       { out "1SF %s";                        wait 25; }
 
-GET_SM       { out "1PR SM";        in "%s";        wait 25; }
+GET_SM       { out "1PR SM";        in "%s";        wait 25;  	@init { out "1PR SM"; 	in "%s"; } }
 SET_SM       { out "1SM %s";                        wait 25; }
 
 GET_TC       { out "1PR TC";        in "%s";        wait 25; }
@@ -247,10 +247,10 @@ SET_TT       { out "1TT %s";                        wait 25; }
 GET_VC       { out "1PR VC";        in "%s";        wait 25; }
 SET_VC       { out "1VC %s";                        wait 25; }
 
-GET_VI       { out "1PR VI";        in "%s";        wait 25; }
+GET_VI       { out "1PR VI";        in "%s";        wait 25;  	@init { out "1PR VI"; 	in "%s"; } }
 SET_VI       { out "1VI %s";                        wait 25; }
 
-GET_VM       { out "1PR VM";        in "%s";        wait 25; }
+GET_VM       { out "1PR VM";        in "%s";        wait 25;  	@init { out "1PR VM"; 	in "%s"; } }
 SET_VM       { out "1VM %s";                        wait 25; }
 
 GET_WT       { out "1PR WT";        in "%s";        wait 25; }
@@ -276,5 +276,5 @@ MOV_SL       { out "1SL %s";                        wait 25; }
 
 ## Additional fields
 # Power up flag
-GET_PU       { out "1PR PU";        in "%s";        wait 25; }
+GET_PU       { out "1PR PU";        in "%s";        wait 25;  	@init { out "1PR PU"; 	in "%s"; } }
 SET_PU       { out "1PU %s";                        wait 25; }
