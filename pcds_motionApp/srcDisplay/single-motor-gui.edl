@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2808
-y 376
+x 2698
+y 456
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -82,45 +82,6 @@ botShadowColor index 11
 label "Exit"
 font "helvetica-medium-r-12.0"
 3d
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 240
-y 0
-w 168
-h 24
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 4
-useDisplayBg
-value {
-  "$(IOC)"
-}
-endObjectProperties
-
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 408
-y 0
-w 144
-h 24
-controlPv "$(IOC):TOD"
-precision 1
-fgColor index 14
-fgAlarm
-bgColor index 12
-font "helvetica-medium-r-12.0"
-fontAlign "right"
 endObjectProperties
 
 # (Rectangle)
@@ -1390,44 +1351,6 @@ symbols {
 }
 endObjectProperties
 
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 664
-y 0
-w 144
-h 24
-controlPv "$(IOC):UPTIME"
-precision 1
-fgColor index 14
-fgAlarm
-bgColor index 12
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 648
-y 0
-w 48
-h 24
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Uptime:"
-}
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -1443,25 +1366,6 @@ fgColor index 14
 bgColor index 56
 value {
   "            PCDS Motion GUI"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 216
-y 0
-w 64
-h 24
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "IOC Name:"
 }
 endObjectProperties
 
