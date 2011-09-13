@@ -23,8 +23,8 @@
 # C, D, E, ... 
 # L					# L:	Calculation Input
 #
-# Hint: To make your CalcFault monitor a PV and process whenever
-#	it changes, use CPP.
+# Hint: To make your CalcFault record monitor it's input PV's and
+# process whenever an input changes, use CPP.
 # Example:
 #	A = "CXI:IOC:CTRL:Beam:Attenuated CPP"
 #	C = "CXI:IOC:CTRL:Configuration CPP"
