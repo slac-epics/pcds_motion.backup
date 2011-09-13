@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 977
-y 43
+x 2075
+y 119
 w 900
 h 1000
 font "helvetica-medium-r-18.0"
@@ -535,7 +535,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 675
+x 820
 y 80
 w 30
 h 20
@@ -557,7 +557,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 675
+x 820
 y 55
 w 30
 h 20
@@ -579,7 +579,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 675
+x 820
 y 30
 w 30
 h 20
@@ -601,8 +601,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 360
-y 60
+x 565
+y 55
 w 30
 h 20
 fgColor index 14
@@ -1693,9 +1693,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x -15
+x -10
 y 0
-w 620
+w 915
 h 25
 lineColor index 1
 fill
@@ -1709,7 +1709,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 0
+x 5
 y 0
 w 170
 h 16
@@ -1735,8 +1735,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 175
-y 15
+x 185
+y 10
 w 175
 h 15
 controlPv "$(MOTOR).DTYP"
@@ -1762,7 +1762,7 @@ minor 0
 release 1
 x 0
 y 20
-w 625
+w 915
 h 20
 lineColor index 44
 fillColor index 44
@@ -1770,7 +1770,7 @@ lineWidth 3
 numPoints 2
 xPoints {
   0 0
-  1 616
+  1 902
 }
 yPoints {
   0 28
@@ -1879,7 +1879,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 560
+x 805
 y 0
 w 35
 h 25
@@ -1956,7 +1956,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 585
+x 730
 y 30
 w 85
 h 20
@@ -1975,7 +1975,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 585
+x 730
 y 55
 w 85
 h 20
@@ -1994,7 +1994,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 580
+x 725
 y 80
 w 90
 h 20
@@ -2314,7 +2314,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 710
+x 855
 y 30
 w 35
 h 16
@@ -2340,7 +2340,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 675
+x 820
 y 30
 w 30
 h 20
@@ -2359,7 +2359,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 710
+x 855
 y 55
 w 35
 h 16
@@ -2385,7 +2385,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 675
+x 820
 y 55
 w 30
 h 20
@@ -2404,7 +2404,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 710
+x 855
 y 80
 w 35
 h 16
@@ -2430,7 +2430,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 675
+x 820
 y 80
 w 30
 h 20
@@ -2487,10 +2487,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 620
-y 360
-w 50
-h 15
+x 400
+y 85
+w 90
+h 25
 fgColor index 14
 onColor index 34
 offColor index 34
@@ -2498,8 +2498,8 @@ topShadowColor index 37
 botShadowColor index 44
 controlPv "$(MOTOR):SAVE"
 pressValue "1"
-onLabel "SAVE"
-offLabel "SAVE"
+onLabel "SAVE ALL"
+offLabel "SAVE ALL"
 3d
 useEnumNumeric
 font "helvetica-medium-r-10.0"
@@ -2535,7 +2535,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 700
+x 640
 y 360
 w 155
 h 30
@@ -2559,8 +2559,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 360
-y 60
+x 565
+y 55
 w 30
 h 20
 controlPv "$(MOTOR):MV"
@@ -2578,8 +2578,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 350
-y 40
+x 555
+y 35
 w 65
 h 20
 font "helvetica-medium-r-10.0"
@@ -2597,8 +2597,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 395
-y 65
+x 600
+y 60
 w 10
 h 10
 lineColor index 35
@@ -5984,8 +5984,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 330
-y 110
+x 350
+y 125
 w 145
 h 290
 
@@ -5997,8 +5997,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 135
+x 465
+y 150
 w 30
 h 20
 controlPv "$(MOTOR):IL"
@@ -6016,8 +6016,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 365
-y 135
+x 385
+y 150
 w 75
 h 20
 font "helvetica-medium-r-10.0"
@@ -6035,8 +6035,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 110
+x 465
+y 125
 w 30
 h 20
 controlPv "$(MOTOR):IH"
@@ -6054,8 +6054,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 360
-y 110
+x 380
+y 125
 w 80
 h 20
 font "helvetica-medium-r-10.0"
@@ -6073,8 +6073,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 165
+x 465
+y 180
 w 30
 h 20
 controlPv "$(MOTOR):IN"
@@ -6092,8 +6092,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 330
-y 165
+x 350
+y 180
 w 110
 h 20
 font "helvetica-medium-r-10.0"
@@ -6111,8 +6111,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 205
+x 465
+y 220
 w 30
 h 20
 controlPv "$(MOTOR):MD"
@@ -6130,8 +6130,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 350
-y 205
+x 370
+y 220
 w 90
 h 20
 font "helvetica-medium-r-10.0"
@@ -6149,8 +6149,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 230
+x 465
+y 245
 w 30
 h 20
 controlPv "$(MOTOR):MP"
@@ -6168,8 +6168,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 365
-y 230
+x 385
+y 245
 w 75
 h 20
 font "helvetica-medium-r-10.0"
@@ -6188,8 +6188,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 255
+x 465
+y 270
 w 30
 h 20
 controlPv "$(MOTOR):NE"
@@ -6207,8 +6207,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 345
-y 255
+x 365
+y 270
 w 95
 h 20
 font "helvetica-medium-r-10.0"
@@ -6226,8 +6226,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 280
+x 465
+y 295
 w 30
 h 20
 controlPv "$(MOTOR):PC"
@@ -6245,8 +6245,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 335
-y 280
+x 355
+y 295
 w 105
 h 20
 font "helvetica-medium-r-10.0"
@@ -6265,8 +6265,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 380
+x 465
+y 395
 w 30
 h 20
 controlPv "$(MOTOR):R4"
@@ -6284,8 +6284,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 355
-y 380
+x 375
+y 395
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -6303,8 +6303,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 355
+x 465
+y 370
 w 30
 h 20
 controlPv "$(MOTOR):R3"
@@ -6322,8 +6322,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 355
-y 355
+x 375
+y 370
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -6341,8 +6341,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 330
+x 465
+y 345
 w 30
 h 20
 controlPv "$(MOTOR):R2"
@@ -6360,8 +6360,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 355
-y 330
+x 375
+y 345
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -6379,8 +6379,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 445
-y 305
+x 465
+y 320
 w 30
 h 20
 controlPv "$(MOTOR):R1"
@@ -6398,8 +6398,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 355
-y 305
+x 375
+y 320
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -6924,8 +6924,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 465
-y 60
+x 655
+y 55
 w 30
 h 20
 fgColor index 14
@@ -7334,17 +7334,17 @@ beginObjectProperties
 major 4
 minor 0
 release 1
-x 465
+x 0
 y 955
-w 425
+w 1395
 h 0
 lineColor index 44
 fillColor index 44
 lineWidth 3
 numPoints 2
 xPoints {
-  0 466
-  1 888
+  0 3
+  1 1389
 }
 yPoints {
   0 955
@@ -7358,7 +7358,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 865
+x 845
 y 980
 w 25
 h 10
@@ -7476,37 +7476,14 @@ value {
 }
 endObjectProperties
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 770
-y 965
-w 65
-h 25
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-10.0"
-buttonLabel "GRAPHICS"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "motor_graphics.edl"
-}
-endObjectProperties
-
 # (Circle)
 object activeCircleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 500
-y 65
+x 690
+y 60
 w 10
 h 10
 lineColor index 35
@@ -7524,8 +7501,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 465
-y 60
+x 655
+y 55
 w 30
 h 20
 controlPv "$(MOTOR):PU"
@@ -7543,8 +7520,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 445
-y 40
+x 635
+y 35
 w 75
 h 20
 font "helvetica-medium-r-10.0"
@@ -7901,9 +7878,9 @@ major 4
 minor 0
 release 0
 x 605
-y 110
-w 185
-h 75
+y 120
+w 250
+h 235
 lineColor index 14
 fillColor index 34
 endObjectProperties
@@ -7914,8 +7891,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 670
-y 150
+x 690
+y 165
 w 110
 h 15
 controlPv "$(MOTOR):CUSTOM"
@@ -7940,8 +7917,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 615
-y 150
+x 635
+y 165
 w 50
 h 20
 font "helvetica-medium-r-10.0"
@@ -7960,8 +7937,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 655
-y 115
+x 685
+y 130
 w 80
 h 20
 font "helvetica-medium-r-10.0"
@@ -7979,8 +7956,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
-y 60
+x 650
+y 80
 w 50
 h 15
 fgColor index 14
@@ -8025,7 +8002,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 550
+x 620
 y 225
 w 95
 h 20
@@ -8038,27 +8015,13 @@ value {
 }
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 540
-y 195
-w 300
-h 160
-lineColor index 14
-fillColor index 34
-endObjectProperties
-
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 2
 release 0
-x 705
+x 775
 y 225
 w 65
 h 16
@@ -8084,7 +8047,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 645
+x 715
 y 225
 w 55
 h 20
@@ -8103,7 +8066,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 715
+x 785
 y 200
 w 40
 h 20
@@ -8122,7 +8085,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 655
+x 725
 y 200
 w 20
 h 20
@@ -8141,7 +8104,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 705
+x 775
 y 250
 w 65
 h 16
@@ -8167,7 +8130,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 645
+x 715
 y 250
 w 55
 h 20
@@ -8186,7 +8149,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 545
+x 615
 y 250
 w 100
 h 20
@@ -8205,7 +8168,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 705
+x 775
 y 275
 w 65
 h 16
@@ -8231,7 +8194,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 645
+x 715
 y 275
 w 55
 h 20
@@ -8250,7 +8213,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 565
+x 635
 y 275
 w 80
 h 20
@@ -8269,7 +8232,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 705
+x 775
 y 300
 w 65
 h 16
@@ -8295,7 +8258,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 645
+x 715
 y 300
 w 55
 h 20
@@ -8314,7 +8277,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 545
+x 615
 y 300
 w 95
 h 20
@@ -8333,7 +8296,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 705
+x 775
 y 325
 w 65
 h 16
@@ -8359,7 +8322,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 645
+x 715
 y 325
 w 55
 h 20
@@ -8378,7 +8341,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 565
+x 635
 y 325
 w 70
 h 20
@@ -8398,7 +8361,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 550
+x 620
 y 195
 w 45
 h 20
@@ -8417,41 +8380,31 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 780
-y 300
-w 50
-h 20
-font "helvetica-medium-r-10.0"
+x 380
+y 35
+w 150
+h 45
+font "helvetica-medium-r-14.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Emergency"
+  "Any changes to this"
+  "page must be saved"
 }
 endObjectProperties
 
-# (Shell Command)
-object shellCmdClass
+# (Rectangle)
+object activeRectangleClass
 beginObjectProperties
 major 4
-minor 2
+minor 0
 release 0
-x 785
-y 320
-w 45
-h 25
-fgColor index 14
-bgColor index 22
-topShadowColor index 66
-botShadowColor index 10
-font "helvetica-medium-r-12.0"
-buttonLabel "STOP"
-numCmds 1
-commandLabel {
-  0 "STOP"
-}
-command {
-  0 "./emergency-stop.sh $(MOTOR)"
-}
+x 360
+y 35
+w 165
+h 80
+lineColor index 14
+fillColor index 34
 endObjectProperties
 
