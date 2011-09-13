@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2794
-y 411
+x 2808
+y 376
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -19,7 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
-title "1 Motor GUI $(DESC)"
+title "IMS Motor Control"
 showGrid
 snapToGrid
 gridSize 8
@@ -61,7 +61,7 @@ font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 56
 value {
-  "   1 Motor GUI for $(DESC)"
+  "   IMS Motor Control"
 }
 endObjectProperties
 
@@ -2918,7 +2918,7 @@ major 4
 minor 2
 release 0
 x 424
-y 64
+y 70
 w 80
 h 12
 controlPv "$(M1):Update.SCAN"

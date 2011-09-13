@@ -41,11 +41,4 @@ pathmunge $EPICS_SITE_TOP/base/current/bin/$EPICS_HOST_ARCH after
 pathmunge $EPICS_SITE_TOP/extensions/current/bin/$EPICS_HOST_ARCH after
 unset pathmunge
 
-echo -n "Motor PV: "
-read -e MPV
-echo -n "IOC PV: "
-read -e IPV
-echo -n "Description: "
-read -e DESC
-
-edm -x -eolc -m "M1=$MPV,IOC=$IPV,DESC=$DESC" /reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/single-motor-gui.edl &
+edm -x -eolc -m "M1=$1" /reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/single-motor-gui.edl &
