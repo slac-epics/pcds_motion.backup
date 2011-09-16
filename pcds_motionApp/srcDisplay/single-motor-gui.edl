@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2698
-y 456
+x 2727
+y 202
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -1453,7 +1453,7 @@ major 4
 minor 0
 release 0
 x 168
-y 280
+y 288
 w 55
 h 20
 fgColor index 14
@@ -1475,7 +1475,7 @@ major 4
 minor 0
 release 0
 x 168
-y 256
+y 264
 w 55
 h 20
 fgColor index 14
@@ -2121,16 +2121,16 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 88
+x 48
 y 288
-w 80
-h 20
+w 120
+h 24
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Setup I/O (S2)"
+  "CCW Limit Switch (S2)"
 }
 endObjectProperties
 
@@ -2230,16 +2230,16 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 88
+x 56
 y 264
-w 80
-h 20
+w 112
+h 24
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Setup I/O (S1)"
+  "CW Limit Switch (S1)"
 }
 endObjectProperties
 
@@ -2822,12 +2822,13 @@ major 4
 minor 2
 release 0
 x 424
-y 70
-w 80
+y 72
+w 64
 h 12
 controlPv "$(M1):Update.SCAN"
 format "decimal"
 font "helvetica-medium-r-10.0"
+fontAlign "center"
 fgColor index 14
 bgColor index 51
 editable
