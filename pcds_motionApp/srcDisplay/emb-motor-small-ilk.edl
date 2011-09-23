@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 188
-y 32
+x 1945
+y 2400
 w 408
 h 328
 font "helvetica-medium-r-18.0"
@@ -878,13 +878,13 @@ buttonLabel "CNTRL"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motorscreens/motor.edl"
+  0 "pcds_motionScreens/single-motor-gui.edl"
 }
 setPosition {
   0 "button"
 }
 symbols {
-  0 "MOTOR=$(MOTOR)"
+  0 "M1=$(MOTOR)"
 }
 endObjectProperties
 
