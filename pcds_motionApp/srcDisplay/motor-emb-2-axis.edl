@@ -1,0 +1,188 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1972
+y 2359
+w 469
+h 427
+font "helvetica-medium-r-14.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+title "$(TITLE)"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 36
+w 456
+h 368
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 2
+w 453
+h 26
+lineColor index 55
+fill
+fillColor index 55
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 16
+y 8
+w 242
+h 16
+font "helvetica-bold-r-14.0"
+fgColor index 14
+bgColor index 54
+useDisplayBg
+value {
+  "$(TITLE)"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 257
+y 39
+w 0
+h 0
+lineColor index 14
+fillColor index 10
+numPoints 3
+xPoints {
+  0 257
+  1 257
+  2 257
+}
+yPoints {
+  0 39
+  1 39
+  2 39
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 405
+y 7
+w 47
+h 16
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Home"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "SXRHome"
+}
+setPosition {
+  0 "parentWindow"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 48
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-motor-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M1)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 166
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-motor-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M2)"
+}
+noScroll
+endObjectProperties
+
