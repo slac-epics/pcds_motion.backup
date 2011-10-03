@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2727
-y 202
+x 2657
+y 460
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -1239,9 +1239,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 824
+x 840
 y 280
-w 80
+w 64
 h 32
 fgColor index 14
 onColor index 37
@@ -1250,8 +1250,8 @@ inconsistentColor index 5
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(M1):SET_ZERO"
-onLabel "Set ZERO Pos"
-offLabel "Set ZERO Pos"
+onLabel "ZERO Pos"
+offLabel "ZERO Pos"
 labelType "literal"
 buttonType "push"
 3d
@@ -2628,14 +2628,14 @@ minor 1
 release 0
 x 664
 y 288
-w 80
+w 40
 h 24
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Disable Control"
+  "Control"
 }
 endObjectProperties
 
@@ -2660,31 +2660,6 @@ visMax "2"
 value {
   "DISABLED"
 }
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 744
-y 288
-w 56
-h 24
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(M1).DISP"
-pressValue "1"
-releaseValue "0"
-onLabel "Enable"
-offLabel "Disable"
-toggle
-3d
-font "helvetica-medium-r-10.0"
 endObjectProperties
 
 # (Static Text)
@@ -2857,6 +2832,73 @@ bgColor index 0
 useDisplayBg
 value {
   "Update:"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 712
+y 288
+w 48
+h 24
+fgColor index 14
+bgColor index 51
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+buttonLabel "Enable"
+numCmds 1
+command {
+  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionApp/srcDisplay/enable.sh $(M1)"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 768
+y 288
+w 48
+h 24
+fgColor index 14
+bgColor index 51
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+buttonLabel "Disable"
+numCmds 1
+command {
+  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionApp/srcDisplay/disable.sh $(M1)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 408
+y 112
+w 72
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 1
+bgColor index 0
+useDisplayBg
+visPv "$(M1).DISP"
+visMin "0"
+visMax "1"
+value {
+  "ENABLED"
 }
 endObjectProperties
 
