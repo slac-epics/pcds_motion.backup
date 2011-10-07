@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2359
-y 428
+x 195
+y 400
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -1344,7 +1344,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "./motor_setup.edl"
+  0 "motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
@@ -1388,7 +1388,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "./motor_mcode.edl"
+  0 "motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
@@ -2722,7 +2722,7 @@ font "helvetica-medium-r-10.0"
 buttonLabel "STOP"
 numCmds 1
 command {
-  0 "./emergency-stop.sh $(M1)"
+  0 "emergency-stop.sh $(M1)"
 }
 endObjectProperties
 
@@ -2853,7 +2853,7 @@ font "helvetica-medium-r-10.0"
 buttonLabel "Enable"
 numCmds 1
 command {
-  0 "./enable.sh $(M1)"
+  0 "enable.sh $(M1)"
 }
 endObjectProperties
 
@@ -2875,7 +2875,7 @@ font "helvetica-medium-r-10.0"
 buttonLabel "Disable"
 numCmds 1
 command {
-  0 "./disable.sh $(M1)"
+  0 "disable.sh $(M1)"
 }
 endObjectProperties
 
