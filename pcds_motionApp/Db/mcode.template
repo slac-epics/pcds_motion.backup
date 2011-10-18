@@ -728,6 +728,13 @@ record(stringin, "$(cont):P") {
   field(SCAN, "Passive")
 }
 
+record(stringin, "$(cont):P1") {
+  field(DESC, "Autosave Position")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_P1 M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
 record(stringout, "$(cont):SET_P") {
   field(DESC, "Set Position")
   field(DTYP, "stream")

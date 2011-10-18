@@ -278,3 +278,6 @@ MOV_SL       { out "1SL %s";                        wait 25; }
 # Power up flag
 GET_PU       { out "1PR PU";        in "%s";        wait 25;  	@init { out "1PR PU"; 	in "%s"; } }
 SET_PU       { out "1PU %s";                        wait 25; }
+
+# Autosave position
+GET_P1       { out "1PR P1";        in "%s";        wait 25; }
