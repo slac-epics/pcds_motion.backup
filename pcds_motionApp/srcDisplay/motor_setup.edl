@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2702
-y 239
+x 2752
+y 138
 w 430
 h 611
 font "helvetica-medium-r-18.0"
@@ -1826,38 +1826,6 @@ font "helvetica-medium-r-10.0"
 orientation "horizontal"
 endObjectProperties
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 345
-y 580
-w 40
-h 20
-fgColor index 0
-bgColor index 17
-topShadowColor index 2
-botShadowColor index 12
-font "helvetica-medium-r-10.0"
-buttonLabel "Debug"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "motorscreens/motorx_all.edl"
-}
-closeAction {
-  0 1
-}
-symbols {
-  0 "M=$(MOTOR),P=$(MOTOR).DESC"
-}
-closeDisplay {
-  0 1
-}
-endObjectProperties
-
 # (Exit Button)
 object activeExitButtonClass
 beginObjectProperties
@@ -1927,7 +1895,7 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 290
+x 330
 y 575
 w 48
 h 24
@@ -1940,7 +1908,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "motor_mcode.edl"
 }
 endObjectProperties
 
@@ -2066,7 +2034,7 @@ release 0
 x 330
 y 265
 w 30
-h 25
+h 20
 fgColor index 14
 onColor index 3
 offColor index 3

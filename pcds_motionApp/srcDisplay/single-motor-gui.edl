@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 195
-y 400
+x 2371
+y 775
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -393,7 +393,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 744
+x 752
 y 232
 w 64
 h 32
@@ -1233,32 +1233,6 @@ endGroup
 
 endObjectProperties
 
-# (Button)
-object activeButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 840
-y 280
-w 64
-h 32
-fgColor index 14
-onColor index 37
-offColor index 37
-inconsistentColor index 5
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(M1):SET_ZERO"
-onLabel "ZERO Pos"
-offLabel "ZERO Pos"
-labelType "literal"
-buttonType "push"
-3d
-font "helvetica-bold-r-10.0"
-objType "controls"
-endObjectProperties
-
 # (Group)
 object activeGroupClass
 beginObjectProperties
@@ -1332,8 +1306,8 @@ major 4
 minor 2
 release 0
 x 664
-y 248
-w 48
+y 256
+w 50
 h 24
 fgColor index 14
 bgColor index 3
@@ -1376,14 +1350,14 @@ major 4
 minor 2
 release 0
 x 664
-y 216
-w 48
+y 224
+w 50
 h 24
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "helvetica-medium-r-10.0"
+font "helvetica-bold-r-10.0"
 buttonLabel "MCODE"
 numPvs 4
 numDsps 1
@@ -1781,11 +1755,11 @@ release 0
 x 168
 y 144
 w 32
-h 24
+h 16
 controlPv "$(M1):LM"
-fgColor index 19
+fgColor index 15
 fgAlarm
-bgColor index 5
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -1915,9 +1889,9 @@ y 112
 w 30
 h 25
 controlPv "$(M1):EE"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 2
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -1960,9 +1934,9 @@ y 216
 w 30
 h 20
 controlPv "$(M1):SM"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 2
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -2088,9 +2062,9 @@ y 168
 w 30
 h 20
 controlPv "$(M1):RC"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 2
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -2107,9 +2081,9 @@ y 192
 w 30
 h 20
 controlPv "$(M1):HC"
-fgColor index 19
+fgColor index 15
 fgAlarm
-bgColor index 5
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -2145,9 +2119,9 @@ y 288
 w 55
 h 20
 controlPv "$(M1):S2"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 2
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -2216,9 +2190,9 @@ y 264
 w 55
 h 20
 controlPv "$(M1):S1"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 2
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -2626,25 +2600,6 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 664
-y 288
-w 40
-h 24
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Control"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
 x 408
 y 112
 w 72
@@ -2685,47 +2640,6 @@ value {
 }
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 840
-y 224
-w 56
-h 24
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Emergency"
-}
-endObjectProperties
-
-# (Shell Command)
-object shellCmdClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 840
-y 248
-w 48
-h 24
-fgColor index 14
-bgColor index 21
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-10.0"
-buttonLabel "STOP"
-numCmds 1
-command {
-  0 "emergency-stop.sh $(M1)"
-}
-endObjectProperties
-
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
@@ -2763,9 +2677,9 @@ y 240
 w 30
 h 20
 controlPv "$(M1):NE"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 2
+bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
@@ -2835,50 +2749,6 @@ value {
 }
 endObjectProperties
 
-# (Shell Command)
-object shellCmdClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 712
-y 288
-w 48
-h 24
-fgColor index 14
-bgColor index 51
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-10.0"
-buttonLabel "Enable"
-numCmds 1
-command {
-  0 "enable.sh $(M1)"
-}
-endObjectProperties
-
-# (Shell Command)
-object shellCmdClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 768
-y 288
-w 48
-h 24
-fgColor index 14
-bgColor index 51
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-10.0"
-buttonLabel "Disable"
-numCmds 1
-command {
-  0 "disable.sh $(M1)"
-}
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -2900,5 +2770,169 @@ visMax "1"
 value {
   "ENABLED"
 }
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 664
+y 288
+w 50
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-10.0"
+buttonLabel "HOMING"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "motor_homing.edl"
+}
+symbols {
+  0 "MOTOR=$(M1)"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 848
+y 224
+w 56
+h 48
+
+beginGroup
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 848
+y 248
+w 48
+h 24
+fgColor index 14
+bgColor index 21
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+buttonLabel "STOP"
+numCmds 1
+command {
+  0 "emergency-stop.sh $(M1)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 848
+y 224
+w 56
+h 24
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Emergency"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 752
+y 272
+w 104
+h 40
+
+beginGroup
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 752
+y 288
+w 48
+h 24
+fgColor index 14
+bgColor index 51
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+buttonLabel "Enable"
+numCmds 1
+command {
+  0 "enable.sh $(M1)"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 808
+y 288
+w 48
+h 24
+fgColor index 14
+bgColor index 51
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+buttonLabel "Disable"
+numCmds 1
+command {
+  0 "disable.sh $(M1)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 784
+y 272
+w 40
+h 16
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Control"
+}
+endObjectProperties
+
+endGroup
+
 endObjectProperties
 

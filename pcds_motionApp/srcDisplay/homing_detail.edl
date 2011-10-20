@@ -1,0 +1,36 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 2362
+y 46
+w 1000
+h 1100
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+endScreenProperties
+
+# (PNG Image)
+object activePngClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 3
+w 1001
+h 1097
+file "ims_homing.png"
+endObjectProperties
+
