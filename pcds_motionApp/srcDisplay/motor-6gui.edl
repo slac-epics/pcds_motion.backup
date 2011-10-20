@@ -1804,7 +1804,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
@@ -3033,7 +3033,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M2)"
@@ -4262,7 +4262,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M3)"
@@ -5529,7 +5529,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M4)"
@@ -6758,7 +6758,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M5)"
@@ -7987,7 +7987,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M6)"
@@ -8050,7 +8050,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
@@ -8076,7 +8076,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M2)"
@@ -8102,7 +8102,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M3)"
@@ -8128,7 +8128,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M4)"
@@ -8154,7 +8154,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M5)"
@@ -8180,7 +8180,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M6)"

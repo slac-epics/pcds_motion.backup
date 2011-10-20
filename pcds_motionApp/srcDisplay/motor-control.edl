@@ -1322,7 +1322,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(MOTOR)"
@@ -1366,7 +1366,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "/reg/neh/home/jsludvik/svn/trunk/modules/pcds_motion/current/pcds_motionScreens/motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(MOTOR)"
