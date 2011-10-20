@@ -1553,7 +1553,7 @@ buttonLabel "DETAILS"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "homing_detail.edl"
+  0 "pcds_motionScreens/homing_detail.edl"
 }
 endObjectProperties
 

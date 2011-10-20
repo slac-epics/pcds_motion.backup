@@ -16,4 +16,4 @@ export EDMWEBBROWSER=mozilla
 export PATH=$PATH:$EPICS_SITE_TOP/extensions/current/bin/$EPICS_HOST_ARCH
 export EDMDATAFILES=".:.."
 
-edm -x -eolc -m "LLL=SXR,MOTOR=SXR:EXP:MMS:08,V1=CXI:SC1:VGC:02,V2=CXI:SC2:VGC:02" pcds_motionScreens/test-interlocks.edl &
+edm -x -eolc -m "LLL=SXR,MOTOR=SXR:EXP:MMS:08,V1=CXI:SC1:VGC:02,V2=CXI:SC2:VGC:02" pcds_motionScreens/test-interlocks.edl pcds_motionScreens/single-motor-gui.edl &

@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1946
-y 2423
+x 793
+y 197
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -1311,7 +1311,7 @@ minor 2
 release 0
 x 664
 y 248
-w 48
+w 50
 h 24
 fgColor index 14
 bgColor index 3
@@ -1355,13 +1355,13 @@ minor 2
 release 0
 x 664
 y 216
-w 48
+w 50
 h 24
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "helvetica-medium-r-10.0"
+font "helvetica-bold-r-10.0"
 buttonLabel "MCODE"
 numPvs 4
 numDsps 1
@@ -2427,10 +2427,10 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 664
-y 288
-w 80
-h 24
+x 732
+y 276
+w 72
+h 12
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
@@ -2438,6 +2438,7 @@ useDisplayBg
 value {
   "Disable Control"
 }
+autoSize
 endObjectProperties
 
 # (Static Text)
@@ -2665,5 +2666,31 @@ smartRefresh
 useHexPrefix
 newPos
 objType "controls"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 664
+y 284
+w 50
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-10.0"
+buttonLabel "HOMING"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/motor_homing.edl"
+}
+symbols {
+  0 "MOTOR=$(MOTOR)"
+}
 endObjectProperties
 

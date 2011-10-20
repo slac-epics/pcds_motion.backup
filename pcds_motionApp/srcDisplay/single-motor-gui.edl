@@ -1318,7 +1318,7 @@ buttonLabel "SETUP"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motor_setup.edl"
+  0 "pcds_motionScreens/motor_setup.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
@@ -1362,7 +1362,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
@@ -2791,7 +2791,7 @@ buttonLabel "HOMING"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motor_homing.edl"
+  0 "pcds_motionScreens/motor_homing.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"

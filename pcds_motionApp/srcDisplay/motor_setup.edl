@@ -1908,7 +1908,7 @@ buttonLabel "MCODE"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motor_mcode.edl"
+  0 "pcds_motionScreens/motor_mcode.edl"
 }
 endObjectProperties
 

@@ -3486,7 +3486,7 @@ buttonLabel "Detailed"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motor_mcode_detailed.edl"
+  0 "pcds_motionScreens/motor_mcode_detailed.edl"
 }
 endObjectProperties
 
