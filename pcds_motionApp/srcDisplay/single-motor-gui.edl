@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2371
-y 775
+x 2388
+y 365
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -2791,25 +2791,12 @@ buttonLabel "HOMING"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "pcds_motionScreens/motor_homing.edl"
+  0 "pcds_motionScreens/motor_homing_index.edl"
 }
 symbols {
   0 "MOTOR=$(M1)"
 }
 endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 848
-y 224
-w 56
-h 48
-
-beginGroup
 
 # (Shell Command)
 object shellCmdClass
@@ -2829,7 +2816,7 @@ font "helvetica-medium-r-10.0"
 buttonLabel "STOP"
 numCmds 1
 command {
-  0 "emergency-stop.sh $(M1)"
+  0 "pcds_motionScreens/emergency-stop.sh $(M1)"
 }
 endObjectProperties
 
@@ -2852,23 +2839,6 @@ value {
 }
 endObjectProperties
 
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 752
-y 272
-w 104
-h 40
-
-beginGroup
-
 # (Shell Command)
 object shellCmdClass
 beginObjectProperties
@@ -2887,7 +2857,7 @@ font "helvetica-medium-r-10.0"
 buttonLabel "Enable"
 numCmds 1
 command {
-  0 "enable.sh $(M1)"
+  0 "pcds_motionScreens/enable.sh $(M1)"
 }
 endObjectProperties
 
@@ -2909,7 +2879,7 @@ font "helvetica-medium-r-10.0"
 buttonLabel "Disable"
 numCmds 1
 command {
-  0 "disable.sh $(M1)"
+  0 "pcds_motionScreens/disable.sh $(M1)"
 }
 endObjectProperties
 
@@ -2930,9 +2900,5 @@ useDisplayBg
 value {
   "Control"
 }
-endObjectProperties
-
-endGroup
-
 endObjectProperties
 
