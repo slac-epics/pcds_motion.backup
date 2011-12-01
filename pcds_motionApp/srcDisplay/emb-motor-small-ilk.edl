@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1940
-y 2376
+x 1930
+y 2328
 w 408
 h 328
 font "helvetica-medium-r-18.0"
@@ -25,6 +25,20 @@ snapToGrid
 gridSize 4
 disableScroll
 endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 399
+h 99
+lineColor index 14
+fillColor index 0
+endObjectProperties
 
 # (Lines)
 object activeLineClass
@@ -101,7 +115,7 @@ x 4
 y 4
 w 140
 h 20
-font "helvetica-bold-r-14.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -127,20 +141,6 @@ useDisplayBg
 value {
   "RBV"
 }
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 0
-w 399
-h 99
-lineColor index 14
-fillColor index 0
 endObjectProperties
 
 # (Related Display)

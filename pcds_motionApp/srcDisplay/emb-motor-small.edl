@@ -26,6 +26,20 @@ gridSize 4
 disableScroll
 endScreenProperties
 
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 399
+h 99
+lineColor index 14
+fillColor index 0
+endObjectProperties
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -368,7 +382,7 @@ x 4
 y 4
 w 140
 h 20
-font "helvetica-bold-r-14.0"
+font "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
@@ -624,20 +638,6 @@ useDisplayBg
 value {
   "TGT"
 }
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 0
-w 399
-h 99
-lineColor index 14
-fillColor index 0
 endObjectProperties
 
 # (Text Monitor)

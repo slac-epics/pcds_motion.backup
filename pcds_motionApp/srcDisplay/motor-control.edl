@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 793
-y 197
+x 2292
+y 2317
 w 948
 h 365
 font "helvetica-medium-r-10.0"
@@ -2691,6 +2691,60 @@ displayFileName {
 }
 symbols {
   0 "MOTOR=$(MOTOR)"
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 900
+y 4
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-10.0"
+3d
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 832
+y 4
+w 40
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "IOC"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "iocscreens/ioc_soft.edl"
+}
+menuLabel {
+  0 "IOC"
+}
+setPosition {
+  0 "parentWindow"
+}
+symbols {
+  0 "ioc=$(IOC)"
+}
+replaceSymbols {
+  0 1
 }
 endObjectProperties
 
