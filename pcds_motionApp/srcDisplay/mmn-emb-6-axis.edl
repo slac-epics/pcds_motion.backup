@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2900
-y 1848
-w 470
-h 320
+x 1446
+y 1132
+w 469
+h 782
 font "helvetica-medium-r-14.0"
 ctlFont "helvetica-medium-r-18.0"
 btnFont "helvetica-medium-r-18.0"
@@ -32,9 +32,9 @@ major 4
 minor 0
 release 0
 x 4
-y 36
+y 44
 w 456
-h 256
+h 728
 lineColor index 3
 fill
 fillColor index 3
@@ -46,10 +46,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 5
-y 2
-w 453
-h 26
+x 0
+y 0
+w 460
+h 32
 lineColor index 55
 fill
 fillColor index 55
@@ -62,9 +62,9 @@ major 4
 minor 1
 release 0
 x 16
-y 8
-w 242
-h 16
+y 4
+w 244
+h 24
 font "helvetica-bold-r-14.0"
 fgColor index 14
 bgColor index 54
@@ -80,81 +80,23 @@ beginObjectProperties
 major 4
 minor 0
 release 1
-x 257
-y 39
+x 256
+y 48
 w 0
 h 0
 lineColor index 14
 fillColor index 10
 numPoints 3
 xPoints {
-  0 257
-  1 257
-  2 257
+  0 256
+  1 256
+  2 256
 }
 yPoints {
-  0 39
-  1 39
-  2 39
+  0 48
+  1 48
+  2 48
 }
-endObjectProperties
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 20
-y 48
-w 400
-h 100
-fgColor index 14
-bgColor index 0
-topShadowColor index 0
-botShadowColor index 14
-displaySource "menu"
-filePv "LOC\\\\three-axis-motors=0"
-numDsps 1
-displayFileName {
-  0 "pcds_motionScreens/emb-motor-small.edl"
-}
-menuLabel {
-  0 "Motor"
-}
-symbols {
-  0 "MOTOR=$(M1)"
-}
-noScroll
-endObjectProperties
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 20
-y 166
-w 400
-h 100
-fgColor index 14
-bgColor index 0
-topShadowColor index 0
-botShadowColor index 14
-displaySource "menu"
-filePv "LOC\\\\three-axis-motors=0"
-numDsps 1
-displayFileName {
-  0 "pcds_motionScreens/emb-motor-small.edl"
-}
-menuLabel {
-  0 "Motor"
-}
-symbols {
-  0 "MOTOR=$(M2)"
-}
-noScroll
 endObjectProperties
 
 # (Related Display)
@@ -163,10 +105,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 348
+x 344
 y 4
 w 48
-h 20
+h 24
 fgColor index 14
 bgColor index 4
 topShadowColor index 1
@@ -186,16 +128,190 @@ replaceSymbols {
 }
 endObjectProperties
 
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 56
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M1)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 176
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M2)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 292
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M3)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 416
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M4)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 540
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M5)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 656
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M6)"
+}
+noScroll
+endObjectProperties
+
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 2
 release 0
-x 288
+x 284
 y 4
 w 48
-h 20
+h 24
 fgColor index 14
 bgColor index 4
 topShadowColor index 1
@@ -227,10 +343,10 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 404
+x 400
 y 4
 w 48
-h 20
+h 24
 fgColor index 14
 bgColor index 4
 topShadowColor index 1

@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2900
-y 1848
+x 1935
+y 1152
 w 470
-h 320
+h 670
 font "helvetica-medium-r-14.0"
 ctlFont "helvetica-medium-r-18.0"
 btnFont "helvetica-medium-r-18.0"
@@ -34,7 +34,7 @@ release 0
 x 4
 y 36
 w 456
-h 256
+h 612
 lineColor index 3
 fill
 fillColor index 3
@@ -117,7 +117,7 @@ displaySource "menu"
 filePv "LOC\\\\three-axis-motors=0"
 numDsps 1
 displayFileName {
-  0 "pcds_motionScreens/emb-motor-small.edl"
+  0 "pcds_motionScreens/emb-mmn-small.edl"
 }
 menuLabel {
   0 "Motor"
@@ -146,13 +146,100 @@ displaySource "menu"
 filePv "LOC\\\\three-axis-motors=0"
 numDsps 1
 displayFileName {
-  0 "pcds_motionScreens/emb-motor-small.edl"
+  0 "pcds_motionScreens/emb-mmn-small.edl"
 }
 menuLabel {
   0 "Motor"
 }
 symbols {
   0 "MOTOR=$(M2)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 284
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M3)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 408
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M4)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 532
+w 400
+h 100
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+displaySource "menu"
+filePv "LOC\\\\three-axis-motors=0"
+numDsps 1
+displayFileName {
+  0 "pcds_motionScreens/emb-mmn-small.edl"
+}
+menuLabel {
+  0 "Motor"
+}
+symbols {
+  0 "MOTOR=$(M5)"
 }
 noScroll
 endObjectProperties

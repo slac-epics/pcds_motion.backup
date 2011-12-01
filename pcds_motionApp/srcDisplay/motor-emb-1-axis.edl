@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1391
-y 155
+x 1935
+y 1152
 w 466
 h 266
 font "helvetica-medium-r-14.0"
@@ -98,35 +98,6 @@ yPoints {
 }
 endObjectProperties
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 405
-y 7
-w 47
-h 16
-fgColor index 14
-bgColor index 4
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-buttonLabel "Home"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "SXRHome"
-}
-setPosition {
-  0 "parentWindow"
-}
-replaceSymbols {
-  0 1
-}
-endObjectProperties
-
 # (Embedded Window)
 object activePipClass
 beginObjectProperties
@@ -151,8 +122,91 @@ menuLabel {
   0 "Load Lock"
 }
 symbols {
-  0 "MOTOR=SXR:EXP:MMS:01"
+  0 "MOTOR=$(M1)"
 }
 noScroll
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 348
+y 4
+w 48
+h 20
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Home"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "$(HOME)"
+}
+setPosition {
+  0 "parentWindow"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 288
+y 4
+w 48
+h 20
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "IOC"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "iocscreens/ioc_soft.edl"
+}
+menuLabel {
+  0 "IOC"
+}
+setPosition {
+  0 "parentWindow"
+}
+symbols {
+  0 "ioc=$(IOC)"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 404
+y 4
+w 48
+h 20
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-12.0"
+3d
 endObjectProperties
 
