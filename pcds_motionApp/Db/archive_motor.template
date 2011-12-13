@@ -1,5 +1,4 @@
 # Motor archive PV list
-$(MOTOR).VAL	1
 $(MOTOR).ATHM	1		monitor
 $(MOTOR).BDST	10
 $(MOTOR).BVEL	10
@@ -34,7 +33,7 @@ $(MOTOR).SYNC	1		monitor
 $(MOTOR).TDIR	1
 $(MOTOR).TWV	10
 $(MOTOR).UREV	1		monitor
+$(MOTOR).VAL	1
 $(MOTOR).VBAS	10
 $(MOTOR).VELO	10
 $(MOTOR).VMAX	10
-

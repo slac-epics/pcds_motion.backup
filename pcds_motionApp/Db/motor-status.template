@@ -75,45 +75,45 @@ record(stringout, "$(MOT):REV_MEANS") {
 
 record(bo, "$(MOT):SET_ZERO") {
   field(DESC, "Write 1 to set position.")
-  field(FLNK, "$(MOT):SET_ZERO_1")
+  field(FLNK, "$(MOT):SET_ZERO_1 PP")
 }
 
 record(fanout, "$(MOT):SET_ZERO_1") {
-  field(LNK1, "$(MOT):SET_ZERO_2")
-  field(LNK2, "$(MOT):SET_ZERO_3")
-  field(LNK3, "$(MOT):SET_ZERO_4")
-  field(LNK4, "$(MOT):SET_ZERO_5")
-  field(LNK5, "$(MOT):SET_ZERO_6")
+  field(LNK1, "$(MOT):SET_ZERO_2 PP")
+  field(LNK2, "$(MOT):SET_ZERO_3 PP")
+  field(LNK3, "$(MOT):SET_ZERO_4 PP")
+  field(LNK4, "$(MOT):SET_ZERO_5 PP")
+  field(LNK5, "$(MOT):SET_ZERO_6 PP")
 }
 
 record(longout, "$(MOT):SET_ZERO_2") {
   field(OUT, "$(MOT).SSET")
   field(VAL, "1")
-  field(FLNK, "$(MOT)")
+  field(FLNK, "$(MOT) PP")
 }
 
 record(longout, "$(MOT):SET_ZERO_3") {
   field(OUT, "$(MOT).RVAL")
   field(VAL, "0")
-  field(FLNK, "$(MOT)")
+  field(FLNK, "$(MOT) PP")
 }
 
 record(longout, "$(MOT):SET_ZERO_4") {
   field(OUT, "$(MOT).OFF")
   field(VAL, "0")
-  field(FLNK, "$(MOT)")
+  field(FLNK, "$(MOT) PP")
 }
 
 record(longout, "$(MOT):SET_ZERO_5") {
   field(OUT, "$(MOT).SUSE")
   field(VAL, "1")
-  field(FLNK, "$(MOT)")
+  field(FLNK, "$(MOT) PP")
 }
 
 record(longout, "$(MOT):SET_ZERO_6") {
   field(OUT, "$(MOT).VAL")
   field(VAL, "0")
-  field(FLNK, "$(MOT)")
+  field(FLNK, "$(MOT) PP")
 }
 
 record(bi, "$(MOT):SET_HOMING_MODE") {
