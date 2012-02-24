@@ -1321,13 +1321,13 @@ record(stringout, "$(cont):SL") {
   field(SCAN, "Passive")
 }
 
-record( dfanout, "$(cont):EMER_STOP" )
+record(dfanout, "$(cont):EMER_STOP" )
 {
-	field( DESC, "Emergency Stop" )
-	field( DOL,  1 )
-	field( OMSL, "closed_loop" )
-	field( OUTA, "$(cont).STOP" )
-	field( OUTB, "$(cont):STOP" )
+  field( DESC, "Emergency Stop" )
+  field( DOL,  "1" )
+  field( OMSL, "closed_loop" )
+  field( OUTA, "$(cont).STOP" )
+  field( OUTB, "$(cont):STOP" )
 }
 
 record(stringout, "$(cont):STOP") {
