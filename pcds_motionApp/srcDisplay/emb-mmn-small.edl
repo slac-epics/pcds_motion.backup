@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 323
-y 59
+x 1023
+y 530
 w 408
 h 328
 font "helvetica-medium-r-18.0"
@@ -25,6 +25,20 @@ snapToGrid
 gridSize 4
 disableScroll
 endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 399
+h 99
+lineColor index 14
+fillColor index 0
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -115,6 +129,23 @@ yPoints {
 }
 endObjectProperties
 
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 372
+y 8
+w 17
+h 16
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+alarmPv "$(MOTOR):STATUS"
+endObjectProperties
+
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
@@ -192,44 +223,48 @@ visMin "1"
 visMax "2"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 1
+minor 2
 release 0
 x 292
 y 28
 w 40
 h 20
+controlPv "$(MOTOR):REV_MEANS"
 font "helvetica-bold-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
 useDisplayBg
-value {
-  "-"
-}
+nullColor index 18
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 1
+minor 2
 release 0
 x 332
 y 28
 w 40
 h 20
+controlPv "$(MOTOR):FW_MEANS"
 font "helvetica-bold-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
 useDisplayBg
-value {
-  "+"
-}
+nullColor index 18
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 
 # (Related Display)
@@ -257,7 +292,13 @@ setPosition {
   0 "button"
 }
 symbols {
-  0 "MOTOR=$(MOTOR)"
+  0 "MOTOR=$(MOTOR),IOC=$(IOC)"
+}
+replaceSymbols {
+  0 1
+}
+propagateMacros {
+  0 0
 }
 endObjectProperties
 
@@ -385,24 +426,26 @@ useEnumNumeric
 font "helvetica-bold-r-10.0"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 1
+minor 2
 release 0
 x 112
 y 44
 w 40
 h 20
+controlPv "$(MOTOR):REV_MEANS"
 font "helvetica-bold-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
 useDisplayBg
-value {
-  "-"
-}
+nullColor index 18
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 
 endGroup
@@ -444,24 +487,26 @@ useEnumNumeric
 font "helvetica-bold-r-10.0"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 1
+minor 2
 release 0
 x 236
 y 44
 w 40
 h 20
+controlPv "$(MOTOR):FW_MEANS"
 font "helvetica-bold-r-10.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 3
 useDisplayBg
-value {
-  "+"
-}
+nullColor index 18
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 
 endGroup
@@ -593,20 +638,6 @@ useDisplayBg
 value {
   "TGT"
 }
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 0
-w 399
-h 99
-lineColor index 14
-fillColor index 0
 endObjectProperties
 
 # (Text Monitor)
