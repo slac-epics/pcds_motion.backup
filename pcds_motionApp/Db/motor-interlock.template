@@ -114,13 +114,13 @@ record( bo, "$(ILK):FaultDetected" )
 # record are 0=Normal, 1=Disabled
 record( calcout, "$(ILK):CalcSignal" )
 {
-	field( INPA,	"$(FAULT_VAL_OK=0)" )
-	field( INPB,	"$(FAULT_VAL_ERR=1)" )
-	field( INPC,	"$(ILK):CalcFault NPP" )
-	field( INPD,	"$(ILK):Override" )
-	field( CALC,	"(C && !D) ? B : A" )
-	field( OUT,		"$(ILK):SignalFault.A PP MS" )
-	field( FLNK,	"$(ILK):MotorDisabled" )
+        field( INPA,    "$(FAULT_VAL_OK=0)" )
+        field( INPB,    "$(FAULT_VAL_ERR=1)" )
+        field( INPC,    "$(ILK):CalcFault NPP" )
+        field( INPD,    "$(ILK):Override" )
+        field( CALC,    "(C && !D) ? B : A" )
+        field( OUT,     "$(ILK):SignalFault.B PP MS" )
+        field( FLNK,    "$(ILK):MotorDisabled" )
 }
 
 record( bo, "$(ILK):MotorDisabled" )
@@ -135,23 +135,26 @@ record( bo, "$(ILK):MotorDisabled" )
 # The SignalFault PV disables or enables the
 # motor by a sequence of writes to the record
 # disable fields.
-# 	DISA:	0=Normal, 1=Disabled
-#	DISP:	0=Normal, 1=Disable CA putField's except to DISP
+#       DISP: 0=Normal, 1=Disable CA putField's except to DISP
+#       SPMG: 0=Stop, 1=Pause, 2=Move, 3=Go
 # This works as follows.   To Disable:
-#	1.	Write 1 to DISA, disables motor
-#	2.	Write 1 to DISP, prevents changes to desired position
-#	3.	Write 1 to DISA, does nothing
+#       1. Write 0 SPMG, stop motor
+#       2. Write 1 to DISP, prevents changes to desired position
+#       3. Write 0 to SPMG, stop motor
 # To Enable:
-#	1.  Write 0 to DISA, does nothing if DISP is set
-#	2.	Write 0 to DISP, allows DISA to be changed
-#	3.	Write 0 to DISA, enables motor
+#       1. Write 3 to SPMG, enable motor
+#       2. Write 0 to DISP, allows DISA to be changed
+#       3. Write 3 to SPMG, enable motor
+# 
+# input B is being set by the CalcSignal record
+#
 record( transform, "$(ILK):SignalFault" )
 {
-	field( DESC,	"Interlock fanout" )
-	field( CLCB,	"a" )
-	field( CLCC,	"a" )
-	field( OUTA,	"$(MOTOR).DISA NPP NMS" )
-	field( OUTB,	"$(MOTOR).DISP NPP NMS" )
-	field( OUTC,	"$(MOTOR).DISA NPP NMS" )
-	field( FLNK,	"$(SIG_FAULT_FLNK=)" )
+ field( DESC, "Interlock fanout" )
+ field( CLCA, "b?0:3" )
+ field( CLCC, "b?0:3" )
+ field( OUTA, "$(MOTOR).SPMG PP NMS" )
+ field( OUTB, "$(MOTOR).DISP PP NMS" )
+ field( OUTC, "$(MOTOR).SPMG PP NMS" )
+ field( FLNK, "$(SIG_FAULT_FLNK=)" )
 }
