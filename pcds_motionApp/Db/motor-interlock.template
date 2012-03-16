@@ -137,24 +137,33 @@ record( bo, "$(ILK):MotorDisabled" )
 # disable fields.
 #       DISP: 0=Normal, 1=Disable CA putField's except to DISP
 #       SPMG: 0=Stop, 1=Pause, 2=Move, 3=Go
+#
+# It is processed when the CalcSignal record writes
+# to input B with the PP (Process Passive record) flag.
+# Write 0 to signal No Fault, and 1 to signal a Fault.
+#
 # This works as follows.   To Disable:
-#       1. Write 0 SPMG, stop motor
+#       1. Write 0 to SPMG, stop motor
 #       2. Write 1 to DISP, prevents changes to desired position
-#       3. Write 0 to SPMG, stop motor
+#       3. Write 0 to SPMG, stop motor (NOOP for CA links as DISP is set)
 # To Enable:
-#       1. Write 3 to SPMG, enable motor
+#       1. Write 3 to SPMG, enable motor (NOOP for CA links as DISP is set)
 #       2. Write 0 to DISP, allows DISA to be changed
 #       3. Write 3 to SPMG, enable motor
-# 
-# input B is being set by the CalcSignal record
+#
+# Note: The 3rd write is needed so this works for both
+# local PV's and Channel Access PV's.  DISP disables
+# calls to dbPutField(), which is how CA sets PV fields.
+# However, links to local PV's use dbPut() which does NOT
+# respect DISP.
 #
 record( transform, "$(ILK):SignalFault" )
 {
  field( DESC, "Interlock fanout" )
  field( CLCA, "b?0:3" )
  field( CLCC, "b?0:3" )
- field( OUTA, "$(MOTOR).SPMG PP NMS" )
- field( OUTB, "$(MOTOR).DISP PP NMS" )
- field( OUTC, "$(MOTOR).SPMG PP NMS" )
+ field( OUTA, "$(MOTOR).SPMG NPP NMS" )
+ field( OUTB, "$(MOTOR).DISP NPP NMS" )
+ field( OUTC, "$(MOTOR).SPMG NPP NMS" )
  field( FLNK, "$(SIG_FAULT_FLNK=)" )
 }

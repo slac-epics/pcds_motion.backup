@@ -3,13 +3,13 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2292
-y 2317
+x 1083
+y 239
 w 948
 h 365
-font "helvetica-medium-r-10.0"
-ctlFont "helvetica-medium-r-10.0"
-btnFont "helvetica-medium-r-10.0"
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-14.0"
 fgColor index 14
 bgColor index 7
 textColor index 14
@@ -74,47 +74,6 @@ w 560
 h 288
 lineColor index 14
 fillColor index 3
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 448
-y 48
-w 112
-h 16
-controlPv "$(MOTOR).DESC"
-font "helvetica-bold-r-14.0"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-autoHeight
-limitsFromDb
-nullColor index 18
-useHexPrefix
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 720
-y 48
-w 200
-h 16
-font "helvetica-bold-r-12.0"
-fgColor index 14
-bgColor index 7
-value {
-  "Motor $(MOTOR)"
-}
 endObjectProperties
 
 # (Rectangle)
@@ -2745,6 +2704,49 @@ symbols {
 }
 replaceSymbols {
   0 1
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 448
+y 4
+w 192
+h 20
+controlPv "$(MOTOR).DESC"
+font "helvetica-medium-r-12.0"
+fgColor index 25
+bgColor index 5
+editable
+limitsFromDb
+nullColor index 40
+smartRefresh
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 224
+y 4
+w 200
+h 20
+font "helvetica-bold-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 7
+useDisplayBg
+value {
+  "Motor $(MOTOR)"
 }
 endObjectProperties
 

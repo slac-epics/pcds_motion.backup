@@ -41,4 +41,4 @@ pathmunge $EPICS_SITE_TOP/base/current/bin/$EPICS_HOST_ARCH after
 pathmunge $EPICS_SITE_TOP/extensions/current/bin/$EPICS_HOST_ARCH after
 unset pathmunge
 
-edm -x -eolc -m "M1=$1" pcds_motionScreens/single-motor-gui.edl &
+edm -x -eolc -m "MOTOR=$1" pcds_motionScreens/motor-control.edl &

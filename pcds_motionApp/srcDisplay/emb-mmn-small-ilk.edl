@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 325
-y 81
+x 301
+y 56
 w 408
 h 328
 font "helvetica-medium-r-18.0"
@@ -518,95 +518,6 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 8
-y 24
-w 84
-h 20
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 8
-y 24
-w 79
-h 20
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 17
-fgAlarm
-bgColor index 0
-useDisplayBg
-visPv "$(MOTOR).MOVN"
-visMin ".05"
-visMax "99.0"
-value {
-  "Moving"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 9
-y 24
-w 79
-h 20
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 82
-fgAlarm
-bgColor index 0
-useDisplayBg
-visPv "$(MOTOR).SPMG"
-visMin "1"
-visMax "2"
-value {
-  "PAUSED"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 8
-y 24
-w 79
-h 20
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-fgColor index 27
-fgAlarm
-bgColor index 0
-useDisplayBg
-visPv "$(MOTOR).DMOV"
-visMin ".05"
-visMax "99.0"
-value {
-  "Stopped"
-}
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
 x 112
 y 24
 w 188
@@ -878,7 +789,7 @@ buttonLabel "CNTRL"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "motorscreens/mmn-motor.edl"
+  0 "pcds_motionScreens/mmn-motor-control.edl"
 }
 setPosition {
   0 "button"
@@ -892,5 +803,159 @@ replaceSymbols {
 propagateMacros {
   0 0
 }
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 24
+w 79
+h 20
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 24
+w 79
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 24
+w 79
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 82
+bgColor index 0
+useDisplayBg
+visPv "$(MOTOR).SPMG"
+visMin "0"
+visMax "1"
+value {
+  "Stopped!"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 24
+w 79
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 15
+bgColor index 0
+useDisplayBg
+visPv "$(MOTOR).MOVN"
+visMin "1"
+visMax "2"
+value {
+  "Moving"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 24
+w 79
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 26
+fgAlarm
+bgColor index 0
+useDisplayBg
+visPv "$(MOTOR).SPMG"
+visMin "1"
+visMax "2"
+value {
+  "Paused"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 24
+w 79
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 26
+fgAlarm
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{A=3&&B=1\}($(MOTOR).SPMG,$(MOTOR).DMOV)"
+visMin "1"
+visMax "2"
+value {
+  "Ready"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(MOTOR).DISP"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 24
+w 79
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 21
+bgColor index 0
+useDisplayBg
+visPv "$(MOTOR).DISP"
+visMin "1"
+visMax "2"
+value {
+  "Disabled!"
+}
+endObjectProperties
+
+endGroup
+
 endObjectProperties
 
