@@ -1,43 +1,34 @@
-VA PU               ` Power-Up flag
-VA p1               ` Remembered position for NVM
-VA f1               ` Save Flag
-
-NE=0                ` Don't treat the next command as move
-p1=P                ` Remember the current position, when starting IOC
-
-PG 1                ` Start editing program 1
-  LB SU             ` Run me at power up
-  PU=1              ` Set the Power-Up flag
-  P=p1              ` Restore the remembered position
-  f1=0              ` Clear Save flag
-
-  LB Pt             ` Function Pt
-    CL zc, Mv=0     ` Call function zc, if not moving
-    CL fa, Mv=1     ` Call function fa, if moving
-    H 100           ` Sleep for 100 ms
-    BR Pt           ` Goto line LB Pt, loop forever
-
-  LB fa             ` Function fa
-    CL fb, f1=0     ` Call function fb to set save flag, if Save flag is clear
-    RT              ` Return
-
-  LB fb             ` Function fb, set Save flag
-    f1=1            ` Set Save flag f1
-    RT              ` Return
-
-  LB zc             ` Function zc, Save position if Save flag is set
-    CL zd, f1=1     ` Call function zd to save position, if Save flag is set
-    RT              ` Return
-
-  LB zd             ` Function zd, Save position
-    p1=P            ` Remember the current position
-    f1=0            ` Clear Save flag
-    RT              ` Return
-
-  E                 ` End of program 1
-  PG                ` Exit from program mode
-
-EX 1                ` Execute program 1
-PU=0                ` Clear Power-Up flag.  This is only done after booting IOC
-S                   ` Save the current state. Again, done only after booting IOC
+VA PU' Power-Up flag
+VA p1' Saved position for NVM
+VA f1' Save Flag
+NE=0' Disable numeric commands
+p1=P' Remember the current position at IOC bootup
+PG 1' Create program 1
+LB SU' Run at power up
+PU=1' Set Power-Up flag
+P=p1' Restore saved position
+f1=0' Clear Save flag
+LB Pt' Function Pt
+CL zc, Mv=0' Call zc, if not moving
+CL fa, Mv=1' Call fa, if moving
+H 100' Sleep for 100 ms
+BR Pt' Goto line LB Pt, loop forever
+LB fa' Function fa
+CL fb, f1=0' Call fb to set save flag, if Save flag is clear
+RT' Return
+LB fb' Function fb, set Save flag
+f1=1' Set Save flag f1
+RT' Return
+LB zc' Function zc, Save position if Save flag set
+CL zd, f1=1' Call zd to save position, if Save flag is set
+RT' Return
+LB zd' Function zd, Save position
+p1=P' Remember the current position
+f1=0' Clear Save flag
+RT' Return
+E' End of program 1
+PG' Exit from program mode
+EX 1' Execute program 1
+PU=0' Clear Power-Up flag. Once after booting IOC
+S' Save the program. Once after booting IOC
 
