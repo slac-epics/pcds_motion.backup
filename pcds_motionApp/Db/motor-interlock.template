@@ -142,14 +142,14 @@ record( bo, "$(ILK):MotorDisabled" )
 # to input B with the PP (Process Passive record) flag.
 # Write 0 to signal No Fault, and 1 to signal a Fault.
 #
-# This works as follows.   To Disable:
-#       1. Write 0 to SPMG, stop motor
-#       2. Write 1 to DISP, prevents changes to desired position
-#       3. Write 0 to SPMG, stop motor (NOOP for CA links as DISP is set)
-# To Enable:
-#       1. Write 3 to SPMG, enable motor (NOOP for CA links as DISP is set)
-#       2. Write 0 to DISP, allows DISA to be changed
-#       3. Write 3 to SPMG, enable motor
+# To Disable motor, write 1 to this PV:
+#       1. Writes 0 to SPMG, stop motor
+#       2. Writes 1 to DISP, prevents changes to desired position
+#       3. Writes 0 to SPMG, stop motor (NOOP for CA links as DISP is set)
+# To Enable motor, write 0 to this PV:
+#       1. Writes 3 to SPMG, enable motor (NOOP for CA links as DISP is set)
+#       2. Writes 0 to DISP, allows DISA to be changed
+#       3. Writes 3 to SPMG, enable motor
 #
 # Note: The 3rd write is needed so this works for both
 # local PV's and Channel Access PV's.  DISP disables

@@ -1,33 +1,43 @@
-VA PU
-VA p1
-VA f1
-NE=0
-p1=P
-PG 1
-LB Su
-PU=1
-P=p1
-f1=0
-LB Pt
-CL zc, Mv=0
-CL fa, Mv=1
-H 100
-BR Pt
-LB fa
-CL fb, f1=0
-RT
-LB fb
-f1=1
-RT
-LB zc
-CL zd, f1=1
-RT
-LB zd
-p1=P
-f1=0
-RT
-E
-PG
-EX 1
-PU=0
-S
+VA PU               ` Power-Up flag
+VA p1               ` Remembered position for NVM
+VA f1               ` Save Flag
+
+NE=0                ` Don't treat the next command as move
+p1=P                ` Remember the current position, when starting IOC
+
+PG 1                ` Start editing program 1
+  LB SU             ` Run me at power up
+  PU=1              ` Set the Power-Up flag
+  P=p1              ` Restore the remembered position
+  f1=0              ` Clear Save flag
+
+  LB Pt             ` Function Pt
+    CL zc, Mv=0     ` Call function zc, if not moving
+    CL fa, Mv=1     ` Call function fa, if moving
+    H 100           ` Sleep for 100 ms
+    BR Pt           ` Goto line LB Pt, loop forever
+
+  LB fa             ` Function fa
+    CL fb, f1=0     ` Call function fb to set save flag, if Save flag is clear
+    RT              ` Return
+
+  LB fb             ` Function fb, set Save flag
+    f1=1            ` Set Save flag f1
+    RT              ` Return
+
+  LB zc             ` Function zc, Save position if Save flag is set
+    CL zd, f1=1     ` Call function zd to save position, if Save flag is set
+    RT              ` Return
+
+  LB zd             ` Function zd, Save position
+    p1=P            ` Remember the current position
+    f1=0            ` Clear Save flag
+    RT              ` Return
+
+  E                 ` End of program 1
+  PG                ` Exit from program mode
+
+EX 1                ` Execute program 1
+PU=0                ` Clear Power-Up flag.  This is only done after booting IOC
+S                   ` Save the current state. Again, done only after booting IOC
+
