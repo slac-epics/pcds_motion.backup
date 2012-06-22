@@ -1,0 +1,26 @@
+record(calcout, "$(IOC):UpdateClock") {
+  field(DESC, "Update Clock")
+  field(INPA, "$(IOC):UpdateClock")
+  field(OUT,  "$(IOC):UpdateEvtSeq.PROC")
+  field(CALC, "(A+1)%$(multiplier)")
+  field(OCAL, "1")
+  field(OOPT, "When Zero")
+  field(DOPT, "Use OCAL")
+  field(SCAN, "$(basePeriod)")
+}
+
+record(calcout, "$(IOC):UpdateEvtSeq") {
+  field(DESC, "Update Event Sequencer")
+  field(INPA, "$(IOC):UpdateEvtSeq")
+  field(OUT,  "$(IOC):UpdateEvtGen.VAL PP")
+  field(CALC, "A%$(noMotors)+1")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(SCAN, "Passive")
+}
+
+record(event, "$(IOC):UpdateEvtGen") {
+  field(DESC, "Update Event Generator")
+  field(SCAN, "Passive")
+}
+

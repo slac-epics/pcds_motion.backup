@@ -434,7 +434,14 @@ record(stringout, "$(cont):CLEAR_ER") {
   field(DTYP, "stream")
   field(OUT, "@mcode.proto CLEAR_ER M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(FLNK, "$(cont):ER")
+  field(FLNK, "$(cont):ERFAN")
+}
+
+record(fanout, "$(cont):ERFAN") {
+  field(DESC, "Update Error Code & Status")
+  field(LNK1, "$(cont):ER")
+  field(LNK2, "$(cont)")
+  field(SCAN, "Passive")
 }
 
 record(stringin, "$(cont):ES") {
@@ -1349,7 +1356,14 @@ record(stringout, "$(cont):SET_PU") {
   field(DTYP, "stream")
   field(OUT, "@mcode.proto SET_PU M$(M) $(addr)")
   field(SCAN, "Passive")
-  field(FLNK, "$(cont):PU")
+  field(FLNK, "$(cont):PUFAN")
+}
+
+record(fanout, "$(cont):PUFAN") {
+  field(DESC, "Update PU Flag & Status")
+  field(LNK1, "$(cont):PU")
+  field(LNK2, "$(cont)")
+  field(SCAN, "Passive")
 }
 
 record(fanout, "$(cont):UPDATE_ALL") {

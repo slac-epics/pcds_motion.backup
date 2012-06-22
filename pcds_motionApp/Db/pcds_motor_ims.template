@@ -28,11 +28,13 @@ grecord(motor,"$(P)$(M)")
 	field(MPGM,"/pcds_motionApp/src/ims_bootup.mcode")
 	field(SDLT,"30")
         field(FOFF,"Frozen")
+	field(PINI,"YES")
 }
 record(bo,"$(P)$(M):Update")
 {
-	field(DESC,"Force motor to Update")
+	field(DESC,"Force Status Update")
 	field(VAL, "1")
-	field(OUT, "$(P)$(M).PROC")
-	field(SCAN,"10 second")
+	field(OUT, "$(P)$(M).STUP")
+	field(SCAN,"Event")
+	field(EVNT,"$(UEvent)")
 }
