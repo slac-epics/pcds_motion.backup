@@ -1,34 +1,90 @@
-VA PU' Power-Up flag
-VA p1' Saved position for NVM
-VA f1' Save Flag
-NE=0' Disable numeric commands
-p1=P' Remember the current position at IOC bootup
-PG 1' Create program 1
-LB SU' Run at power up
-PU=1' Set Power-Up flag
-P=p1' Restore saved position
-f1=0' Clear Save flag
-LB Pt' Function Pt
-CL zc, Mv=0' Call zc, if not moving
-CL fa, Mv=1' Call fa, if moving
-H 100' Sleep for 100 ms
-BR Pt' Goto line LB Pt, loop forever
-LB fa' Function fa
-CL fb, f1=0' Call fb to set save flag, if Save flag is clear
-RT' Return
-LB fb' Function fb, set Save flag
-f1=1' Set Save flag f1
-RT' Return
-LB zc' Function zc, Save position if Save flag set
-CL zd, f1=1' Call zd to save position, if Save flag is set
-RT' Return
-LB zd' Function zd, Save position
-p1=P' Remember the current position
-f1=0' Clear Save flag
-RT' Return
-E' End of program 1
-PG' Exit from program mode
-EX 1' Execute program 1
-PU=0' Clear Power-Up flag. Once after booting IOC
-S' Save the program. Once after booting IOC
+VA PU   ' power up flag
+VA p1	' saved position
+VA Sd	' save deadband
+VA Hb   ' heartbeat monitor
+VA Ns   ' number of saves
 
+Ne=0
+p1=P
+Sd=Db*4 ' set save deadband
+
+PG 1
+  LB SU	' Run at power up
+  PU=1	' Set the Power-Up flag
+
+  H 1000 ' 1 second hold let motor boot-up
+
+  P=p1	' Restore last saved position
+
+  R1=0	' Reset the delay counter
+  R2=0  ' Reset the moved flag
+  Hb=0  ' Reset heartbeat monitor
+
+  LB Lp
+    CL Za, Mv=1	' Call function Za, If moving
+    CL Zb, Mv=0	' Call function Zb, If not moving
+    IC Hb
+    H 100
+    BR Lp
+
+  LB Za
+    R1=1  ' (Re-)Start the delay counter
+    R2=1  ' (Re-)set the moved flag
+    RT
+
+  LB Zb
+    CL Zc, R1>0
+    CL Zj, R1=0
+    RT
+
+  LB Zc	' Function Zc
+    CL Zd, R1<301 ' Call Zd, not yet    100*100 Ms
+    CL Ze, R1>300 ' Call Ze, if delayed 100*100 Ms
+    RT
+
+  LB Zd
+    IC R1 ' Increment delay counter
+    RT
+
+  LB Ze
+    CL Zf, R2=0 ' Call Zf, if delay not started by a move
+    CL Zg, R2=1	' Call Zg, if delay was started by a move
+    RT
+
+  LB Zf
+    R3=p1-Sd
+    R4=p1+Sd
+    CL Zg, P<R3	' Call Zg, if slipped below deadband
+    CL Zg, P>R4	' Call Zg, if slipped above deadband
+    CL Zh, P>=R3
+    RT
+
+  LB Zg
+    p1=P  ' Assign P1 to P
+    S	  ' Save to NVM
+    IC Ns ' Increment Save counter
+    R1=0  ' Reset Timer Counter
+    R2=0
+    RT
+
+  LB Zh
+    CL Zi, P<=R4
+    RT
+
+  LB Zi
+    R1=0
+    RT
+
+  LB Zj
+    R3=p1-Sd
+    R4=p1+Sd
+    CL Zk, P<R3	' Call Zg, if slipped below deadband
+    CL Zk, P>R4	' Call Zg, if slipped above deadband
+    RT
+
+  LB Zk
+    R1=1
+    RT
+
+E
+PG

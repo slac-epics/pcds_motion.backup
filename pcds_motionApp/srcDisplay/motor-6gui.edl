@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1945
-y 220
+x 4944
+y 552
 w 1860
 h 850
 font "helvetica-medium-r-10.0"
@@ -14293,5 +14293,155 @@ useDisplayBg
 value {
   "PN:"
 }
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 560
+y 72
+w 64
+h 12
+controlPv "$(M1):Update.SCAN"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+editable
+autoHeight
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 568
+y 328
+w 64
+h 12
+controlPv "$(M2):Update.SCAN"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+editable
+autoHeight
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 560
+y 584
+w 64
+h 12
+controlPv "$(M3):Update.SCAN"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+editable
+autoHeight
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1144
+y 584
+w 64
+h 12
+controlPv "$(M6):Update.SCAN"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+editable
+autoHeight
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1144
+y 328
+w 64
+h 12
+controlPv "$(M5):Update.SCAN"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+editable
+autoHeight
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 1144
+y 72
+w 64
+h 12
+controlPv "$(M4):Update.SCAN"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+editable
+autoHeight
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
 endObjectProperties
 

@@ -440,7 +440,8 @@ record(stringout, "$(cont):CLEAR_ER") {
 record(fanout, "$(cont):ERFAN") {
   field(DESC, "Update Error Code & Status")
   field(LNK1, "$(cont):ER")
-  field(LNK2, "$(cont)")
+  field(LNK2, "$(cont):EF")
+  field(LNK3, "$(cont)")
   field(SCAN, "Passive")
 }
 
@@ -1357,6 +1358,27 @@ record(stringout, "$(cont):SET_PU") {
   field(OUT, "@mcode.proto SET_PU M$(M) $(addr)")
   field(SCAN, "Passive")
   field(FLNK, "$(cont):PUFAN")
+}
+
+record(stringin, "$(cont):HB") {
+  field(DESC, "Heartbeat")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_HB M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringin, "$(cont):NS") {
+  field(DESC, "Number of Saves")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_NS M$(M) $(addr)")
+  field(SCAN, "Passive")
+}
+
+record(stringin, "$(cont):SD") {
+  field(DESC, "Save Deadband")
+  field(DTYP, "stream")
+  field(INP, "@mcode.proto GET_SD M$(M) $(addr)")
+  field(SCAN, "Passive")
 }
 
 record(fanout, "$(cont):PUFAN") {
