@@ -34,7 +34,7 @@ record(bo,"$(P)$(M):Update")
 {
 	field(DESC,"Force Status Update")
 	field(VAL, "1")
-	field(OUT, "$(P)$(M).STUP")
+	field(OUT, "$(P)$(M).PROC")
 	field(SCAN,"Event")
 	field(EVNT,"$(UEvent)")
 }
