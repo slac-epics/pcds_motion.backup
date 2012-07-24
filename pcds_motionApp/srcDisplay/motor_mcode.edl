@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1986
-y 345
+x 3085
+y 747
 w 640
-h 680
+h 697
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -22,6 +22,94 @@ botShadowColor index 44
 snapToGrid
 gridSize 5
 endScreenProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 320
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):R1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 295
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):NS"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 270
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):SD"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 245
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):HB"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
 
 # (Message Button)
 object activeMessageButtonClass
@@ -1334,8 +1422,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 385
-y 630
+x 380
+y 665
 w 110
 h 15
 controlPv "$(MOTOR):CUSTOM"
@@ -1360,8 +1448,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 330
-y 630
+x 325
+y 665
 w 50
 h 20
 font "helvetica-medium-r-10.0"
@@ -1380,308 +1468,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 60
-y 565
-w 190
-h 90
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 165
-y 625
-w 30
-h 10
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(MOTOR):ER"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 165
-y 640
-w 30
-h 10
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(MOTOR):EF"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 60
-y 605
-w 100
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "MCode version (VR)"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 165
-y 610
-w 60
-h 10
-controlPv "$(MOTOR):VR"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 44
-bgColor index 3
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 165
-y 625
-w 30
-h 10
-controlPv "$(MOTOR):ER"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 44
-bgColor index 3
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 60
-y 620
-w 100
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Last Error code (ER)"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 165
-y 590
-w 75
-h 10
-controlPv "$(MOTOR):SN"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 44
-bgColor index 3
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 60
-y 585
-w 100
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Serial Number (SN)"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 165
-y 570
-w 75
-h 12
-controlPv "$(MOTOR):PN"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 44
-bgColor index 3
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 60
-y 565
-w 100
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Part Number (PN)"
-}
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 200
-y 625
-w 50
-h 15
-fgColor index 14
-onColor index 34
-offColor index 34
-topShadowColor index 37
-botShadowColor index 44
-controlPv "$(MOTOR):CLEAR_ER"
-pressValue "1"
-onLabel "CLR"
-offLabel "CLR"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 165
-y 640
-w 30
-h 12
-controlPv "$(MOTOR):EF"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 44
-bgColor index 3
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 90
-y 635
-w 70
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Error flag (EF)"
-}
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 270
-y 40
+x 440
+y 35
 w 170
 h 80
 
@@ -1693,8 +1481,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 310
-y 90
+x 480
+y 85
 w 90
 h 25
 fgColor index 14
@@ -1717,8 +1505,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 290
-y 40
+x 460
+y 35
 w 150
 h 45
 font "helvetica-medium-r-14.0"
@@ -1737,8 +1525,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 270
-y 40
+x 440
+y 35
 w 165
 h 80
 lineColor index 14
@@ -1778,9 +1566,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 320
-y 560
-w 185
+x 315
+y 615
+w 195
 h 45
 
 beginGroup
@@ -1791,9 +1579,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 395
-y 560
-w 110
+x 394
+y 615
+w 116
 h 45
 font "helvetica-medium-r-10.0"
 fgColor index 14
@@ -1813,9 +1601,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 320
-y 560
-w 65
+x 315
+y 615
+w 69
 h 40
 fgColor index 14
 onColor index 34
@@ -2014,8 +1802,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 315
+x 425
+y 385
 w 30
 h 20
 fgColor index 14
@@ -2036,8 +1824,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 290
+x 425
+y 360
 w 30
 h 20
 fgColor index 14
@@ -2058,8 +1846,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 320
-y 290
+x 315
+y 360
 w 100
 h 20
 font "helvetica-medium-r-10.0"
@@ -2077,8 +1865,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 300
-y 315
+x 295
+y 385
 w 120
 h 20
 font "helvetica-medium-r-10.0"
@@ -2096,8 +1884,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 290
+x 460
+y 360
 w 35
 h 16
 controlPv "$(MOTOR):SET_RC"
@@ -2122,8 +1910,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 315
+x 460
+y 385
 w 35
 h 16
 controlPv "$(MOTOR):SET_HC"
@@ -2148,8 +1936,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 290
+x 425
+y 360
 w 30
 h 20
 controlPv "$(MOTOR):RC"
@@ -2167,8 +1955,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 315
+x 425
+y 385
 w 30
 h 20
 controlPv "$(MOTOR):HC"
@@ -2186,8 +1974,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 355
+x 425
+y 415
 w 30
 h 25
 fgColor index 14
@@ -2208,8 +1996,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 340
-y 355
+x 335
+y 415
 w 85
 h 25
 font "helvetica-medium-r-10.0"
@@ -2227,8 +2015,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 505
-y 355
+x 500
+y 415
 w 38
 h 21
 font "helvetica-medium-r-18.0"
@@ -2250,8 +2038,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 510
-y 355
+x 505
+y 415
 w 30
 h 21
 font "helvetica-bold-r-18.0"
@@ -2273,8 +2061,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 355
+x 460
+y 415
 w 35
 h 20
 controlPv "$(MOTOR):SET_EE"
@@ -2299,8 +2087,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 355
+x 425
+y 415
 w 30
 h 25
 controlPv "$(MOTOR):EE"
@@ -2312,307 +2100,6 @@ font "helvetica-medium-r-10.0"
 fontAlign "center"
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 315
-y 170
-w 255
-h 90
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 395
-y 235
-w 80
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(MOTOR):C2"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 395
-y 210
-w 80
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(MOTOR):C1"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 395
-y 185
-w 80
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(MOTOR):P"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 335
-y 170
-w 50
-h 15
-fgColor index 14
-onColor index 34
-offColor index 34
-topShadowColor index 37
-botShadowColor index 44
-controlPv "$(MOTOR):ZERO_POS"
-pressValue "1"
-onLabel "SET ZERO"
-offLabel "SET ZERO"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 315
-y 210
-w 80
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Counter 1 (C1)"
-  "Motor Steps"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 315
-y 240
-w 80
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Counter 2 (C2)"
-  "Encoder Counts"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 330
-y 185
-w 65
-h 20
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Position (P)"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 485
-y 185
-w 85
-h 16
-controlPv "$(MOTOR):SET_P"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 51
-editable
-autoHeight
-motifWidget
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 395
-y 185
-w 80
-h 20
-controlPv "$(MOTOR):P"
-fgColor index 15
-fgAlarm
-bgColor index 12
-fill
-font "helvetica-medium-r-10.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 485
-y 210
-w 85
-h 16
-controlPv "$(MOTOR):SET_C1"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 51
-editable
-autoHeight
-motifWidget
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 395
-y 210
-w 80
-h 20
-controlPv "$(MOTOR):C1"
-fgColor index 15
-fgAlarm
-bgColor index 12
-fill
-font "helvetica-medium-r-10.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 2
-release 0
-x 485
-y 235
-w 85
-h 16
-controlPv "$(MOTOR):SET_C2"
-format "decimal"
-font "helvetica-medium-r-10.0"
-fgColor index 14
-bgColor index 51
-editable
-autoHeight
-motifWidget
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 395
-y 235
-w 80
-h 20
-controlPv "$(MOTOR):C2"
-fgColor index 15
-fgAlarm
-bgColor index 12
-fill
-font "helvetica-medium-r-10.0"
-fontAlign "center"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -2620,7 +2107,7 @@ major 4
 minor 1
 release 0
 x 495
-y 160
+y 120
 w 20
 h 20
 font "helvetica-medium-r-10.0"
@@ -2639,7 +2126,7 @@ major 4
 minor 1
 release 0
 x 425
-y 160
+y 120
 w 30
 h 20
 font "helvetica-medium-r-10.0"
@@ -2657,7 +2144,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 465
+x 280
 y 45
 w 75
 h 60
@@ -2670,7 +2157,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 485
+x 300
 y 65
 w 30
 h 20
@@ -2692,7 +2179,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 520
+x 335
 y 70
 w 10
 h 10
@@ -2711,7 +2198,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 485
+x 300
 y 65
 w 30
 h 20
@@ -2730,7 +2217,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 465
+x 280
 y 45
 w 75
 h 20
@@ -2749,7 +2236,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 480
+x 295
 y 90
 w 50
 h 15
@@ -2777,8 +2264,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 510
-y 290
+x 505
+y 360
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -2796,8 +2283,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 510
-y 310
+x 505
+y 380
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -2919,8 +2406,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 410
+x 425
+y 475
 w 30
 h 20
 fgColor index 14
@@ -2941,8 +2428,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 435
+x 425
+y 500
 w 30
 h 20
 fgColor index 14
@@ -2963,8 +2450,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 510
+x 425
+y 585
 w 30
 h 20
 fgColor index 14
@@ -2985,8 +2472,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 485
+x 425
+y 555
 w 30
 h 20
 fgColor index 14
@@ -3007,8 +2494,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 460
+x 425
+y 530
 w 30
 h 20
 fgColor index 14
@@ -3029,8 +2516,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 350
-y 460
+x 345
+y 530
 w 80
 h 20
 font "helvetica-medium-r-10.0"
@@ -3048,8 +2535,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 345
-y 485
+x 340
+y 555
 w 85
 h 20
 font "helvetica-medium-r-10.0"
@@ -3067,10 +2554,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 485
+x 460
+y 555
 w 35
-h 16
+h 15
 controlPv "$(MOTOR):SET_SF"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -3093,8 +2580,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 485
+x 425
+y 555
 w 30
 h 20
 controlPv "$(MOTOR):SF"
@@ -3112,10 +2599,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 460
+x 460
+y 530
 w 35
-h 16
+h 15
 controlPv "$(MOTOR):SET_DB"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -3138,8 +2625,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 460
+x 425
+y 530
 w 30
 h 20
 controlPv "$(MOTOR):DB"
@@ -3157,8 +2644,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 510
+x 460
+y 585
 w 35
 h 15
 controlPv "$(MOTOR):SET_SM"
@@ -3183,8 +2670,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 510
+x 425
+y 585
 w 30
 h 20
 controlPv "$(MOTOR):SM"
@@ -3202,8 +2689,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 350
-y 510
+x 345
+y 585
 w 80
 h 20
 font "helvetica-medium-r-10.0"
@@ -3221,8 +2708,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 410
+x 460
+y 475
 w 35
 h 15
 controlPv "$(MOTOR):SET_EL"
@@ -3247,10 +2734,10 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 325
-y 415
+x 320
+y 480
 w 100
-h 18
+h 20
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 0
@@ -3266,8 +2753,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 435
+x 460
+y 500
 w 35
 h 15
 controlPv "$(MOTOR):SET_MS"
@@ -3292,8 +2779,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 340
-y 435
+x 335
+y 500
 w 80
 h 20
 font "helvetica-medium-r-10.0"
@@ -3311,8 +2798,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 435
+x 425
+y 500
 w 30
 h 20
 controlPv "$(MOTOR):MS"
@@ -3330,8 +2817,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 410
+x 425
+y 475
 w 30
 h 20
 controlPv "$(MOTOR):EL"
@@ -3349,8 +2836,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 510
-y 435
+x 505
+y 500
 w 110
 h 20
 font "helvetica-medium-r-10.0"
@@ -3368,8 +2855,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 430
-y 385
+x 425
+y 450
 w 30
 h 20
 fgColor index 14
@@ -3390,10 +2877,10 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 465
-y 385
+x 460
+y 450
 w 35
-h 16
+h 15
 controlPv "$(MOTOR):SET_MT"
 format "decimal"
 font "helvetica-medium-r-10.0"
@@ -3416,8 +2903,8 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 430
-y 385
+x 425
+y 450
 w 30
 h 20
 controlPv "$(MOTOR):MT"
@@ -3435,8 +2922,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 305
-y 385
+x 300
+y 450
 w 120
 h 20
 font "helvetica-medium-r-10.0"
@@ -3454,8 +2941,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 510
-y 385
+x 505
+y 450
 w 120
 h 20
 font "helvetica-medium-r-10.0"
@@ -3473,8 +2960,8 @@ beginObjectProperties
 major 4
 minor 2
 release 0
-x 325
-y 125
+x 375
+y 70
 w 48
 h 24
 fgColor index 14
@@ -3487,6 +2974,842 @@ numPvs 4
 numDsps 1
 displayFileName {
   0 "pcds_motionScreens/motor_mcode_detailed.edl"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 220
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):C2"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 195
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):C1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 145
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):P"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 575
+y 145
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(MOTOR):ZERO_POS"
+pressValue "1"
+onLabel "SET ZERO"
+offLabel "SET ZERO"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 315
+y 195
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Counter 1 (C1)"
+  "Motor Steps"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 315
+y 220
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Counter 2 (C2)"
+  "Encoder Counts"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 330
+y 145
+w 65
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Position (P)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 485
+y 145
+w 85
+h 16
+controlPv "$(MOTOR):SET_P"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 145
+w 80
+h 20
+controlPv "$(MOTOR):P"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 485
+y 195
+w 85
+h 16
+controlPv "$(MOTOR):SET_C1"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 195
+w 80
+h 20
+controlPv "$(MOTOR):C1"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 485
+y 220
+w 85
+h 16
+controlPv "$(MOTOR):SET_C2"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 220
+w 80
+h 20
+controlPv "$(MOTOR):C2"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 395
+y 170
+w 80
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):P1"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 290
+y 170
+w 105
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Saved Position (P1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 170
+w 80
+h 20
+controlPv "$(MOTOR):P1"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 245
+w 80
+h 20
+controlPv "$(MOTOR):HB"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 315
+y 245
+w 80
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Heartbeat (HB)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 270
+w 80
+h 20
+controlPv "$(MOTOR):SD"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 290
+y 270
+w 105
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Save Deadband (SD)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 320
+w 80
+h 20
+controlPv "$(MOTOR):R1"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 300
+y 320
+w 95
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Timer Counter (R1)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 395
+y 295
+w 80
+h 20
+controlPv "$(MOTOR):NS"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 295
+y 295
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Num of Saves (NS)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 485
+y 270
+w 70
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "+/- Deadband"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 485
+y 295
+w 125
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Cumulative Save Counter"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 485
+y 320
+w 70
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Timer Counter"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 165
+y 630
+w 30
+h 10
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):ER"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 165
+y 650
+w 30
+h 10
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):EF"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 60
+y 605
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MCode version (VR)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 165
+y 610
+w 60
+h 10
+controlPv "$(MOTOR):VR"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 44
+bgColor index 3
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 165
+y 630
+w 30
+h 10
+controlPv "$(MOTOR):ER"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 44
+bgColor index 3
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 60
+y 625
+w 100
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Last Error code (ER)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 165
+y 590
+w 75
+h 10
+controlPv "$(MOTOR):SN"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 44
+bgColor index 3
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 65
+y 585
+w 95
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Serial Number (SN)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 165
+y 570
+w 75
+h 12
+controlPv "$(MOTOR):PN"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 44
+bgColor index 3
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 70
+y 565
+w 90
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Part Number (PN)"
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 195
+y 630
+w 50
+h 15
+fgColor index 14
+onColor index 34
+offColor index 34
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(MOTOR):CLEAR_ER"
+pressValue "1"
+onLabel "CLR"
+offLabel "CLR"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 165
+y 650
+w 30
+h 12
+controlPv "$(MOTOR):EF"
+format "decimal"
+font "helvetica-medium-r-10.0"
+fgColor index 44
+bgColor index 3
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 90
+y 645
+w 70
+h 20
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Error flag (EF)"
 }
 endObjectProperties
 

@@ -18,10 +18,9 @@ export EDMDATAFILES=".:.."
 
 edm -x -eolc		\
  -m "LLL=SXR"		\
- -m "MOTOR=SXR:EXP:MMN:02:WVP"	\
+ -m "MOTOR=SXR:EXP:MMS:03"	\
  -m "IOC=SXR:R24:IOC:23:FLX"	\
  -m "V1=CXI:SC1:VGC:02,V2=CXI:SC2:VGC:02" \
  pcds_motionScreens/test-interlocks.edl	\
- pcds_motionScreens/single-motor-gui.edl \
  pcds_motionScreens/motor-control.edl \
  &

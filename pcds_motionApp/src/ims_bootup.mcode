@@ -1,33 +1,90 @@
-VA PU
-VA p1
-VA f1
-NE=0
+VA PU   ' power up flag
+VA p1	' saved position
+VA Sd	' save deadband
+VA Hb   ' heartbeat monitor
+VA Ns   ' number of saves
+
+Ne=0
 p1=P
+Sd=Db*4 ' set save deadband
+
 PG 1
-LB Su
-PU=1
-P=p1
-f1=0
-LB Pt
-CL zc, Mv=0
-CL fa, Mv=1
-H 100
-BR Pt
-LB fa
-CL fb, f1=0
-RT
-LB fb
-f1=1
-RT
-LB zc
-CL zd, f1=1
-RT
-LB zd
-p1=P
-f1=0
-RT
+  LB SU	' Run at power up
+  PU=1	' Set the Power-Up flag
+
+  H 1000 ' 1 second hold let motor boot-up
+
+  P=p1	' Restore last saved position
+
+  R1=0	' Reset the delay counter
+  R2=0  ' Reset the moved flag
+  Hb=0  ' Reset heartbeat monitor
+
+  LB Lp
+    CL Za, Mv=1	' Call function Za, If moving
+    CL Zb, Mv=0	' Call function Zb, If not moving
+    IC Hb
+    H 100
+    BR Lp
+
+  LB Za
+    R1=1  ' (Re-)Start the delay counter
+    R2=1  ' (Re-)set the moved flag
+    RT
+
+  LB Zb
+    CL Zc, R1>0
+    CL Zj, R1=0
+    RT
+
+  LB Zc	' Function Zc
+    CL Zd, R1<301 ' Call Zd, not yet    100*100 Ms
+    CL Ze, R1>300 ' Call Ze, if delayed 100*100 Ms
+    RT
+
+  LB Zd
+    IC R1 ' Increment delay counter
+    RT
+
+  LB Ze
+    CL Zf, R2=0 ' Call Zf, if delay not started by a move
+    CL Zg, R2=1	' Call Zg, if delay was started by a move
+    RT
+
+  LB Zf
+    R3=p1-Sd
+    R4=p1+Sd
+    CL Zg, P<R3	' Call Zg, if slipped below deadband
+    CL Zg, P>R4	' Call Zg, if slipped above deadband
+    CL Zh, P>=R3
+    RT
+
+  LB Zg
+    p1=P  ' Assign P1 to P
+    S	  ' Save to NVM
+    IC Ns ' Increment Save counter
+    R1=0  ' Reset Timer Counter
+    R2=0
+    RT
+
+  LB Zh
+    CL Zi, P<=R4
+    RT
+
+  LB Zi
+    R1=0
+    RT
+
+  LB Zj
+    R3=p1-Sd
+    R4=p1+Sd
+    CL Zk, P<R3	' Call Zg, if slipped below deadband
+    CL Zk, P>R4	' Call Zg, if slipped above deadband
+    RT
+
+  LB Zk
+    R1=1
+    RT
+
 E
 PG
-EX 1
-PU=0
-S

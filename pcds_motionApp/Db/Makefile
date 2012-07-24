@@ -24,6 +24,8 @@ DB += sim-motor.template
 DB += table-protection.template
 DB += newall-shg-a2.template
 
+DB += status_update.db
+
 #
 # Create and install archive templates and sample substitutions
 #

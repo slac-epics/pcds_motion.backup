@@ -1,13 +1,19 @@
 # Autosave position values for motor record 
-# TODO: Review this list
 
-$(MOTOR).DHLM
-$(MOTOR).DLLM
-$(MOTOR).S
-$(MOTOR).TWV
-$(MOTOR).DESC
+$(MOTOR).ACCL
+$(MOTOR).BACC
 $(MOTOR).BDST
-$(MOTOR).SBAK
+$(MOTOR).BVEL
+$(MOTOR).DESC
+$(MOTOR).DHLM
 $(MOTOR).DIR
+$(MOTOR).DLLM
+$(MOTOR).EGU
+$(MOTOR).MRES
 $(MOTOR).OFF
-
+$(MOTOR).PREC
+$(MOTOR).SBAK
+$(MOTOR).TWV
+$(MOTOR).UREV
+$(MOTOR).VBAS
+$(MOTOR).VELO
