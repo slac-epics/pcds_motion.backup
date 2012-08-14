@@ -3,7 +3,9 @@ VA p1	' saved position
 VA Sd	' save deadband
 VA Hb   ' heartbeat monitor
 VA Ns   ' number of saves
+VA Ve   ' mcode version
 
+Ve=1
 Ne=0
 p1=P
 Sd=Db*4 ' set save deadband
