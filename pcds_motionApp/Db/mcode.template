@@ -202,7 +202,6 @@ record(bi, "$(cont):CM") {
   field(ZSV,  "NO_ALARM")
   field(ONAM, "Enable")
   field(OSV,  "NO_ALARM")
-  field(PINI, "YES")
 }
 
 record(bo, "$(cont):SET_CM") {

@@ -59,7 +59,7 @@ SET_CE       { out "1CE %d";                        wait 25; }
 GET_CK       { out "1PR CK";        in "%d";        wait 25;	@init { out "1PR CK";   in "%d"; } }
 SET_CK       { out "1CK %d";                        wait 25; }
 
-GET_CM       { out "1PR CM";        in "%b";        wait 25;	@init { out "1PR CM";   in "%b"; } }
+GET_CM       { out "1PR CM";        in "%b";        wait 25: }
 SET_CM       { out "1CM %b";                        wait 25; }
 
 GET_CR       { out "1PR CR";        in "%f";        wait 25; }
