@@ -1,4 +1,5 @@
 # Motor archive PV list
+# Example: <channel> <period [s]>
 $(MOTOR).VAL	1
 $(MOTOR).ATHM	1		monitor
 $(MOTOR).BDST	10
@@ -13,6 +14,10 @@ $(MOTOR).DVAL	1		monitor
 $(MOTOR).EGU	10
 $(MOTOR).ERES	1		monitor
 $(MOTOR).HLS	1
+$(MOTOR).HBAS	10
+$(MOTOR).HMDR	10
+$(MOTOR).HMTP	10
+$(MOTOR).HVEL	10
 $(MOTOR).LLS	1
 $(MOTOR).MISS	1		monitor
 $(MOTOR).MOVN	1
@@ -45,6 +50,7 @@ $(MOTOR):LM		30		monitor
 $(MOTOR):EE		30		monitor
 $(MOTOR):EL		30		monitor
 $(MOTOR):MS		30		monitor
+$(MOTOR):NS		30
 $(MOTOR):DB		30		monitor
 $(MOTOR):SM		30		monitor
 $(MOTOR):PM		30		monitor
@@ -53,6 +59,8 @@ $(MOTOR):S2		30		monitor
 $(MOTOR):S3		30		monitor
 $(MOTOR):S4		30		monitor
 $(MOTOR):PN		30
+$(MOTOR):SD		30
 $(MOTOR):SN		30
+$(MOTOR):VE		30
 $(MOTOR):VR		30
 
