@@ -44,20 +44,21 @@ $(MOTOR).VELO	10
 $(MOTOR).VMAX	10
 
 # mcode template additional records
-$(MOTOR):RC		30		monitor
-$(MOTOR):HC		30		monitor
-$(MOTOR):LM		30		monitor
-$(MOTOR):EE		30		monitor
-$(MOTOR):EL		30		monitor
-$(MOTOR):MS		30		monitor
+$(MOTOR):RC		30
+$(MOTOR):HC		30
+$(MOTOR):LM		30
+$(MOTOR):EE		30
+$(MOTOR):EL		30
+$(MOTOR):MS		30
 $(MOTOR):NS		30
-$(MOTOR):DB		30		monitor
-$(MOTOR):SM		30		monitor
-$(MOTOR):PM		30		monitor
-$(MOTOR):S1		30		monitor
-$(MOTOR):S2		30		monitor
-$(MOTOR):S3		30		monitor
-$(MOTOR):S4		30		monitor
+$(MOTOR):DB		30
+$(MOTOR):SM		30
+$(MOTOR):PM		30
+$(MOTOR):S1		30
+$(MOTOR):S2		30
+$(MOTOR):S3		30
+$(MOTOR):S4		30
+$(MOTOR):SF		30
 $(MOTOR):PN		30
 $(MOTOR):SD		30
 $(MOTOR):SN		30
