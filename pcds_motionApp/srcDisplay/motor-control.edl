@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 3962
-y 626
+x 5885
+y 1195
 w 948
 h 380
 font "helvetica-medium-r-12.0"
@@ -24,6 +24,20 @@ showGrid
 snapToGrid
 gridSize 4
 endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 368
+y 40
+w 564
+h 312
+lineColor index 14
+fillColor index 3
+endObjectProperties
 
 # (Rectangle)
 object activeRectangleClass
@@ -75,20 +89,6 @@ botShadowColor index 11
 label "Exit"
 font "helvetica-medium-r-12.0"
 3d
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 368
-y 40
-w 564
-h 312
-lineColor index 14
-fillColor index 3
 endObjectProperties
 
 # (Rectangle)
@@ -1292,7 +1292,7 @@ lineColor index 35
 lineAlarm
 fill
 fillColor index 35
-visPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
+visPv "CALC\\\{(A>>15)&1\}($(MOTOR).MSTA)"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -1908,7 +1908,7 @@ x 96
 y 72
 w 30
 h 20
-controlPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
+controlPv "CALC\\\{(A>>15)&1\}($(MOTOR).MSTA)"
 fgColor index 15
 bgColor index 12
 fill
@@ -2667,35 +2667,12 @@ w 118
 h 18
 font "helvetica-bold-r-12.0"
 fontAlign "right"
-fgColor index 7
-bgColor index 0
-useDisplayBg
-visPv "CALC\\\{A&32768\}($(MOTOR).MSTA)"
-visMin "0"
-visMax "1"
-value {
-  "Stall Detected"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 516
-y 72
-w 118
-h 18
-font "helvetica-bold-r-12.0"
-fontAlign "right"
 fgColor index 35
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&32768\}($(MOTOR).MSTA)"
-visMin "32768"
-visMax "32769"
+visPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
 value {
   "Stall Detected"
 }
@@ -2782,9 +2759,9 @@ fontAlign "right"
 fgColor index 77
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&65536\}($(MOTOR).MSTA)"
-visMin "65536"
-visMax "65537"
+visPv "CALC\\\{(A>>15)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
 value {
   "Power Cycled"
 }
@@ -2805,11 +2782,34 @@ fontAlign "right"
 fgColor index 7
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&65536\}($(MOTOR).MSTA)"
+visPv "CALC\\\{(A>>15)&1\}($(MOTOR).MSTA)"
 visMin "0"
 visMax "1"
 value {
   "Power Cycled"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 516
+y 72
+w 118
+h 18
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 7
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
+value {
+  "Stall Detected"
 }
 endObjectProperties
 
