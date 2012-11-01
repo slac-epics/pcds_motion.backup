@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 5885
-y 1195
+x 904
+y 498
 w 948
 h 380
 font "helvetica-medium-r-12.0"
@@ -2526,7 +2526,7 @@ major 4
 minor 1
 release 0
 x 516
-y 132
+y 136
 w 118
 h 18
 font "helvetica-bold-r-12.0"
@@ -2534,7 +2534,7 @@ fontAlign "right"
 fgColor index 7
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&64\}($(MOTOR).MSTA)"
+visPv "CALC\\\{(A>>6)&1\}($(MOTOR).MSTA)"
 visMin "0"
 visMax "1"
 value {
@@ -2557,7 +2557,7 @@ fontAlign "right"
 fgColor index 7
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&4278190080\}($(MOTOR).MSTA)"
+visPv "CALC\\\{(A>>12)&1\}($(MOTOR).MSTA)"
 visMin "0"
 visMax "1"
 value {
@@ -2580,7 +2580,7 @@ fontAlign "right"
 fgColor index 7
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&65536\}($(MOTOR).MSTA)"
+visPv "CALC\\\{(A>>17)&1\}($(MOTOR).MSTA)"
 visMin "0"
 visMax "1"
 value {
@@ -2600,35 +2600,11 @@ w 56
 h 24
 font "helvetica-bold-r-12.0"
 fontAlign "center"
-fgColor index 32
-fgAlarm
-bgColor index 0
-useDisplayBg
-visPv "CALC\\\{A&16384\}($(MOTOR).MSTA)"
-visMin "16384"
-visMax "16385"
-value {
-  "HOMED"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 496
-y 132
-w 56
-h 24
-font "helvetica-bold-r-12.0"
-fontAlign "center"
 fgColor index 7
 fgAlarm
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{A&16384\}($(MOTOR).MSTA)"
+visPv "CALC\\\{(A>>14)&1\}($(MOTOR).MSTA)"
 visMin "0"
 visMax "1"
 value {
@@ -2653,29 +2629,6 @@ bgColor index 12
 fill
 font "helvetica-medium-r-10.0"
 fontAlign "center"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 516
-y 72
-w 118
-h 18
-font "helvetica-bold-r-12.0"
-fontAlign "right"
-fgColor index 35
-bgColor index 0
-useDisplayBg
-visPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
-visMin "1"
-visMax "2"
-value {
-  "Stall Detected"
-}
 endObjectProperties
 
 # (Message Button)
@@ -2756,6 +2709,52 @@ w 118
 h 18
 font "helvetica-bold-r-12.0"
 fontAlign "right"
+fgColor index 7
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A>>15)&1\}($(MOTOR).MSTA)"
+visMin "0"
+visMax "1"
+value {
+  "Power Cycled"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 516
+y 104
+w 118
+h 18
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 20
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A>>17)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
+value {
+  "MCode Not Running"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 520
+y 88
+w 118
+h 18
+font "helvetica-bold-r-12.0"
+fontAlign "right"
 fgColor index 77
 bgColor index 0
 useDisplayBg
@@ -2773,20 +2772,43 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 520
-y 88
+x 516
+y 120
 w 118
 h 18
 font "helvetica-bold-r-12.0"
 fontAlign "right"
-fgColor index 7
+fgColor index 20
 bgColor index 0
 useDisplayBg
-visPv "CALC\\\{(A>>15)&1\}($(MOTOR).MSTA)"
-visMin "0"
-visMax "1"
+visPv "CALC\\\{(A>>12)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
 value {
-  "Power Cycled"
+  "Error"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 516
+y 136
+w 118
+h 18
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 20
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A>>6)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
+value {
+  "Slip/Stall"
 }
 endObjectProperties
 
@@ -2806,10 +2828,57 @@ fgColor index 7
 bgColor index 0
 useDisplayBg
 visPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
+visMin "0"
+visMax "1"
+value {
+  "Stall Detected"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 516
+y 72
+w 118
+h 18
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 35
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A>>16)&1\}($(MOTOR).MSTA)"
 visMin "1"
 visMax "2"
 value {
   "Stall Detected"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 496
+y 132
+w 56
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 32
+fgAlarm
+bgColor index 0
+useDisplayBg
+visPv "CALC\\\{(A>>14)&1\}($(MOTOR).MSTA)"
+visMin "1"
+visMax "2"
+value {
+  "HOMED"
 }
 endObjectProperties
 

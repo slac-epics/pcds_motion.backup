@@ -258,7 +258,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):LM"
+controlPv "$(MOTOR):LM_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1756,7 +1756,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):EE"
+controlPv "$(MOTOR):EE_L"
 pressValue "1"
 3d
 useEnumNumeric
