@@ -7,6 +7,7 @@ $(MOTOR).DIR	1		monitor
 $(MOTOR).DISA	10
 $(MOTOR).DISP	10
 $(MOTOR).DLLM	10
+$(MOTOR).DMOV	1		monitor
 $(MOTOR).DRBV	1
 $(MOTOR).DVAL	1		monitor
 $(MOTOR).EGU	10
@@ -14,7 +15,7 @@ $(MOTOR).ERES	1		monitor
 $(MOTOR).HLS	1
 $(MOTOR).LLS	1
 $(MOTOR).MISS	1		monitor
-$(MOTOR).MOVN	1
+$(MOTOR).MOVN	1		monitor
 $(MOTOR).MRES	1		monitor
 $(MOTOR).MSTA	10
 $(MOTOR).OFF	10
