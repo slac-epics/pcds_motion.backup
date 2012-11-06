@@ -1864,10 +1864,19 @@ record(fanout, "$(cont):PUFAN") {
   field(LNK2, "$(cont)")
 }
 
-record(stringout, "$(cont):RUN_PG") {
+record(seq, "$(cont):RUN_PG") {
+  field(DESC, "Run Program Seq")
+  field(LNK1, "$(cont):EXE_PG PP")
+  field(DO1,  "1")
+  field(LNK2, "$(cont):SET_PU PP")
+  field(DO2,  "0")
+  field(DLY2, "1")
+}
+
+record(bo, "$(cont):EXE_PG") {
   field(DESC, "Run Program")
   field(DTYP, "stream")
-  field(OUT,  "@mcode.proto RUN_PG M$(M) $(addr)")
+  field(OUT,  "@mcode.proto EXE_PG M$(M) $(addr)")
 }
 
 record(fanout, "$(cont):UPDATE_ALL") {
