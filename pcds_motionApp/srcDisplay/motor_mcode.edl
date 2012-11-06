@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 4239
-y 952
+x 4130
+y 877
 w 640
 h 697
 font "helvetica-medium-r-18.0"
@@ -22,6 +22,28 @@ botShadowColor index 44
 snapToGrid
 gridSize 5
 endScreenProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 170
+y 465
+w 30
+h 20
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 3
+botShadowColor index 3
+controlPv "$(MOTOR):PM_L"
+pressValue "1"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
 
 # (Message Button)
 object activeMessageButtonClass
@@ -148,7 +170,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I6"
+controlPv "$(MOTOR):I6_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1470,29 +1492,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):BD"
-pressValue "1"
-3d
-useEnumNumeric
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 170
-y 465
-w 30
-h 20
-fgColor index 14
-onColor index 3
-offColor index 3
-topShadowColor index 3
-botShadowColor index 3
-controlPv "$(MOTOR):PM"
+controlPv "$(MOTOR):BD_L"
 pressValue "1"
 3d
 useEnumNumeric
