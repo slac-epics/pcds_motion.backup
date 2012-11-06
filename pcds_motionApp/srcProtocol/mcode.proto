@@ -284,5 +284,5 @@ GET_P1       { out "1PR P1";        in "%d";        wait 25;  	@init { out "1PR 
 GET_NS       { out "1PR NS";        in "%d";        wait 25;  	@init { out "1PR NS"; 	in "%d"; } }
 GET_SD       { out "1PR SD";        in "%d";        wait 25;  	@init { out "1PR SD"; 	in "%d"; } }
 GET_VE       { out "1PR VE";        in "%d";        wait 25;  	@init { out "1PR VE"; 	in "%d"; } }
-RUN_PG       { out "1EX=1";                         wait 25; }
+EXE_PG       { out "1EX=1";                         wait 25; }
 
