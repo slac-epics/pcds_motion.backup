@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 3208
-y 635
+x 4022
+y 676
 w 880
 h 960
 font "helvetica-medium-r-18.0"
@@ -60,7 +60,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):BY"
+controlPv "$(MOTOR):BY_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -214,7 +214,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):CK"
+controlPv "$(MOTOR):CK_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -579,16 +579,16 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 655
+x 690
 y 65
-w 90
+w 55
 h 20
 fgColor index 14
 onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):EM"
+controlPv "$(MOTOR):EM_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -601,16 +601,16 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 655
+x 690
 y 40
-w 90
+w 55
 h 20
 fgColor index 14
 onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):PY"
+controlPv "$(MOTOR):PY_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -764,7 +764,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):NE"
+controlPv "$(MOTOR):NE_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -896,7 +896,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I11"
+controlPv "$(MOTOR):I11_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -918,7 +918,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I10"
+controlPv "$(MOTOR):I10_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -940,7 +940,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I9"
+controlPv "$(MOTOR):I9_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -962,7 +962,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I6"
+controlPv "$(MOTOR):I6_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1006,7 +1006,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):SM"
+controlPv "$(MOTOR):SM_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1138,7 +1138,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):BD"
+controlPv "$(MOTOR):BD_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1182,7 +1182,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):PM"
+controlPv "$(MOTOR):PM_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1468,7 +1468,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):LM"
+controlPv "$(MOTOR):LM_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1578,7 +1578,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I1"
+controlPv "$(MOTOR):I1_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1600,7 +1600,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I2"
+controlPv "$(MOTOR):I2_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1622,7 +1622,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I3"
+controlPv "$(MOTOR):I3_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -1644,7 +1644,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):I4"
+controlPv "$(MOTOR):I4_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -3643,6 +3643,7 @@ y 665
 w 50
 h 20
 controlPv "$(MOTOR):MT"
+displayMode "decimal"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -3706,7 +3707,8 @@ x 105
 y 635
 w 50
 h 20
-controlPv "$(MOTOR):PM"
+controlPv "$(MOTOR):PM_L"
+displayMode "decimal"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -4044,7 +4046,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):PU"
+controlPv "$(MOTOR):PU_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -6301,7 +6303,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 3
 botShadowColor index 3
-controlPv "$(MOTOR):EE"
+controlPv "$(MOTOR):EE_L"
 pressValue "1"
 3d
 useEnumNumeric
@@ -6409,6 +6411,7 @@ y 720
 w 70
 h 25
 controlPv "$(MOTOR):EE"
+displayMode "decimal"
 fgColor index 15
 fgAlarm
 bgColor index 12
