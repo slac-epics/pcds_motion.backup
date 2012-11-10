@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 4130
-y 877
+x 50
+y 50
 w 640
 h 697
 font "helvetica-medium-r-18.0"
@@ -1935,9 +1935,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 425
+x 415
 y 475
-w 30
+w 40
 h 20
 fgColor index 14
 onColor index 3
@@ -2181,7 +2181,7 @@ minor 2
 release 0
 x 460
 y 475
-w 35
+w 50
 h 15
 controlPv "$(MOTOR):SET_EL"
 format "decimal"
@@ -2288,9 +2288,9 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 425
+x 415
 y 475
-w 30
+w 40
 h 20
 controlPv "$(MOTOR):EL"
 fgColor index 15
