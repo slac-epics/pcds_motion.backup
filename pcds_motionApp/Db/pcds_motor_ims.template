@@ -51,14 +51,14 @@ record(stringin, "$(P)$(M):UTCS") {
 	field(DTYP,"Soft Timestamp")
 	field(TSEL,"$(P)$(M).TIME")
 	field(INP, "@%s")
-#	field(FLNK,"$(P)$(M):UTC")
+	field(FLNK,"$(P)$(M):UTC")
 }
 
-#record(scalcout, "$(P)$(M):UTC") {
-#	field(DESC,"UTC Seconds of Last Update")
-#	field(INAA,"$(P)$(M):UTCS")
-#	field(CALC,"INT(AA)")
-#}
+record(scalcout, "$(P)$(M):UTC") {
+	field(DESC,"UTC Seconds of Last Update")
+	field(INAA,"$(P)$(M):UTCS")
+	field(CALC,"INT(AA)")
+}
 
 record(calcout,"$(P)$(M):Update")
 {
