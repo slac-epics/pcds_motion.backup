@@ -1928,3 +1928,30 @@ record(fanout, "$(cont):UPDATE_STATUS") {
   field(LNK6, "$(cont):I2")
 }
 
+record(longin, "$(cont):SAVED_RAW") {
+  field(DESC, "Saved raw position")
+  field(DTYP, "stream")
+  field(INP,  "@mcode.proto SAVED_P M$(M) $(addr)")
+  field(EGU,  "Steps/Counts")
+  field(SCAN, "I/O Intr")
+  field(FLNK, "$(cont):SAVED_P")
+}
+
+record(calc, "$(cont):SAVED_P") {
+  field(DESC, "Saved position")
+  field(INPA, "$(cont):SAVED_RAW NPP")
+  field(INPB, "$(cont).RES       NPP")
+  field(INPC, "$(cont).DIR       NPP")
+  field(INPD, "$(cont).OFF       NPP")
+  field(CALC, "A*B*(1-2*C)+D")
+  field(FLNK, "$(cont):SAVED_TS")
+}
+
+record(stringin, "$(cont):SAVED_TS") {
+  field(DESC, "Time Stamp of Last Save")
+  field(DTYP, "Soft Timestamp")
+  field(TSEL, "$(cont):SAVED_RAW.TIME")
+  field(INP,  "@%b %d %R:%S %Y")
+  field(FLNK, "$(cont)")
+}
+
