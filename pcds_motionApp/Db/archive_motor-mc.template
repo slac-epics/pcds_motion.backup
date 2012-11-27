@@ -67,3 +67,7 @@ $(MOTOR):SN	86400           monitor
 $(MOTOR):VE	86400           monitor
 $(MOTOR):VR	86400           monitor
 
+# position archiving
+$(MOTOR):SAVED_RAW	86400           monitor
+$(MOTOR):SAVED_P	86400           monitor
+
