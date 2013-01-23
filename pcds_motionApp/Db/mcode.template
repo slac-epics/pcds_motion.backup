@@ -766,6 +766,7 @@ record(longin, "$(cont):HC") {
   field(DTYP, "stream")
   field(INP,  "@mcode.proto GET_HC M$(M) $(addr)")
   field(EGU,  "%")
+  field(FLNK, "$(cont):SAVED_HC")
 }
 
 record(longout, "$(cont):SET_HC") {
@@ -1948,10 +1949,40 @@ record(calc, "$(cont):SAVED_P") {
 }
 
 record(stringin, "$(cont):SAVED_TS") {
-  field(DESC, "Time Stamp of Last Save")
+  field(DESC, "Time stamp of last save")
   field(DTYP, "Soft Timestamp")
   field(TSEL, "$(cont):SAVED_RAW.TIME")
   field(INP,  "@%b %d %R:%S %Y")
   field(FLNK, "$(cont)")
+}
+
+record(calcout, "$(cont):SAVED_HC") {
+  field(DESC, "Remember HC")
+  field(INPC, "$(cont):HC NPP")
+  field(OUT,  "$(cont):SAVED_HC.A")
+  field(CALC, "(C>0)?C:A")
+  field(OOPT, "On Change")
+  field(DOPT, "Use CALC")
+  field(PINI, "YES")
+}
+
+record(bo, "$(cont):TOGGLE_HC") {
+  field(DESC, "Toggle HC 0 and SAVED_HC")
+  field(ZNAM, "Turn Off HC")
+  field(ZSV,  "MINOR")
+  field(ONAM, "Restore HC")
+  field(OSV,  "NO_ALARM")
+  field(VAL,  "1")
+  field(FLNK, "$(cont):TOGGLE_HC_ACT")
+}
+
+record(calcout, "$(cont):TOGGLE_HC_ACT") {
+  field(DESC, "Toggle HC 0 and SAVED_HC")
+  field(INPA, "$(cont):TOGGLE_HC NPP")
+  field(INPC, "$(cont):SAVED_HC  NPP")
+  field(OUT,  "$(cont):SET_HC    CPP")
+  field(CALC, "(A>0)?C:0")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
 }
 
