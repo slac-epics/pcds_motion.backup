@@ -505,7 +505,13 @@ record(longin, "$(cont):EE_L") {
   field(DESC, "Encoder enabled (L)")
   field(DTYP, "stream")
   field(INP,  "@mcode.proto GET_EE M$(M) $(addr)")
-  field(FLNK, "$(cont):EE")
+  field(FLNK, "$(cont):EE_FAN")
+}
+
+record(fanout, "$(cont):EE_FAN") {
+  field(DESC, "Update bi and record")
+  field(LNK1, "$(cont):EE")
+  field(LNK2, "$(cont)")
 }
 
 record(bi, "$(cont):EE") {
@@ -517,6 +523,7 @@ record(bi, "$(cont):EE") {
   field(ONAM, "Enable")
   field(OSV,  "NO_ALARM")
   field(PINI, "YES")
+  field(FLNK, "$(cont)")
 }
 
 record(bo, "$(cont):SET_EE") {
