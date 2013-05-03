@@ -68,6 +68,11 @@ record(stringout, "$(MOT):REV_MEANS") {
   field(VAL, "$(REV_MEANS)")
 }
 
+record(stringout, "$(MOT):MODEL") {
+  field(DESC, "Motor vendor model.")
+  field(VAL, "$(MODEL=NA)")
+}
+
 record(bo, "$(MOT):SET_ZERO") {
   field(DESC, "Write 1 to set position.")
   field(FLNK, "$(MOT):SET_ZERO_1 PP")
