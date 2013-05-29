@@ -30,6 +30,7 @@ VA N1        'Steps to move Cw
 VA N2        'Steps to move ccw
 VA N         'Steps to move
 VA CT        'Trigger counter
+VA HB        'Hearbeat during normal operation
 
 
 Ht=5         'Reduce Holding time to 5
@@ -71,6 +72,7 @@ N1=0
 N2=0
 N=0
 CT=0
+HB=0
 
 PG 1
 
@@ -102,6 +104,8 @@ PG 1
     BR Z0, SE = 1
     BR Z2, SE = 2
     BR Z4, SE = 3
+    IC HB
+    H 100
     BR ZA
 
   LB Z0             ' One-shot init
@@ -276,6 +280,5 @@ PG 1
     E             ' Kill program on violation
     RT
 
-PG
 E
-
+PG
