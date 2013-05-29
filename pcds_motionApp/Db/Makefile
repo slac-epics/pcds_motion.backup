@@ -42,6 +42,7 @@ REQ	+= autosave_motor_positions.template
 REQ	+= autosave_motor_settings.template
 REQ	+= autosave_motor_ilk.template
 REQ	+= ims_motor_settings.template
+REQ	+= usr_motor_settings.template
 
 
 include $(TOP)/configure/RULES

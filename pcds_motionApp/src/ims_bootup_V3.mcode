@@ -1,0 +1,281 @@
+' XIP Pulse Picker Program
+' VA restrictions:
+' 1. A variable cannot be named after A MCode Instruction,
+' Variable or Flag or Keyword
+' 2. The first character must be alpha, the second character
+' may be alpha-numeric.
+' 3. A variable is limited to two characters.
+' 4. Limited to 192 variables and labels.
+
+'Additions
+VA Ve        'Program version
+VA SE        'Program select
+VA EN        'Current enable
+VA Eo        'Last enable
+VA TG        'Trigger enable
+VA Sd        '+/- deadband
+VA Ud        'Upper limit violation flag
+VA Ld        'Lower limit violation flag
+VA N3        'Cw encoder desired position
+VA N4        'Ccw encoder desired position
+VA AF        'Actual frequency (120Hz)
+VA DF        'Desired frequency
+VA RF        'Ratio of frequencies
+VA R5
+
+VA NS
+VA DT        'Waiting time
+VA QN        'Ratio to divide
+VA N1        'Steps to move Cw
+VA N2        'Steps to move ccw
+VA N         'Steps to move
+VA CT        'Trigger counter
+
+
+Ht=5         'Reduce Holding time to 5
+Fc=9         'filter input 13 for 12.9uS need this?
+R2=0         'Clear R2 for counting
+Dn="1"
+El=4096      'Encoder lines
+S3=16,1,1    'Encoder power
+S4=16,0,0    'Setup IO 4 for Fan control
+S13=60,0,0   'Set inp 13 for Hi speed TC in
+Fc=0         'Filter input none
+Ms=256       'Microsteps/Fullsteps
+Vi=1000      'Initial velocity
+Vm=768000    'Maximum velocity
+A=1000000    'Acceleration
+D=1000000    'Deceleration
+Ee=0         'Disable encoder closed-loop
+Rc=100       'Max run current
+Hc=5         'Min hold current
+
+'Separate variable assignments from declarations
+Ve=3         'MCode Version 3
+SE=0
+EN=0
+Eo=0
+TG=0
+Sd=50
+Ud=0
+Ld=0
+N3=0
+N4=0
+AF=120
+DF=30
+RF=AF/DF
+NS=0
+DT=0
+QN=1
+N1=0
+N2=0
+N=0
+CT=0
+
+PG 1
+
+  LB SU
+    ' 30Hz testing inits
+    Te=0       'Disable trigger
+    SE=0       'Program select
+    N1=3200    '+22.5 degrees
+    N2=-3200   '-22.5 degrees
+    N3=1016    '+22.5 degress in counts
+    N4=0       'Home position
+    Sd=50      '+/- deadband
+    QN=1
+    DT=0
+    CT=0
+    N=5
+    Ud=0
+    Ld=0
+    En=0
+    Eo=0
+    R2=0       'Limit check alternator
+    Vm=5000000
+    Vi=100000
+    A=30000000
+    D=30000000
+    H 100
+
+  LB ZA             ' Main loop
+    BR Z0, SE = 1
+    BR Z2, SE = 2
+    BR Z4, SE = 3
+    BR ZA
+
+  LB Z0             ' One-shot init
+    Tc = M1
+    H 500
+    R2=0
+    BR Z1
+
+  LB Z1             ' One-shot program
+    BR ZB, TG = 1
+    BR Z1
+
+  LB ZB
+    Te = 4
+    BR ZG
+
+  LB ZG
+    BR Z1, TG = 0
+    BR ZG
+
+  LB M1
+    Te = 0
+    TG = 0
+    CL ZC, EN = 0
+    CL ZD, EN = 1
+    CL ZE, EO = 0
+    CL ZF, EO = 1
+    RT
+
+  LB ZC
+    MR N1
+    H
+    EO = 0
+    'CL Yp, R2=1
+    CL Zp', R2=1     ' Check CW + deadband
+    ''CL Zq, R2=61    ' Check CW - deadband
+    RT
+
+  LB ZD
+    MR N2
+    H
+    EO = 1
+    'CL Yp, R2=5
+    'CL Zr, R2=30    ' Check CCW + deadband
+    CL Zs', R2=30    ' Check CCW - deadband
+    'CL Yj, R2>=10  ' Clear R2
+    RT
+
+  LB Yj
+    R2=0
+    RT
+
+  LB Yp
+    PR "C2=", C2
+    RT
+
+  LB ZE
+    EN = 1
+    RT
+
+  LB ZF
+    EN = 0
+    RT
+
+  LB Z2         ' Flip-flop init
+    R2=0
+    H 100
+    BR Z3
+
+  LB Z3         ' Flip-flop program
+    Tc = M2
+    Te = 4
+    BR Z3
+
+   LB M2
+    IC R2
+    CL ZC, EN = 0
+    CL ZD, EN = 1
+    CL ZE, EO = 0
+    CL ZF, EO = 1
+    RT
+
+  LB Z4             ' Burst init
+    R1=0
+    TG=0
+    R1 = 0
+    H 100
+    BR Zy
+
+  LB Zy             ' Burst trigger enable
+    BR Zx, TG = 1
+    BR Zy
+
+  LB Zx
+    MR N1
+    BR Z5
+
+  LB Z5             ' Burst program
+    Tc = M4
+    Te = 4
+    BR ZZ, R1 = N
+    BR Z5
+
+  LB M4
+    IC R1
+    RT
+
+  LB ZZ
+    MR N2
+    R1 = 0
+    Tg=0
+    BR Zy
+
+  LB M3
+    MR N1
+    H DT
+    MR N2
+    H DT
+    RT
+
+  LB Zj            ' Cw slip check
+    R3=N3-Sd
+    R4=N3+Sd
+    CL Zm, C2<R3   ' Slipped below deadband
+    CL Zm, C2>R4   ' Slipped above deadband
+  RT
+
+  LB Zk             'Ccw slip check
+    R3=N4-Sd
+    R4=N4+Sd
+    CL Zn, C2<R3   ' Slipped below deadband
+    CL Zn, C2>R4   ' Slipped above deadband
+  RT
+
+  LB Zp            ' CW + deadband
+    'PR "CW+ check"
+    R4=N3+Sd
+    CL Zm, C2>R4   ' Slipped above CW deadband
+    'IC R2
+    RT
+
+  LB Zq            ' CW - deadband
+    'PR "CW- check"
+    R3=N3-Sd
+    CL Zm, C2<R3   ' Slipped below CW deadband
+    'IC R2
+    RT
+
+  LB Zr            ' CCW + deadband
+    'PR "CCW+ check"
+    R4=N4+Sd
+    CL Zn, C2>R4   ' Slipped above CCW deadband
+    'IC R2
+    RT
+
+  LB Zs            ' CCW - deadband
+    'PR "CCW- check"
+    R3=N4-Sd
+    CL Zn, C2<R3   ' Slipped below CCW deadband
+    'R2=0
+    RT
+
+  LB Zm
+    Ud=1          ' Upper limit violation
+    PR "ULV=", C2
+    E             ' Kill program on violation
+    RT
+
+  LB Zn
+    Ld=1          ' Lower limit violation
+    PR "LLV=", C2
+    E             ' Kill program on violation
+    RT
+
+PG
+E
+
