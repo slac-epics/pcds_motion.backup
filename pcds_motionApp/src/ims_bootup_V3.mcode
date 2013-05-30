@@ -31,6 +31,7 @@ VA N2        'Steps to move ccw
 VA N         'Steps to move
 VA CT        'Trigger counter
 VA HB        'Hearbeat during normal operation
+VA PU
 
 
 Ht=5         'Reduce Holding time to 5
@@ -73,6 +74,7 @@ N2=0
 N=0
 CT=0
 HB=0
+PU=0
 
 PG 1
 
@@ -200,7 +202,7 @@ PG 1
     BR Zy
 
   LB Zx
-    MR N1
+    MR N1/2
     BR Z5
 
   LB Z5             ' Burst program
@@ -214,7 +216,7 @@ PG 1
     RT
 
   LB ZZ
-    MR N2
+    MR N2/2
     R1 = 0
     Tg=0
     BR Zy
@@ -271,12 +273,14 @@ PG 1
   LB Zm
     Ud=1          ' Upper limit violation
     PR "ULV=", C2
+    SE=0
     E             ' Kill program on violation
     RT
 
   LB Zn
     Ld=1          ' Lower limit violation
     PR "LLV=", C2
+    SE=0
     E             ' Kill program on violation
     RT
 
