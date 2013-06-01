@@ -61,17 +61,17 @@ TG=0
 Sd=50
 Ud=0
 Ld=0
-N3=0
-N4=0
 AF=120
 DF=30
 RF=AF/DF
 NS=0
 DT=0
 QN=1
-N1=0
-N2=0
-N=0
+N1=3200
+N2=-3200
+N3=1016
+N4=0 
+N=5
 CT=0
 HB=0
 PU=0
@@ -90,11 +90,12 @@ PG 1
     QN=1
     DT=0
     CT=0
-    N=5
+    'N=5
     Ud=0
     Ld=0
     En=0
     Eo=0
+    R1=0
     R2=0       'Limit check alternator
     Vm=5000000
     Vi=100000
@@ -141,27 +142,16 @@ PG 1
     MR N1
     H
     EO = 0
-    'CL Yp, R2=1
-    CL Zp', R2=1     ' Check CW + deadband
-    ''CL Zq, R2=61    ' Check CW - deadband
+    CL Zp     ' Check CW + deadband
+    'CL Zq     ' Check CW - deadband
     RT
 
   LB ZD
     MR N2
     H
     EO = 1
-    'CL Yp, R2=5
-    'CL Zr, R2=30    ' Check CCW + deadband
-    CL Zs', R2=30    ' Check CCW - deadband
-    'CL Yj, R2>=10  ' Clear R2
-    RT
-
-  LB Yj
-    R2=0
-    RT
-
-  LB Yp
-    PR "C2=", C2
+    'CL Zr    ' Check CCW + deadband
+    CL Zs    ' Check CCW - deadband
     RT
 
   LB ZE
@@ -192,41 +182,49 @@ PG 1
 
   LB Z4             ' Burst init
     R1=0
-    TG=0
-    R1 = 0
+    'TG=0
     H 100
-    BR Zy
-
-  LB Zy             ' Burst trigger enable
-    BR Zx, TG = 1
-    BR Zy
-
-  LB Zx
-    MR N1/2
     BR Z5
+
+  'LB Zy             ' Burst trigger enable
+  '  BR Zx, TG = 1
+  '  BR Zy
 
   LB Z5             ' Burst program
     Tc = M4
     Te = 4
-    BR ZZ, R1 = N
+    'CL Zx, R1 = 1
+    'CL ZZ, R1 = N+1
     BR Z5
 
   LB M4
     IC R1
+    CL Zx, R1=1
+    CL ZZ, R1=N+1
+    'IC R1
     RT
 
-  LB ZZ
+  LB Zx      'Move to open
+    MR N1/2
+    H
+    'CL Zp
+    'IC R1
+    RT
+
+  LB ZZ      'Move to close, reset
     MR N2/2
-    R1 = 0
-    Tg=0
-    BR Zy
-
-  LB M3
-    MR N1
-    H DT
-    MR N2
-    H DT
+    H
+    'CL Zs
+    R1=0
+    'Te=0
     RT
+
+  'LB M3     'Delay segment
+  '  MR N1
+  '  H DT
+  '  MR N2
+  '  H DT
+  '  RT
 
   LB Zj            ' Cw slip check
     R3=N3-Sd
@@ -273,6 +271,7 @@ PG 1
   LB Zm
     Ud=1          ' Upper limit violation
     PR "ULV=", C2
+    'MA 0       'Move to home position
     SE=0
     E             ' Kill program on violation
     RT
@@ -280,6 +279,7 @@ PG 1
   LB Zn
     Ld=1          ' Lower limit violation
     PR "LLV=", C2
+    'MA 0       'Move to home position
     SE=0
     E             ' Kill program on violation
     RT
