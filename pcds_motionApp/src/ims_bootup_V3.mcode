@@ -191,32 +191,30 @@ PG 1
   '  BR Zy
 
   LB Z5             ' Burst program
+    'CL Zx, R1=1
+    'CL ZZ, R1=R3
     Tc = M4
     Te = 4
-    'CL Zx, R1 = 1
-    'CL ZZ, R1 = N+1
     BR Z5
 
   LB M4
     IC R1
     CL Zx, R1=1
-    CL ZZ, R1=N+1
+    CL ZZ, R1>=N
     'IC R1
     RT
 
   LB Zx      'Move to open
     MR N1/2
     H
-    'CL Zp
-    'IC R1
+    CL Zt
     RT
 
   LB ZZ      'Move to close, reset
     MR N2/2
     H
-    'CL Zs
+    CL Zs
     R1=0
-    'Te=0
     RT
 
   'LB M3     'Delay segment
@@ -245,6 +243,12 @@ PG 1
     R4=N3+Sd
     CL Zm, C2>R4   ' Slipped above CW deadband
     'IC R2
+    RT
+
+  LB Zt            ' CW + Db to "home position" N1/2
+    R4=N3/2
+    R4=R4+Sd
+    CL Zm, C2>R4
     RT
 
   LB Zq            ' CW - deadband
