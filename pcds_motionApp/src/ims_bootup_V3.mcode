@@ -35,6 +35,7 @@ VA PU
 VA EC        'Enable error checking
 VA N5        'Cw limit + SD
 VA N6        'Ccw limt - SD
+VA Go        'Single burst loop indicator
 
 Ht=5         'Reduce Holding time to 5
 Fc=9         'filter input 13 for 12.9uS need this?
@@ -108,6 +109,7 @@ PG 1
     'Vi=100000
     'A=30000000
     'D=30000000
+    Go=0
     H 100
 
   LB ZA             ' Main loop
@@ -192,28 +194,50 @@ PG 1
 
   LB Z4             ' Burst init
     R1=0
-    Tc = M4
-    Te = 4
-    'H 100
+    BR Yy, TG = 0   ' Single burst
+    BR Yz, TG = 1   ' Continuous burst
+    BR Z4
+
+  LB Yy
+    Tc=M5
+    CL Yx, Go=1
+    BR Yy
+   
+  LB Yx
+    Te=4
+    BR Z6 
+    
+  LB Z6         ' Single burst, loop
+    BR Yy, Go=0
+    BR Z6
+
+  LB Yz
+    Tc=M4
+    Te=4
     BR Z5
 
-  'LB Zy             ' Burst trigger enable
-  '  BR Zx, TG = 1
-  '  BR Zy
-
   LB Z5             ' Burst program, loop
-    'CL Zx, R1=1
-    'CL ZZ, R1=R3
-    'Tc = M4
-    'Te = 4
+    'Run Forever
     BR Z5
 
   LB M4           ' Trigger function
     IC R1
     CL Zx, R1=1
     CL ZZ, R1>=N
-    'IC R1
     Te=4
+    RT
+
+  LB M5           ' Trigger function
+    IC R1
+    CL Zx, R1=1
+    CL ZZ, R1>=N
+    Te=4
+    CL Ya, Go=0
+    RT
+
+
+  LB Ya
+    Te=0
     RT
 
   LB Zx      'Move to open
@@ -224,10 +248,10 @@ PG 1
 
   LB ZZ      'Move to close, reset
     R1=0
+    Go=0
     MR N2/2
     H
     CL Zs,EC=1
-    'R1=0
     RT
 
   'LB M3     'Delay segment
