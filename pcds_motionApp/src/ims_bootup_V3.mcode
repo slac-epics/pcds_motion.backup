@@ -122,25 +122,28 @@ PG 1
 
   LB Z0             ' One-shot init
     Tc = M1
-    H 500
+    H 100
     R2=0
     BR Z1
 
   LB Z1             ' One-shot program
-    BR ZB, TG = 1
+    'BR ZB, TG = 1
+    CL ZB, TG=1
     BR Z1
 
   LB ZB
     Te = 4
-    BR ZG
+    Tg = 0
+    'BR ZG
+    RT
 
-  LB ZG
-    BR Z1, TG = 0
-    BR ZG
+  'LB ZG
+  '  BR Z1, TG = 0
+  '  BR ZG
 
   LB M1
-    Te = 0
-    TG = 0
+    'Te = 0
+    'TG = 0
     CL ZC, EN = 0
     CL ZD, EN = 1
     CL ZE, EO = 0
