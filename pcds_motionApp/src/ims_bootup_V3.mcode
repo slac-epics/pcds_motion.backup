@@ -113,9 +113,11 @@ PG 1
     H 100
 
   LB ZA             ' Main loop
-    BR Z0, SE = 1
-    BR Z2, SE = 2
-    BR Z4, SE = 3
+    BR Z0, SE = 1   ' Mode 1
+    BR Z2, SE = 2   ' Mode 2
+    BR Z4, SE = 3   ' Mode 3
+    CL Z8, SE = 4   ' Open routine
+    CL Z9, SE = 5   ' Close routine
     IC HB
     H 100
     BR ZA
@@ -271,6 +273,28 @@ PG 1
     MR N2/2
     H
     CL Zs,EC=1
+    RT
+  
+  LB Z8
+    SE=0
+    EE=1
+    'MA 0
+    'H
+    'C1=0
+    'C2=0
+    MA 560
+    H
+    EE=0
+    RT
+
+  LB Z9
+    SE=0
+    EE=1
+    MA 0
+    H
+    'C1=0
+    'C2=0
+    EE=0
     RT
 
   'LB M3     'Delay segment
