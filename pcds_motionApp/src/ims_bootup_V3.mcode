@@ -88,21 +88,21 @@ PG 1
     ' 30Hz testing inits
     Te=0       'Disable trigger
     SE=0       'Program select
-    N1=3200    '+22.5 degrees
-    N2=-3200   '-22.5 degrees
-    N3=1016    '+22.5 degress in counts
-    N4=0       'Home position
+    'N1=3200    '+22.5 degrees
+    'N2=-3200   '-22.5 degrees
+    'N3=1016    '+22.5 degress in counts
+    'N4=0       'Home position
     N5=N3+SD
     N6=N4-SD
     'Sd=50      '+/- deadband
-    QN=1
-    DT=0
+    'QN=1
+    'DT=0
     CT=0
     'N=5
     Ud=0
     Ld=0
-    En=0
-    Eo=0
+    'En=0       'Clear position history
+    'Eo=0       'Clear position history
     R1=0
     R2=0       'Limit check alternator
     'Vm=5000000
@@ -198,7 +198,8 @@ PG 1
   LB Z4             ' Burst init
     R1=0
     BR Yy, TG = 0   ' Single burst
-    BR Yz, TG = 1   ' Continuous burst
+    BR Yz, TG = 1   ' Continuous burs
+    BR Ys, TG = 2   ' open/close only
     BR Z4
 
   LB Yy
@@ -219,18 +220,27 @@ PG 1
     Te=4
     BR Z5
 
-  LB Z5             ' Burst program, loop
+  LB Z5          ' Burst program, loop
     'Run Forever
     BR Z5
 
-  LB M4           ' Trigger function
+  LB Ys
+    Tc=M6
+    Te=4
+    BR Z7
+
+  LB Z7          'Burst program, open/close, loop
+    'Run Forever
+    BR Z7
+
+  LB M4          ' Continous function
     IC R1
     CL Zx, R1=1
     CL ZZ, R1>=N
     Te=4
     RT
 
-  LB M5           ' Trigger function
+  LB M5          ' Single function
     IC R1
     CL Zx, R1=1
     CL ZZ, R1>=N
@@ -238,9 +248,15 @@ PG 1
     CL Ya, Go=0
     RT
 
-
   LB Ya
     Te=0
+    RT
+
+  LB M6           ' Open/close function
+    IC R1
+    CL Zx, R1=1   'Open 1st trigger
+    CL ZZ, R1>=2  'Close 2nd trigger
+    Te=4
     RT
 
   LB Zx      'Move to open
