@@ -12,7 +12,7 @@ VA Ve        'Program version
 VA SE        'Program select
 VA EN        'Current enable
 VA Eo        'Last enable
-VA TG        'Trigger enable
+VA TG        'Trigger mode 3
 VA Sd        '+/- deadband
 VA Ud        'Upper limit violation flag
 VA Ld        'Lower limit violation flag
@@ -36,6 +36,8 @@ VA EC        'Enable error checking
 VA N5        'Cw limit + SD
 VA N6        'Ccw limt - SD
 VA Go        'Single burst loop indicator
+VA N7        'Calc Cw swing open, relative
+VA N8        'Calc Ccw swing close, relative
 
 Ht=5         'Reduce Holding time to 5
 Fc=9         'filter input 13 for 12.9uS need this?
@@ -81,6 +83,8 @@ CT=0
 HB=0
 PU=0
 EC=1        'Default error checking ON
+N7=N1/2     'Open swing value
+N8=N2/2     'Close swing value
 
 PG 1
 
@@ -123,29 +127,22 @@ PG 1
     BR ZA
 
   LB Z0             ' One-shot init
-    Tc = M1
-    H 100
+    Tc=M1
     R2=0
+    Go=0
+    'H 100
     BR Z1
 
-  LB Z1             ' One-shot program
-    'BR ZB, TG = 1
-    CL ZB, TG=1
+  LB Z1             ' One-shot program, loop
+    CL ZB, GO=1
     BR Z1
 
   LB ZB
     Te = 4
-    Tg = 0
-    'BR ZG
+    GO = 0
     RT
 
-  'LB ZG
-  '  BR Z1, TG = 0
-  '  BR ZG
-
   LB M1
-    'Te = 0
-    'TG = 0
     CL ZC, EN = 0
     CL ZD, EN = 1
     CL ZE, EO = 0
@@ -157,14 +154,14 @@ PG 1
     H
     EO = 0
     CL Zp,EC=1     ' Check CW + deadband
-    ''CL Zq,EC=1     ' Check CW - deadband
+    'CL Zq,EC=1     ' Check CW - deadband
     RT
 
   LB ZD
     MR N2
     H
     EO = 1
-    ''CL Zr,EC=1    ' Check CCW + deadband
+    'CL Zr,EC=1    ' Check CCW + deadband
     CL Zs,EC=1    ' Check CCW - deadband
     RT
 
@@ -177,15 +174,13 @@ PG 1
     RT
 
   LB Z2         ' Flip-flop init
-    'R2=0
     Tc = M2
     Te = 4
-    H 100
+    'H 100
     BR Z3
 
-  LB Z3         ' Flip-flop program
-    'Tc = M2
-    'Te = 4
+  LB Z3         ' Flip-flop program, loop
+    'Run Forever
     BR Z3
 
    LB M2
@@ -201,7 +196,7 @@ PG 1
     R1=0
     BR Yy, TG = 0   ' Single burst
     BR Yz, TG = 1   ' Continuous burs
-    BR Ys, TG = 2   ' open/close only
+    BR Ys, TG = 2   ' Open/close only
     BR Z4
 
   LB Yy
@@ -262,7 +257,7 @@ PG 1
     RT
 
   LB Zx      'Move to open
-    MR N1/2
+    MR N7
     H
     CL Zt,EC=1
     RT
@@ -270,31 +265,31 @@ PG 1
   LB ZZ      'Move to close, reset
     R1=0
     Go=0
-    MR N2/2
+    MR N8
     H
     CL Zs,EC=1
     RT
   
-  LB Z8
-    SE=0
-    EE=1
+  LB Z8     'Move to open, encoder
+    'SE=0    'Return status to standby
+    EE=1    'Enable encoder
     'MA 0
     'H
     'C1=0
     'C2=0
-    MA 560
-    H
-    EE=0
+    MA 560  'Move to open position
+    H       'Wait for move to finish
+    EE=0    'Disable encoder
     RT
 
-  LB Z9
-    SE=0
-    EE=1
-    MA 0
-    H
+  LB Z9     'Move to close, encoder
+    'SE=0    'Return status to standby
+    EE=1    'Enable encoder
+    MA 0    'Move to closed, home position
+    H       'Wait till move is done
     'C1=0
     'C2=0
-    EE=0
+    EE=0    'Disable encoder
     RT
 
   'LB M3     'Delay segment
@@ -358,6 +353,7 @@ PG 1
     Ud=1          ' Upper limit violation
     PR "ULV=", C2
     'MA 0       'Move to home position
+    'CL Z9         ' Move to close
     SE=0
     E             ' Kill program on violation
     RT
