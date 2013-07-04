@@ -38,6 +38,14 @@ VA N6        'Ccw limt - SD
 VA Go        'Single burst loop indicator
 VA N7        'Calc Cw swing open, relative
 VA N8        'Calc Ccw swing close, relative
+VA N9        'Is Closed flag
+VA MO        'Move to open value
+VA X1        'Middle enc position
+VA X2        'Upper enc deadband
+VA V1        'Previous VM
+VA V2        'Previous VI
+VA V3        'Previous A
+VA V4        'Previous D
 
 Ht=5         'Reduce Holding time to 5
 Fc=9         'filter input 13 for 12.9uS need this?
@@ -85,6 +93,11 @@ PU=0
 EC=1        'Default error checking ON
 N7=N1/2     'Open swing value
 N8=N2/2     'Close swing value
+N9=0        'Default to zero, sucesseful close=1
+MO=650      'Default move to open, encoder cnts
+X1=N3/2
+X2=X1+Sd
+NE=0        'Disable numeric enable
 
 PG 1
 
@@ -105,8 +118,8 @@ PG 1
     'N=5
     Ud=0
     Ld=0
-    'En=0       'Clear position history
-    'Eo=0       'Clear position history
+    En=0       'Clear position history
+    Eo=0       'Clear position history
     R1=0
     R2=0       'Limit check alternator
     'Vm=5000000
@@ -114,6 +127,7 @@ PG 1
     'A=30000000
     'D=30000000
     Go=0
+    N9=0       'Default to zero, sucesseful close=1
     H 100
 
   LB ZA             ' Main loop
@@ -127,6 +141,7 @@ PG 1
     BR ZA
 
   LB Z0             ' One-shot init
+    CL Y3           'Realignment check
     Tc=M1
     R2=0
     Go=0
@@ -174,6 +189,7 @@ PG 1
     RT
 
   LB Z2         ' Flip-flop init
+    CL Y3         'Realignment check
     Tc = M2
     Te = 4
     'H 100
@@ -193,6 +209,7 @@ PG 1
     RT
 
   LB Z4             ' Burst init
+    CL Y3           'Realignment check
     R1=0
     BR Yy, TG = 0   ' Single burst
     BR Yz, TG = 1   ' Continuous burs
@@ -208,7 +225,7 @@ PG 1
     Te=4
     BR Z6 
     
-  LB Z6         ' Single burst, loop
+  LB Z6         ' 3.1 Single burst, loop
     BR Yy, Go=0
     BR Z6
 
@@ -217,7 +234,7 @@ PG 1
     Te=4
     BR Z5
 
-  LB Z5          ' Burst program, loop
+  LB Z5          ' 3.2 Burst program, loop
     'Run Forever
     BR Z5
 
@@ -226,7 +243,7 @@ PG 1
     Te=4
     BR Z7
 
-  LB Z7          'Burst program, open/close, loop
+  LB Z7          ' 3.3 Burst program, open/close, loop
     'Run Forever
     BR Z7
 
@@ -270,26 +287,26 @@ PG 1
     CL Zs,EC=1
     RT
   
-  LB Z8     'Move to open, encoder
-    'SE=0    'Return status to standby
+  LB Z8     'Fast open, encoder
+    CL Y4   'Save current speeds
+    CL Y7   'Fast open/close speeds
+    SE=0    'Return status to standby
     EE=1    'Enable encoder
-    'MA 0
-    'H
-    'C1=0
-    'C2=0
-    MA 560  'Move to open position
+    MA MO   'Move to open position
     H       'Wait for move to finish
     EE=0    'Disable encoder
+    CL Y6   'Restore speeds
     RT
 
-  LB Z9     'Move to close, encoder
-    'SE=0    'Return status to standby
+  LB Z9     'Fast close, encoder
+    CL Y4   'Save current speeds
+    CL Y7   'Fast open/close speeds
+    SE=0    'Return status to standby
     EE=1    'Enable encoder
     MA 0    'Move to closed, home position
     H       'Wait till move is done
-    'C1=0
-    'C2=0
     EE=0    'Disable encoder
+    CL Y6   'Restore speeds
     RT
 
   'LB M3     'Delay segment
@@ -318,19 +335,22 @@ PG 1
     'R4=N3+Sd
     'CL Zm, C2>R4   ' Slipped above CW deadband
     CL Zm, C2>N5   ' Slipped above CW deadband
+    PR "OPEN=", C2
     'IC R2
     RT
 
   LB Zt            ' CW + Db to "home position" N1/2
-    R4=N3/2
-    R4=R4+Sd
-    CL Zm, C2>R4
+    'R4=N3/2
+    'R4=R4+Sd
+    CL Zm, C2>X2
+    PR "OPEN=", C2
     RT
 
   LB Zq            ' CW - deadband
     'PR "CW- check"
     R3=N3-Sd
     CL Zm, C2<R3   ' Slipped below CW deadband
+    'PR "OPEN=", C2
     'IC R2
     RT
 
@@ -346,6 +366,7 @@ PG 1
     'R3=N4-Sd
     'CL Zn, C2<R3   ' Slipped below CCW deadband
     CL Zn, C2<N6   ' Slipped below CCW deadband
+    PR "CLOSE=", C2
     'R2=0
     RT
 
@@ -353,7 +374,7 @@ PG 1
     Ud=1          ' Upper limit violation
     PR "ULV=", C2
     'MA 0       'Move to home position
-    'CL Z9         ' Move to close
+    'CL Y3         ' Move to close
     SE=0
     E             ' Kill program on violation
     RT
@@ -362,9 +383,72 @@ PG 1
     Ld=1          ' Lower limit violation
     PR "LLV=", C2
     'MA 0       'Move to home position
+    'CL Y3         ' Move to close
     SE=0
     E             ' Kill program on violation
     RT
+
+  LB Y1         'Reset far end, C2>N3-SD
+    EE=1        'Enable encoder
+    MA 8192     'Move to 180 degrees
+    H           'Wait till move is done
+    C1=0        'Reset microsteps register
+    C2=0        'Reset encoder register
+    EE=0        'Disable encoder for trigger mode
+    N9=1        'Flag successful close
+    H 100
+    RT
+
+  LB Y2         'Reset near zero, C2<N4+SD
+    EE=1        'Enable encoder
+    MA 0        'Move to 0 degrees
+    H           'Wait till move is done
+    C1=0        'Reset microsteps register
+    C2=0        'Reset encoder register
+    EE=0        'Disable encoder for trigger mode
+    N9=1        'Flag successful close
+    H 100
+    RT
+
+  LB Y3         'Realignment checks
+    CL Y4       'Save current speeds
+    CL Y5       'Assign realignment speeds
+    R3=N3-50      'Lower upper deadband
+    R4=N4+50      'Upper lower deadband
+    CL Y2, C2<R4  'If C2 is below this db, move to 0
+    CL Y1, C2>R3  'If C2 above the db, move to 180
+    CL Y1, N9=0   'If open, just move to 0
+    CL Y6       'Restore PP speeds
+    H 100
+    RT
+
+  LB Y4         'Save current speeds
+   V1=VM
+   V2=VI
+   V3=A
+   V4=D
+   RT
+
+  LB Y5         'Assign realignment speeds
+   VM=8192
+   VI=2000
+   A=2000
+   D=2000
+   RT
+
+  LB Y6         'Restore speeds
+   VM=V1
+   VI=V2
+   A=V3
+   D=V4
+   RT
+  
+  LB Y7        'Fast open/close speeds
+   VM=32000
+   VI=10000
+   A=32000
+   D=32000
+   RT
 
 E
 PG
