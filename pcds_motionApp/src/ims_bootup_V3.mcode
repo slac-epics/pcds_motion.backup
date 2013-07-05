@@ -288,6 +288,7 @@ PG 1
     RT
   
   LB Z8     'Fast open, encoder
+    CL Y3   'Align to safe position
     CL Y4   'Save current speeds
     CL Y7   'Fast open/close speeds
     SE=0    'Return status to standby
@@ -299,6 +300,7 @@ PG 1
     RT
 
   LB Z9     'Fast close, encoder
+    CL Y3   'Align to safe position
     CL Y4   'Save current speeds
     CL Y7   'Fast open/close speeds
     SE=0    'Return status to standby
@@ -419,6 +421,7 @@ PG 1
     CL Y1, C2>R3  'If C2 above the db, move to 180
     CL Y1, N9=0   'If open, just move to 0
     CL Y6       'Restore PP speeds
+    PR "REALIGN=1"
     H 100
     RT
 
