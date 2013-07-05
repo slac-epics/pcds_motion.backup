@@ -46,6 +46,7 @@ VA V1        'Previous VM
 VA V2        'Previous VI
 VA V3        'Previous A
 VA V4        'Previous D
+VA AD        'Align Done Flag
 
 Ht=5         'Reduce Holding time to 5
 Fc=9         'filter input 13 for 12.9uS need this?
@@ -128,14 +129,15 @@ PG 1
     'D=30000000
     Go=0
     N9=0       'Default to zero, sucesseful close=1
+    AD=0       'Clear align done flag
     H 100
 
   LB ZA             ' Main loop
     BR Z0, SE = 1   ' Mode 1
     BR Z2, SE = 2   ' Mode 2
     BR Z4, SE = 3   ' Mode 3
-    CL Z8, SE = 4   ' Open routine
-    CL Z9, SE = 5   ' Close routine
+    CL Z8, SE = 4   ' Fast Open
+    CL Z9, SE = 5   ' Fast Close
     IC HB
     H 100
     BR ZA
@@ -374,19 +376,17 @@ PG 1
 
   LB Zm
     Ud=1          ' Upper limit violation
-    PR "ULV=", C2
-    'MA 0       'Move to home position
-    'CL Y3         ' Move to close
-    SE=0
+    PR "ULV=", C2 ' Print encoder pos
+    CL Y3         ' Realign before abort
+    SE=0          ' Set program state to idle
     E             ' Kill program on violation
     RT
 
   LB Zn
     Ld=1          ' Lower limit violation
-    PR "LLV=", C2
-    'MA 0       'Move to home position
-    'CL Y3         ' Move to close
-    SE=0
+    PR "LLV=", C2 ' Print encoder position
+    CL Y3         ' Realign before abort
+    SE=0          ' Set program state to idle
     E             ' Kill program on violation
     RT
 
@@ -412,16 +412,16 @@ PG 1
     H 100
     RT
 
-  LB Y3         'Realignment checks
-    CL Y4       'Save current speeds
-    CL Y5       'Assign realignment speeds
+  LB Y3           'Realignment checks
+    CL Y4         'Save current speeds
+    CL Y5         'Assign realignment speeds
     R3=N3-50      'Lower upper deadband
     R4=N4+50      'Upper lower deadband
     CL Y2, C2<R4  'If C2 is below this db, move to 0
     CL Y1, C2>R3  'If C2 above the db, move to 180
     CL Y1, N9=0   'If open, just move to 0
-    CL Y6       'Restore PP speeds
-    PR "REALIGN=1"
+    CL Y6         'Restore PP speeds
+    AD=1          'Set align done flag
     H 100
     RT
 
