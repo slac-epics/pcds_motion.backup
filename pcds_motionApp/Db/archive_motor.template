@@ -1,8 +1,11 @@
 # Motor archive PV list
+$(MOTOR).VAL	1
+$(MOTOR).ACCL	5		monitor
 $(MOTOR).ATHM	1		monitor
 $(MOTOR).BDST	10
 $(MOTOR).BVEL	10
 $(MOTOR).DHLM	10
+$(MOTOR).DESC	10		monitor
 $(MOTOR).DIR	1		monitor
 $(MOTOR).DISA	10
 $(MOTOR).DISP	10
@@ -13,6 +16,10 @@ $(MOTOR).DVAL	1		monitor
 $(MOTOR).EGU	10
 $(MOTOR).ERES	1		monitor
 $(MOTOR).HLS	1
+$(MOTOR).HBAS	10
+$(MOTOR).HMDR	10
+$(MOTOR).HMTP	10
+$(MOTOR).HVEL	10
 $(MOTOR).LLS	1
 $(MOTOR).MISS	1		monitor
 $(MOTOR).MOVN	1		monitor
@@ -34,7 +41,7 @@ $(MOTOR).SYNC	1		monitor
 $(MOTOR).TDIR	1
 $(MOTOR).TWV	10
 $(MOTOR).UREV	1		monitor
-$(MOTOR).VAL	1
 $(MOTOR).VBAS	10
 $(MOTOR).VELO	10
 $(MOTOR).VMAX	10
+
