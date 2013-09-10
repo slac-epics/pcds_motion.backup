@@ -1,0 +1,318 @@
+' =============================================================
+' ================= XIP PULSE PICKER MCODE ====================
+' =============================================================
+
+' Strip comments with stripcomments.py before uploading this!
+
+
+' ===== LEGACY MCODE VARIABLES FOR IOC COMPATIBILITY =====
+VA Ve           ' MCode version. If Ve!=$DVER, MCode uploads
+VA Pu           ' Power-Up status flag
+
+
+' ===== CUSTOM PULSE PICKER VARIABLE DECLARATIONS =====
+VA Se           ' PP mode [Se]lect; refer to legend 
+VA Sd           ' Status indicator register; refer to legend
+VA Sw           ' [Sw]eep distance: # steps to 11.25deg
+VA Sr           ' Encoder sweep distance to 11.25deg
+VA Dr           ' Encoder [Dr]ift
+VA Dl           ' Encoder Drift Limit
+VA P0           ' Center (open) position
+VA P1           ' Positive closed position (from std MCode)
+VA P2           ' Negative closed position
+VA N0           ' Center (open) encoder pos
+VA N1           ' Positive closed encoder pos
+VA N2           ' Negative closed encoder pos
+VA Ec           ' Enable error checking (0=OFF, 1=ON)
+VA Ns           ' Number of saves, repurposed as PP version #
+VA Hb           ' Heartbeat counter
+VA Po           ' Position (P or C1) shadow register
+VA Cs           ' Encoder count (C2) shadow register
+VA Ud           ' Drift violation: motor drifting in + dir
+VA Ld           ' Drift violation: motor drifting in - dir
+
+Se=99           ' Ensure that HARD RESET init happens
+
+' ===== PROGRAM START =====
+PG 1                ' Enter programming mode, program address 1
+  LB SU             ' BUILT-IN MCode START-UP PROGRAM LABEL
+
+  ' ***** INITIALIZATION *****
+    ' *** INIT on HARD RESET ONLY ***
+    BR Mc, Se=0      ' Skip this section on a soft reset (Se=0)
+    Sd=80            ' Signal state change to power-up init
+    Ve=4
+    Pu=0
+    Ns=70            ' PP MCode version
+    Hb=0
+    
+    EL=4096          ' 4096 lines * 4 step/line = 16384 enc/rev
+    MS=64            ' 64 uS/Step * 200 S/rev = 12800 uS/rev
+    EE=0             ' Disable closed-loop: too slow! (~1kHz)
+    S3=16,0,1        ' S3 for enc power, active low, sourcing
+    O3=1             ' Turn on encoder power
+    S4=16,0,0        ' S4 for fan ctrl, active low, sinking
+    'O4=1             ' Turn on fan power
+    S13=60,0,0       ' Set S13 for hi-speed trip input capture
+    FC=9             ' Filter S13 for 12.9uS for debouncing
+    HT=5             ' Hold current delay time = 5ms
+    RC=100           ' Run current = 100%
+    HC=5             ' Hold current = 5%
+    NE=0             ' Disable numeric enable
+    Pu=0             ' Power-up flag de-assertion
+    
+    Sw=400           ' Sweep distance: 400 steps to 11.25deg
+    Sr=512           ' 512 encoder counts to 11.25deg
+    Dr=0             ' Encoder [Dr]ift
+    Dl=23            ' Drift limit set to 23 encs (0.5 deg)
+    P0=0             ' Center (open) position
+    P1=P0+Sw         ' Positive closed position
+    P2=P0-Sw         ' Negative closed position
+    N0=0             ' Center (open) position
+    N1=N0+Sr         ' Positive closed position
+    N2=N0-Sr         ' Negative closed position
+    Po=P             ' [Po]sition counter shadow register
+    Cs=C2            ' Encoder counter shadow register
+    Ec=1             ' Error checking (default ON)
+    Ud=0             ' Reset + violation flag
+    Ld=0             ' Reset - violation flag
+    
+  ' *** INIT on START-UP or mode change ***
+  LB Mc
+    Sd=81            ' Set state to start-up initialization
+    TE=0             ' Disable any trips
+    H 100            ' Hold for 100ms
+    Se=0             ' Mode Select = 0 ("Waiting for mode")
+    Sd=0             ' Signal state change to mode select
+
+  ' ***** MODE SELECT *****
+  LB Za             ' Mode Select loop START
+    BR Z1, Se = 1    ' Branch Z0 if Mode 1: ONE-SHOT
+    BR Z2, Se = 2    ' Branch Z2 if Mode 2: FLIP-FLOP
+    BR Z4, Se = 3    ' Branch Z3 if Mode 3: BURST
+    BR Z4, Se = 4    ' Branch Z4 if Mode 4: Fast Open
+    BR Z5, Se = 5    ' Branch Z5 if Mode 5: Fast Close
+    IC Hb            ' Increment heartbeat counter
+    H 100            ' Hold for 100ms
+    BR Za           ' Mode Select loop END
+
+
+  ' ***** MODE Se 1: ONE-SHOT ***** 
+  LB Z1             ' Mode 1: ONE-SHOT
+    Sd=10            ' Signal state change to ONE-SHOT init 
+    CL V1            ' Switch to ONE-SHOT speeds
+    TC=J1            ' Run subroutine J1 on Input Trip
+    TE=TE|4          ' Arm the built-in Input Trip
+    Sd=11            ' Set state to ONE-SHOT loop
+  LB Zb             ' Go into infinite loop, wait for movement
+    IC Hb            ' Increment heartbeat counter
+    H 100            ' Hold for 100ms
+    BR Mc, Se=0      ' If user sets Se to 0, go to mode select
+    BR Zb, Sd<>90    ' If movement not complete, loop
+    Sd=12           ' Signal one-shot complete
+    BR Zb           ' Loop back while waiting
+
+
+  ' ***** MODE Se 2: FLIP-FLOP *****
+  LB Z2             ' Mode 2: FLIP-FLOP init
+    Sd=20            ' Signal state change to FLIP-FLOP init
+    CL V2            ' Switch to FLIP-FLOP speeds
+    TC=J2            ' Run subroutine J2 on Input Trip
+    TE=TE|4          ' Arm built-in Input Trip
+    Sd=21            ' Signal state change to FLIP-FLOP loop
+  LB Zc             ' Go into infinite loop
+    IC Hb            ' Increment heartbeat counter
+    H 100            ' Hold for 100ms
+    BR Mc, Se=0      ' If user sets Se to 0, go to mode select
+    BR Zc, Sd<>90    ' If movement not complete, loop
+    Sd=22            ' Signal state is FLIP-FLOP loop (active)
+    BR Zc           ' Loop back while waiting
+
+
+  ' ***** MODE Se 3: BURST *****
+  LB Z3             ' Mode 3: BURST init
+    Sd=30            ' Signal state change to BURST init
+    CL V3            ' Switch to BURST speeds
+    TC J3            ' Run subroutine J3 on Input Trip
+    TE=TE|4          ' Arm built-in Input Trip
+    Sd=31            ' Signal state change to BURST loop
+  LB Zd             ' Go into infinite loop
+    IC Hb            ' Increment heartbeat counter
+    H 100            ' Hold for 100ms
+    BR Mc, Se=0      ' If user sets Se to 0, go to mode select
+    BR Zd, Sd<>92    ' If movement not complete, loop
+    Sd=39            ' Signal state change to BURST complete
+    BR Zd           ' Loop back while waiting
+
+
+  ' ***** MODE Se 4: FAST OPEN *****
+  LB Z4             ' Mode 4: FAST OPEN
+    Sd=40            ' Signal state change to FAST OPEN
+    CL V4            ' Switch to FAST OPEN speeds
+    CL X4            ' Call blocking move to open position
+    Sd=41            ' Signal fast open complete
+    BR Mc            ' Go back to mode select
+
+  ' ***** MODE Se 5: FAST CLOSE *****
+  LB Z5             ' Mode 5: FAST CLOSE
+    Sd=50            ' Signal state change to FAST CLOSE
+    CL V5            ' Switch to FAST CLOSE speeds
+    CL X5            ' Call blocking move to closed position
+    Sd=51            ' Signal fast close complete
+    BR Mc            ' Go back to mode select
+
+
+' ***** INTERRUPT SERVICE ROUTINES *****
+' *** ONE-SHOT mode ISR - BLOCKING toggle
+  LB J1
+    BR X0            ' Execute toggle movement
+
+' *** FLIP-FLOP mode ISR - BLOCKING toggle with auto re-arm
+  LB J2
+    TE=TE|4          ' Re-arm Input Trip
+    BR X0            ' Execute toggle movement
+
+' *** BURST mode ISR 1 - OPENING
+  LB J3
+    Sd=32            ' Signal OPEN pulse received
+    CL X4            ' Move to open
+    TC=J4            ' Change so that next ISR is J4
+    TE=TE|4          ' Re-arm input trip
+  RT                ' Return
+
+' *** BURST mode ISR 2 - CLOSING
+  LB J4
+    Sd=33            ' Signal CLOSE pulse received
+    BR X1            ' Move to close
+
+
+' ***** MOVEMENT SUBROUTINES *****
+' *** BLOCKING TOGGLE between one 'off' pos and the other ***
+  LB X0
+    BR Xa, P=P1      ' If in the + pos, move to the -
+    MA P1            ' Else, move to the + position
+    CL X9, Ec=1      ' Check drift at previous - position
+    BR Xb            ' Branch to end of subroutine
+  LB Xa             ' Here because in the positive position
+    MA P2            ' Move to the negative position
+    CL X8, Ec=1      ' Check drift at previous + position
+  LB Xb             ' End of subroutine
+    H                ' Hold until movement is complete
+    Po=P             ' Store current pos in shadow variable
+    Cs=C2            ' Store current enc in shadow variable
+    Sd=90            ' Signal movement complete
+  RT                ' Return
+
+' *** BLOCKING MOVE to POSITIVE CLOSED position ***
+  LB X1
+    MA P1            ' Move to + closed postition
+    CL X9, Ec=1      ' Check drift at previous - position
+    H                ' Hold until movement is complete
+    Po=P             ' Store current pos in shadow variable
+    Cs=C2            ' Store current enc in shadow variable
+    Sd=91            ' Signal movement complete to + pos
+  RT                ' Return
+
+' *** BLOCKING MOVE to NEGATIVE CLOSED position ***
+  LB X2
+    MA P2            ' Move to - closed postition
+    CL X8, Ec=1      ' Check drift at previous + position
+    H                ' Hold until movement is complete
+    Po=P             ' Store current pos in shadow variable
+    Cs=C2            ' Store current enc in shadow variable
+    Sd=92            ' Signal movement complete to - pos
+  RT                ' Return
+
+' *** BLOCKING MOVE to OPEN position ***
+  LB X4
+    MA P0            ' Move to the open position
+    CL X8, Ec=1      ' Assumed previous pos is + pos
+    H                ' Hold until movement is complete
+                     ' No shadow storage - open position is
+                     ' not used for drift check
+    Sd=94            ' Signal movement complete to open pos
+  RT                ' Return
+
+' *** BLOCKING MOVE to CLOSED position ***
+  LB X5
+    BR Xc, P=P1      ' Do not move if already in + pos
+    BR Xc, P=P2      ' Do not move if already in - pos
+    BR X1            ' Otherwise, move to + closed pos
+  LB Xc
+    Sd=95            ' Signal already in closed position
+  RT                ' Return
+
+
+' *** CHECK FOR DRIFT at positive closed position ***
+  LB X8
+    BR Xd, Po<>P1    ' Skip the routine if pos was not P1
+    Dr=N1-Cs         ' + Dr indicates slippage
+    BR Xd, Dr<Dl     ' Skip to end if Dr in spec
+    Ld=1             ' Otherwise, set violation flag
+                     ' motor drifting in - direction
+  LB Xd
+  RT                ' Return
+
+' *** CHECK FOR DRIFT at negative closed position ***
+  LB X9
+    BR Xe, Po<>P2    ' Skip the routine if pos was not P2
+    Dr=Cs-N2         ' + Dr indicates slippage
+    BR Xe, Dr<Dl     ' Skip to end if Dr in spec
+    Ud=1             ' Otherwise, set violation flag
+                     ' motor drifting in + direction
+  LB Xe
+  RT                ' Return
+
+
+' ***** VELOCITY, ACCELERATION LOADING SUBROUTINES *****
+' CL any of these subroutines to load various V/A profiles
+
+' *** Set MAXIMUM velocity and acceleration ***
+  LB V0
+    VI=96000         ' 7.5 rev/sec = 2700 deg/sec = 2.7 deg/ms
+    VM=128000        ' 10 rev/sec = 3600 deg/sec = 3.6 deg/ms
+    A=249600         ' 19.5 rev/s^2 = 7024 deg/sec^2
+    D=A              ' 19.5 rev/s^2 = 7024 deg/sec^2
+  RT                ' Return
+
+' *** Set ONE-SHOT velocity and acceleration ***
+  LB V1
+    BR V0            ' Use MAXIMUM (TEMPORARY) TODO: FIX
+
+' *** Set FLIP-FLOP velocity and acceleration ***
+  LB V2
+    BR V1            ' Use same as ONE-SHOT
+
+' *** Set BURST velocity and acceleration ***
+  LB V3
+    BR V0            ' Use MAXIMUM
+
+' *** Set FAST OPEN velocity and acceleration ***
+  LB V4
+    BR V0            ' Use MAXIMUM
+
+' *** Set FAST CLOSE velocity and acceleration ***
+  LB V5
+    BR V0            ' Use MAXIMUM
+
+' *** Set Jeff's previous fast open/close V/A ***    
+  LB V8
+    VI=3203
+    VM=10250
+    A=10250
+    D=A
+  RT
+
+' *** Set REALIGNMENT velocity and acceleration
+  LB V9
+    VI=640           ' 0.039 rev/sec = 14 deg/sec
+    VM=2624          ' 0.16 rev/sec = 57.6 deg/sec
+    A=640            ' 0.039 rev/s^2 = 14 deg/s^2
+    D=A              ' 0.039 rev/s^2 = 14 deg/s^2
+  RT                ' Return
+    
+    
+E                   ' Program End
+' ===== PROGRAM END =====
+
+PG                  ' End programming mode
