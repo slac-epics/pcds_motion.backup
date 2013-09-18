@@ -27,7 +27,7 @@ BR Mc, Se=0
 Sd=80
 Ve=4
 Pu=0
-Ns=86
+Ns=87
 EL=4096
 MS=8
 EE=0
@@ -257,7 +257,7 @@ Ud=1
 LB Xe
 RT
 LB V0
-VI=10000
+VI=5300
 VM=156250
 A=1875000
 D=A

@@ -44,7 +44,7 @@ PG 1                ' Enter programming mode, program address 1
     Sd=80            ' Signal state change to power-up init
     Ve=4
     Pu=0
-    Ns=86            ' PP MCode version
+    Ns=87            ' PP MCode version
     
     EL=4096          ' 4096 lines * 4 step/line = 16384 enc/rev
     MS=8             ' 8 uS/Step * 200 S/rev = 1600 uS/rev
@@ -353,7 +353,7 @@ PG 1                ' Enter programming mode, program address 1
 
 ' *** Set MAXIMUM velocity and acceleration ***
   LB V0
-    VI=10000         ' TODO further tuning
+    VI=5300          ' TODO further tuning
     VM=156250
     A=1875000
     D=A
