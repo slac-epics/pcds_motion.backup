@@ -3,15 +3,23 @@ VA Pu
 VA Se
 VA Sd
 VA Sw
+VA Sr
 VA Dr
+VA Dl
 VA P0
 VA P1
 VA P2
+VA N0
+VA N1
+VA N2
 VA Ec
 VA Ns
 VA Hb
-VA Po
 VA Cs
+VA Ud
+VA Ld
+VA Df
+VA Mo
 Se=99
 PG 1
 LB SU
@@ -19,14 +27,14 @@ BR Mc, Se=0
 Sd=80
 Ve=4
 Pu=0
-Ns=69
-Hb=0
+Ns=86
 EL=4096
-MS=64
+MS=8
 EE=0
 S3=16,0,1
 O3=1
 S4=16,0,0
+O4=1
 S13=60,0,0
 FC=9
 HT=5
@@ -34,181 +42,247 @@ RC=100
 HC=5
 NE=0
 Pu=0
-Sw=400
+Sw=50
+Sr=512
 Dr=0
+Dl=23
 P0=0
 P1=P0+Sw
 P2=P0-Sw
-Po=P
+N0=0
+N1=N0+Sr
+N2=N0-Sr
 Cs=C2
 Ec=1
+Ud=0
+Ld=0
+Df=99
 LB Mc
 Sd=81
 TE=0
 H 100
+Hb=0
 Se=0
 Sd=0
 LB Za
-BR Z1, Se = 1
-BR Z2, Se = 2
-BR Z4, Se = 3
-BR Z4, Se = 4
-BR Z5, Se = 5
+BR Z1, Se=1
+BR Z2, Se=2
+BR Z3, Se=3
+BR Z4, Se=4
+BR Z5, Se=5
+BR Z7, Se=7
 IC Hb
 H 100
 BR Za
 LB Z1
 Sd=10
 CL V1
-CL X9, Ec=1
+CL X5
+BR Zg, Df=-1
 TC=J1
+BR Zh
+LB Zg
+TC=J2
+LB Zh
 TE=TE|4
 Sd=11
 LB Zb
 IC Hb
 H 100
-BR Mc, Se=0
-BR Zb, Sd<>90
-Sd=12
+BR Z5, Se=0
 BR Zb
 LB Z2
 Sd=20
 CL V2
-CL X9, Ec=1
-TC=J2
+CL X5
+BR Ze, Df=-1
+TC=J5
+BR Zf
+LB Ze
+TC=J6
+LB Zf
 TE=TE|4
 Sd=21
 LB Zc
 IC Hb
 H 100
-BR Mc, Se=0
-BR Zc, Sd<>90
+BR Z5, Se=0
 Sd=22
 BR Zc
 LB Z3
 Sd=30
 CL V3
-CL X9, Ec=1
-TC J3
+TC=J3
 TE=TE|4
 Sd=31
 LB Zd
 IC Hb
 H 100
-BR Mc, Se=0
-BR Zd, Sd<>92
-Sd=39
+BR Z5, Se=0
 BR Zd
 LB Z4
 Sd=40
 CL V4
-CL X9, Ec=1
 CL X4
 Sd=41
 BR Mc
 LB Z5
 Sd=50
 CL V5
-Sd=1001
-CL X9, Ec=1
-Sd=1002
 CL X5
 Sd=51
 BR Mc
+LB Z7
+Sd=70
+CL V9
+HI 3
+H
+MR Mo
+H
+C1=P1
+C2=N1
+Cs=N1
+Df=1
+Sd=79
+BR Mc
 LB J1
-BR X0
+MA P2
+CL X8, Ec=1
+H
+Cs=C2
+Df=-1
+RT
 LB J2
-TE=TE|4
-BR X0
+MA P1
+CL X9, Ec=1
+H
+Cs=C2
+Df=1
+RT
 LB J3
-Sd=32
-CL X4
+MA P0
+CL X8, Ec=1
 TC=J4
+H
+Df=0
 TE=TE|4
 RT
 LB J4
-Sd=33
-BR X1
-LB X0
-Po=P
-Cs=C2
-BR Xa,P=P1
 MA P1
-Dr=Cs-Po
+CL X9, Ec=1
+TC=J3
+H
+Cs=C2
+Df=1
+TE=TE|4
+RT
+LB J5
+MA P2
+CL X8, Ec=1
+TC=J6
+H
+Cs=C2
+Df=-1
+TE=TE|4
+RT
+LB J6
+MA P1
+CL X9, Ec=1
+TC=J5
+H
+Cs=C2
+Df=1
+TE=TE|4
+RT
+LB X0
+BR Xa, Df=1
+MA P1
+CL X9, Ec=1
+H
+Df=1
 BR Xb
 LB Xa
 MA P2
-Dr=Cs-Po
-LB Xb
+CL X8, Ec=1
 H
-Sd=90
+Df=-1
+LB Xb
+Cs=C2
 RT
 LB X1
-Sd=1004
-Po=P
-Sd=1005
-Cs=C2
-Sd=1006
 MA P1
-Sd=1007
-Dr=Cs-Po
-Sd=1008
+CL X9, Ec=1
 H
-Sd=91
+Cs=C2
+Df=1
 RT
 LB X2
-Po=P
-Cs=C2
 MA P2
-Dr=Cs-Po
+CL X8, Ec=1
 H
-Sd=92
+Cs=C2
+Df=-1
 RT
 LB X4
-Po=P
-Cs=C2
 MA P0
-Dr=Cs-Po
+CL X8, Ec=1
 H
-Sd=94
+Df=0
 RT
 LB X5
-BR Xc, P=P1
-BR Xc, P=P2
-Sd=1003
+BR Xc, Df=1
+BR Xc, Df=-1
 BR X1
-Sd=1009
 LB Xc
-Sd=95
+RT
+LB X7
+VA L1
+VA L2
+L1=C2*EL*8
+L2=MS*200
+C1=L1/L2
+RT
+LB X8
+BR Xd, Df<>1
+Dr=N1-Cs
+BR Xd, Dr<Dl
+Ld=1
+LB Xd
 RT
 LB X9
-Dr=C2-P
+BR Xe, Df<>-1
+Dr=Cs-N2
+BR Xe, Dr<Dl
+Ud=1
+LB Xe
 RT
 LB V0
-VI=96000
-VM=128000
-A=249600
+VI=10000
+VM=156250
+A=1875000
 D=A
 RT
 LB V1
-BR V0
+VI=10000
+VM=10000
+A=1875000
+D=A
+RT
 LB V2
-BR V1
+VI=10000
+VM=10000
+A=1875000
+D=A
+RT
 LB V3
 BR V0
 LB V4
 BR V0
 LB V5
-BR V0
-LB V8
-VI=3203
-VM=10250
-A=10250
-D=A
-RT
+BR V4
 LB V9
 VI=640
-VM=2624
+VM=2560
 A=640
 D=A
 RT
