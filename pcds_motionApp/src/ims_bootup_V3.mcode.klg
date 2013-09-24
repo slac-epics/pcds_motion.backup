@@ -42,9 +42,9 @@ PG 1                ' Enter programming mode, program address 1
     ' *** INIT on HARD RESET ONLY ***
     BR Mc, Se=0      ' Skip this section on a soft reset (Se=0)
     Sd=80            ' Signal state change to power-up init
-    Ve=4
+    Ve=3
     Pu=0
-    Ns=87            ' PP MCode version
+    Ns=89            ' PP MCode version
     
     EL=4096          ' 4096 lines * 4 step/line = 16384 enc/rev
     MS=8             ' 8 uS/Step * 200 S/rev = 1600 uS/rev
@@ -354,14 +354,14 @@ PG 1                ' Enter programming mode, program address 1
 ' *** Set MAXIMUM velocity and acceleration ***
   LB V0
     VI=5300          ' TODO further tuning
-    VM=156250
+    VM=10000
     A=1875000
     D=A
   RT                ' Return
 
 ' *** Set ONE-SHOT velocity and acceleration ***
   LB V1
-    VI=10000         ' TODO further tuning
+    VI=7500         ' TODO further tuning
     VM=10000
     A=1875000
     D=A
@@ -369,7 +369,7 @@ PG 1                ' Enter programming mode, program address 1
 
 ' *** Set FLIP-FLOP velocity and acceleration ***
   LB V2
-    VI=10000         ' TODO further tuning
+    VI=7500         ' TODO further tuning
     VM=10000
     A=1875000
     D=A
