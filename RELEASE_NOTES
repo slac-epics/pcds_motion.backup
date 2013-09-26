@@ -1,0 +1,3 @@
+R2.3.9
+	Changed Ud, Ld to counters rather than flags, they count the number of violations,
+	counters are cleared when se=0 is called. 

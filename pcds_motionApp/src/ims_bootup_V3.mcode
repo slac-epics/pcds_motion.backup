@@ -27,7 +27,7 @@ BR Mc, Se=0
 Sd=80
 Ve=3
 Pu=0
-Ns=89
+Ns=90
 EL=4096
 MS=8
 EE=0
@@ -65,6 +65,8 @@ Hb=0
 Se=0
 Sd=0
 LB Za
+Ld=0
+Ud=0
 BR Z1, Se=1
 BR Z2, Se=2
 BR Z3, Se=3
@@ -246,14 +248,14 @@ LB X8
 BR Xd, Df<>1
 Dr=N1-Cs
 BR Xd, Dr<Dl
-Ld=1
+Ld=Ld+1
 LB Xd
 RT
 LB X9
 BR Xe, Df<>-1
 Dr=Cs-N2
 BR Xe, Dr<Dl
-Ud=1
+Ud=Ud+1
 LB Xe
 RT
 LB V0
