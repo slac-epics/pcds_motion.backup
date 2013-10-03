@@ -85,11 +85,12 @@ PG 1                ' Enter programming mode, program address 1
     Hb=0             ' Reset heartbeat
     Se=0             ' Mode Select = 0 ("Waiting for mode")
     Sd=0             ' Signal state change to mode select
+'    Ld=0	      'Clear low limit violation counter
+'    Ud=0 	      'Clear high limit violation counter
+
 
   ' ***** MODE SELECT *****
   LB Za             ' Mode Select loop START
-    Ld=0			' Clear low limit violation counter
-    Ud=0			' Clear high limit violation counter
     BR Z1, Se=1      ' Branch Z0 if Mode 1: ONE-SHOT
     BR Z2, Se=2      ' Branch Z2 if Mode 2: FLIP-FLOP
     BR Z3, Se=3      ' Branch Z3 if Mode 3: BURST
@@ -335,7 +336,7 @@ PG 1                ' Enter programming mode, program address 1
     Dr=N1-Cs         ' + Dr indicates slippage
     BR Xd, Dr<Dl     ' Skip to end if Dr in spec
     'Ld=1				' Otherwise, set violaiton flag
-    Ld=Ld+1             ' Otherwise, incorment violation counter
+    IC Ld             ' Otherwise, incorment violation counter
                      ' motor drifting in - direction
   LB Xd
     'Ld=0			' Clear violation flag if within spec	
@@ -347,7 +348,7 @@ PG 1                ' Enter programming mode, program address 1
     Dr=Cs-N2         ' + Dr indicates slippage
     BR Xe, Dr<Dl     ' Skip to end if Dr in spec
     'Ud=1				' Otherwise, set violaiton flag
-    Ud=Ud+1             ' Otherwise, incroment violation counter
+    IC Ud             ' Otherwise, incroment violation counter
                      ' motor drifting in + direction
   LB Xe
     'Ud=0			' Clear violation flag if within spec
