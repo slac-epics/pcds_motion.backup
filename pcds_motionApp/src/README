@@ -10,3 +10,8 @@ Used for any motor that is serviced by the pcds_motion module.
 V3 - Pulse Picker MCode
 Used only for pulse picker spindle motors. Read out variable Ns to see 
 the revision number for this particular variant.
+
+V4 - PCDS Generic MCode w/o PU Flag
+Used for timing phase shifter "motors" to avoid the need to clear the PU 
+flag on power-cycle (it is critical that these come up in automated 
+fashion). That is the only difference between this and V2.

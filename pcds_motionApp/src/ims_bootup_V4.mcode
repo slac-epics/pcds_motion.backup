@@ -1,0 +1,93 @@
+VA PU   ' Power up flag
+VA p1	' Saved position
+VA Sd	' Save deadband
+VA Hb   ' Heartbeat monitor
+VA Ns   ' Number of saves
+VA Ve   ' MCode version
+
+Ve=2    ' Version 2
+Ne=0    ' Disable numeric cmd
+p1=P    ' Assign current position
+Sd=Db*4 ' Set save deadband
+
+PG 1
+  LB SU	          ' Run at power up
+  PU=0	          ' De-assert the Power-Up flag
+
+  H 1000          ' 1 second hold let motor boot-up
+
+  P=p1         	  ' Restore last saved position
+
+  R1=0	          ' Reset the delay counter
+  R2=0            ' Reset the moved flag
+  Hb=0            ' Reset heartbeat monitor
+
+  LB Lp
+    CL Za, Mv=1	  ' Moving
+    CL Zb, Mv=0	  ' Not moving
+    IC Hb
+    H 100
+    BR Lp
+
+  LB Za
+    R1=1          ' (Re-)Start the delay counter
+    R2=1          ' (Re-)set the moved flag
+    RT
+
+  LB Zb
+    CL Zc, R1>0   ' Finished moving or slipped, delaying
+    CL Zj, R1=0   ' Not moving yet
+    RT
+
+  LB Zc
+    CL Zd, R1<301 ' Not yet     300*100 ms
+    CL Ze, R1>300 ' Has delayed 300*100 ms
+    RT
+
+  LB Zd
+    IC R1         ' Increment the delay counter
+    RT
+
+  LB Ze
+    CL Zf, R2=1	  ' Delay was started by a move
+    CL Zg, R2=0   ' Delay not started by a move
+    RT
+
+  LB Zf
+    p1=P          ' Assign P to P1
+    S	          ' Save to NVM
+    IC Ns         ' Increment the Save counter
+    R1=0          ' Reset the delay counter
+    R2=0          ' Reset the moved flag
+    PR "Saved ",P1
+    RT
+
+  LB Zg
+    R3=p1-Sd
+    R4=p1+Sd
+    CL Zf, P<R3	  ' Really slipped below deadband
+    CL Zf, P>R4	  ' Really slipped above deadband
+    CL Zh, P>=R3  ' Came back or not
+    RT
+
+  LB Zh
+    CL Zi, P<=R4  ' Came back
+    RT
+
+  LB Zi
+    R1=0          ' Came back, reset the delay counter
+    RT
+
+  LB Zj
+    R3=p1-Sd
+    R4=p1+Sd
+    CL Zk, P<R3	  ' Slipped below deadband
+    CL Zk, P>R4	  ' Slipped above deadband
+    RT
+
+  LB Zk
+    R1=1          ' Start the delay counter
+    RT
+
+E
+PG
