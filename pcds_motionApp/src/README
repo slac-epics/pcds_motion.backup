@@ -1,0 +1,12 @@
+README for various PCDS MCode Implementations
+Last Updated: 2013-10-09 by klg
+
+This is intended to give a quick overview of which MCode version is used 
+for which motors.
+
+V2 - PCDS Generic MCode
+Used for any motor that is serviced by the pcds_motion module.
+
+V3 - Pulse Picker MCode
+Used only for pulse picker spindle motors. Read out variable Ns to see 
+the revision number for this particular variant.
