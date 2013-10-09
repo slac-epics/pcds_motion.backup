@@ -23,11 +23,11 @@ VA Mo
 Se=99
 PG 1
 LB SU
-BR Mc, Se=0
+BR Mc,Se=0
 Sd=80
 Ve=3
 Pu=0
-Ns=90
+Ns=91
 EL=4096
 MS=8
 EE=0
@@ -41,7 +41,6 @@ HT=5
 RC=100
 HC=5
 NE=0
-Pu=0
 Sw=50
 Sr=512
 Dr=0
@@ -63,14 +62,16 @@ TE=0
 H 100
 Hb=0
 Se=0
-Sd=0
 LB Za
-BR Z1, Se=1
-BR Z2, Se=2
-BR Z3, Se=3
-BR Z4, Se=4
-BR Z5, Se=5
-BR Z7, Se=7
+Sd=0
+Ld=0
+Ud=0
+BR Z1,Se=1
+BR Z2,Se=2
+BR Z3,Se=3
+BR Z4,Se=4
+BR Z5,Se=5
+BR Z7,Se=7
 IC Hb
 H 100
 BR Za
@@ -78,58 +79,67 @@ LB Z1
 Sd=10
 CL V1
 CL X5
-BR Zg, Df=-1
+BR Zg,Df=-1
 TC=J1
 BR Zh
 LB Zg
 TC=J2
 LB Zh
-TE=TE|4
+TE=4
 Sd=11
 LB Zb
 IC Hb
 H 100
-BR Z5, Se=0
+BR Z5,Se=0
 BR Zb
 LB Z2
 Sd=20
 CL V2
 CL X5
-BR Ze, Df=-1
+BR Ze,Df=-1
 TC=J5
 BR Zf
 LB Ze
 TC=J6
 LB Zf
-TE=TE|4
+TE=4
 Sd=21
 LB Zc
 IC Hb
 H 100
-BR Z5, Se=0
-Sd=22
+BR Z5,Se=0
 BR Zc
 LB Z3
 Sd=30
 CL V3
+CL X5
 TC=J3
-TE=TE|4
+TE=4
 Sd=31
 LB Zd
 IC Hb
 H 100
-BR Z5, Se=0
+BR Z5,Se=0
 BR Zd
 LB Z4
 Sd=40
 CL V4
-CL X4
+MA P0
+H
+Cs=C2
+Df=0
 Sd=41
 BR Mc
 LB Z5
 Sd=50
 CL V5
-CL X5
+BR Zi,Df=1
+BR Zi,Df=-1
+MA P1
+H
+Cs=C2
+Df=1
+LB Zi
 Sd=51
 BR Mc
 LB Z7
@@ -141,98 +151,94 @@ MR Mo
 H
 C1=P1
 C2=N1
-Cs=N1
+Cs=C2
 Df=1
+Ud=0
+Ld=0
 Sd=79
 BR Mc
 LB J1
 MA P2
-CL X8, Ec=1
+BR Ja,Ec=0
+Dr=N1-Cs
+BR Ja,Dr<Dl
+IC Ld
+LB Ja
 H
 Cs=C2
 Df=-1
 RT
 LB J2
 MA P1
-CL X9, Ec=1
+BR Jb,Ec=0
+Dr=Cs-N2
+BR Jb,Dr<Dl
+IC Ud
+LB Jb
 H
 Cs=C2
 Df=1
 RT
 LB J3
 MA P0
-CL X8, Ec=1
+BR Jc,Ec=0
+BR Jc,Df<>1
+Dr=N1-Cs
+BR Jc,Dr<Dl
+IC Ld
+LB Jc
 TC=J4
 H
+Cs=C2
 Df=0
-TE=TE|4
+TE=4
 RT
 LB J4
 MA P1
-CL X9, Ec=1
+BR Jg,Ec=0
+Dr=Cs-N0
+BR Jg,Dr<Dl
+IC Ud
+LB Jg
 TC=J3
 H
 Cs=C2
 Df=1
-TE=TE|4
+TE=4
 RT
 LB J5
 MA P2
-CL X8, Ec=1
+BR Jd,Ec=0
+Dr=N1-Cs
+BR Jd,Dr<Dl
+IC Ld
+LB Jd
 TC=J6
 H
 Cs=C2
 Df=-1
-TE=TE|4
+TE=4
 RT
 LB J6
 MA P1
-CL X9, Ec=1
+BR Jf,Ec=0
+Dr=Cs-N2
+BR Jf,Dr<Dl
+IC Ud
+LB Jf
 TC=J5
 H
 Cs=C2
 Df=1
-TE=TE|4
-RT
-LB X0
-BR Xa, Df=1
-MA P1
-CL X9, Ec=1
-H
-Df=1
-BR Xb
-LB Xa
-MA P2
-CL X8, Ec=1
-H
-Df=-1
-LB Xb
-Cs=C2
-RT
-LB X1
-MA P1
-CL X9, Ec=1
-H
-Cs=C2
-Df=1
-RT
-LB X2
-MA P2
-CL X8, Ec=1
-H
-Cs=C2
-Df=-1
-RT
-LB X4
-MA P0
-CL X8, Ec=1
-H
-Df=0
+TE=4
 RT
 LB X5
-BR Xc, Df=1
-BR Xc, Df=-1
-BR X1
+BR Xc,Df=1
+BR Xc,Df=-1
+MA P1
+H
+Cs=C2
+Df=1
 LB Xc
 RT
 LB X7
@@ -241,20 +247,7 @@ VA L2
 L1=C2*EL*8
 L2=MS*200
 C1=L1/L2
-RT
-LB X8
-BR Xd, Df<>1
-Dr=N1-Cs
-BR Xd, Dr<Dl
-IC Ld
-LB Xd
-RT
-LB X9
-BR Xe, Df<>-1
-Dr=Cs-N2
-BR Xe, Dr<Dl
-IC Ud
-LB Xe
+Df=98
 RT
 LB V0
 VI=5300
