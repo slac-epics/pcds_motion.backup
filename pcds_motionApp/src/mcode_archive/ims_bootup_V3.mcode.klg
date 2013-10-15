@@ -44,7 +44,7 @@ PG 1                ' Enter programming mode, program address 1
     Sd=80            ' Signal state change to power-up init
     Ve=3             ' General MCode version
     Pu=0             ' Power-up flag de-assertion
-    Ns=91            ' PP MCode version
+    Ns=92            ' PP MCode version
     
     EL=4096          ' 4096 lines * 4 step/line = 16384 enc/rev
     MS=8             ' 8 uS/Step * 200 S/rev = 1600 uS/rev
@@ -63,7 +63,7 @@ PG 1                ' Enter programming mode, program address 1
     Sw=50            ' Sweep distance: 50 steps to 11.25deg
     Sr=512           ' 512 encoder counts to 11.25deg
     Dr=0             ' Encoder [Dr]ift
-    Dl=23            ' Drift limit set to 23 encs (0.5 deg)
+    Dl=46            ' Drift limit set to 46 encs (1 deg)
     P0=0             ' Center (open) position
     P1=P0+Sw         ' Positive closed position
     P2=P0-Sw         ' Negative closed position
@@ -87,8 +87,6 @@ PG 1                ' Enter programming mode, program address 1
   ' ***** MODE SELECT *****
   LB Za             ' Mode Select loop START
     Sd=0             ' Signal state change to mode select
-    Ld=0             ' Reset low limit violation counter
-    Ud=0             ' Reset high limit violation counter
     BR Z1,Se=1       ' Branch Z0 if Mode 1: ONE-SHOT
     BR Z2,Se=2       ' Branch Z2 if Mode 2: FLIP-FLOP
     BR Z3,Se=3       ' Branch Z3 if Mode 3: BURST
