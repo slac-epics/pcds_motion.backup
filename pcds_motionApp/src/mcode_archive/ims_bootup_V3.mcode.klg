@@ -44,15 +44,13 @@ PG 1                ' Enter programming mode, program address 1
     Sd=80            ' Signal state change to power-up init
     Ve=3             ' General MCode version
     Pu=0             ' Power-up flag de-assertion
-    Ns=92            ' PP MCode version
+    Ns=93            ' PP MCode version
     
     EL=4096          ' 4096 lines * 4 step/line = 16384 enc/rev
     MS=8             ' 8 uS/Step * 200 S/rev = 1600 uS/rev
     EE=0             ' Disable closed-loop: too slow! (~1kHz)
     S3=16,0,1        ' S3 for enc power, active low, sourcing
-    O3=1             ' Turn on encoder power
     S4=16,0,0        ' S4 for fan ctrl, active low, sinking
-    O4=1             ' Turn on fan power
     S13=60,0,0       ' Set S13 for hi-speed trip input capture
     FC=9             ' Filter S13 for 12.9uS for debouncing
     HT=5             ' Hold current delay time = 5ms
@@ -83,6 +81,9 @@ PG 1                ' Enter programming mode, program address 1
     H 100            ' Hold for 100ms
     Hb=0             ' Reset heartbeat
     Se=0             ' Mode Select = 0 ("Waiting for mode")
+    O3=1             ' Turn on encoder power
+    O4=1             ' Turn on fan power
+    H 1000           ' Hold for 1s
 
   ' ***** MODE SELECT *****
   LB Za             ' Mode Select loop START
