@@ -25,9 +25,10 @@ PG 1
 LB SU
 BR Mc,Se=0
 Sd=80
+Se=99
 Ve=3
 Pu=0
-Ns=93
+Ns=94
 EL=4096
 MS=8
 EE=0
@@ -54,6 +55,7 @@ Ec=1
 Ud=0
 Ld=0
 Df=99
+S
 LB Mc
 Sd=81
 TE=0

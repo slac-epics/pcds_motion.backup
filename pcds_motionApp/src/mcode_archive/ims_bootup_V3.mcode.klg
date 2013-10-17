@@ -42,9 +42,10 @@ PG 1                ' Enter programming mode, program address 1
     ' *** INIT on HARD RESET ONLY ***
     BR Mc,Se=0       ' Skip this section on a soft reset (Se=0)
     Sd=80            ' Signal state change to power-up init
+    Se=99            ' Ensure that HARD RESET is in NVRAM
     Ve=3             ' General MCode version
     Pu=0             ' Power-up flag de-assertion
-    Ns=93            ' PP MCode version
+    Ns=94            ' PP MCode version
     
     EL=4096          ' 4096 lines * 4 step/line = 16384 enc/rev
     MS=8             ' 8 uS/Step * 200 S/rev = 1600 uS/rev
@@ -73,6 +74,7 @@ PG 1                ' Enter programming mode, program address 1
     Ud=0             ' Reset + violation counter
     Ld=0             ' Reset - violation counter
     Df=99            ' Current position unknown
+    S                ' Save entire init block to NVRAM
     
   ' *** INIT on START-UP or mode change ***
   LB Mc
