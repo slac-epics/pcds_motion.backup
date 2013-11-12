@@ -5,7 +5,7 @@ VA Hb   ' Heartbeat monitor
 VA Ns   ' Number of saves
 VA Ve   ' MCode version
 
-Ve=2    ' Version 2
+Ve=4    ' Version 4
 Ne=0    ' Disable numeric cmd
 p1=P    ' Assign current position
 Sd=Db*4 ' Set save deadband
