@@ -12,3 +12,4 @@ R2.3.11
 	
 R2.3.16
     Addition of softmotor_interlock.template. A template for conditional soft limits. 
+    Renamed autosave and archive file with .template to .tpl-req or .tpl-arch to match changes Bruce

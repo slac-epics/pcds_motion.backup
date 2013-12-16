@@ -1,0 +1,28 @@
+# Autosave position values for motor record 
+# TODO: Review this list
+
+$(MOTOR).DHLM
+$(MOTOR).DLLM
+$(MOTOR).S
+$(MOTOR).SMAX
+$(MOTOR).SBAS
+$(MOTOR).ACCL
+$(MOTOR).TWV
+$(MOTOR).DESC
+$(MOTOR):MODEL
+$(MOTOR).BDST
+$(MOTOR).SBAK
+$(MOTOR).DIR
+$(MOTOR).OFF
+$(MOTOR).PDBD
+$(MOTOR).PREC
+$(MOTOR).SDLT
+$(MOTOR):Update.SCAN
+$(MOTOR).RDBD
+$(MOTOR).RTRY
+$(MOTOR).HVEL
+$(MOTOR).HBAS
+$(MOTOR).HMDR
+$(MOTOR).UEIP
+$(MOTOR).ERES
+$(MOTOR):SAVED_HC.A
