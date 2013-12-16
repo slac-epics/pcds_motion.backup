@@ -23,26 +23,26 @@ DB += sim-valve.template
 DB += sim-motor.template
 DB += table-protection.template
 DB += newall-shg-a2.template
-
+DB += softlimit_interlock.template
 DB += status_update.db
 
 #
 # Create and install archive templates and sample substitutions
 #
-ARCHIVE	+= archive_clinometer.template
-ARCHIVE	+= archive_motor.template
-ARCHIVE	+= archive_motor-mc.template
-ARCHIVE	+= archive_newall-shg-a2.template
+ARCHIVE	+= archive_clinometer.tpl-arch
+ARCHIVE	+= archive_motor.tpl-arch
+ARCHIVE	+= archive_motor-mc.tpl-arch
+ARCHIVE	+= archive_newall-shg-a2.tpl-arch
 
 #
 # Create and install autosave templates and sample substitutions
 #
-REQ	+= autosave_clinometer.template
-REQ	+= autosave_motor_positions.template
-REQ	+= autosave_motor_settings.template
-REQ	+= autosave_motor_ilk.template
-REQ	+= ims_motor_settings.template
-REQ	+= usr_motor_settings.template
+REQ	+= autosave_clinometer.tpl-req
+REQ	+= autosave_motor_positions.tpl-req
+REQ	+= autosave_motor_settings.tpl-req
+REQ	+= autosave_motor_ilk.tpl-req
+REQ	+= ims_motor_settings.tpl-req
+REQ	+= usr_motor_settings.tpl-req
 
 
 include $(TOP)/configure/RULES

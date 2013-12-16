@@ -1,0 +1,90 @@
+#the template will be used to change the soft limits of a motor based on the position of a second motor
+#NOTE: To reduce the chance that a motor can violate its soft limit a stop command is set to the motor when ever the soft
+#       limits are changed. This may effect the movement of the motor that is having is soft limits changed.  
+#Pvs created by this template
+# $(ILK):DispName -- Name of interlock
+# $(ILK):Condition -- Condition that determines if true or false limits are written
+# $(ILK):LimitSelect -- Based on output from Condition causes true or false limits to be written
+# $(ILK):TrueLimits -- Writes 'true' high and low soft limits to motor
+# $(ILK):FalseLimits -- Writes 'false' high and low soft limits to motor
+ 
+#Substitutions for softlimit_interlock.template
+# MOTOR -- Motor who's soft limits will be changed by template
+# TRUE_HIGH_LIMIT -- Limit value that is written to the motor's high dial limit if condition is true
+# TRUE_LOW_LIMIT -- Limit value that is written to the motor's high dial limit if condition is true
+# FALSE_HIGH_LIMIT-- Limit value that is written to the motor's high dial limit if condition is false
+# FALSE_LOW_LIMIT -- Limit value that is written to the motor's high dial limit if condition is false
+# LIMCONDT -- Condition that dictates which limits are written to the motor. If condition is true then the TRUE limits are
+#         written, if false the FALSE limits are written.  Note: ?1:2  is automatically added to the end of the $(LIMCONDT)
+#         substitution. This ensures  that the resultant of the calculation is the value 1 or 2. If this ending is not
+#          present the template will not function correctly.   
+# ILK -- PV base name for interlock records
+# A -> L -- Inputs for condition calculation
+#----------------------------------------------Optional Substitutions--------------------------------------------------------------#
+# CALC_SCAN -- The rate at which the condition is checked, default is .1 second
+
+
+#Display name for interlock 
+record(stringout,	"$(ILK):DispName" )    {
+	field( DESC,	"Interlock Display Name" )
+	field( VAL,		"$(NAME)" )
+	field( PINI,	"YES" )
+}
+#Condition for changing soft limits on motor. When condition is true soft limits
+#will be set to TRUE_HIGH/LOW_LIMIT. When condition is false motor soft limits will
+#be set to FALSE_HIGH/LOW_LIMIT. Limits are only written when condition changes state.
+record(calcout, "$(ILK):Condition")  {
+	field(DESC, "Condition to Change slimits")
+	field(OOPT, "On Change")
+	field(DOPT, "Use CALC")
+	field(SCAN, "$(CALC_SCAN=.1 second)")
+	field(INPA,	"$(A=)")
+	field(INPB,	"$(B=)")
+	field(INPC,	"$(C=)")
+	field(INPD,	"$(D=)")
+	field(INPE,	"$(E=)")
+	field(INPF,	"$(F=)")
+	field(INPG,	"$(G=)")
+	field(INPH,	"$(H=)")
+	field(INPI,	"$(I=)")
+	field(INPJ,	"$(J=)")
+	field(INPK,	"$(K=)")
+	field(INPL,	"$(L=)")
+	field(OUT,  "$(ILK):LimitSelect.SELN PP")
+	field(CALC, "$(LIMCONDT)?1:2")
+}
+
+#sequence record that selects the true limits or false limits to process.
+record(seq, "$(ILK):LimitSelect")  {
+	field(DESC, "Select Soft Limits")
+	field(SCAN, "Passive")
+	field(SELM, "Specified")
+	field(LNK1, "$(ILK):TrueLimits.PROC")
+	field(DO1,  1)
+	field(LNK2, "$(ILK):FalseLimits.PROC")
+	field(DO2,  1)
+}
+
+#Writes false soft limit values to motors soft limits
+record(seq, "$(ILK):FalseLimits")  {
+	field(DESC, "False Soft Limits")
+	field(SELM, "All")
+	field(DO1, 1)
+	field(LNK1, "$(MOTOR).STOP PP")
+	field(DO2,  "$(FALSE_HIGH_LIMIT)")
+	field(LNK2, "$(MOTOR).DHLM")
+	field(DO3,  "$(FALSE_LOW_LIMIT)")
+	field(LNK3, "$(MOTOR).DLLM")
+}
+
+#Writes true soft limit values to motor soft limits
+record(seq, "$(ILK):TrueLimits")  {
+	field(DESC, "True Soft Limits")
+	field(SELM, "All")
+	field(DO1, 1)
+	field(LNK1, "$(MOTOR).STOP PP")
+	field(DO2,  "$(TRUE_HIGH_LIMIT)")
+	field(LNK2, "$(MOTOR).DHLM")
+	field(DO3,  "$(TRUE_LOW_LIMIT)")
+	field(LNK3, "$(MOTOR).DLLM")
+}
