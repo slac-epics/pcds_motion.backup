@@ -1,73 +1,71 @@
 # Motor archive PV list
 # Example: <channel> <period [s]>
-$(MOTOR).VAL	86400		monitor
-$(MOTOR).ATHM	86400		monitor
-$(MOTOR).BDST	86400           monitor
-$(MOTOR).BVEL	86400           monitor
-$(MOTOR).DHLM	86400           monitor
-$(MOTOR).DIR	86400           monitor
-$(MOTOR).DISA	86400           monitor
-$(MOTOR).DISP	86400           monitor
-$(MOTOR).DLLM	86400           monitor
-$(MOTOR).DMOV   86400           monitor
-$(MOTOR).DRBV	86400           monitor
-$(MOTOR).DVAL	86400           monitor
-$(MOTOR).EGU	86400           monitor
-$(MOTOR).ERES	86400           monitor
-$(MOTOR).HLS	86400           monitor
-$(MOTOR).HBAS	86400           monitor
-$(MOTOR).HMDR	86400           monitor
-$(MOTOR).HMTP	86400           monitor
-$(MOTOR).HVEL	86400           monitor
-$(MOTOR).LLS	86400           monitor
-$(MOTOR).MISS	86400           monitor
-$(MOTOR).MOVN   86400           monitor
-$(MOTOR).MRES	86400           monitor
-$(MOTOR).MSTA	86400           monitor
-$(MOTOR).OFF	86400           monitor
-$(MOTOR).OMSL	86400           monitor
-$(MOTOR).RBV	86400           monitor
-$(MOTOR).RCNT	86400           monitor
-$(MOTOR).RDBD	86400           monitor
-$(MOTOR).RMP	86400           monitor
-$(MOTOR).RRES	86400           monitor
-$(MOTOR).RTRY	86400           monitor
-$(MOTOR).SET	86400           monitor
-$(MOTOR).SPMG	86400           monitor
-$(MOTOR).SREV	86400           monitor
-$(MOTOR).STOP	86400           monitor
-$(MOTOR).SYNC	86400           monitor
-$(MOTOR).TDIR	86400           monitor
-$(MOTOR).TWV	86400           monitor
-$(MOTOR).UREV	86400           monitor
-$(MOTOR).VBAS	86400           monitor
-$(MOTOR).VELO	86400           monitor
-$(MOTOR).VMAX	86400           monitor
-
-# mcode template additional records
-$(MOTOR):RC	86400           monitor
-$(MOTOR):HC	86400           monitor
-$(MOTOR):LM	86400           monitor
-$(MOTOR):EE	86400           monitor
-$(MOTOR):EL	86400           monitor
-$(MOTOR):MS	86400           monitor
-$(MOTOR):MT	86400           monitor
-$(MOTOR):NS	86400           monitor
-$(MOTOR):DB	86400           monitor
-$(MOTOR):SM	86400           monitor
-$(MOTOR):PM	86400           monitor
-$(MOTOR):S1	86400           monitor
-$(MOTOR):S2	86400           monitor
-$(MOTOR):S3	86400           monitor
-$(MOTOR):S4	86400           monitor
-$(MOTOR):SF	86400           monitor
-$(MOTOR):PN	86400           monitor
-$(MOTOR):SD	86400           monitor
-$(MOTOR):SN	86400           monitor
-$(MOTOR):VE	86400           monitor
-$(MOTOR):VR	86400           monitor
-
 # position archiving
-$(MOTOR):SAVED_RAW	86400           monitor
-$(MOTOR):SAVED_P	86400           monitor
-
+$(MOTOR).ACCL	5		monitor
+$(MOTOR).ATHM	1		monitor
+$(MOTOR).BDST	10
+$(MOTOR).BVEL	10
+$(MOTOR).DESC	10		monitor
+$(MOTOR).DHLM	10
+$(MOTOR).DIR	1		monitor
+$(MOTOR).DISA	10
+$(MOTOR).DISP	10
+$(MOTOR).DLLM	10
+$(MOTOR).DMOV	1		monitor
+$(MOTOR).DRBV	1
+$(MOTOR).DVAL	1		monitor
+$(MOTOR).EGU	10
+$(MOTOR).ERES	1		monitor
+$(MOTOR).HBAS	10
+$(MOTOR).HLS	1
+$(MOTOR).HMDR	10
+$(MOTOR).HMTP	10
+$(MOTOR).HVEL	10
+$(MOTOR).LLS	1
+$(MOTOR).MISS	1		monitor
+$(MOTOR).MOVN	1		monitor
+$(MOTOR).MRES	1		monitor
+$(MOTOR).MSTA	10
+$(MOTOR).OFF	10
+$(MOTOR).OMSL	10
+$(MOTOR).RBV	1
+$(MOTOR).RCNT	10
+$(MOTOR).RDBD	1		monitor
+$(MOTOR).RMP	1
+$(MOTOR).RRES	1		monitor
+$(MOTOR).RTRY	10
+$(MOTOR).SET	10
+$(MOTOR).SPMG	1		monitor
+$(MOTOR).SREV	1		monitor
+$(MOTOR).STOP	1		monitor
+$(MOTOR).SYNC	1		monitor
+$(MOTOR).TDIR	1
+$(MOTOR).TWV	10
+$(MOTOR).UREV	1		monitor
+$(MOTOR).VAL	1
+$(MOTOR).VBAS	10
+$(MOTOR).VELO	10
+$(MOTOR).VMAX	10
+$(MOTOR):DB	1           monitor
+$(MOTOR):EE	1           monitor
+$(MOTOR):EL	1           monitor
+$(MOTOR):HC	1           monitor
+$(MOTOR):LM	1           monitor
+$(MOTOR):MS	1           monitor
+$(MOTOR):MT	1           monitor
+$(MOTOR):NS	1           monitor
+$(MOTOR):PM	1           monitor
+$(MOTOR):PN	1           monitor
+$(MOTOR):RC	1           monitor
+$(MOTOR):S1	1           monitor
+$(MOTOR):S2	1           monitor
+$(MOTOR):S3	1           monitor
+$(MOTOR):S4	1           monitor
+$(MOTOR):SAVED_P	1           monitor
+$(MOTOR):SAVED_RAW	1           monitor
+$(MOTOR):SD	1           monitor
+$(MOTOR):SF	1           monitor
+$(MOTOR):SM	1           monitor
+$(MOTOR):SN	1           monitor
+$(MOTOR):VE	1           monitor
+$(MOTOR):VR	1           monitor
