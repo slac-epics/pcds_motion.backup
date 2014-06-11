@@ -28,13 +28,13 @@ Sd=80
 Se=99
 Ve=3
 Pu=0
-Ns=94
+Ns=96
 EL=4096
 MS=8
 EE=0
 S3=16,0,1
 S4=16,0,0
-S13=60,0,0
+S13=60,0
 FC=9
 HT=5
 RC=100
@@ -64,6 +64,7 @@ Hb=0
 Se=0
 O3=1
 O4=1
+S13=60,0
 H 1000
 LB Za
 Sd=0
@@ -72,6 +73,7 @@ BR Z2,Se=2
 BR Z3,Se=3
 BR Z4,Se=4
 BR Z5,Se=5
+BR Z6,Se=6
 BR Z7,Se=7
 IC Hb
 H 100
@@ -91,7 +93,8 @@ Sd=11
 LB Zb
 IC Hb
 H 100
-BR Z5,Se=0
+BR Mc,Se=0
+BR Z5,Se=5
 BR Zb
 LB Z2
 Sd=20
@@ -108,7 +111,8 @@ Sd=21
 LB Zc
 IC Hb
 H 100
-BR Z5,Se=0
+BR Mc,Se=0
+BR Z5,Se=5
 BR Zc
 LB Z3
 Sd=30
@@ -120,7 +124,8 @@ Sd=31
 LB Zd
 IC Hb
 H 100
-BR Z5,Se=0
+BR Mc,Se=0
+BR Z5,Se=5
 BR Zd
 LB Z4
 Sd=40
@@ -143,6 +148,20 @@ Df=1
 LB Zi
 Sd=51
 BR Mc
+LB Z6
+Sd=60
+CL V6
+CL X5
+S13=60,1
+TC=J7
+TE=4
+Sd=61
+LB Zj
+IC Hb
+H 100
+BR Mc,Se=0
+BR Z5,Se=5
+BR Zj
 LB Z7
 Sd=70
 CL V9
@@ -233,6 +252,35 @@ Cs=C2
 Df=1
 TE=4
 RT
+LB J7
+MA P0
+BR Jh,Ec=0
+BR Jh,Df<>1
+Dr=N1-Cs
+BR Jh,Dr<Dl
+IC Ld
+LB Jh
+TC=J8
+H
+Cs=C2
+Df=0
+S13=60,0
+TE=4
+RT
+LB J8
+MA P1
+BR Ji,Ec=0
+Dr=Cs-N0
+BR Ji,Dr<Dl
+IC Ud
+LB Ji
+TC=J7
+H
+Cs=C2
+Df=1
+S13=60,1
+TE=4
+RT
 LB X5
 BR Xc,Df=1
 BR Xc,Df=-1
@@ -274,6 +322,8 @@ LB V4
 BR V0
 LB V5
 BR V4
+LB V6
+BR V0
 LB V9
 VI=640
 VM=2560
