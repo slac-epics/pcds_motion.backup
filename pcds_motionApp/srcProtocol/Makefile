@@ -5,13 +5,16 @@ T_A=$(EPICS_HOST_ARCH)
 TOP=../..
 include $(TOP)/configure/CONFIG
 
+FILE_TYPE += PROTO
+INSTALL_PROTO = $(INSTALL_LOCATION)/protocol
+
 ######################################################################
 # Specify what files should be copied and where.
 
 # What protocol files should be copied as part of the build.
-COPY_FILES += mcode.proto
-COPY_FILES += newall-shg-a2.proto
-COPY_FILES += AGI_MD900_clinometer.proto
+PROTO += mcode.proto
+PROTO += newall-shg-a2.proto
+PROTO += AGI_MD900_clinometer.proto
 
 # What subdirectory should hold the protcol files.  For this example,
 # $INSTALL_LOCATION/protocol will be created.
@@ -25,7 +28,7 @@ COPY_SUBDIR = protocol
 ######################################################################
 # Don't change these.
 include $(TOP)/configure/RULES
-include $(TOP)/configure/RULES.copy
+#include $(TOP)/configure/RULES.copy
 
 ######################################################################
 # Add additional RULES files, if necessary.

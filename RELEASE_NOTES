@@ -1,0 +1,14 @@
+#
+# RELEASE_NOTES
+#
+R2.6.0	2017-05-11, Bruce Hill
+	Updated for git workflow
+	Had to change archive and autosave suffixes from template to tpl-arch and tpl-req
+
+R2.5.0	2014-06-25	Karl Gumerlock
+	New versions of IMS firmware for Pulse Picker, as well as new version of comment stripping utility.
+	Fix the motor launcher script to work with 3.14.12
+
+R2.4.0	2014-02-14	Bruce Hill
+	Fixed build for RTEMS and misc build cleanups
+	Fixed broken archiver settings.
