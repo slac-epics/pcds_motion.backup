@@ -32,7 +32,7 @@ ss motor_stop {
    state startup {
       entry {
          printf( "motor_stop: startup\n" );
-	 printf( "assign: %ld, connect: %ld\n", pvAssignCount(),
+	 printf( "assign: %u, connect: %u\n", pvAssignCount(),
 					        pvConnectCount() );
          ret = pvGet( stop_motors, SYNC );
 	 printf( "pvGet(stop_motors) = %d.\n", ret );
