@@ -5,10 +5,10 @@
 
 record(calc, "$(MOT):_CALC_STATUS") {
   field(CALC, "D<<3|G<<2|L<<1|H")
-  field(INPD, "$(MOT).DMOV NPP MS")
-  field(INPG, "$(MOT).MOVN NPP MS")
-  field(INPH, "$(MOT).HLS  NPP MS")
-  field(INPL, "$(MOT).LLS  NPP MS")
+  field(INPD, "$(MOT).DMOV CPP MS")
+  field(INPG, "$(MOT).MOVN CPP MS")
+  field(INPH, "$(MOT).HLS  CPP MS")
+  field(INPL, "$(MOT).LLS  CPP MS")
 }
 
 record(mbbi, "$(MOT):STATUS") {
